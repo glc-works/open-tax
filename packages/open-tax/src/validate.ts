@@ -1,4 +1,7 @@
-// Copyright GLC Works and Open-Tax contributors. Licensed under Apache-2.0.
+// Copyright GLC Works and Open-Tax contributors.
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 import { Ajv2020, type ErrorObject, type ValidateFunction } from "ajv/dist/2020.js";
 import { parseIsoDate } from "./dates.js";

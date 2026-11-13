@@ -2,7 +2,7 @@
 
 Open-Tax is an open, machine-readable standard for tax codification: versioned jurisdiction packs and regulatory policy diffs for accounting systems and AI agents.
 
-It is published under the [Apache License 2.0](LICENSE). Attribution for redistributors lives in [NOTICE](NOTICE).
+The first-party code, schemas, documentation, and tax packs are published under the [Mozilla Public License 2.0 (MPL-2.0)](LICENSE). Attribution and source availability information live in [NOTICE](NOTICE).
 
 **Not legal advice.** A pack is a coded reference so software can apply a cited rule on a cited date. It is not a filing position, a tax opinion, or a complete statement of the law. Where a number is missing, the pack is silent. Do not read silence as zero.
 
@@ -100,7 +100,7 @@ console.log(rate.rate.statutory_value, rate.rate.base_formula, rate.rate.value);
 
 `npm run build` writes the package that `npm pack` publishes, including the `open-tax` command at `dist/cli.js`. Pushing a tag `vX.Y.Z` that matches `packages/open-tax/package.json` runs the release workflow: tests, the tarball, a GitHub release, and npm publish when the `NPM_TOKEN` secret is set. A data pull request does not publish.
 
-The package name is `open-tax`, license `Apache-2.0`, `private` false. Schemas are exported from `open-tax/schemas/*.json` after the build copies them.
+The package name is `open-tax`, license `MPL-2.0`, `private` false. Schemas are exported from `open-tax/schemas/*.json` after the build copies them.
 
 ## Country packs
 
@@ -124,7 +124,7 @@ A pull request that changes a regulated rule must cite the source, keep `effecti
 | `benchmarks/` | How other administrations and open projects relate to the four layers |
 | `packages/open-tax/` | TypeScript ESM and CJS library, and the `open-tax` command |
 | `packaging/homebrew/` | Homebrew formula template for `glc-works/tap` |
-| `NOTICE` | Apache-2.0 Section 4(d) attribution |
+| `NOTICE` | Attribution and source availability information |
 
 ## Inspiration
 

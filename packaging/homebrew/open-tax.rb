@@ -11,9 +11,9 @@
 class OpenTax < Formula
   desc "Validate Open-Tax packs and resolve a treatment on a date"
   homepage "https://github.com/glc-works/open-tax"
-  url "https://github.com/glc-works/open-tax/releases/download/v0.1.0/open-tax-0.1.0.tgz"
+  url "https://github.com/glc-works/open-tax/releases/download/v0.1.1/open-tax-0.1.1.tgz"
   sha256 "0000000000000000000000000000000000000000000000000000000000000000"
-  license "Apache-2.0"
+  license "MPL-2.0"
 
   # The CLI and the library require Node.js 20 or newer.
   depends_on "node"

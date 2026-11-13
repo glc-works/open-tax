@@ -33,8 +33,8 @@ const here = dirname(fileURLToPath(import.meta.url));
 const packageRoot = join(here, "..");
 const repoRoot = join(here, "../../..");
 const packageJson = JSON.parse(readFileSync(join(packageRoot, "package.json"), "utf8"));
-if (packageJson.bin?.["open-tax"] !== "./dist/cli.js") {
-  throw new Error(`bin.open-tax should be ./dist/cli.js, got ${packageJson.bin?.["open-tax"]}.`);
+if (packageJson.bin?.["open-tax"] !== "dist/cli.js") {
+  throw new Error(`bin.open-tax should be dist/cli.js, got ${packageJson.bin?.["open-tax"]}.`);
 }
 
 const cli = join(packageRoot, "dist/cli.js");

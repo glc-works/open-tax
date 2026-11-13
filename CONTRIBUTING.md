@@ -4,6 +4,13 @@ Open-Tax is data plus a small validator. The valuable change is usually a cited 
 
 Pack data is not legal advice. Do not add a rate you cannot point at.
 
+## License
+
+First-party contributions, including code, schemas, documentation, and tax
+packs, are provided under the [Mozilla Public License 2.0 (MPL-2.0)](LICENSE).
+Preserve applicable copyright and license notices. Third-party dependencies
+and official source publications retain their own licenses and rights.
+
 ## Become a country pack maintainer
 
 1. Read [benchmarks/global-comparison.md](benchmarks/global-comparison.md). Decide which local rules map to `standard`, `reduced`, `super_reduced`, `zero`, `exempt`, `out_of_scope`, `reverse_charge`, `withholding`, `luxury`, `not_collected`, and `final`. Write that decision down. It becomes `semantic_mappings` in the regime.

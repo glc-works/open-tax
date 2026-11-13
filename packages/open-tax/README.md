@@ -2,7 +2,7 @@
 
 Reference loader and command-line tool for [Open-Tax](https://github.com/glc-works/open-tax) jurisdiction packs.
 
-Apache-2.0. See the repository [NOTICE](https://github.com/glc-works/open-tax/blob/main/NOTICE) for the attribution redistributors keep under Section 4(d).
+Licensed under the [Mozilla Public License 2.0 (MPL-2.0)](LICENSE). See [NOTICE](NOTICE) for attribution and source availability information. Source Code Form is available in the [Open-Tax repository](https://github.com/glc-works/open-tax).
 
 ## Install
 
