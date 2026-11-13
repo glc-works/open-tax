@@ -19,7 +19,7 @@ Reviewed against the cited DJP and Ministry of Finance pages on 2026-11-13.
 | PPh 21 TER bulanan, monthly-paid pegawai tidak tetap, including December | `withholding` | Same A/B/C tables. Not the daily bands and not the December Pasal 17 switch. |
 | PPh 21 TER harian | `withholding` | Non-monthly non-permanent employees. 0% up to Rp450,000; 0.5% above that up to Rp2,500,000. Nothing above that band. |
 | PPh 21 Pasal 17 | `withholding` | Layer schedule from the DJP UU HPP comparison, from tax year 2022. Last-period withholding for permanent employees and pensioners. |
-| PPh 22 | `withholding` | Category and KAP only. No percentage. |
+| PPh 22 | `withholding` / `final` | 28 PMK 51/2025 base-rate classes, including separate fuel/gas finality. |
 | PPh 23 | `withholding` | Headline 15% and 2% as stated by DJP. Exemptions, the no-TIN uplift, and the service list are not fully encoded. |
 | PPh 4 ayat (2) | `final` | General category plus a separately scoped UMKM 0.5% treatment and sample billing codes. |
 | PPh Badan and Pasal 31E | `standard` / `reduced` | HPP 22% on taxable income; conditional 50% rate reduction on the eligible Article 31E taxable-income portion. |
@@ -29,7 +29,7 @@ Reviewed against the cited DJP and Ministry of Finance pages on 2026-11-13.
 
 - PPnBM percentages
 - PPN DPP/besaran tertentu schedules under PMK 11/2025
-- PPh 22 percentages
+- Earlier PPh 22 numerical history, full HS annex membership and special Article 22 regimes outside PMK 51/2025
 - PPh 4 ayat (2) percentages outside UMKM
 - Tax-treaty withholding tables
 - A KBLI-to-tax map (the dictionary is an empty, labeled structure)
@@ -108,3 +108,22 @@ withholding/collection, verified against the
 These codes identify payment types, not tax eligibility, commencement dates or
 current filing deadlines. The generic PPh 4(2) category still has no universal
 rate; other final-tax schedules remain absent.
+
+## PPh 22 collection classes
+
+[PMK 51/2025](https://www.pajak.go.id/index.php/id/peraturan/pemungutan-pajak-penghasilan-pasal-22-sehubungan-dengan-pembayaran-atas-penyerahan-1)
+Pasal 15 starts the encoded classes on 1 August 2025. There are 28 scoped
+treatments: seven import/auction classes, mining exports, government and
+specified-body purchases, five producer/distributor industries, motor-vehicle
+agents, raw materials, mining purchases, bullion purchases, eight fuel/gas
+final/non-final variants, and lubricants. Import value includes the cited CIF,
+duty and other customs levies; auction price is a different base.
+
+Apply the Article 4 exceptions before choosing a rate. Government and
+specified-body/bullion purchase limits require that payments are not split
+from a larger transaction. The raw-material IDR 20 million exception is a
+tax-period aggregate. Annex goods/HS membership must be checked against the
+original annex; no unverified tariff lines are vendored. Fuel/gas collection
+is final only for distributors/agents; lubricants remain non-final. These
+are ordinary taxpayer-identification base rates; no-NPWP uplifts and special
+Article 22 regimes outside PMK 51/2025 remain unencoded.

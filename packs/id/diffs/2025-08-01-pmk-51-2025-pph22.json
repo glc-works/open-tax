@@ -1,0 +1,78 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2025-08-01-pmk-51-2025-pph22",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "PMK 51/2025: Article 22 collection classes",
+  "summary": "Encode the cited PMK 51 classes at statutory commencement, preserving final fuel/gas collection to agents separately from non-final collection and lubricant collection. Earlier numeric histories and the full HS annex are not reconstructed.",
+  "legal_basis": [
+    {
+      "title": "PMK 51/2025",
+      "instrument": "PMK 51/2025",
+      "url": "https://www.pajak.go.id/index.php/id/peraturan/pemungutan-pajak-penghasilan-pasal-22-sehubungan-dengan-pembayaran-atas-penyerahan-1",
+      "pinpoint": "Pasal 2-4, Pasal 10, Pasal 13 dan Pasal 15 (berlaku 1 Agustus 2025)",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-14",
+    "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+  },
+  "changes": [
+    {
+      "id": "2025-08-01-pmk-51-2025-pph22-coverage",
+      "effective_from": "2025-08-01",
+      "change_type": "treatment_added",
+      "summary": "Encode the cited PMK 51 classes at statutory commencement, preserving final fuel/gas collection to agents separately from non-final collection and lubricant collection. Earlier numeric histories and the full HS annex are not reconstructed.",
+      "affected": {
+        "tax_ids": [
+          "pph22"
+        ],
+        "treatment_ids": [
+          "pph22-import-listed-10",
+          "pph22-import-listed-75",
+          "pph22-import-food-api",
+          "pph22-import-gold",
+          "pph22-import-other-api",
+          "pph22-import-no-api",
+          "pph22-auction",
+          "pph22-mineral-export",
+          "pph22-government-goods",
+          "pph22-specified-body-goods",
+          "pph22-cement",
+          "pph22-paper",
+          "pph22-steel",
+          "pph22-automotive",
+          "pph22-medicines",
+          "pph22-vehicle-agents",
+          "pph22-raw-agri",
+          "pph22-mineral-purchase",
+          "pph22-bullion-purchase",
+          "pph22-fuel-pertamina-spbu-agent",
+          "pph22-fuel-pertamina-spbu-nonagent",
+          "pph22-fuel-other-spbu-agent",
+          "pph22-fuel-other-spbu-nonagent",
+          "pph22-fuel-other-agent",
+          "pph22-fuel-other-nonagent",
+          "pph22-gas-agent",
+          "pph22-gas-nonagent",
+          "pph22-lubricants"
+        ],
+        "semantic_codes": [
+          "withholding",
+          "final"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Select the treatment by taxpayer, transaction and statutory scope; apply exclusions before choosing a rate. The resolver returns authored references and does not compute tax.",
+        "systems": [
+          "filing",
+          "reporting"
+        ]
+      }
+    }
+  ]
+}
