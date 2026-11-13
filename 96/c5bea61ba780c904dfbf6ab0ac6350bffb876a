@@ -1,0 +1,32 @@
+packs/id/regime.json
+  s_5fda4c2dbca69b::t_f0f7cb1db4a855 22,85,101-121,163-172,600,614,643,676,686,700,764-1545,1547
+  s_5fda4c2dbca69b::t_4bca53209ef06b 1546,1839-1938
+packs/id/diffs/2024-01-01-pp-58-2023-pph21-ter.json
+  s_5fda4c2dbca69b::t_f0f7cb1db4a855 8,23-29,34-35,42,44-59,67-70,73,82-93,102-104
+packages/open-tax/test/id-ter.test.ts
+  s_5fda4c2dbca69b::t_50b2f93f316516 1-82,88,91,99
+  s_5fda4c2dbca69b::t_eee43409806a3f 83-87,89-90,92-98
+packs/id/README.md
+  s_5fda4c2dbca69b::t_f0f7cb1db4a855 18-19,57-69
+  s_5fda4c2dbca69b::t_5db270d832ceb1 25,31-32,70-83
+benchmarks/global-comparison.md
+  s_5fda4c2dbca69b::t_28534237276497 7-79
+packs/id/diffs/2022-01-01-uu-7-2021-pasal-17.json
+  s_5fda4c2dbca69b::t_c26f62bb5c0658 7,16-29,44-55,63-66,74-108
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "96c5bea61ba780c904dfbf6ab0ac6350bffb876a",
+  "prompts": {},
+  "sessions": {
+    "s_5fda4c2dbca69b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1d597-01b7-7913-914e-820e8b2e7cac",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Cid <308343041+convergenceID@users.noreply.github.com>"
+    }
+  }
+}
