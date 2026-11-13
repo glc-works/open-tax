@@ -27,8 +27,8 @@ Reviewed against the cited DJP and Ministry of Finance pages on 2026-11-13.
 
 ## What is not encoded
 
-- PPnBM percentages
-- PPN DPP/besaran tertentu schedules under PMK 11/2025
+- Detailed PPnBM vehicle schedules, ministerial goods/HS classification and housing thresholds
+- PMK 11 formulas not expressly encoded here, including imported-film, voucher, certain commodity/KSO formulas and crypto history
 - Earlier PPh 22 numerical history, full HS annex membership and special Article 22 regimes outside PMK 51/2025
 - Other final-tax families outside the explicitly encoded UMKM, rent, land-transfer, construction and resident-bond snapshots
 - Tax-treaty withholding tables
@@ -155,3 +155,25 @@ base. It is distinct from PP 91/2021 resident/BUT final bond tax and the
 general Article 26(1) gross-income class. Treaty eligibility, Article 26(2)
 estimated-net-income coefficients and branch-profit computations remain
 unencoded; do not apply the gross-income percentage to those other bases.
+
+## Specific PPN bases and non-vehicle PPnBM
+
+22 scoped PMK 11/2025 treatments preserve nine expressly stated special DPP
+paths, specified agricultural/used-vehicle regimes, selected PMK 71 services,
+insurance commissions, self-building, tobacco and LPG margins. Article 22
+applies the calculations to collections since 1 January 2025; promulgation
+was 4 February 2025. PMK 53/2025 restates insurance/self-building from
+1 August 2025; those treatments have linked versions with an inclusive
+31 July end date. Crypto rates are absent, including the removed provisions.
+All formulas remain text; a missing decimal value is not zero. Special input
+credit rules and supplier/invoice/classification conditions remain external.
+
+PP 61/2020 contributes seven **non-vehicle PPnBM** groups from 15 December
+2020, after its 60-day delay. PPnBM has its own tax ID and is separate from
+the PPN luxury base. Its housing/HS ministerial classification and vehicle
+schedules remain unencoded. The tourism-yacht exception has a four-year
+recapture condition; no unverified zero-rate exemption is asserted.
+
+Sources: [PMK 11](https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan),
+[PMK 53](https://jdih.kemenkeu.go.id/download/f5252d58-c4a6-45c3-87b7-cb3b6c3abbf9/2025pmkeuangan053.pdf),
+[PP 61](https://www.pajak.go.id/id/peraturan/barang-kena-pajak-yang-tergolong-mewah-selain-kendaraan-bermotor-yang-dikenai-pajak).

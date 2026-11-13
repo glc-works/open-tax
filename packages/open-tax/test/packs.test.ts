@@ -45,7 +45,7 @@ test("Indonesia standard PPN follows 10%, then 11%, then 12% times 11/12", () =>
 
 test("luxury PPN branches for final consumers in January 2025", () => {
   const regime = loadRegime();
-  const january = resolveTaxAtDate(regime, { date: "2025-01-15", semanticCode: "luxury" });
+  const january = resolveTaxAtDate(regime, { date: "2025-01-15", semanticCode: "luxury", taxId: "ppn" });
   const ids = january.map((row) => row.versionId).sort();
   assert.deepEqual(ids, ["ppn-luxury-12", "ppn-luxury-fc-dpp"]);
   const transitional = january.find((row) => row.treatmentId === "ppn-luxury-final-consumer");
@@ -58,7 +58,7 @@ test("luxury PPN branches for final consumers in January 2025", () => {
   assert.equal(february[0]?.versionId, "ppn-luxury-fc-12");
   assert.equal(february[0]?.rate.value, "0.12");
 
-  const before = resolveTaxAtDate(regime, { date: "2024-12-31", semanticCode: "luxury" });
+  const before = resolveTaxAtDate(regime, { date: "2024-12-31", semanticCode: "luxury", taxId: "ppn" });
   assert.deepEqual(before, []);
 });
 

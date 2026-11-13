@@ -1,0 +1,71 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2025-01-01-pmk-11-2025-special-bases",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "PMK 11/2025: specific VAT bases and amounts",
+  "summary": "Encode selected expressly stated DPP and besaran tertentu formulas, with Article 22 application to collections since 1 January 2025. PMK 11 was promulgated 4 February 2025; effective_from represents its stated collection-period application, not the publication date.",
+  "legal_basis": [
+    {
+      "title": "PMK 11/2025",
+      "instrument": "PMK 11/2025",
+      "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+      "pinpoint": "Pasal 4, 9, 14-17, 20, 22 dan 23; pengumpulan sejak 1 Januari 2025",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-14",
+    "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+  },
+  "changes": [
+    {
+      "id": "2025-01-01-pmk-11-2025-special-bases-coverage",
+      "effective_from": "2025-01-01",
+      "change_type": "treatment_added",
+      "summary": "Encode selected expressly stated DPP and besaran tertentu formulas, with Article 22 application to collections since 1 January 2025. PMK 11 was promulgated 4 February 2025; effective_from represents its stated collection-period application, not the publication date.",
+      "affected": {
+        "tax_ids": [
+          "ppn"
+        ],
+        "treatment_ids": [
+          "ppn-nilai-lain-self-use",
+          "ppn-nilai-lain-free-supply",
+          "ppn-nilai-lain-film",
+          "ppn-nilai-lain-dissolution",
+          "ppn-nilai-lain-intermediary",
+          "ppn-nilai-lain-auction",
+          "ppn-nilai-lain-asset-gift",
+          "ppn-nilai-lain-labour-service",
+          "ppn-nilai-lain-public-message",
+          "ppn-besaran-agri",
+          "ppn-besaran-used-vehicles",
+          "ppn-besaran-parcel",
+          "ppn-besaran-travel",
+          "ppn-besaran-freight-forwarding",
+          "ppn-besaran-religious-itemised",
+          "ppn-besaran-religious-unsplit",
+          "ppn-besaran-insurance-agent",
+          "ppn-besaran-insurance-broker",
+          "ppn-besaran-self-build",
+          "ppn-tobacco-retail",
+          "ppn-lpg-agent",
+          "ppn-lpg-base"
+        ],
+        "semantic_codes": [
+          "standard"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Select the treatment by taxpayer, transaction and statutory scope; apply exclusions before choosing a rate. The resolver returns authored references and does not compute tax.",
+        "systems": [
+          "filing",
+          "reporting"
+        ]
+      }
+    }
+  ]
+}

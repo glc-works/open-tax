@@ -1,0 +1,59 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2025-08-01-pmk-53-2025-restatement",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "PMK 53/2025: insurance and self-build restatement",
+  "summary": "Preserve reciprocal versions for the unchanged insurance/self-build computations restated by PMK 53. Crypto provisions are removed from amended Article 20; no crypto VAT rate or exemption is inferred here.",
+  "legal_basis": [
+    {
+      "title": "PMK 11/2025",
+      "instrument": "PMK 11/2025",
+      "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+      "pinpoint": "Pasal 4, 9, 14-17, 20, 22 dan 23; pengumpulan sejak 1 Januari 2025",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    },
+    {
+      "title": "PMK 53/2025",
+      "instrument": "PMK 53/2025",
+      "url": "https://jdih.kemenkeu.go.id/download/f5252d58-c4a6-45c3-87b7-cb3b6c3abbf9/2025pmkeuangan053.pdf",
+      "pinpoint": "Pasal I perubahan Pasal 20; Pasal II berlaku 1 Agustus 2025",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-14",
+    "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+  },
+  "changes": [
+    {
+      "id": "2025-08-01-pmk-53-2025-restatement-coverage",
+      "effective_from": "2025-08-01",
+      "change_type": "clarification",
+      "summary": "Preserve reciprocal versions for the unchanged insurance/self-build computations restated by PMK 53. Crypto provisions are removed from amended Article 20; no crypto VAT rate or exemption is inferred here.",
+      "affected": {
+        "tax_ids": [
+          "ppn"
+        ],
+        "treatment_ids": [
+          "ppn-besaran-insurance-agent",
+          "ppn-besaran-insurance-broker",
+          "ppn-besaran-self-build"
+        ],
+        "semantic_codes": [
+          "standard"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Select the treatment by taxpayer, transaction and statutory scope; apply exclusions before choosing a rate. The resolver returns authored references and does not compute tax.",
+        "systems": [
+          "filing",
+          "reporting"
+        ]
+      }
+    }
+  ]
+}
