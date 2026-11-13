@@ -44,7 +44,7 @@
       },
       "migration_impact": {
         "severity": "high",
-        "summary": "Invoices dated 1 April 2022 or later use 11%. Invoices through 31 March 2022 stay at 10%. Do not change the 0% export treatment.",
+        "summary": "Invoices for supplies from 1 April 2022 use 11%. Invoices for supplies through 31 March 2022 stay at 10%. A replacement invoice, or a return or cancellation note, keeps the rate of the original tax invoice even when the replacement is issued on or after 1 April 2022. Do not change the 0% export treatment.",
         "systems": ["invoicing", "filing", "ecommerce"]
       },
       "before": { "statutory_rate": "0.10", "effective_rate": "0.10" },

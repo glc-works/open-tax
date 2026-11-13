@@ -57,7 +57,7 @@ body:
       description: Tick what you already have. Leave the rest for the pull request.
       options:
         - label: I copied `packs/_template/` to `packs/<iso>/` and replaced the placeholder regime.
-          required: true
+          required: false
         - label: Every numeric rate or threshold I will mark `verified` or `verified_starter` has a legal citation and an effective date.
           required: true
         - label: Semantic codes use the universal keys (`standard`, `reduced`, `zero`, `exempt`, `out_of_scope`, `reverse_charge`, `withholding`, `luxury`, and the others in the schema). Local names stay in `local_name` / `local_code`.
@@ -67,7 +67,7 @@ body:
         - label: I will add at least one policy diff if the first version includes a historical change. An initial snapshot with no transition does not need a fake diff.
           required: true
         - label: "`npm test`, `npm run typecheck`, and `npm run validate` pass locally."
-          required: true
+          required: false
         - label: I understand pack data is a software reference and not a filing opinion.
           required: true
   - type: textarea

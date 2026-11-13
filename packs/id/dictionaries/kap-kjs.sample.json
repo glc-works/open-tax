@@ -144,7 +144,12 @@
       "code": "411127-100",
       "name": "Masa PPh Pasal 26",
       "status": "sample",
-      "maps_to": { "tax_id": "pph26", "treatment_id": "pph26", "semantic_code": "withholding" },
+      "description": "General monthly deposit. KJS 100 is not one rate: Pasal 26(1) and Pasal 26(2) asset sales use different bases. Classify the income before choosing a treatment.",
+      "maps_to": {
+        "tax_id": "pph26",
+        "semantic_code": "withholding",
+        "notes": "Tax-only. Do not apply the 20% pph26 treatment until the income type is known."
+      },
       "legal_citations": [
         {
           "title": "Kode Jenis Pajak dan Kode Jenis Setoran",

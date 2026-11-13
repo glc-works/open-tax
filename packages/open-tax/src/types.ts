@@ -312,9 +312,10 @@ export interface PolicyDiffFilter {
 }
 
 export interface RegimeChange {
-  taxId: string;
-  treatmentId: string;
-  semanticCode: SemanticCode;
+  /** Omitted when the edit is the regime manifest or the semantic mapping table. */
+  taxId?: string;
+  treatmentId?: string;
+  semanticCode?: SemanticCode;
   versionId?: string;
   changeType: "added" | "removed" | "modified";
   path: string;

@@ -15,9 +15,10 @@ Reviewed against the cited DJP and Ministry of Finance pages on 2026-11-13.
 | Pasal 4A | `out_of_scope` | The groups in the UU HPP text of Pasal 4A. Later amendments are not certified. |
 | Pemanfaatan BKP tidak berwujud / JKP dari luar Daerah Pabean | `reverse_charge` | Same rate path as standard. The recipient accounts for it. |
 | BKP mewah yang dikenai PPnBM, from 2025-01-01 | `luxury` | 12% on the full base. Final consumers use 11/12 only during January 2025. |
-| PPh 21 TER bulanan | `withholding` | Categories A/B/C and the effective date. The monthly percentage grid is not copied. |
-| PPh 21 TER harian | `withholding` | 0% up to Rp450,000; 0.5% above that up to Rp2,500,000. Nothing above that band. |
-| PPh 21 Pasal 17 | `withholding` | Layer schedule from the DJP UU HPP comparison, from tax year 2022. |
+| PPh 21 TER bulanan, pegawai tetap and pensioner, except the last period | `withholding` | Categories A/B/C and the effective date. The monthly percentage grid is not copied. |
+| PPh 21 TER bulanan, monthly-paid pegawai tidak tetap, including December | `withholding` | Same unpublished monthly grid. Not the daily bands and not the December Pasal 17 switch. |
+| PPh 21 TER harian | `withholding` | Non-monthly non-permanent employees. 0% up to Rp450,000; 0.5% above that up to Rp2,500,000. Nothing above that band. |
+| PPh 21 Pasal 17 | `withholding` | Layer schedule from the DJP UU HPP comparison, from tax year 2022. Last-period withholding for permanent employees and pensioners. |
 | PPh 22 | `withholding` | Category and KAP only. No percentage. |
 | PPh 23 | `withholding` | Headline 15% and 2% as stated by DJP. Exemptions, the no-TIN uplift, and the service list are not fully encoded. |
 | PPh 4 ayat (2) | `final` | Category and three filing-code names. No percentage. |

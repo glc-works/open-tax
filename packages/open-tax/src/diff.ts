@@ -56,8 +56,19 @@ function sortValue(value: unknown): unknown {
   return value;
 }
 
+function regimeManifest(regime: Regime): Record<string, unknown> {
+  const { taxes: _taxes, semantic_mappings: _mappings, ...rest } = regime;
+  return rest;
+}
+
 function diffRegimes(before: Regime, after: Regime): RegimeChange[] {
   const changes: RegimeChange[] = [];
+  if (canonical(regimeManifest(before)) !== canonical(regimeManifest(after))) {
+    changes.push({ changeType: "modified", path: "/" });
+  }
+  if (canonical(before.semantic_mappings) !== canonical(after.semantic_mappings)) {
+    changes.push({ changeType: "modified", path: "/semantic_mappings" });
+  }
   const beforeTaxes = new Map(before.taxes.map((tax) => [tax.id, tax]));
   const afterTaxes = new Map(after.taxes.map((tax) => [tax.id, tax]));
   const taxIds = new Set([...beforeTaxes.keys(), ...afterTaxes.keys()]);
@@ -92,8 +103,18 @@ function diffRegimes(before: Regime, after: Regime): RegimeChange[] {
       continue;
     }
 
-    const leftTreatments = new Map(leftTax.treatments.map((treatment) => [treatment.id, treatment]));
-    const rightTreatments = new Map(rightTax.treatments.map((treatment) => [treatment.id, treatment]));
+    const { treatments: leftTreatmentList, ...leftTaxMeta } = leftTax;
+    const { treatments: rightTreatmentList, ...rightTaxMeta } = rightTax;
+    if (canonical(leftTaxMeta) !== canonical(rightTaxMeta)) {
+      changes.push({
+        taxId,
+        changeType: "modified",
+        path: `/taxes/${taxId}`,
+      });
+    }
+
+    const leftTreatments = new Map(leftTreatmentList.map((treatment) => [treatment.id, treatment]));
+    const rightTreatments = new Map(rightTreatmentList.map((treatment) => [treatment.id, treatment]));
     const treatmentIds = new Set([...leftTreatments.keys(), ...rightTreatments.keys()]);
     for (const treatmentId of treatmentIds) {
       const left = leftTreatments.get(treatmentId);

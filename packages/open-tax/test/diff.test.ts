@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
+import { parseIsoDate } from "../src/dates.js";
 import { diffPolicyChanges } from "../src/index.js";
 import type { PolicyDiff } from "../src/types.js";
 import { exampleRegime } from "./fixtures.js";
@@ -45,6 +46,29 @@ test("diffPolicyChanges filters authored diffs by date and semantic code", () =>
     ["rate"],
   );
   assert.equal(diffs[0]?.changes.length, 2);
+});
+
+test("a to-only filter includes changes inside the period", () => {
+  assert.notEqual(parseIsoDate("0001-01-01"), undefined);
+  const found = diffPolicyChanges(diffs, { to: "2020-12-31" });
+  assert.deepEqual(
+    found[0]?.changes.map((change) => change.id),
+    ["other"],
+  );
+});
+
+test("regime comparison reports manifest and mapping edits", () => {
+  const before = exampleRegime();
+  const after = exampleRegime();
+  after.currency = "EUR";
+  const mapping = after.semantic_mappings[0];
+  assert.ok(mapping);
+  mapping.rule = "A different selection rule for the same treatment.";
+  const changes = diffPolicyChanges(before, after);
+  assert.deepEqual(
+    changes.map((change) => change.path).sort(),
+    ["/", "/semantic_mappings"],
+  );
 });
 
 test("diffPolicyChanges reports a regime edit without inventing a citation", () => {

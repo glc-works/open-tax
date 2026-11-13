@@ -20,7 +20,7 @@ Every treatment picks one key. The `rule` on `semantic_mappings` says when.
 | `final` | A withholding that is itself the final tax. Indonesia: PPh Pasal 4 ayat (2). |
 | `luxury` | A distinct higher or special luxury treatment of the same tax. Indonesia uses this for the PMK 131/2024 full 12% base on PPnBM goods, not for the PPnBM schedule. |
 
-If two treatments share a key, callers must pass `treatmentId` or read `local_code`. `resolveTaxAtDate` returns every match. That is deliberate: January 2025 luxury PPN in Indonesia is two treatments.
+If two treatments share a key, callers must pass `treatmentId` or read `localCode` on the object returned by `resolveTaxAtDate`. The pack file still stores that value as `local_code`. The function returns every match. That is deliberate: January 2025 luxury PPN in Indonesia is two treatments.
 
 ## Read next
 

@@ -9,8 +9,9 @@ export function parseIsoDate(value: string): number | undefined {
   const year = Number(match[1]);
   const month = Number(match[2]);
   const day = Number(match[3]);
-  const utc = Date.UTC(year, month - 1, day);
-  const check = new Date(utc);
+  // Date.UTC maps years 0–99 onto 1900–1999. setUTCFullYear keeps year 0001.
+  const check = new Date(Date.UTC(0, 0, 1));
+  check.setUTCFullYear(year, month - 1, day);
   if (
     check.getUTCFullYear() !== year ||
     check.getUTCMonth() !== month - 1 ||
@@ -18,7 +19,7 @@ export function parseIsoDate(value: string): number | undefined {
   ) {
     return undefined;
   }
-  return utc;
+  return check.getTime();
 }
 
 export function assertIsoDate(value: string, label: string): number {

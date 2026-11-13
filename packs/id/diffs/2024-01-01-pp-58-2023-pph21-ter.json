@@ -5,7 +5,7 @@
   "jurisdiction": "ID",
   "pack_id": "id",
   "title": "PP 58/2023: monthly and daily TER for PPh 21",
-  "summary": "From 1 January 2024, PPh 21 withholding for a period that is not the last period uses the average effective rate (TER). The annual and last-period calculation stays on Pasal 17. This diff does not copy the monthly percentage grid.",
+  "summary": "From 1 January 2024, PPh 21 withholding uses the average effective rate (TER). For a permanent employee or pensioner, a period that is not the last period uses monthly TER and the last period stays on Pasal 17. A monthly-paid non-permanent employee stays on monthly TER in every month, including December. Daily TER is for a non-permanent employee who is not paid monthly. This diff does not copy the monthly percentage grid.",
   "legal_basis": [
     {
       "title": "PP Nomor 58 Tahun 2023",
@@ -35,16 +35,16 @@
       "summary": "Non-final monthly withholding uses TER kategori A, B, or C chosen from PTKP status, applied to monthly gross income. The percentage for a gross-income row is in the annex, which this pack does not transcribe.",
       "affected": {
         "semantic_codes": ["withholding"],
-        "treatment_ids": ["pph21-ter-monthly"],
+        "treatment_ids": ["pph21-ter-monthly", "pph21-ter-monthly-tidak-tetap"],
         "tax_ids": ["pph21"],
         "authority_codes": ["411121"]
       },
       "computation": {
-        "notes": "Base for the monthly TER is gross income for the month, without the old biaya jabatan deduction inside that interim calculation. Annual tax is still Pasal 17 on taxable income."
+        "notes": "Base for the monthly TER is gross income for the month. For a permanent employee or pensioner the last period is still Pasal 17 on taxable income. A monthly-paid non-permanent employee uses the monthly TER in the last month as well."
       },
       "migration_impact": {
         "severity": "high",
-        "summary": "Payroll must switch the interim month calculation on 1 January 2024 and must still run Pasal 17 in the last period. Category A/B/C follows PTKP status, not a single national percentage.",
+        "summary": "Payroll must switch the interim month calculation on 1 January 2024. Run Pasal 17 in the last period for permanent employees and pensioners. Keep monthly TER, including December, for monthly-paid non-permanent employees. Category A/B/C follows PTKP status, not a single national percentage.",
         "systems": ["payroll", "filing"]
       },
       "after": {
@@ -55,7 +55,7 @@
       "id": "pp58-ter-daily",
       "effective_from": "2024-01-01",
       "change_type": "schedule_change",
-      "summary": "Daily TER is 0% up to Rp450,000 of daily gross income and 0.5% above that up to Rp2,500,000. This diff does not state a rate above Rp2,500,000.",
+      "summary": "Daily TER, for a non-permanent employee who is not paid monthly, is 0% up to Rp450,000 of daily gross income and 0.5% above that up to Rp2,500,000. A monthly-paid non-permanent employee uses monthly TER instead. This diff does not state a rate above Rp2,500,000.",
       "affected": {
         "semantic_codes": ["withholding"],
         "treatment_ids": ["pph21-ter-daily"],
@@ -68,7 +68,7 @@
       },
       "migration_impact": {
         "severity": "medium",
-        "summary": "Day-rate payroll for non-permanent employees needs the two published bands. Do not extrapolate 0.5% above Rp2,500,000 from this pack.",
+        "summary": "Day-rate payroll for non-permanent employees who are not paid monthly needs the two published bands. Monthly-paid non-permanent employees stay on monthly TER. Do not extrapolate 0.5% above Rp2,500,000 from this pack.",
         "systems": ["payroll"]
       },
       "after": {

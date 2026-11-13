@@ -107,6 +107,16 @@ export function checkPackIntegrity(regime: Regime, options: ValidateOptions = {}
       ),
     );
   }
+  const countryPrefix = regime.pack_id.split("-")[0] ?? regime.pack_id;
+  if (countryPrefix !== regime.jurisdiction.code.toLowerCase()) {
+    issues.push(
+      issue(
+        "error",
+        "/jurisdiction/code",
+        `jurisdiction.code ${regime.jurisdiction.code} does not match the country prefix of pack_id ${regime.pack_id}.`,
+      ),
+    );
+  }
 
   const taxIds = new Set<string>();
   const treatmentById = new Map<string, { taxId: string; treatment: Treatment; path: string }>();
@@ -193,6 +203,17 @@ export function checkPackIntegrity(regime: Regime, options: ValidateOptions = {}
                 `${version.id} names ${previous.id} as predecessor, but ${previous.id} does not name ${version.id} as superseded_by.`,
               ),
             );
+          } else {
+            const previousFrom = parseIsoDate(previous.effective_from);
+            if (from !== undefined && previousFrom !== undefined && previousFrom >= from) {
+              issues.push(
+                issue(
+                  "error",
+                  `${versionPath}/successor_of`,
+                  `${version.id} must start after ${previous.id}. A successor link cannot be a self-link or run backwards.`,
+                ),
+              );
+            }
           }
         }
         if (version.superseded_by) {
@@ -325,7 +346,24 @@ export function validatePack(data: unknown, options: ValidateOptions = {}): Vali
 }
 
 export function validatePolicyDiff(data: unknown): ValidationResult {
-  return result(schemaIssues("policyDiff", data));
+  const issues = schemaIssues("policyDiff", data);
+  if (issues.some((item) => item.level === "error")) return result(issues);
+  const diff = data as PolicyDiff;
+  diff.changes.forEach((change, index) => {
+    if (!change.effective_to) return;
+    const from = parseIsoDate(change.effective_from);
+    const to = parseIsoDate(change.effective_to);
+    if (from !== undefined && to !== undefined && to < from) {
+      issues.push(
+        issue(
+          "error",
+          `/changes/${index}`,
+          "effective_to is earlier than effective_from.",
+        ),
+      );
+    }
+  });
+  return result(issues);
 }
 
 export function validateDictionary(data: unknown): ValidationResult {

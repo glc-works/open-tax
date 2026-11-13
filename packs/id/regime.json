@@ -82,21 +82,28 @@
       "treatment_id": "pph21-ter-monthly",
       "local_code": "ter_bulanan",
       "local_name": "PPh 21 tarif efektif bulanan",
-      "rule": "Monthly TER for a tax period that is not the last period, for a resident individual employee whose PTKP status selects kategori A, B, or C under PP 58/2023 Pasal 2. The percentage grid is the annex of that PP and is not transcribed here."
+      "rule": "Monthly TER for a permanent employee or pensioner in a tax period that is not the last period. PTKP status selects kategori A, B, or C under PP 58/2023 Pasal 2. Their last period uses pph21-annual. The percentage grid is not transcribed here."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph21-ter-monthly-tidak-tetap",
+      "local_code": "ter_bulanan_tidak_tetap",
+      "local_name": "PPh 21 TER bulanan pegawai tidak tetap",
+      "rule": "Monthly TER for a non-permanent employee who is paid monthly, including the last month of the year. Do not move this case to pph21-annual in December, and do not use the daily bands."
     },
     {
       "semantic_code": "withholding",
       "treatment_id": "pph21-ter-daily",
       "local_code": "ter_harian",
       "local_name": "PPh 21 tarif efektif harian",
-      "rule": "Daily TER for non-permanent employees within the two bands published for PP 58/2023: 0% up to Rp450,000 a day, and 0.5% above that up to Rp2,500,000 a day. Amounts above that band are not encoded."
+      "rule": "Daily TER for a non-permanent employee who is not paid monthly, within the two bands published for PP 58/2023: 0% up to Rp450,000 a day, and 0.5% above that up to Rp2,500,000 a day. A monthly-paid non-permanent employee stays on ter_bulanan_tidak_tetap even when average daily income falls in these bands. Amounts above Rp2,500,000 a day are not encoded."
     },
     {
       "semantic_code": "withholding",
       "treatment_id": "pph21-annual",
       "local_code": "pasal_17",
       "local_name": "PPh 21 tarif Pasal 17",
-      "rule": "Annual reconciliation and the last tax period use the Pasal 17 ayat (1) huruf a layers on taxable income, not the monthly TER. Layers are progressive. Do not multiply the whole income by the top rate."
+      "rule": "Pasal 17 layers for the annual tax and for the last-period withholding of a permanent employee or pensioner. Layers are progressive on taxable income. A monthly-paid non-permanent employee is not moved onto this treatment for December."
     },
     {
       "semantic_code": "withholding",
@@ -559,7 +566,7 @@
       "name": "Employment withholding tax",
       "local_name": "Pajak Penghasilan Pasal 21",
       "kind": "withholding",
-      "notes": "Monthly TER percentages live in the annex to PP 58/2023 and are not copied here, so a typo cannot ship as a verified bracket. Annual tax still uses Pasal 17.",
+      "notes": "Monthly TER percentages live in the annex to PP 58/2023 and are not copied here. Last-period Pasal 17 withholding is for permanent employees and pensioners. Monthly-paid non-permanent employees stay on the monthly TER through December.",
       "treatments": [
         {
           "id": "pph21-ter-monthly",
@@ -602,7 +609,7 @@
               "effective_from_bound": "exact",
               "rate": {
                 "kind": "schedule",
-                "notes": "The monthly TER grid is Lampiran huruf A, B, and C of PP 58/2023. It is applied to monthly gross income for periods other than the last period. This starter does not transcribe the rows. The last period uses pph21-annual."
+                "notes": "The monthly TER grid is Lampiran huruf A, B, and C of PP 58/2023, applied to monthly gross income. For a permanent employee or pensioner this version is the periods other than the last period, and that last period uses pph21-annual. This starter does not transcribe the rows."
               },
               "legal_citations": [
                 {
@@ -618,6 +625,49 @@
                   "url": "https://pajak.go.id/sites/default/files/2024-02/PMK%20168%20Tahun%202023%20Tentang%20PPh%20Pasal%2021%20TER.pdf",
                   "pinpoint": "PP 58/2023 berlaku 1 Januari 2024. TER untuk masa selain masa pajak terakhir.",
                   "publisher": "Kementerian Keuangan"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pph21-ter-monthly-tidak-tetap",
+          "name": "Monthly TER for monthly-paid non-permanent employees",
+          "local_name": "TER bulanan pegawai tidak tetap",
+          "local_code": "ter_bulanan_tidak_tetap",
+          "semantic_code": "withholding",
+          "authority_codes": ["411121"],
+          "chargeability": "withheld",
+          "collection": { "method": "withholding", "interim": false, "reconciled_annually": false },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "Scope only. The monthly percentage rows are not transcribed. PMK 168/2023 keeps monthly-paid pegawai tidak tetap on the monthly TER in the last month."
+          },
+          "notes": "Use this instead of pph21-ter-daily when the non-permanent employee is paid monthly, and instead of pph21-annual for that employee's December withholding.",
+          "rates": [
+            {
+              "id": "pph21-ter-monthly-tidak-tetap-2024",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "notes": "Same unpublished monthly TER grid as pph21-ter-monthly, including the last month of the year. This starter does not transcribe the rows. Daily bands do not apply to a monthly-paid non-permanent employee."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK Nomor 168 Tahun 2023",
+                  "instrument": "Peraturan Menteri Keuangan Nomor 168 Tahun 2023, pemotongan pegawai tidak tetap yang dibayar bulanan",
+                  "url": "https://pajak.go.id/sites/default/files/2024-02/PMK%20168%20Tahun%202023%20Tentang%20PPh%20Pasal%2021%20TER.pdf",
+                  "pinpoint": "Pegawai tidak tetap yang dibayar bulanan memakai tarif efektif bulanan, termasuk bulan terakhir.",
+                  "publisher": "Kementerian Keuangan"
+                },
+                {
+                  "title": "PP Nomor 58 Tahun 2023",
+                  "instrument": "Peraturan Pemerintah Nomor 58 Tahun 2023 Pasal 2",
+                  "url": "https://www.pajak.go.id/id/peraturan/tarif-pemotongan-pajak-penghasiian-pasal-21-atas-penghasilan-sehubungan-dengan-pekerjaan",
+                  "pinpoint": "Tarif efektif bulanan. Rincian tarif ada pada Lampiran dan tidak disalin di sini.",
+                  "publisher": "Direktorat Jenderal Pajak"
                 }
               ]
             }
@@ -659,7 +709,7 @@
                     "notes": "0.5% of daily gross income. Daily gross above Rp2,500,000 is outside this encoded table."
                   }
                 ],
-                "notes": "Bands as stated by DJP and the PMK 168/2023 explainer for TER harian. Currency is IDR."
+                "notes": "Bands as stated by DJP and the PMK 168/2023 explainer for TER harian. Currency is IDR. These bands are for a non-permanent employee who is not paid monthly."
               },
               "legal_citations": [
                 {
@@ -898,8 +948,7 @@
           "local_code": "pph_final_4_2",
           "semantic_code": "final",
           "authority_codes": ["411128"],
-          "chargeability": "final_withheld",
-          "collection": { "method": "withholding" },
+          "notes": "The tax is final. Collection is not always withholding: when the payer is not a withholding agent, the income recipient remits it. Building rent is one of those cases. This treatment does not pick the collection method.",
           "verification": {
             "status": "verified_starter",
             "reviewed_on": "2026-11-13",
