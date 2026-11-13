@@ -1,0 +1,55 @@
+CONTRIBUTING.md
+  s_5fda4c2dbca69b::t_aae8b849f9ba98 7-13
+LICENSE
+  s_5fda4c2dbca69b::t_a87ada1bd2d6ba 1-373
+NOTICE
+  s_5fda4c2dbca69b::t_68b1c3f140e6e0 4-6,8-10,12-13,20-21
+README.md
+  s_5fda4c2dbca69b::t_33c9e5e28ec05d 5,103,127
+package-lock.json
+  s_5fda4c2dbca69b::t_0aff5e1d61491b 8,2066
+package.json
+  s_5fda4c2dbca69b::t_b1d395bd5e0c93 4
+packages/open-tax/LICENSE
+  s_5fda4c2dbca69b::t_db6cff8cde0618 1-373
+packages/open-tax/NOTICE
+  s_5fda4c2dbca69b::t_08f6710c7cf3cb 4-6,8-10,12-13,20-21
+packages/open-tax/README.md
+  s_5fda4c2dbca69b::t_1d92495d60cf4f 5
+packages/open-tax/package.json
+  s_5fda4c2dbca69b::t_92ed0db999f5ee 5,36
+packages/open-tax/src/cli.ts
+  s_5fda4c2dbca69b::t_3e5285620ecd2b 1-4
+packages/open-tax/src/dates.ts
+  s_5fda4c2dbca69b::t_3aada596632bf5 1-4
+packages/open-tax/src/diff.ts
+  s_5fda4c2dbca69b::t_8959519dbd4de9 1-4
+packages/open-tax/src/index.ts
+  s_5fda4c2dbca69b::t_d4aca0cdd42a08 1-4
+packages/open-tax/src/resolve.ts
+  s_5fda4c2dbca69b::t_00758d2aa11c08 1-4
+packages/open-tax/src/schema-path.ts
+  s_5fda4c2dbca69b::t_108101c3980494 1-4
+packages/open-tax/src/types.ts
+  s_5fda4c2dbca69b::t_cf423409b9739e 1-4
+packages/open-tax/src/validate.ts
+  s_5fda4c2dbca69b::t_326a81c0549da9 1-4
+packaging/homebrew/open-tax.rb
+  s_5fda4c2dbca69b::t_244af245319955 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ee51086dd2bc3e0ea29323d6af0490d103f53aaf",
+  "prompts": {},
+  "sessions": {
+    "s_5fda4c2dbca69b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1d597-01b7-7913-914e-820e8b2e7cac",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Cid <308343041+convergenceID@users.noreply.github.com>"
+    }
+  }
+}
