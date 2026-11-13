@@ -1,0 +1,323 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/regime.schema.json",
+  "title": "Jurisdiction tax regime",
+  "description": "Country pack manifest: authority, maintainer, semantic mappings, and effective-dated rate history. Rates are decimal strings. Formulas are notes and are not evaluated.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "pack_id",
+    "jurisdiction",
+    "currency",
+    "authority",
+    "maintainer",
+    "semantic_mappings",
+    "taxes"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema_version": { "const": "1.0.0" },
+    "pack_id": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(-[a-z0-9]{1,12})?$",
+      "description": "Lowercase ISO 3166-1 alpha-2, optional subdivision suffix. The template pack uses xx."
+    },
+    "jurisdiction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "name"],
+      "properties": {
+        "code": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "official_name": { "type": "string" },
+        "subdivision": { "type": "string" }
+      }
+    },
+    "currency": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "short_name": { "type": "string" },
+        "website": { "type": "string", "format": "uri" }
+      }
+    },
+    "maintainer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "github": { "type": "string" },
+        "url": { "type": "string", "format": "uri" }
+      }
+    },
+    "semantic_mappings": {
+      "type": "array",
+      "minItems": 1,
+      "description": "How each local treatment maps onto a universal semantic key.",
+      "items": { "$ref": "#/$defs/semanticMapping" }
+    },
+    "taxes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/tax" }
+    },
+    "notes": { "type": "string" }
+  },
+  "$defs": {
+    "semanticCode": {
+      "type": "string",
+      "enum": [
+        "standard",
+        "reduced",
+        "super_reduced",
+        "zero",
+        "exempt",
+        "out_of_scope",
+        "reverse_charge",
+        "withholding",
+        "luxury",
+        "not_collected",
+        "final"
+      ]
+    },
+    "decimal": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+      "description": "Non-negative decimal string. 11% is 0.11. Do not use binary floats in the file."
+    },
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "instrument"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "instrument": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Formal citation, including article or section when known."
+        },
+        "url": { "type": "string", "format": "uri" },
+        "pinpoint": { "type": "string" },
+        "publisher": { "type": "string" }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["verified_starter", "verified", "structure_only", "unverified"]
+        },
+        "reviewed_on": { "type": "string", "format": "date" },
+        "notes": { "type": "string" }
+      }
+    },
+    "semanticMapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic_code", "treatment_id", "rule"],
+      "properties": {
+        "semantic_code": { "$ref": "#/$defs/semanticCode" },
+        "treatment_id": { "type": "string", "minLength": 1 },
+        "local_code": { "type": "string" },
+        "local_name": { "type": "string" },
+        "rule": {
+          "type": "string",
+          "minLength": 10,
+          "description": "When a maintainer should choose this treatment for the semantic key."
+        }
+      }
+    },
+    "bracket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rate"],
+      "properties": {
+        "label": { "type": "string" },
+        "over": { "$ref": "#/$defs/decimal" },
+        "up_to": { "$ref": "#/$defs/decimal" },
+        "rate": { "$ref": "#/$defs/decimal" },
+        "notes": { "type": "string" }
+      }
+    },
+    "rate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["ad_valorem", "specific", "formula", "none", "schedule"]
+        },
+        "value": {
+          "$ref": "#/$defs/decimal",
+          "description": "Stated rate or stated effective equivalent. Not computed by the library."
+        },
+        "statutory_value": { "$ref": "#/$defs/decimal" },
+        "base_formula": {
+          "type": "string",
+          "description": "Human-readable base. Never evaluated."
+        },
+        "unit": { "type": "string" },
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "brackets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/bracket" }
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "rateVersion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "effective_from", "rate", "legal_citations"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]{1,80}$"
+        },
+        "effective_from": { "type": "string", "format": "date" },
+        "effective_to": {
+          "type": "string",
+          "format": "date",
+          "description": "Inclusive last day. Omit when the version is still open."
+        },
+        "effective_from_bound": {
+          "type": "string",
+          "enum": ["exact", "in_force_by"],
+          "description": "exact means the legal start is this date. in_force_by means the rate is verified on this date and the legal start may be earlier."
+        },
+        "rate": { "$ref": "#/$defs/rate" },
+        "legal_citations": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/citation" }
+        },
+        "successor_of": { "type": "string" },
+        "superseded_by": { "type": "string" },
+        "verification": { "$ref": "#/$defs/verification" },
+        "notes": { "type": "string" }
+      }
+    },
+    "parameter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "value": { "type": "string" },
+        "unit": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    },
+    "treatment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "semantic_code", "rates"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]{1,80}$"
+        },
+        "name": { "type": "string", "minLength": 1 },
+        "local_name": { "type": "string" },
+        "local_code": { "type": "string" },
+        "semantic_code": { "$ref": "#/$defs/semanticCode" },
+        "authority_codes": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "chargeability": {
+          "type": "string",
+          "enum": [
+            "charged",
+            "zero_rated",
+            "exempt",
+            "out_of_scope",
+            "not_collected",
+            "withheld",
+            "final_withheld",
+            "reverse_charged"
+          ]
+        },
+        "input_credit": {
+          "type": "string",
+          "enum": ["creditable", "not_creditable", "not_applicable", "see_citation"]
+        },
+        "collection": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "method": {
+              "type": "string",
+              "enum": [
+                "invoice",
+                "withholding",
+                "import",
+                "self_assessment",
+                "not_collected",
+                "none"
+              ]
+            },
+            "interim": { "type": "boolean" },
+            "reconciled_annually": { "type": "boolean" }
+          }
+        },
+        "parameters": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/parameter" }
+        },
+        "rates": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/rateVersion" }
+        },
+        "verification": { "$ref": "#/$defs/verification" },
+        "notes": { "type": "string" }
+      }
+    },
+    "tax": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "kind", "treatments"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
+        },
+        "name": { "type": "string", "minLength": 1 },
+        "local_name": { "type": "string" },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "vat",
+            "sales",
+            "excise",
+            "income",
+            "withholding",
+            "customs",
+            "other"
+          ]
+        },
+        "treatments": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/treatment" }
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+# CODEOWNERS for open-tax
+#
+# GitHub requests a review from the owners of a path when a pull request
+# changes it. Country packs should gain an owner only after that person is
+# listed in MAINTAINERS.md.
+#
+# Add one uncommented line per adopted pack:
+#
+# /packs/id/    @github-handle
+# /packs/sg/    @github-handle
+#
+# A pack without an owner is still reviewed by the project maintainers
+# named below, once this line is uncommented and the handle exists:
+#
+# *             @glc-works/open-tax-maintainers
+
+# Schema and the reference library affect every pack. Leave these owned by
+# the project maintainers when the GitHub team exists:
+#
+# /schemas/                 @glc-works/open-tax-maintainers
+# /packages/open-tax/       @glc-works/open-tax-maintainers

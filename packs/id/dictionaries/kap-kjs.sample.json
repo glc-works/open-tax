@@ -1,0 +1,245 @@
+{
+  "$schema": "../../../schemas/dictionary-entry.schema.json",
+  "schema_version": "1.0.0",
+  "dictionary_id": "id-kap-kjs",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "kind": "authority_filing",
+  "name": "Kode Akun Pajak / Kode Jenis Setoran (sample)",
+  "authority": "Direktorat Jenderal Pajak",
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-13",
+    "notes": "Sample of deposit codes copied from the DJP Kode Jenis Pajak page. Not the full KAP/KJS list, and not a rate table."
+  },
+  "notes": "Codes are the KAP-KJS pair written as 411211-100. A filing code identifies the deposit. It does not select a PPN percentage or a TER row.",
+  "entries": [
+    {
+      "code": "411121-100",
+      "name": "Masa PPh Pasal 21",
+      "status": "sample",
+      "maps_to": {
+        "tax_id": "pph21",
+        "notes": "Monthly deposit for Pasal 21. Choose TER bulanan, TER harian, or Pasal 17 from the facts, not from this code."
+      },
+      "legal_citations": [
+        {
+          "title": "Kode Jenis Pajak dan Kode Jenis Setoran",
+          "instrument": "Kode Akun Pajak 411121, Kode Jenis Setoran 100",
+          "url": "https://www.pajak.go.id/id/kode-jenis-pajak-dan-kode-jenis-setoran",
+          "pinpoint": "Masa PPh Pasal 21",
+          "publisher": "Direktorat Jenderal Pajak"
+        }
+      ]
+    },
+    {
+      "code": "411122-100",
+      "name": "Masa PPh Pasal 22",
+      "status": "sample",
+      "maps_to": { "tax_id": "pph22", "treatment_id": "pph22", "semantic_code": "withholding" },
+      "legal_citations": [
+        {
+          "title": "Kode Jenis Pajak dan Kode Jenis Setoran",
+          "instrument": "Kode Akun Pajak 411122, Kode Jenis Setoran 100",
+          "url": "https://www.pajak.go.id/id/kode-jenis-pajak-dan-kode-jenis-setoran",
+          "pinpoint": "Masa PPh Pasal 22",
+          "publisher": "Direktorat Jenderal Pajak"
+        }
+      ]
+    },
+    {
+      "code": "411123-100",
+      "name": "Masa PPh Pasal 22 Impor",
+      "status": "sample",
+      "maps_to": { "tax_id": "pph22", "treatment_id": "pph22", "semantic_code": "withholding" },
+      "legal_citations": [
+        {
+          "title": "Kode Jenis Pajak dan Kode Jenis Setoran",
+          "instrument": "Kode Akun Pajak 411123, Kode Jenis Setoran 100",
+          "url": "https://www.pajak.go.id/id/kode-jenis-pajak-dan-kode-jenis-setoran",
+          "pinpoint": "Masa PPh Pasal 22 Impor",
+          "publisher": "Direktorat Jenderal Pajak"
+        }
+      ]
+    },
+    {
+      "code": "411124-100",
+      "name": "Masa PPh Pasal 23",
+      "status": "sample",
+      "maps_to": {
+        "tax_id": "pph23",
+        "notes": "General monthly deposit. Dividends, interest, and royalties use 411124-101 through 411124-103. Services use 411124-104."
+      },
+      "legal_citations": [
+        {
+          "title": "Kode Jenis Pajak dan Kode Jenis Setoran",
+          "instrument": "Kode Akun Pajak 411124, Kode Jenis Setoran 100",
+          "url": "https://www.pajak.go.id/id/kode-jenis-pajak-dan-kode-jenis-setoran",
+          "pinpoint": "Masa PPh Pasal 23",
+          "publisher": "Direktorat Jenderal Pajak"
+        }
+      ]
+    },
+    {
+      "code": "411124-101",
+      "name": "PPh Pasal 23 atas Dividen",
+      "status": "sample",
+      "maps_to": { "tax_id": "pph23", "treatment_id": "pph23-15", "semantic_code": "withholding" },
+      "legal_citations": [
+        {
+          "title": "Kode Jenis Pajak dan Kode Jenis Setoran",
+          "instrument": "Kode Akun Pajak 411124, Kode Jenis Setoran 101",
+          "url": "https://www.pajak.go.id/id/kode-jenis-pajak-dan-kode-jenis-setoran",
+          "pinpoint": "PPh Pasal 23 atas Dividen",
+          "publisher": "Direktorat Jenderal Pajak"
+        }
+      ]
+    },
+    {
+      "code": "411124-102",
+      "name": "PPh Pasal 23 atas Bunga",
+      "status": "sample",
+      "maps_to": { "tax_id": "pph23", "treatment_id": "pph23-15", "semantic_code": "withholding" },
+      "legal_citations": [
+        {
+          "title": "Kode Jenis Pajak dan Kode Jenis Setoran",
+          "instrument": "Kode Akun Pajak 411124, Kode Jenis Setoran 102",
+          "url": "https://www.pajak.go.id/id/kode-jenis-pajak-dan-kode-jenis-setoran",
+          "pinpoint": "PPh Pasal 23 atas Bunga",
+          "publisher": "Direktorat Jenderal Pajak"
+        }
+      ]
+    },
+    {
+      "code": "411124-103",
+      "name": "PPh Pasal 23 atas Royalti",
+      "status": "sample",
+      "maps_to": { "tax_id": "pph23", "treatment_id": "pph23-15", "semantic_code": "withholding" },
+      "legal_citations": [
+        {
+          "title": "Kode Jenis Pajak dan Kode Jenis Setoran",
+          "instrument": "Kode Akun Pajak 411124, Kode Jenis Setoran 103",
+          "url": "https://www.pajak.go.id/id/kode-jenis-pajak-dan-kode-jenis-setoran",
+          "pinpoint": "PPh Pasal 23 atas Royalti",
+          "publisher": "Direktorat Jenderal Pajak"
+        }
+      ]
+    },
+    {
+      "code": "411124-104",
+      "name": "PPh Pasal 23 atas Jasa",
+      "status": "sample",
+      "maps_to": { "tax_id": "pph23", "treatment_id": "pph23-2", "semantic_code": "withholding" },
+      "legal_citations": [
+        {
+          "title": "Kode Jenis Pajak dan Kode Jenis Setoran",
+          "instrument": "Kode Akun Pajak 411124, Kode Jenis Setoran 104",
+          "url": "https://www.pajak.go.id/id/kode-jenis-pajak-dan-kode-jenis-setoran",
+          "pinpoint": "PPh Pasal 23 atas Jasa",
+          "publisher": "Direktorat Jenderal Pajak"
+        }
+      ]
+    },
+    {
+      "code": "411127-100",
+      "name": "Masa PPh Pasal 26",
+      "status": "sample",
+      "description": "General monthly deposit. KJS 100 is not one rate: Pasal 26(1) and Pasal 26(2) asset sales use different bases. Classify the income before choosing a treatment.",
+      "maps_to": {
+        "tax_id": "pph26",
+        "semantic_code": "withholding",
+        "notes": "Tax-only. Do not apply the 20% pph26 treatment until the income type is known."
+      },
+      "legal_citations": [
+        {
+          "title": "Kode Jenis Pajak dan Kode Jenis Setoran",
+          "instrument": "Kode Akun Pajak 411127, Kode Jenis Setoran 100",
+          "url": "https://www.pajak.go.id/id/kode-jenis-pajak-dan-kode-jenis-setoran",
+          "pinpoint": "Masa PPh Pasal 26",
+          "publisher": "Direktorat Jenderal Pajak"
+        }
+      ]
+    },
+    {
+      "code": "411128-402",
+      "name": "PPh Final Pasal 4 ayat (2) atas Pengalihan Hak atas Tanah dan/atau Bangunan",
+      "description": "Filing name only. The percentage is not encoded.",
+      "status": "sample",
+      "maps_to": { "tax_id": "pph4-2", "treatment_id": "pph4-2", "semantic_code": "final" },
+      "legal_citations": [
+        {
+          "title": "Kode Jenis Pajak dan Kode Jenis Setoran",
+          "instrument": "Kode Akun Pajak 411128, Kode Jenis Setoran 402",
+          "url": "https://www.pajak.go.id/id/kode-jenis-pajak-dan-kode-jenis-setoran",
+          "pinpoint": "PPh Final Pasal 4 ayat (2) atas Pengalihan Hak atas Tanah dan/atau Bangunan",
+          "publisher": "Direktorat Jenderal Pajak"
+        }
+      ]
+    },
+    {
+      "code": "411128-403",
+      "name": "PPh Final Pasal 4 ayat (2) atas Persewaan Tanah dan/atau Bangunan",
+      "description": "Filing name only. The percentage is not encoded.",
+      "status": "sample",
+      "maps_to": { "tax_id": "pph4-2", "treatment_id": "pph4-2", "semantic_code": "final" },
+      "legal_citations": [
+        {
+          "title": "Kode Jenis Pajak dan Kode Jenis Setoran",
+          "instrument": "Kode Akun Pajak 411128, Kode Jenis Setoran 403",
+          "url": "https://www.pajak.go.id/id/kode-jenis-pajak-dan-kode-jenis-setoran",
+          "pinpoint": "PPh Final Pasal 4 ayat (2) atas Persewaan Tanah dan/atau Bangunan",
+          "publisher": "Direktorat Jenderal Pajak"
+        }
+      ]
+    },
+    {
+      "code": "411128-404",
+      "name": "PPh Final Pasal 4 ayat (2) atas Bunga Deposito / Tabungan, Jasa Giro dan Diskonto SBI",
+      "description": "Filing name only. The percentage is not encoded.",
+      "status": "sample",
+      "maps_to": { "tax_id": "pph4-2", "treatment_id": "pph4-2", "semantic_code": "final" },
+      "legal_citations": [
+        {
+          "title": "Kode Jenis Pajak dan Kode Jenis Setoran",
+          "instrument": "Kode Akun Pajak 411128, Kode Jenis Setoran 404",
+          "url": "https://www.pajak.go.id/id/kode-jenis-pajak-dan-kode-jenis-setoran",
+          "pinpoint": "PPh Final Pasal 4 ayat (2) atas Bunga Deposito / Tabungan, Jasa Giro dan Diskonto SBI",
+          "publisher": "Direktorat Jenderal Pajak"
+        }
+      ]
+    },
+    {
+      "code": "411211-100",
+      "name": "Setoran Masa PPN Dalam Negeri",
+      "status": "sample",
+      "maps_to": {
+        "tax_id": "ppn",
+        "notes": "Net domestic VAT deposit. It does not by itself mean standard, exempt, or luxury."
+      },
+      "legal_citations": [
+        {
+          "title": "Kode Jenis Pajak dan Kode Jenis Setoran",
+          "instrument": "Kode Akun Pajak 411211, Kode Jenis Setoran 100",
+          "url": "https://www.pajak.go.id/id/kode-jenis-pajak-dan-kode-jenis-setoran",
+          "pinpoint": "Setoran Masa PPN Dalam Negeri",
+          "publisher": "Direktorat Jenderal Pajak"
+        }
+      ]
+    },
+    {
+      "code": "411212-100",
+      "name": "Setoran Masa PPN Impor",
+      "status": "sample",
+      "maps_to": { "tax_id": "ppn", "notes": "Import VAT deposit. The rate still comes from the treatment in force on the import date." },
+      "legal_citations": [
+        {
+          "title": "Kode Jenis Pajak dan Kode Jenis Setoran",
+          "instrument": "Kode Akun Pajak 411212, Kode Jenis Setoran 100",
+          "url": "https://www.pajak.go.id/id/kode-jenis-pajak-dan-kode-jenis-setoran",
+          "pinpoint": "Setoran Masa PPN Impor",
+          "publisher": "Direktorat Jenderal Pajak"
+        }
+      ]
+    }
+  ]
+}

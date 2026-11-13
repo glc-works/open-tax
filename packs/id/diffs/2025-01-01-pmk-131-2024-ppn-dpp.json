@@ -1,0 +1,179 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2025-01-01-pmk-131-2024-ppn-dpp",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "PMK 131/2024: statutory 12% PPN with DPP Nilai Lain 11/12",
+  "summary": "From 1 January 2025 the statutory PPN rate is 12%. Supplies other than PPnBM luxury goods use a nilai lain base of 11/12, so the stated effective rate stays 11%. Luxury goods use 12% on the full base, with a one-month delay for sales to final consumers.",
+  "legal_basis": [
+    {
+      "title": "PMK Nomor 131 Tahun 2024",
+      "instrument": "Peraturan Menteri Keuangan Nomor 131 Tahun 2024",
+      "url": "https://jdih.kemenkeu.go.id/api/download/f128868e-3cf6-4596-8407-c34eeca0e7be/2024pmkeuangan131.pdf",
+      "pinpoint": "Pasal 2, Pasal 3, Pasal 5, dan Pasal 6",
+      "publisher": "Kementerian Keuangan"
+    },
+    {
+      "title": "PMK 131/2024: Tarif PPN Sebelas-Dua Belas",
+      "instrument": "Penjelasan DJP atas PMK 131/2024",
+      "url": "https://www.pajak.go.id/id/artikel/pmk-1312024-tarif-ppn-sebelas-dua-belas",
+      "publisher": "Direktorat Jenderal Pajak"
+    },
+    {
+      "title": "UU HPP, jadwal tarif 12%",
+      "instrument": "UU No. 7 Tahun 2021, Pasal 7 ayat (1) huruf b UU PPN",
+      "url": "https://www.pajak.go.id/id/uu-hpp",
+      "pinpoint": "Tarif 12% paling lambat 1 Januari 2025",
+      "publisher": "Direktorat Jenderal Pajak"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-13",
+    "notes": "Wording checked against the PMK PDF text and the DJP explainer. Not a legal opinion."
+  },
+  "changes": [
+    {
+      "id": "pmk131-statutory-12",
+      "effective_from": "2025-01-01",
+      "change_type": "rate_change",
+      "summary": "The statutory PPN rate applied by PMK 131 is 12%, the rate UU HPP required by 1 January 2025 at the latest.",
+      "affected": {
+        "semantic_codes": ["standard", "luxury", "reverse_charge"],
+        "treatment_ids": ["ppn-standard", "ppn-inbound", "ppn-luxury", "ppn-luxury-final-consumer"],
+        "tax_ids": ["ppn"],
+        "authority_codes": ["411211", "411212"]
+      },
+      "computation": {
+        "statutory_rate": "0.12",
+        "notes": "12% is the statutory multiplier. The base is not always the full price; see the nilai lain change."
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Invoice tax engines must store 12% as the statutory rate from 1 January 2025 and must not keep writing 11% as the statutory rate.",
+        "systems": ["invoicing", "filing", "reporting"]
+      },
+      "before": { "statutory_rate": "0.11", "description": "Pasal 7 ayat (1) huruf a, in force through 31 December 2024." },
+      "after": { "statutory_rate": "0.12", "description": "PMK 131 Pasal 2 ayat (2) and Pasal 3 ayat (2)." }
+    },
+    {
+      "id": "pmk131-dpp-nilai-lain",
+      "effective_from": "2025-01-01",
+      "change_type": "base_change",
+      "summary": "For imports and supplies of non-luxury BKP, supplies of JKP, and use of offshore intangible BKP or offshore JKP, the DPP is nilai lain of 11/12 of the import value, selling price, or compensation. 12% times 11/12 is an 11% effective charge.",
+      "affected": {
+        "semantic_codes": ["standard", "reverse_charge"],
+        "treatment_ids": ["ppn-standard", "ppn-inbound"],
+        "tax_ids": ["ppn"]
+      },
+      "computation": {
+        "statutory_rate": "0.12",
+        "effective_rate": "0.11",
+        "base_formula": "11/12 * (nilai impor | harga jual | penggantian)",
+        "notes": "Other pre-existing DPP Nilai Lain and besaran tertentu rules are excluded by PMK 131 Pasal 4 and are not in this diff."
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "A system that multiplies 12% by the full invoice amount will overcharge non-luxury supplies. Persist both the 11/12 base and the stated 11% equivalent, and keep them off luxury invoices that use the full base.",
+        "systems": ["invoicing", "ecommerce", "reporting"]
+      },
+      "before": {
+        "statutory_rate": "0.11",
+        "effective_rate": "0.11",
+        "description": "11% on the ordinary DPP through 31 December 2024."
+      },
+      "after": {
+        "statutory_rate": "0.12",
+        "effective_rate": "0.11",
+        "base_formula": "11/12 * (nilai impor | harga jual | penggantian)"
+      }
+    },
+    {
+      "id": "pmk131-luxury-full-base",
+      "effective_from": "2025-01-01",
+      "change_type": "base_change",
+      "summary": "Luxury BKP that are subject to PPnBM are charged at 12% of harga jual or nilai impor, not of an 11/12 base. This does not set the PPnBM amount.",
+      "affected": {
+        "semantic_codes": ["luxury"],
+        "treatment_ids": ["ppn-luxury"],
+        "tax_ids": ["ppn"]
+      },
+      "computation": {
+        "statutory_rate": "0.12",
+        "effective_rate": "0.12",
+        "base_formula": "harga jual | nilai impor",
+        "notes": "Pasal 5 delays this result for a final consumer until 1 February 2025."
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Product masters need a luxury-and-PPnBM flag. Final-consumer sales in January 2025 must use the transitional treatment instead of this one.",
+        "systems": ["invoicing", "ecommerce"]
+      },
+      "after": {
+        "statutory_rate": "0.12",
+        "effective_rate": "0.12",
+        "base_formula": "harga jual | nilai impor"
+      }
+    },
+    {
+      "id": "pmk131-luxury-final-consumer-january",
+      "effective_from": "2025-01-01",
+      "effective_to": "2025-01-31",
+      "change_type": "base_change",
+      "summary": "A luxury BKP supplied to a final consumer from 1 January 2025 through 31 January 2025 still uses 12% times nilai lain of 11/12 of the selling price.",
+      "affected": {
+        "semantic_codes": ["luxury"],
+        "treatment_ids": ["ppn-luxury-final-consumer"],
+        "tax_ids": ["ppn"]
+      },
+      "computation": {
+        "statutory_rate": "0.12",
+        "effective_rate": "0.11",
+        "base_formula": "11/12 * harga jual"
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Point-of-sale systems need a buyer characteristic for konsumen akhir and a hard end date of 31 January 2025.",
+        "systems": ["invoicing", "ecommerce"]
+      },
+      "after": {
+        "statutory_rate": "0.12",
+        "effective_rate": "0.11",
+        "base_formula": "11/12 * harga jual",
+        "description": "PMK 131 Pasal 5 huruf a."
+      }
+    },
+    {
+      "id": "pmk131-luxury-final-consumer-february",
+      "effective_from": "2025-02-01",
+      "change_type": "rate_change",
+      "summary": "From 1 February 2025 a luxury BKP supplied to a final consumer uses Pasal 2 ayat (2): 12% of the selling price.",
+      "affected": {
+        "semantic_codes": ["luxury"],
+        "treatment_ids": ["ppn-luxury-final-consumer"],
+        "tax_ids": ["ppn"]
+      },
+      "computation": {
+        "statutory_rate": "0.12",
+        "effective_rate": "0.12",
+        "base_formula": "harga jual"
+      },
+      "migration_impact": {
+        "severity": "medium",
+        "summary": "Remove the January nilai lain path for final-consumer luxury goods on 1 February 2025.",
+        "systems": ["invoicing", "ecommerce"]
+      },
+      "before": {
+        "effective_rate": "0.11",
+        "base_formula": "11/12 * harga jual"
+      },
+      "after": {
+        "statutory_rate": "0.12",
+        "effective_rate": "0.12",
+        "base_formula": "harga jual",
+        "description": "PMK 131 Pasal 5 huruf b."
+      }
+    }
+  ]
+}

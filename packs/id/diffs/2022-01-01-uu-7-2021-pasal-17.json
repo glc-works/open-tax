@@ -1,0 +1,51 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2022-01-01-uu-7-2021-pasal-17",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "UU HPP: Pasal 17 individual layers from tax year 2022",
+  "summary": "The progressive layers on individual taxable income widen the first band to Rp60 million and add a 35% layer above Rp5 billion. DJP said the UU PPh changes apply from tax year 2022.",
+  "legal_basis": [
+    {
+      "title": "Presiden RI Sahkan UU Harmonisasi Peraturan Perpajakan",
+      "instrument": "UU No. 7 Tahun 2021, Pasal 17 ayat (1) huruf a UU PPh",
+      "url": "https://www.pajak.go.id/id/siaran-pers/presiden-ri-sahkan-uu-harmonisasi-peraturan-perpajakan",
+      "pinpoint": "Tabel lapisan UU PPh versus UU HPP. Perubahan UU PPh berlaku mulai Tahun Pajak 2022.",
+      "publisher": "Direktorat Jenderal Pajak"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-13",
+    "notes": "Layers are those in the DJP comparison table. They apply per slice of taxable income."
+  },
+  "changes": [
+    {
+      "id": "uuhpp-pasal-17-layers",
+      "effective_from": "2022-01-01",
+      "change_type": "schedule_change",
+      "summary": "Replace the four-layer individual schedule with the five-layer UU HPP schedule. This is the annual Pasal 17 computation, not the 2024 monthly TER.",
+      "affected": {
+        "semantic_codes": ["withholding"],
+        "treatment_ids": ["pph21-annual"],
+        "tax_ids": ["pph21"],
+        "authority_codes": ["411121"]
+      },
+      "computation": {
+        "notes": "Layers from 2022: 5% to Rp60 million; 15% to Rp250 million; 25% to Rp500 million; 30% to Rp5 billion; 35% above Rp5 billion. Each rate applies only to its slice."
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Payroll annualisation for tax year 2022 must use the new layers. Do not apply 35% to income below Rp5 billion.",
+        "systems": ["payroll", "filing"]
+      },
+      "before": {
+        "description": "5% to Rp50 million; 15% to Rp250 million; 25% to Rp500 million; 30% above Rp500 million."
+      },
+      "after": {
+        "description": "5% to Rp60 million; 15% to Rp250 million; 25% to Rp500 million; 30% to Rp5 billion; 35% above Rp5 billion."
+      }
+    }
+  ]
+}

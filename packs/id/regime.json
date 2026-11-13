@@ -1,0 +1,1026 @@
+{
+  "$schema": "../../schemas/regime.schema.json",
+  "schema_version": "1.0.0",
+  "pack_id": "id",
+  "jurisdiction": {
+    "code": "ID",
+    "name": "Indonesia",
+    "official_name": "Republik Indonesia"
+  },
+  "currency": "IDR",
+  "authority": {
+    "id": "id-djp",
+    "name": "Direktorat Jenderal Pajak",
+    "short_name": "DJP",
+    "website": "https://www.pajak.go.id"
+  },
+  "maintainer": {
+    "name": "Open-Tax contributors (Indonesia seat open)",
+    "github": "glc-works/open-tax",
+    "url": "https://github.com/glc-works/open-tax"
+  },
+  "notes": "Verified starter for PPN and the core PPh withholding categories. This is not a filing position and not a complete rate engine. PPnBM percentages, the full monthly TER grid, PPh 22 percentages, and PPh 4(2) percentages are intentionally absent. Silence means not encoded, not zero. Windows marked in_force_by are verified on that date; the legal start may be earlier.",
+  "semantic_mappings": [
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-standard",
+      "local_code": "tarif_umum",
+      "local_name": "PPN tarif umum",
+      "rule": "BKP and JKP that take the generally applicable PPN rate. From 2025-01-01 this is 12% times DPP Nilai Lain 11/12 for supplies that are not Pasal 2 luxury goods. Do not map that 11/12 mechanism to reduced."
+    },
+    {
+      "semantic_code": "zero",
+      "treatment_id": "ppn-export",
+      "local_code": "ekspor",
+      "local_name": "PPN 0% atas ekspor",
+      "rule": "Exports of tangible BKP, intangible BKP, and JKP taxed at 0% under Pasal 7 ayat (2). This is not dibebaskan: the statutory explanation says related input VAT stays creditable."
+    },
+    {
+      "semantic_code": "exempt",
+      "treatment_id": "ppn-dibebaskan",
+      "local_code": "dibebaskan",
+      "local_name": "PPN dibebaskan",
+      "rule": "A supply is exempt only when a government regulation grants fasilitas PPN dibebaskan under Pasal 16B. Input VAT on that supply is not creditable (Pasal 16B ayat (3)). Do not use this for Pasal 4A or for tidak dipungut."
+    },
+    {
+      "semantic_code": "not_collected",
+      "treatment_id": "ppn-tidak-dipungut",
+      "local_code": "tidak_dipungut",
+      "local_name": "PPN tidak dipungut",
+      "rule": "VAT remains payable but is not collected, and only where a Pasal 16B facility says tidak dipungut. Input VAT on that supply can be credited (Pasal 16B ayat (2)). This is not an exemption and not a non-object."
+    },
+    {
+      "semantic_code": "out_of_scope",
+      "treatment_id": "ppn-non-objek",
+      "local_code": "non_objek",
+      "local_name": "Bukan objek PPN (Pasal 4A)",
+      "rule": "Goods and services listed as not subject to VAT in Pasal 4A as amended by UU HPP. The negative list is closed. Older guides that still treat staples as non-objek are not a source for this code."
+    },
+    {
+      "semantic_code": "reverse_charge",
+      "treatment_id": "ppn-inbound",
+      "local_code": "pemanfaatan_luar_daerah_pabean",
+      "local_name": "Pemanfaatan BKP tidak berwujud atau JKP dari luar Daerah Pabean",
+      "rule": "The recipient self-assesses PPN on use of offshore intangible BKP or offshore JKP (Pasal 4 ayat (1) huruf d and e). From 2025-01-01 PMK 131 Pasal 3 puts this in the 11/12 base with the standard treatment."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppn-luxury",
+      "local_code": "bkp_mewah",
+      "local_name": "PPN atas BKP mewah yang dikenai PPnBM",
+      "rule": "From 2025-01-01, luxury BKP that are also subject to PPnBM take 12% on harga jual or nilai impor (PMK 131 Pasal 2). Do not use this for a final consumer during 1-31 January 2025; use ppn-luxury-final-consumer. PPnBM itself is a different tax and is not in this pack."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppn-luxury-final-consumer",
+      "local_code": "bkp_mewah_konsumen_akhir",
+      "local_name": "PPN BKP mewah kepada konsumen akhir",
+      "rule": "PMK 131 Pasal 5: a luxury BKP supplied to a final consumer uses 12% times 11/12 from 2025-01-01 through 2025-01-31, and 12% on the selling price from 2025-02-01."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph21-ter-monthly",
+      "local_code": "ter_bulanan",
+      "local_name": "PPh 21 tarif efektif bulanan",
+      "rule": "Monthly TER for a permanent employee or pensioner in a tax period that is not the last period. PTKP status selects kategori A, B, or C under PP 58/2023 Pasal 2. Their last period uses pph21-annual. The percentage grid is not transcribed here."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph21-ter-monthly-tidak-tetap",
+      "local_code": "ter_bulanan_tidak_tetap",
+      "local_name": "PPh 21 TER bulanan pegawai tidak tetap",
+      "rule": "Monthly TER for a non-permanent employee who is paid monthly, including the last month of the year. Do not move this case to pph21-annual in December, and do not use the daily bands."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph21-ter-daily",
+      "local_code": "ter_harian",
+      "local_name": "PPh 21 tarif efektif harian",
+      "rule": "Daily TER for a non-permanent employee who is not paid monthly, within the two bands published for PP 58/2023: 0% up to Rp450,000 a day, and 0.5% above that up to Rp2,500,000 a day. A monthly-paid non-permanent employee stays on ter_bulanan_tidak_tetap even when average daily income falls in these bands. Amounts above Rp2,500,000 a day are not encoded."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph21-annual",
+      "local_code": "pasal_17",
+      "local_name": "PPh 21 tarif Pasal 17",
+      "rule": "Pasal 17 layers for the annual tax and for the last-period withholding of a permanent employee or pensioner. Layers are progressive on taxable income. A monthly-paid non-permanent employee is not moved onto this treatment for December."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph22",
+      "local_code": "pph_22",
+      "local_name": "PPh Pasal 22",
+      "rule": "Article 22 withholding by appointed collectors. Rates depend on the goods and the collector and are not encoded. Do not assume a single percentage."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph23-15",
+      "local_code": "pph_23_15",
+      "local_name": "PPh 23 sebesar 15%",
+      "rule": "Pasal 23 ayat (1) headline 15% of the gross amount on dividends, interest, royalties, and prizes paid to a resident taxpayer or permanent establishment. Exemptions, including the domestic-dividend rule, are not enumerated."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph23-2",
+      "local_code": "pph_23_2",
+      "local_name": "PPh 23 sebesar 2%",
+      "rule": "Pasal 23 ayat (1) headline 2% of the gross amount on rent other than land and/or buildings, and on compensation for technical, management, consulting, and other services. The Minister of Finance service list is not encoded."
+    },
+    {
+      "semantic_code": "final",
+      "treatment_id": "pph4-2",
+      "local_code": "pph_final_4_2",
+      "local_name": "PPh Pasal 4 ayat (2)",
+      "rule": "Final tax on the income types named in Pasal 4 ayat (2). Each type has its own percentage in a government regulation or minister of finance regulation. This pack records the category and the filing codes only."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph26",
+      "local_code": "pph_26",
+      "local_name": "PPh Pasal 26",
+      "rule": "Statutory 20% withholding on the specified Indonesia-source income of a non-resident, unless a tax treaty sets a different rate. Treaty rates are not encoded."
+    }
+  ],
+  "taxes": [
+    {
+      "id": "ppn",
+      "name": "Value-added tax",
+      "local_name": "Pajak Pertambahan Nilai",
+      "kind": "vat",
+      "notes": "PPnBM (Pajak Penjualan atas Barang Mewah) is a separate tax. Its rates are not in this pack. Luxury here means the PPN rate base in PMK 131/2024 Pasal 2 and Pasal 5, not the PPnBM schedule.",
+      "treatments": [
+        {
+          "id": "ppn-standard",
+          "name": "Standard PPN",
+          "local_name": "PPN tarif umum",
+          "local_code": "tarif_umum",
+          "semantic_code": "standard",
+          "authority_codes": ["411211", "411212"],
+          "chargeability": "charged",
+          "input_credit": "creditable",
+          "collection": { "method": "invoice" },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "Rate path checked against DJP and the PMK 131/2024 text. Not a legal opinion."
+          },
+          "rates": [
+            {
+              "id": "ppn-standard-10",
+              "effective_from": "2021-01-01",
+              "effective_to": "2022-03-31",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.10",
+                "notes": "Pre-HPP statutory rate. The 10% rate is older than 2021-01-01; this starter does not reconstruct the commencement date."
+              },
+              "legal_citations": [
+                {
+                  "title": "Penyesuaian Tarif PPN",
+                  "instrument": "UU No. 8 Tahun 1983 tentang PPN dan PPnBM, Pasal 7 sebelum diubah oleh UU No. 7 Tahun 2021, tarif 10%",
+                  "url": "https://www.pajak.go.id/id/artikel/penyesuaian-tarif-ppn-tidak-bikin-masyarakat-susah-ini-penjelasannya",
+                  "pinpoint": "DJP: tarif semula 10%, menjadi 11% mulai April 2022",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "superseded_by": "ppn-standard-11"
+            },
+            {
+              "id": "ppn-standard-11",
+              "effective_from": "2022-04-01",
+              "effective_to": "2024-12-31",
+              "effective_from_bound": "exact",
+              "rate": { "kind": "ad_valorem", "value": "0.11" },
+              "legal_citations": [
+                {
+                  "title": "UU PPN konsolidasi dengan tanda perubahan UU HPP",
+                  "instrument": "UU No. 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan, mengubah Pasal 7 ayat (1) huruf a UU PPN",
+                  "url": "https://pajak.go.id/sites/default/files/2021-12/SDSN%20UU%20PPN%20Indo-%20dengan%20tanda%20perubahan_UU%20HPP.pdf",
+                  "pinpoint": "Pasal 7 ayat (1) huruf a: 11% mulai 1 April 2022",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "successor_of": "ppn-standard-10",
+              "superseded_by": "ppn-standard-12-dpp"
+            },
+            {
+              "id": "ppn-standard-12-dpp",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "value": "0.11",
+                "base_formula": "11/12 * (nilai impor | harga jual | penggantian)",
+                "notes": "Stated effective equivalent is 12% times 11/12. The library does not evaluate the formula. PMK 131 Pasal 4 leaves other DPP Nilai Lain and besaran tertentu regimes on their own rules; those amounts are not encoded."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK Nomor 131 Tahun 2024",
+                  "instrument": "Peraturan Menteri Keuangan Nomor 131 Tahun 2024 Pasal 3 ayat (2) dan ayat (3), berlaku Pasal 6",
+                  "url": "https://jdih.kemenkeu.go.id/api/download/f128868e-3cf6-4596-8407-c34eeca0e7be/2024pmkeuangan131.pdf",
+                  "pinpoint": "Tarif 12% dikalikan DPP nilai lain sebesar 11/12. Berlaku 1 Januari 2025.",
+                  "publisher": "Kementerian Keuangan"
+                },
+                {
+                  "title": "PMK 131/2024: Tarif PPN Sebelas-Dua Belas",
+                  "instrument": "Penjelasan DJP atas PMK 131/2024 Pasal 3",
+                  "url": "https://www.pajak.go.id/id/artikel/pmk-1312024-tarif-ppn-sebelas-dua-belas",
+                  "pinpoint": "Tarif efektif 11% untuk selain barang mewah",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "successor_of": "ppn-standard-11",
+              "notes": "Pasal 3 ayat (4) says input VAT on acquisitions whose output used this nilai lain base can be credited under the ordinary rules."
+            }
+          ]
+        },
+        {
+          "id": "ppn-export",
+          "name": "Export zero rate",
+          "local_name": "Ekspor BKP dan JKP",
+          "local_code": "ekspor",
+          "semantic_code": "zero",
+          "chargeability": "zero_rated",
+          "input_credit": "creditable",
+          "collection": { "method": "invoice" },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "Zero-rating and input-credit explanation taken from the DJP consolidated UU PPN text."
+          },
+          "rates": [
+            {
+              "id": "ppn-export-0",
+              "effective_from": "2021-01-01",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0",
+                "notes": "0% is a rate, not a pembebasan. The consolidated text marks Pasal 7 ayat (2) as older than UU HPP. This window starts at the starter's verified in-force date."
+              },
+              "legal_citations": [
+                {
+                  "title": "UU PPN konsolidasi dengan tanda perubahan UU HPP",
+                  "instrument": "UU PPN Pasal 7 ayat (2) dan Penjelasan Pasal 7 ayat (2)",
+                  "url": "https://pajak.go.id/sites/default/files/2021-12/SDSN%20UU%20PPN%20Indo-%20dengan%20tanda%20perubahan_UU%20HPP.pdf",
+                  "pinpoint": "Tarif 0% atas ekspor BKP berwujud, BKP tidak berwujud, dan JKP. Pajak masukan tetap dapat dikreditkan.",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ppn-dibebaskan",
+          "name": "VAT exempted by facility",
+          "local_name": "PPN dibebaskan",
+          "local_code": "dibebaskan",
+          "semantic_code": "exempt",
+          "chargeability": "exempt",
+          "input_credit": "not_creditable",
+          "collection": { "method": "none" },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "Category rule only. The list of exempted goods and services is in the granting government regulation and is not copied here."
+          },
+          "notes": "Apply only when the granting PP lists the supply. Which staples, books, or public services are dibebaskan changes with that PP.",
+          "rates": [
+            {
+              "id": "ppn-dibebaskan-facility",
+              "effective_from": "2021-01-01",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "none",
+                "notes": "No positive PPN rate. Not a 0% export."
+              },
+              "legal_citations": [
+                {
+                  "title": "UU PPN konsolidasi dengan tanda perubahan UU HPP",
+                  "instrument": "UU PPN Pasal 16B ayat (1) dan ayat (3)",
+                  "url": "https://pajak.go.id/sites/default/files/2021-12/SDSN%20UU%20PPN%20Indo-%20dengan%20tanda%20perubahan_UU%20HPP.pdf",
+                  "pinpoint": "Fasilitas dibebaskan diatur dengan PP. Pajak masukan atas penyerahan yang dibebaskan tidak dapat dikreditkan.",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ppn-tidak-dipungut",
+          "name": "VAT not collected",
+          "local_name": "PPN tidak dipungut",
+          "local_code": "tidak_dipungut",
+          "semantic_code": "not_collected",
+          "chargeability": "not_collected",
+          "input_credit": "creditable",
+          "collection": { "method": "not_collected" },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "Category rule only. A supply is tidak dipungut only when a facility says so."
+          },
+          "rates": [
+            {
+              "id": "ppn-tidak-dipungut-facility",
+              "effective_from": "2021-01-01",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "none",
+                "notes": "The tax is still payable. Collection is waived in whole or in part by the facility."
+              },
+              "legal_citations": [
+                {
+                  "title": "UU PPN konsolidasi dengan tanda perubahan UU HPP",
+                  "instrument": "UU PPN Pasal 16B ayat (1) dan ayat (2)",
+                  "url": "https://pajak.go.id/sites/default/files/2021-12/SDSN%20UU%20PPN%20Indo-%20dengan%20tanda%20perubahan_UU%20HPP.pdf",
+                  "pinpoint": "Pajak terutang tidak dipungut. Pajak masukan atas penyerahan itu dapat dikreditkan.",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ppn-non-objek",
+          "name": "Not a VAT object",
+          "local_name": "Non-objek PPN",
+          "local_code": "non_objek",
+          "semantic_code": "out_of_scope",
+          "chargeability": "out_of_scope",
+          "input_credit": "not_creditable",
+          "collection": { "method": "none" },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "The groups below are the Pasal 4A text in the December 2021 DJP consolidation. Later amendments are not certified by this starter."
+          },
+          "notes": "Pasal 4A ayat (2) as marked for UU HPP: food and drink served by hotels, restaurants, caterers, and similar businesses that are regional-tax objects; money, gold bars for official foreign-exchange reserves, and securities. Pasal 4A ayat (3): religious services; art and entertainment that are regional-tax objects; hotel room or space rental that is a regional-tax object; government services performed in a governmental capacity; parking that is a regional-tax object; catering that is a regional-tax object. Many former negative-list items were deleted by UU HPP.",
+          "rates": [
+            {
+              "id": "ppn-non-objek-4a",
+              "effective_from": "2022-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "none",
+                "notes": "Not a taxable supply. DJP said the PPN amendments in UU HPP apply from 1 April 2022."
+              },
+              "legal_citations": [
+                {
+                  "title": "UU PPN konsolidasi dengan tanda perubahan UU HPP",
+                  "instrument": "UU PPN Pasal 4A ayat (2) dan ayat (3) sebagaimana diubah UU No. 7 Tahun 2021",
+                  "url": "https://pajak.go.id/sites/default/files/2021-12/SDSN%20UU%20PPN%20Indo-%20dengan%20tanda%20perubahan_UU%20HPP.pdf",
+                  "pinpoint": "Pasal 4A",
+                  "publisher": "Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "Presiden RI Sahkan UU Harmonisasi Peraturan Perpajakan",
+                  "instrument": "Siaran pers DJP SP-35/2021",
+                  "url": "https://www.pajak.go.id/id/siaran-pers/presiden-ri-sahkan-uu-harmonisasi-peraturan-perpajakan",
+                  "pinpoint": "Perubahan UU PPN berlaku mulai 1 April 2022",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ppn-inbound",
+          "name": "Inbound intangible goods and services",
+          "local_name": "Pemanfaatan dari luar Daerah Pabean",
+          "local_code": "pemanfaatan_luar_daerah_pabean",
+          "semantic_code": "reverse_charge",
+          "chargeability": "reverse_charged",
+          "input_credit": "see_citation",
+          "collection": { "method": "self_assessment" },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "The rate follows the standard PPN rate. The recipient accounts for it. Partial-credit splits are not encoded."
+          },
+          "rates": [
+            {
+              "id": "ppn-inbound-10",
+              "effective_from": "2021-01-01",
+              "effective_to": "2022-03-31",
+              "effective_from_bound": "in_force_by",
+              "rate": { "kind": "ad_valorem", "value": "0.10" },
+              "legal_citations": [
+                {
+                  "title": "UU PPN konsolidasi dengan tanda perubahan UU HPP",
+                  "instrument": "UU PPN Pasal 4 ayat (1) huruf d dan huruf e, tarif Pasal 7 sebelum UU HPP",
+                  "url": "https://pajak.go.id/sites/default/files/2021-12/SDSN%20UU%20PPN%20Indo-%20dengan%20tanda%20perubahan_UU%20HPP.pdf",
+                  "pinpoint": "Pemanfaatan BKP tidak berwujud dan JKP dari luar Daerah Pabean",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "superseded_by": "ppn-inbound-11"
+            },
+            {
+              "id": "ppn-inbound-11",
+              "effective_from": "2022-04-01",
+              "effective_to": "2024-12-31",
+              "effective_from_bound": "exact",
+              "rate": { "kind": "ad_valorem", "value": "0.11" },
+              "legal_citations": [
+                {
+                  "title": "UU PPN konsolidasi dengan tanda perubahan UU HPP",
+                  "instrument": "UU No. 7 Tahun 2021, Pasal 7 ayat (1) huruf a, atas objek Pasal 4 ayat (1) huruf d dan e",
+                  "url": "https://pajak.go.id/sites/default/files/2021-12/SDSN%20UU%20PPN%20Indo-%20dengan%20tanda%20perubahan_UU%20HPP.pdf",
+                  "pinpoint": "Tarif 11% mulai 1 April 2022",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "successor_of": "ppn-inbound-10",
+              "superseded_by": "ppn-inbound-12-dpp"
+            },
+            {
+              "id": "ppn-inbound-12-dpp",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "value": "0.11",
+                "base_formula": "11/12 * (penggantian | nilai lain yang disebut Pasal 3)",
+                "notes": "PMK 131 Pasal 3 ayat (1) includes offshore intangible BKP and offshore JKP in the nilai lain base."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK Nomor 131 Tahun 2024",
+                  "instrument": "PMK 131/2024 Pasal 3 ayat (1) sampai ayat (3)",
+                  "url": "https://jdih.kemenkeu.go.id/api/download/f128868e-3cf6-4596-8407-c34eeca0e7be/2024pmkeuangan131.pdf",
+                  "pinpoint": "Pemanfaatan BKP tidak berwujud dan JKP dari luar Daerah Pabean",
+                  "publisher": "Kementerian Keuangan"
+                }
+              ],
+              "successor_of": "ppn-inbound-11"
+            }
+          ]
+        },
+        {
+          "id": "ppn-luxury",
+          "name": "Luxury goods on the full 12% base",
+          "local_name": "BKP mewah dikenai PPnBM",
+          "local_code": "bkp_mewah",
+          "semantic_code": "luxury",
+          "chargeability": "charged",
+          "input_credit": "see_citation",
+          "collection": { "method": "invoice" },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "The PPN rate is encoded. The PPnBM rate schedule is not."
+          },
+          "notes": "Before 2025-01-01 these goods took the ordinary PPN rate (see ppn-standard) plus PPnBM. There is no separate luxury PPN rate in this pack before that date. For a sale to a final consumer from 1 to 31 January 2025, use ppn-luxury-final-consumer instead of this treatment.",
+          "rates": [
+            {
+              "id": "ppn-luxury-12",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.12",
+                "statutory_value": "0.12",
+                "notes": "DPP is harga jual or nilai impor, not 11/12. Limited to BKP mewah, motor vehicles and other goods, that are subject to PPnBM."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK Nomor 131 Tahun 2024",
+                  "instrument": "PMK 131/2024 Pasal 2 ayat (2) dan ayat (3)",
+                  "url": "https://jdih.kemenkeu.go.id/api/download/f128868e-3cf6-4596-8407-c34eeca0e7be/2024pmkeuangan131.pdf",
+                  "pinpoint": "Tarif 12% dikalikan harga jual atau nilai impor untuk BKP mewah yang dikenai PPnBM",
+                  "publisher": "Kementerian Keuangan"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ppn-luxury-final-consumer",
+          "name": "Luxury goods supplied to a final consumer",
+          "local_name": "BKP mewah kepada konsumen akhir",
+          "local_code": "bkp_mewah_konsumen_akhir",
+          "semantic_code": "luxury",
+          "chargeability": "charged",
+          "input_credit": "see_citation",
+          "collection": { "method": "invoice" },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "Transitional January 2025 rule and the 1 February 2025 switch, both from PMK 131 Pasal 5."
+          },
+          "rates": [
+            {
+              "id": "ppn-luxury-fc-dpp",
+              "effective_from": "2025-01-01",
+              "effective_to": "2025-01-31",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "value": "0.11",
+                "base_formula": "11/12 * harga jual",
+                "notes": "Only supplies of Pasal 2 ayat (3) goods to a buyer who is a final consumer."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK Nomor 131 Tahun 2024",
+                  "instrument": "PMK 131/2024 Pasal 5 huruf a",
+                  "url": "https://jdih.kemenkeu.go.id/api/download/f128868e-3cf6-4596-8407-c34eeca0e7be/2024pmkeuangan131.pdf",
+                  "pinpoint": "1 Januari 2025 sampai 31 Januari 2025: 12% kali DPP nilai lain 11/12 dari harga jual",
+                  "publisher": "Kementerian Keuangan"
+                }
+              ],
+              "superseded_by": "ppn-luxury-fc-12"
+            },
+            {
+              "id": "ppn-luxury-fc-12",
+              "effective_from": "2025-02-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.12",
+                "statutory_value": "0.12",
+                "notes": "Pasal 5 huruf b turns on Pasal 2 ayat (2): 12% of the selling price."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK Nomor 131 Tahun 2024",
+                  "instrument": "PMK 131/2024 Pasal 5 huruf b jo. Pasal 2 ayat (2)",
+                  "url": "https://jdih.kemenkeu.go.id/api/download/f128868e-3cf6-4596-8407-c34eeca0e7be/2024pmkeuangan131.pdf",
+                  "pinpoint": "Mulai 1 Februari 2025 berlaku Pasal 2 ayat (2)",
+                  "publisher": "Kementerian Keuangan"
+                }
+              ],
+              "successor_of": "ppn-luxury-fc-dpp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pph21",
+      "name": "Employment withholding tax",
+      "local_name": "Pajak Penghasilan Pasal 21",
+      "kind": "withholding",
+      "notes": "Monthly TER percentages live in the annex to PP 58/2023 and are not copied here. Last-period Pasal 17 withholding is for permanent employees and pensioners. Monthly-paid non-permanent employees stay on the monthly TER through December.",
+      "treatments": [
+        {
+          "id": "pph21-ter-monthly",
+          "name": "Monthly average effective rate",
+          "local_name": "TER bulanan",
+          "local_code": "ter_bulanan",
+          "semantic_code": "withholding",
+          "authority_codes": ["411121"],
+          "chargeability": "withheld",
+          "collection": { "method": "withholding", "interim": true, "reconciled_annually": true },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "Categories and effective date are encoded. The monthly percentage rows are not."
+          },
+          "parameters": [
+            {
+              "id": "ter-a",
+              "name": "TER kategori A",
+              "value": "TK/0; TK/1; K/0",
+              "notes": "PP 58/2023 Pasal 2 ayat (4) huruf a. PMK 168/2023 explanatory material states PTKP TK/0 Rp54,000,000 and TK/1 plus K/0 Rp58,500,000."
+            },
+            {
+              "id": "ter-b",
+              "name": "TER kategori B",
+              "value": "TK/2; TK/3; K/1; K/2",
+              "notes": "Pasal 2 ayat (4) huruf b. The same material states TK/2 and K/1 Rp63,000,000, and TK/3 and K/2 Rp67,500,000."
+            },
+            {
+              "id": "ter-c",
+              "name": "TER kategori C",
+              "value": "K/3",
+              "notes": "Pasal 2 ayat (4) huruf c. The same material states K/3 Rp72,000,000."
+            }
+          ],
+          "rates": [
+            {
+              "id": "pph21-ter-monthly-2024",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "notes": "The monthly TER grid is Lampiran huruf A, B, and C of PP 58/2023, applied to monthly gross income. For a permanent employee or pensioner this version is the periods other than the last period, and that last period uses pph21-annual. This starter does not transcribe the rows."
+              },
+              "legal_citations": [
+                {
+                  "title": "PP Nomor 58 Tahun 2023",
+                  "instrument": "Peraturan Pemerintah Nomor 58 Tahun 2023 Pasal 2 ayat (2) sampai ayat (5)",
+                  "url": "https://www.pajak.go.id/id/peraturan/tarif-pemotongan-pajak-penghasiian-pasal-21-atas-penghasilan-sehubungan-dengan-pekerjaan",
+                  "pinpoint": "Tarif efektif bulanan kategori A, B, dan C. Rincian tarif ada pada Lampiran.",
+                  "publisher": "Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK Nomor 168 Tahun 2023",
+                  "instrument": "Peraturan Menteri Keuangan Nomor 168 Tahun 2023",
+                  "url": "https://pajak.go.id/sites/default/files/2024-02/PMK%20168%20Tahun%202023%20Tentang%20PPh%20Pasal%2021%20TER.pdf",
+                  "pinpoint": "PP 58/2023 berlaku 1 Januari 2024. TER untuk masa selain masa pajak terakhir.",
+                  "publisher": "Kementerian Keuangan"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pph21-ter-monthly-tidak-tetap",
+          "name": "Monthly TER for monthly-paid non-permanent employees",
+          "local_name": "TER bulanan pegawai tidak tetap",
+          "local_code": "ter_bulanan_tidak_tetap",
+          "semantic_code": "withholding",
+          "authority_codes": ["411121"],
+          "chargeability": "withheld",
+          "collection": { "method": "withholding", "interim": false, "reconciled_annually": false },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "Scope only. The monthly percentage rows are not transcribed. PMK 168/2023 keeps monthly-paid pegawai tidak tetap on the monthly TER in the last month."
+          },
+          "notes": "Use this instead of pph21-ter-daily when the non-permanent employee is paid monthly, and instead of pph21-annual for that employee's December withholding.",
+          "rates": [
+            {
+              "id": "pph21-ter-monthly-tidak-tetap-2024",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "notes": "Same unpublished monthly TER grid as pph21-ter-monthly, including the last month of the year. This starter does not transcribe the rows. Daily bands do not apply to a monthly-paid non-permanent employee."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK Nomor 168 Tahun 2023",
+                  "instrument": "Peraturan Menteri Keuangan Nomor 168 Tahun 2023, pemotongan pegawai tidak tetap yang dibayar bulanan",
+                  "url": "https://pajak.go.id/sites/default/files/2024-02/PMK%20168%20Tahun%202023%20Tentang%20PPh%20Pasal%2021%20TER.pdf",
+                  "pinpoint": "Pegawai tidak tetap yang dibayar bulanan memakai tarif efektif bulanan, termasuk bulan terakhir.",
+                  "publisher": "Kementerian Keuangan"
+                },
+                {
+                  "title": "PP Nomor 58 Tahun 2023",
+                  "instrument": "Peraturan Pemerintah Nomor 58 Tahun 2023 Pasal 2",
+                  "url": "https://www.pajak.go.id/id/peraturan/tarif-pemotongan-pajak-penghasiian-pasal-21-atas-penghasilan-sehubungan-dengan-pekerjaan",
+                  "pinpoint": "Tarif efektif bulanan. Rincian tarif ada pada Lampiran dan tidak disalin di sini.",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pph21-ter-daily",
+          "name": "Daily average effective rate",
+          "local_name": "TER harian",
+          "local_code": "ter_harian",
+          "semantic_code": "withholding",
+          "authority_codes": ["411121"],
+          "chargeability": "withheld",
+          "collection": { "method": "withholding", "interim": true },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "Only the two bands stated on the DJP TER article and the PMK 168/2023 explainer."
+          },
+          "rates": [
+            {
+              "id": "pph21-ter-daily-2024",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "brackets": [
+                  {
+                    "label": "Sampai dengan Rp450.000 per hari",
+                    "up_to": "450000",
+                    "rate": "0",
+                    "notes": "0% of daily gross income."
+                  },
+                  {
+                    "label": "Di atas Rp450.000 sampai dengan Rp2.500.000 per hari",
+                    "over": "450000",
+                    "up_to": "2500000",
+                    "rate": "0.005",
+                    "notes": "0.5% of daily gross income. Daily gross above Rp2,500,000 is outside this encoded table."
+                  }
+                ],
+                "notes": "Bands as stated by DJP and the PMK 168/2023 explainer for TER harian. Currency is IDR. These bands are for a non-permanent employee who is not paid monthly."
+              },
+              "legal_citations": [
+                {
+                  "title": "Yuk, Ta'aruf dengan TER",
+                  "instrument": "Penjelasan DJP atas PP 58/2023 dan PMK 168/2023, tarif efektif harian",
+                  "url": "https://www.pajak.go.id/id/artikel/yuk-taaruf-dengan-ter",
+                  "pinpoint": "0% jika bruto harian sampai dengan Rp450.000; 0,5% jika di atas Rp450.000 sampai dengan Rp2.500.000",
+                  "publisher": "Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK Nomor 168 Tahun 2023",
+                  "instrument": "PMK 168/2023, bahan penjelasan tarif efektif harian",
+                  "url": "https://pajak.go.id/sites/default/files/2024-02/PMK%20168%20Tahun%202023%20Tentang%20PPh%20Pasal%2021%20TER.pdf",
+                  "pinpoint": "<= Rp450 ribu sebesar 0%; di atas Rp450 ribu sampai Rp2,5 juta sebesar 0,5%",
+                  "publisher": "Kementerian Keuangan"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pph21-annual",
+          "name": "Article 17 annual layers",
+          "local_name": "Tarif Pasal 17 ayat (1) huruf a",
+          "local_code": "pasal_17",
+          "semantic_code": "withholding",
+          "authority_codes": ["411121"],
+          "chargeability": "withheld",
+          "collection": { "method": "withholding", "interim": false, "reconciled_annually": true },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "Layers copied from the DJP comparison of the pre-HPP schedule and the UU HPP schedule. Applied to penghasilan kena pajak, per layer."
+          },
+          "notes": "DJP stated that the UU PPh changes apply from tax year 2022. The monthly TER does not replace this annual computation.",
+          "rates": [
+            {
+              "id": "pph21-pasal-17-pre-hpp",
+              "effective_from": "2021-01-01",
+              "effective_to": "2021-12-31",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "schedule",
+                "brackets": [
+                  { "label": "Sampai dengan Rp50 juta", "up_to": "50000000", "rate": "0.05" },
+                  { "label": "Di atas Rp50 juta sampai dengan Rp250 juta", "over": "50000000", "up_to": "250000000", "rate": "0.15" },
+                  { "label": "Di atas Rp250 juta sampai dengan Rp500 juta", "over": "250000000", "up_to": "500000000", "rate": "0.25" },
+                  { "label": "Di atas Rp500 juta", "over": "500000000", "rate": "0.30" }
+                ],
+                "notes": "Progressive layers on taxable income, as DJP published them for the schedule immediately before UU HPP. Not a flat rate."
+              },
+              "legal_citations": [
+                {
+                  "title": "Presiden RI Sahkan UU Harmonisasi Peraturan Perpajakan",
+                  "instrument": "UU PPh Pasal 17 ayat (1) huruf a sebelum UU No. 7 Tahun 2021, sebagaimana dibandingkan DJP",
+                  "url": "https://www.pajak.go.id/id/siaran-pers/presiden-ri-sahkan-uu-harmonisasi-peraturan-perpajakan",
+                  "pinpoint": "Lapisan lama: 5% sampai Rp50 juta; 15% sampai Rp250 juta; 25% sampai Rp500 juta; 30% di atas Rp500 juta",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "superseded_by": "pph21-pasal-17-hpp"
+            },
+            {
+              "id": "pph21-pasal-17-hpp",
+              "effective_from": "2022-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "brackets": [
+                  { "label": "Sampai dengan Rp60 juta", "up_to": "60000000", "rate": "0.05" },
+                  { "label": "Di atas Rp60 juta sampai dengan Rp250 juta", "over": "60000000", "up_to": "250000000", "rate": "0.15" },
+                  { "label": "Di atas Rp250 juta sampai dengan Rp500 juta", "over": "250000000", "up_to": "500000000", "rate": "0.25" },
+                  { "label": "Di atas Rp500 juta sampai dengan Rp5 miliar", "over": "500000000", "up_to": "5000000000", "rate": "0.30" },
+                  { "label": "Di atas Rp5 miliar", "over": "5000000000", "rate": "0.35" }
+                ],
+                "notes": "Progressive layers on taxable income from tax year 2022. The 35% layer applies only to the slice above Rp5,000,000,000."
+              },
+              "legal_citations": [
+                {
+                  "title": "Presiden RI Sahkan UU Harmonisasi Peraturan Perpajakan",
+                  "instrument": "UU No. 7 Tahun 2021, Pasal 17 ayat (1) huruf a UU PPh, berlaku Tahun Pajak 2022",
+                  "url": "https://www.pajak.go.id/id/siaran-pers/presiden-ri-sahkan-uu-harmonisasi-peraturan-perpajakan",
+                  "pinpoint": "5% sampai Rp60 juta; 15% sampai Rp250 juta; 25% sampai Rp500 juta; 30% sampai Rp5 miliar; 35% di atas Rp5 miliar",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "successor_of": "pph21-pasal-17-pre-hpp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pph22",
+      "name": "Article 22 withholding",
+      "local_name": "Pajak Penghasilan Pasal 22",
+      "kind": "withholding",
+      "notes": "Import and certain domestic collections. Percentages are instrument-specific and are not in this starter.",
+      "treatments": [
+        {
+          "id": "pph22",
+          "name": "Article 22",
+          "local_name": "PPh Pasal 22",
+          "local_code": "pph_22",
+          "semantic_code": "withholding",
+          "authority_codes": ["411122", "411123"],
+          "chargeability": "withheld",
+          "collection": { "method": "withholding" },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "Category and filing codes only."
+          },
+          "rates": [
+            {
+              "id": "pph22-schedule",
+              "effective_from": "2022-01-01",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "schedule",
+                "notes": "No single Article 22 rate is encoded. Read the minister of finance regulation for the goods and the collector before calculating."
+              },
+              "legal_citations": [
+                {
+                  "title": "Ketentuan dalam UU HPP",
+                  "instrument": "UU No. 7 Tahun 1983 tentang Pajak Penghasilan sebagaimana diubah terakhir dengan UU No. 7 Tahun 2021, Pasal 22",
+                  "url": "https://www.pajak.go.id/id/uu-hpp",
+                  "pinpoint": "Pasal 22",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pph23",
+      "name": "Article 23 withholding",
+      "local_name": "Pajak Penghasilan Pasal 23",
+      "kind": "withholding",
+      "notes": "Headline rates only. The exemption list and the services list are not encoded.",
+      "treatments": [
+        {
+          "id": "pph23-15",
+          "name": "15% Article 23 items",
+          "local_name": "Dividen, bunga, royalti, dan hadiah",
+          "local_code": "pph_23_15",
+          "semantic_code": "withholding",
+          "authority_codes": ["411124"],
+          "chargeability": "withheld",
+          "collection": { "method": "withholding" },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "Headline 15% from Pasal 23 ayat (1). Boundary exemptions are not encoded."
+          },
+          "rates": [
+            {
+              "id": "pph23-15-headline",
+              "effective_from": "2022-01-01",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.15",
+                "notes": "15% of the gross amount. DJP's PPh 23/26 page states this headline for interest, royalties, and prizes, and its English rate table still lists dividends at 15% of the gross amount. Domestic dividend exemptions under UU HPP are not encoded. DJP also states that a missing tax ID makes the withholding 100% higher; that uplift is not encoded."
+              },
+              "legal_citations": [
+                {
+                  "title": "PPh Pasal 23/26",
+                  "instrument": "UU PPh Pasal 23 ayat (1), sebagaimana dijelaskan DJP pada halaman PPh Pasal 23/26",
+                  "url": "https://www.pajak.go.id/id/pph-pasal-2326",
+                  "pinpoint": "15% dari jumlah bruto. Lihat juga tabel bahasa Inggris DJP untuk dividen.",
+                  "publisher": "Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "Article 23 Income Tax",
+                  "instrument": "DJP English rate table: dividends 15% of the gross amount",
+                  "url": "https://www.pajak.go.id/id/node/80370",
+                  "pinpoint": "Dividends: 15% x gross amount. No TIN: withholding 100% higher, not encoded here.",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pph23-2",
+          "name": "2% Article 23 items",
+          "local_name": "Sewa dan imbalan jasa",
+          "local_code": "pph_23_2",
+          "semantic_code": "withholding",
+          "authority_codes": ["411124"],
+          "chargeability": "withheld",
+          "collection": { "method": "withholding" },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "Headline 2% from Pasal 23 ayat (1). Land and building rent is Article 4(2), not this treatment."
+          },
+          "rates": [
+            {
+              "id": "pph23-2-headline",
+              "effective_from": "2022-01-01",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.02",
+                "notes": "2% of the gross amount for rent other than rent already taxed under Pasal 4 ayat (2), and for the service fees DJP lists. Construction can also be a Pasal 4 ayat (2) final tax; do not choose 2% for construction from this starter alone."
+              },
+              "legal_citations": [
+                {
+                  "title": "PPh Pasal 23/26",
+                  "instrument": "UU PPh Pasal 23 ayat (1), sebagaimana dijelaskan DJP pada halaman PPh Pasal 23/26",
+                  "url": "https://www.pajak.go.id/id/pph-pasal-2326",
+                  "pinpoint": "2% dari jumlah bruto atas sewa (kecuali yang sudah dikenai Pasal 4 ayat (2)) dan imbalan jasa yang disebut di halaman itu",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pph4-2",
+      "name": "Final income tax",
+      "local_name": "Pajak Penghasilan Pasal 4 ayat (2)",
+      "kind": "withholding",
+      "notes": "Final character is encoded. The percentages for deposits, land transfer, construction, and the other types are not, because each sits in its own regulation.",
+      "treatments": [
+        {
+          "id": "pph4-2",
+          "name": "Article 4(2) final tax",
+          "local_name": "PPh Final Pasal 4 ayat (2)",
+          "local_code": "pph_final_4_2",
+          "semantic_code": "final",
+          "authority_codes": ["411128"],
+          "notes": "The tax is final. Collection is not always withholding: when the payer is not a withholding agent, the income recipient remits it. Building rent is one of those cases. This treatment does not pick the collection method.",
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "Category only. See dictionaries/kap-kjs.sample.json for deposit-code names, not for rates."
+          },
+          "rates": [
+            {
+              "id": "pph4-2-schedule",
+              "effective_from": "2022-01-01",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "schedule",
+                "notes": "No Article 4(2) percentage is encoded. Cite the government regulation or PMK for the income type before using a number."
+              },
+              "legal_citations": [
+                {
+                  "title": "Ketentuan dalam UU HPP",
+                  "instrument": "UU PPh Pasal 4 ayat (2), UU No. 7 Tahun 1983 sebagaimana diubah terakhir dengan UU No. 7 Tahun 2021",
+                  "url": "https://www.pajak.go.id/id/uu-hpp",
+                  "pinpoint": "Pasal 4 ayat (2)",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pph26",
+      "name": "Non-resident withholding",
+      "local_name": "Pajak Penghasilan Pasal 26",
+      "kind": "withholding",
+      "notes": "Domestic statutory rate. A tax treaty can reduce it. Treaty tables are not in this pack.",
+      "treatments": [
+        {
+          "id": "pph26",
+          "name": "Article 26",
+          "local_name": "PPh Pasal 26",
+          "local_code": "pph_26",
+          "semantic_code": "withholding",
+          "authority_codes": ["411127"],
+          "chargeability": "withheld",
+          "collection": { "method": "withholding" },
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-13",
+            "notes": "Statutory 20%. Not a treaty rate."
+          },
+          "rates": [
+            {
+              "id": "pph26-20",
+              "effective_from": "2022-01-01",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.20",
+                "notes": "20% of the gross amount where no treaty rate applies. DJP's Pasal 26 table states 20% x penghasilan bruto, or the treaty rate. Bond interest paid to a non-resident can be a different statutory rate and is not encoded. Apply a treaty rate only from the treaty."
+              },
+              "legal_citations": [
+                {
+                  "title": "Pemotongan Pajak Penghasilan Pasal 26",
+                  "instrument": "UU PPh Pasal 26 ayat (1), tabel tarif DJP",
+                  "url": "https://www.pajak.go.id/id/pemotongan-pajak-penghasilan-pasal-26",
+                  "pinpoint": "Jika tidak memakai tax treaty, tarif PPh 26 adalah 20%. Tabel: 20% x penghasilan bruto atau Tax Treaty.",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
