@@ -43,4 +43,8 @@ A maintainer does not give filing advice on the issue. The reply points at the c
 
 ## Release of the npm package
 
-`packages/open-tax` is `private: false` so it can be published later. Publishing is a separate decision. Do not run `npm publish` as part of a data correction.
+`packages/open-tax` is `private: false`. Do not run `npm publish` as part of a data correction.
+
+To release, set `version` in `packages/open-tax/package.json` and push a matching `vX.Y.Z` tag. [`.github/workflows/release.yml`](.github/workflows/release.yml) runs `npm ci`, typecheck, tests, `npm run validate`, and `npm run build`, then attaches the `npm pack` tarball and `SHA256SUMS` to the GitHub release. It runs `npm publish` only when the `NPM_TOKEN` secret is set.
+
+The Homebrew formula is not in this repository. Copy [`packaging/homebrew/open-tax.rb`](packaging/homebrew/open-tax.rb) into `Formula/open-tax.rb` on [glc-works/homebrew-tap](https://github.com/glc-works/homebrew-tap) and replace `url` and `sha256` from that release. `brew tap glc-works/tap && brew install open-tax` installs that formula.

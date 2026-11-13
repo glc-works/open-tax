@@ -72,7 +72,7 @@ What happens next is in [MAINTAINERS.md](MAINTAINERS.md). Short version: a corre
 ## Change the schema or the library
 
 - Schemas are draft 2020-12 in `schemas/`. The package copies them at build time.
-- `packages/open-tax` is ESM and CJS. Public functions are `validatePack`, `resolveTaxAtDate`, and `diffPolicyChanges`.
+- `packages/open-tax` is ESM and CJS. Public functions are `validatePack`, `resolveTaxAtDate`, and `diffPolicyChanges`. The `open-tax` command is `src/cli.ts`; `npm run validate` runs it with no arguments.
 - `base_formula` is a string for humans and agents. Do not evaluate it.
 - Rates in JSON are decimal strings (`0.11` for 11%). Do not put binary floats in the files.
 - Run `npm test`, `npm run typecheck`, and `npm run validate` before opening the pull request.
