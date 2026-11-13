@@ -1,0 +1,27 @@
+packs/id/diffs/2022-04-01-pmk-42-2022-vehicles.json
+  s_5fda4c2dbca69b::t_47f762babbaf18 1-70
+packs/id/README.md
+  s_5fda4c2dbca69b::t_47f762babbaf18 5,26-27,32,175-176,216-246
+packs/id/regime.json
+  s_5fda4c2dbca69b::t_47f762babbaf18 773-856,7087,7403-8032
+benchmarks/global-comparison.md
+  s_5fda4c2dbca69b::t_47f762babbaf18 17,95,125
+packages/open-tax/test/id-vehicles.test.ts
+  s_5fda4c2dbca69b::t_8486aa40ca88bf 1-61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0f33c97b39ca51bb96329e6ae54d304295fd2171",
+  "prompts": {},
+  "sessions": {
+    "s_5fda4c2dbca69b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1d597-01b7-7913-914e-820e8b2e7cac",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Cid <308343041+convergenceID@users.noreply.github.com>"
+    }
+  }
+}
