@@ -17,7 +17,7 @@ Reviewed against the cited DJP and Ministry of Finance pages on 2026-11-13.
 | BKP mewah yang dikenai PPnBM, from 2025-01-01 | `luxury` | 12% on the full base. Final consumers use 11/12 only during January 2025. |
 | PPh 21 TER bulanan, pegawai tetap and pensioner, except the last period | `withholding` | Categories A/B/C and the effective date. Complete A/B/C percentage tables; one rate applies to the whole monthly gross amount. |
 | PPh 21 TER bulanan, monthly-paid pegawai tidak tetap, including December | `withholding` | Same A/B/C tables. Not the daily bands and not the December Pasal 17 switch. |
-| PPh 21 TER harian | `withholding` | Non-monthly non-permanent employees. 0% up to Rp450,000; 0.5% above that up to Rp2,500,000. Nothing above that band. |
+| PPh 21 TER harian | `withholding` | Non-monthly non-permanent employees. 0% up to Rp450,000; 0.5% above that up to Rp2,500,000. Above that band, a separate PMK 168 treatment applies Pasal 17 to 50% of gross. |
 | PPh 21 Pasal 17 | `withholding` | Layer schedule from the DJP UU HPP comparison, from tax year 2022. Last-period withholding for permanent employees and pensioners. |
 | PPh 22 | `withholding` / `final` | 28 PMK 51/2025 base-rate classes, including separate fuel/gas finality. |
 | PPh 23 | `withholding` | Ordinary 15%/2% plus separately scoped no-NPWP snapshots and exclusion notes; detailed service-list eligibility remains external. |
@@ -177,3 +177,20 @@ recapture condition; no unverified zero-rate exemption is asserted.
 Sources: [PMK 11](https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan),
 [PMK 53](https://jdih.kemenkeu.go.id/download/f5252d58-c4a6-45c3-87b7-cb3b6c3abbf9/2025pmkeuangan053.pdf),
 [PP 61](https://www.pajak.go.id/id/peraturan/barang-kena-pajak-yang-tergolong-mewah-selain-kendaraan-bermotor-yang-dikenai-pajak).
+
+## PMK 168 recipient classes and final-period reconciliation
+
+Seven scoped treatments add the Article 17 bases for non-monthly non-permanent
+employees above the daily IDR 2.5 million cutoff, Bukan Pegawai, event
+participants, employed pension-program withdrawals, and irregular former-employee
+payments; irregular commissioners instead use the monthly TER grid. The
+Bukan Pegawai path is for resident individuals, not a company service invoice.
+Its 50% base and documentary exclusions differ from participant/former-employee
+whole-gross bases; catering does not receive the other-service cost exclusions.
+
+`pph21-last-period` expresses annual/part-year Article 17 liability less earlier
+withholding, using net income minus eligible PTKP, rounded down to IDR thousands.
+It records separate capped job/pension costs and the subjective-liability
+annualisation condition. It is not a tax on December gross and does not apply
+to monthly-paid non-permanent employees. The library does not execute formulas.
+All begin on 1 January 2024 under [PMK 168](https://pajak.go.id/id/peraturan/petunjuk-pelaksanaan-pemotongan-pajak-atas-penghasilan-sehubungan-dengan-pekerjaan-jasa-1).

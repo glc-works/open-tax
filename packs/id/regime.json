@@ -602,6 +602,48 @@
       "semantic_code": "luxury",
       "treatment_id": "ppnbm-yachts",
       "rule": "Yachts under Article 1(5)(b), excluding state, public transport and qualifying tourism uses. Article 2 recaptures the relief for changed use/transfer within four years; the exception is not an unconditional 0% rate. PPnBM is separate from PPN and applies at the legally specified import/producer-supply stage, not automatically at every resale. The detailed ministerial goods/HS lists and vehicle schedules are not encoded; no guessed threshold or code is supplied."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph21-daily-high",
+      "local_code": "pph21-daily-high",
+      "rule": "Non-monthly non-permanent employees whose daily gross exceeds IDR 2,500,000 under Article 12(2)(b) and 16(2)(b). This is not an extension of the 0.5% daily TER band and not the monthly-paid employee path. Apply Article 7 income exclusions first. The resolver provides the schedule and does not calculate withholding."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph21-non-employee",
+      "local_code": "pph21-non-employee",
+      "rule": "Resident individuals classified as Bukan Pegawai under Article 3(1)(e), not companies paid for services. For catering, gross is the full payment; for other services, worker compensation, materials and third-party payments are excluded only if separable and supported by the specified contracts/payroll/invoices. Otherwise use the full receipt. Apply Article 7 income exclusions first. The resolver provides the schedule and does not calculate withholding."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph21-event-participant",
+      "local_code": "pph21-event-participant",
+      "rule": "Participants under Article 3(1)(f) and 12(6); the payment must be treated whole and not artificially split. Distinguish an employee participating in an employer activity, whose payment is employee income. Apply Article 7 income exclusions first. The resolver provides the schedule and does not calculate withholding."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph21-employee-pension-withdrawal",
+      "local_code": "pph21-employee-pension-withdrawal",
+      "rule": "Pension-program participants still employed, Article 3(1)(g), 5(1)(g), 12(7) and 16(5). Limited to the specified withdrawal by a participant still an employee; not ordinary periodic pension or severance tax. Apply Article 7 income exclusions first. The resolver provides the schedule and does not calculate withholding."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph21-former-employee",
+      "local_code": "pph21-former-employee",
+      "rule": "Former employees under Article 3(1)(h), 5(1)(h), 12(8) and 16(6): irregular production payments, tantiem, gratuities, bonuses and similar payments. Not all retirement/severance receipts. Apply Article 7 income exclusions first. The resolver provides the schedule and does not calculate withholding."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph21-irregular-commissioner",
+      "local_code": "pph21-irregular-commissioner",
+      "rule": "Commissioners or supervisory board members receiving irregular income under Article 3(1)(c), 12(1) and 16(1). This distinct class uses monthly TER; do not infer the permanent-employee last-period reconciliation for this payment."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph21-last-period",
+      "local_code": "pph21-last-period",
+      "rule": "Permanent employees and periodic pensioners, Article 8-11 and 15. Last period is December or the period employment/periodic pension stops. Annual tax minus earlier-period withholding, not Article 17 tax on December gross. Employee deductions include salary-related eligible employee-paid pension contributions and qualifying religious payments; pensioner deductions differ. PTKP eligibility/status and part-year subjective liability require the cited tests. Monthly-paid non-permanent employees remain on monthly TER."
     }
   ],
   "taxes": [
@@ -2076,9 +2118,15 @@
           "local_name": "TER bulanan",
           "local_code": "ter_bulanan",
           "semantic_code": "withholding",
-          "authority_codes": ["411121"],
+          "authority_codes": [
+            "411121"
+          ],
           "chargeability": "withheld",
-          "collection": { "method": "withholding", "interim": true, "reconciled_annually": true },
+          "collection": {
+            "method": "withholding",
+            "interim": true,
+            "reconciled_annually": true
+          },
           "verification": {
             "status": "verified_starter",
             "reviewed_on": "2026-11-13",
@@ -2138,9 +2186,15 @@
           "local_name": "TER bulanan pegawai tidak tetap",
           "local_code": "ter_bulanan_tidak_tetap",
           "semantic_code": "withholding",
-          "authority_codes": ["411121"],
+          "authority_codes": [
+            "411121"
+          ],
           "chargeability": "withheld",
-          "collection": { "method": "withholding", "interim": false, "reconciled_annually": false },
+          "collection": {
+            "method": "withholding",
+            "interim": false,
+            "reconciled_annually": false
+          },
           "verification": {
             "status": "verified_starter",
             "reviewed_on": "2026-11-13",
@@ -2181,9 +2235,14 @@
           "local_name": "TER harian",
           "local_code": "ter_harian",
           "semantic_code": "withholding",
-          "authority_codes": ["411121"],
+          "authority_codes": [
+            "411121"
+          ],
           "chargeability": "withheld",
-          "collection": { "method": "withholding", "interim": true },
+          "collection": {
+            "method": "withholding",
+            "interim": true
+          },
           "verification": {
             "status": "verified_starter",
             "reviewed_on": "2026-11-13",
@@ -3022,9 +3081,15 @@
           "local_name": "Tarif Pasal 17 ayat (1) huruf a",
           "local_code": "pasal_17",
           "semantic_code": "withholding",
-          "authority_codes": ["411121"],
+          "authority_codes": [
+            "411121"
+          ],
           "chargeability": "withheld",
-          "collection": { "method": "withholding", "interim": false, "reconciled_annually": true },
+          "collection": {
+            "method": "withholding",
+            "interim": false,
+            "reconciled_annually": true
+          },
           "verification": {
             "status": "verified_starter",
             "reviewed_on": "2026-11-13",
@@ -3040,10 +3105,28 @@
               "rate": {
                 "kind": "schedule",
                 "brackets": [
-                  { "label": "Sampai dengan Rp50 juta", "up_to": "50000000", "rate": "0.05" },
-                  { "label": "Di atas Rp50 juta sampai dengan Rp250 juta", "over": "50000000", "up_to": "250000000", "rate": "0.15" },
-                  { "label": "Di atas Rp250 juta sampai dengan Rp500 juta", "over": "250000000", "up_to": "500000000", "rate": "0.25" },
-                  { "label": "Di atas Rp500 juta", "over": "500000000", "rate": "0.30" }
+                  {
+                    "label": "Sampai dengan Rp50 juta",
+                    "up_to": "50000000",
+                    "rate": "0.05"
+                  },
+                  {
+                    "label": "Di atas Rp50 juta sampai dengan Rp250 juta",
+                    "over": "50000000",
+                    "up_to": "250000000",
+                    "rate": "0.15"
+                  },
+                  {
+                    "label": "Di atas Rp250 juta sampai dengan Rp500 juta",
+                    "over": "250000000",
+                    "up_to": "500000000",
+                    "rate": "0.25"
+                  },
+                  {
+                    "label": "Di atas Rp500 juta",
+                    "over": "500000000",
+                    "rate": "0.30"
+                  }
                 ],
                 "notes": "Progressive layers on taxable income, as DJP published them for the schedule immediately before UU HPP. Not a flat rate."
               },
@@ -3065,11 +3148,34 @@
               "rate": {
                 "kind": "schedule",
                 "brackets": [
-                  { "label": "Sampai dengan Rp60 juta", "up_to": "60000000", "rate": "0.05" },
-                  { "label": "Di atas Rp60 juta sampai dengan Rp250 juta", "over": "60000000", "up_to": "250000000", "rate": "0.15" },
-                  { "label": "Di atas Rp250 juta sampai dengan Rp500 juta", "over": "250000000", "up_to": "500000000", "rate": "0.25" },
-                  { "label": "Di atas Rp500 juta sampai dengan Rp5 miliar", "over": "500000000", "up_to": "5000000000", "rate": "0.30" },
-                  { "label": "Di atas Rp5 miliar", "over": "5000000000", "rate": "0.35" }
+                  {
+                    "label": "Sampai dengan Rp60 juta",
+                    "up_to": "60000000",
+                    "rate": "0.05"
+                  },
+                  {
+                    "label": "Di atas Rp60 juta sampai dengan Rp250 juta",
+                    "over": "60000000",
+                    "up_to": "250000000",
+                    "rate": "0.15"
+                  },
+                  {
+                    "label": "Di atas Rp250 juta sampai dengan Rp500 juta",
+                    "over": "250000000",
+                    "up_to": "500000000",
+                    "rate": "0.25"
+                  },
+                  {
+                    "label": "Di atas Rp500 juta sampai dengan Rp5 miliar",
+                    "over": "500000000",
+                    "up_to": "5000000000",
+                    "rate": "0.30"
+                  },
+                  {
+                    "label": "Di atas Rp5 miliar",
+                    "over": "5000000000",
+                    "rate": "0.35"
+                  }
                 ],
                 "notes": "Progressive layers on taxable income from tax year 2022. The 35% layer applies only to the slice above Rp5,000,000,000."
               },
@@ -3085,6 +3191,546 @@
               "successor_of": "pph21-pasal-17-pre-hpp"
             }
           ]
+        },
+        {
+          "id": "pph21-daily-high",
+          "name": "PMK 168 Article 17: daily-high",
+          "local_code": "pph21-daily-high",
+          "semantic_code": "withholding",
+          "notes": "Non-monthly non-permanent employees whose daily gross exceeds IDR 2,500,000 under Article 12(2)(b) and 16(2)(b). This is not an extension of the 0.5% daily TER band and not the monthly-paid employee path. Apply Article 7 income exclusions first. The resolver provides the schedule and does not calculate withholding.",
+          "rates": [
+            {
+              "id": "pph21-daily-high-20240101",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "brackets": [
+                  {
+                    "label": "Sampai dengan Rp60 juta",
+                    "up_to": "60000000",
+                    "rate": "0.05"
+                  },
+                  {
+                    "label": "Di atas Rp60 juta sampai dengan Rp250 juta",
+                    "over": "60000000",
+                    "up_to": "250000000",
+                    "rate": "0.15"
+                  },
+                  {
+                    "label": "Di atas Rp250 juta sampai dengan Rp500 juta",
+                    "over": "250000000",
+                    "up_to": "500000000",
+                    "rate": "0.25"
+                  },
+                  {
+                    "label": "Di atas Rp500 juta sampai dengan Rp5 miliar",
+                    "over": "500000000",
+                    "up_to": "5000000000",
+                    "rate": "0.30"
+                  },
+                  {
+                    "label": "Di atas Rp5 miliar",
+                    "over": "5000000000",
+                    "rate": "0.35"
+                  }
+                ],
+                "notes": "Apply the Article 17 marginal layers to the stated withholding base for this PMK 168 class, not a whole-gross TER percentage. No employee PTKP or annualisation is silently applied to these bases.",
+                "currency": "IDR",
+                "base_formula": "50% * penghasilan bruto"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 168/2023",
+                  "instrument": "PMK 168/2023",
+                  "url": "https://pajak.go.id/id/peraturan/petunjuk-pelaksanaan-pemotongan-pajak-atas-penghasilan-sehubungan-dengan-pekerjaan-jasa-1",
+                  "pinpoint": "Pasal 8-16 dan Pasal 25: berlaku 1 Januari 2024",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "Presiden RI Sahkan UU Harmonisasi Peraturan Perpajakan",
+                  "instrument": "UU No. 7 Tahun 2021, Pasal 17 ayat (1) huruf a UU PPh, berlaku Tahun Pajak 2022",
+                  "url": "https://www.pajak.go.id/id/siaran-pers/presiden-ri-sahkan-uu-harmonisasi-peraturan-perpajakan",
+                  "pinpoint": "5% sampai Rp60 juta; 15% sampai Rp250 juta; 25% sampai Rp500 juta; 30% sampai Rp5 miliar; 35% di atas Rp5 miliar",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "chargeability": "withheld",
+          "authority_codes": [
+            "411121"
+          ]
+        },
+        {
+          "id": "pph21-non-employee",
+          "name": "PMK 168 Article 17: non-employee",
+          "local_code": "pph21-non-employee",
+          "semantic_code": "withholding",
+          "notes": "Resident individuals classified as Bukan Pegawai under Article 3(1)(e), not companies paid for services. For catering, gross is the full payment; for other services, worker compensation, materials and third-party payments are excluded only if separable and supported by the specified contracts/payroll/invoices. Otherwise use the full receipt. Apply Article 7 income exclusions first. The resolver provides the schedule and does not calculate withholding.",
+          "rates": [
+            {
+              "id": "pph21-non-employee-20240101",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "brackets": [
+                  {
+                    "label": "Sampai dengan Rp60 juta",
+                    "up_to": "60000000",
+                    "rate": "0.05"
+                  },
+                  {
+                    "label": "Di atas Rp60 juta sampai dengan Rp250 juta",
+                    "over": "60000000",
+                    "up_to": "250000000",
+                    "rate": "0.15"
+                  },
+                  {
+                    "label": "Di atas Rp250 juta sampai dengan Rp500 juta",
+                    "over": "250000000",
+                    "up_to": "500000000",
+                    "rate": "0.25"
+                  },
+                  {
+                    "label": "Di atas Rp500 juta sampai dengan Rp5 miliar",
+                    "over": "500000000",
+                    "up_to": "5000000000",
+                    "rate": "0.30"
+                  },
+                  {
+                    "label": "Di atas Rp5 miliar",
+                    "over": "5000000000",
+                    "rate": "0.35"
+                  }
+                ],
+                "notes": "Apply the Article 17 marginal layers to the stated withholding base for this PMK 168 class, not a whole-gross TER percentage. No employee PTKP or annualisation is silently applied to these bases.",
+                "currency": "IDR",
+                "base_formula": "50% * penghasilan bruto after Article 12(4)-(5) exclusions"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 168/2023",
+                  "instrument": "PMK 168/2023",
+                  "url": "https://pajak.go.id/id/peraturan/petunjuk-pelaksanaan-pemotongan-pajak-atas-penghasilan-sehubungan-dengan-pekerjaan-jasa-1",
+                  "pinpoint": "Pasal 8-16 dan Pasal 25: berlaku 1 Januari 2024",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "Presiden RI Sahkan UU Harmonisasi Peraturan Perpajakan",
+                  "instrument": "UU No. 7 Tahun 2021, Pasal 17 ayat (1) huruf a UU PPh, berlaku Tahun Pajak 2022",
+                  "url": "https://www.pajak.go.id/id/siaran-pers/presiden-ri-sahkan-uu-harmonisasi-peraturan-perpajakan",
+                  "pinpoint": "5% sampai Rp60 juta; 15% sampai Rp250 juta; 25% sampai Rp500 juta; 30% sampai Rp5 miliar; 35% di atas Rp5 miliar",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "chargeability": "withheld",
+          "authority_codes": [
+            "411121"
+          ]
+        },
+        {
+          "id": "pph21-event-participant",
+          "name": "PMK 168 Article 17: event-participant",
+          "local_code": "pph21-event-participant",
+          "semantic_code": "withholding",
+          "notes": "Participants under Article 3(1)(f) and 12(6); the payment must be treated whole and not artificially split. Distinguish an employee participating in an employer activity, whose payment is employee income. Apply Article 7 income exclusions first. The resolver provides the schedule and does not calculate withholding.",
+          "rates": [
+            {
+              "id": "pph21-event-participant-20240101",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "brackets": [
+                  {
+                    "label": "Sampai dengan Rp60 juta",
+                    "up_to": "60000000",
+                    "rate": "0.05"
+                  },
+                  {
+                    "label": "Di atas Rp60 juta sampai dengan Rp250 juta",
+                    "over": "60000000",
+                    "up_to": "250000000",
+                    "rate": "0.15"
+                  },
+                  {
+                    "label": "Di atas Rp250 juta sampai dengan Rp500 juta",
+                    "over": "250000000",
+                    "up_to": "500000000",
+                    "rate": "0.25"
+                  },
+                  {
+                    "label": "Di atas Rp500 juta sampai dengan Rp5 miliar",
+                    "over": "500000000",
+                    "up_to": "5000000000",
+                    "rate": "0.30"
+                  },
+                  {
+                    "label": "Di atas Rp5 miliar",
+                    "over": "5000000000",
+                    "rate": "0.35"
+                  }
+                ],
+                "notes": "Apply the Article 17 marginal layers to the stated withholding base for this PMK 168 class, not a whole-gross TER percentage. No employee PTKP or annualisation is silently applied to these bases.",
+                "currency": "IDR",
+                "base_formula": "penghasilan bruto paid whole and not split"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 168/2023",
+                  "instrument": "PMK 168/2023",
+                  "url": "https://pajak.go.id/id/peraturan/petunjuk-pelaksanaan-pemotongan-pajak-atas-penghasilan-sehubungan-dengan-pekerjaan-jasa-1",
+                  "pinpoint": "Pasal 8-16 dan Pasal 25: berlaku 1 Januari 2024",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "Presiden RI Sahkan UU Harmonisasi Peraturan Perpajakan",
+                  "instrument": "UU No. 7 Tahun 2021, Pasal 17 ayat (1) huruf a UU PPh, berlaku Tahun Pajak 2022",
+                  "url": "https://www.pajak.go.id/id/siaran-pers/presiden-ri-sahkan-uu-harmonisasi-peraturan-perpajakan",
+                  "pinpoint": "5% sampai Rp60 juta; 15% sampai Rp250 juta; 25% sampai Rp500 juta; 30% sampai Rp5 miliar; 35% di atas Rp5 miliar",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "chargeability": "withheld",
+          "authority_codes": [
+            "411121"
+          ]
+        },
+        {
+          "id": "pph21-employee-pension-withdrawal",
+          "name": "PMK 168 Article 17: employee-pension-withdrawal",
+          "local_code": "pph21-employee-pension-withdrawal",
+          "semantic_code": "withholding",
+          "notes": "Pension-program participants still employed, Article 3(1)(g), 5(1)(g), 12(7) and 16(5). Limited to the specified withdrawal by a participant still an employee; not ordinary periodic pension or severance tax. Apply Article 7 income exclusions first. The resolver provides the schedule and does not calculate withholding.",
+          "rates": [
+            {
+              "id": "pph21-employee-pension-withdrawal-20240101",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "brackets": [
+                  {
+                    "label": "Sampai dengan Rp60 juta",
+                    "up_to": "60000000",
+                    "rate": "0.05"
+                  },
+                  {
+                    "label": "Di atas Rp60 juta sampai dengan Rp250 juta",
+                    "over": "60000000",
+                    "up_to": "250000000",
+                    "rate": "0.15"
+                  },
+                  {
+                    "label": "Di atas Rp250 juta sampai dengan Rp500 juta",
+                    "over": "250000000",
+                    "up_to": "500000000",
+                    "rate": "0.25"
+                  },
+                  {
+                    "label": "Di atas Rp500 juta sampai dengan Rp5 miliar",
+                    "over": "500000000",
+                    "up_to": "5000000000",
+                    "rate": "0.30"
+                  },
+                  {
+                    "label": "Di atas Rp5 miliar",
+                    "over": "5000000000",
+                    "rate": "0.35"
+                  }
+                ],
+                "notes": "Apply the Article 17 marginal layers to the stated withholding base for this PMK 168 class, not a whole-gross TER percentage. No employee PTKP or annualisation is silently applied to these bases.",
+                "currency": "IDR",
+                "base_formula": "penghasilan bruto of the specified pension withdrawal"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 168/2023",
+                  "instrument": "PMK 168/2023",
+                  "url": "https://pajak.go.id/id/peraturan/petunjuk-pelaksanaan-pemotongan-pajak-atas-penghasilan-sehubungan-dengan-pekerjaan-jasa-1",
+                  "pinpoint": "Pasal 8-16 dan Pasal 25: berlaku 1 Januari 2024",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "Presiden RI Sahkan UU Harmonisasi Peraturan Perpajakan",
+                  "instrument": "UU No. 7 Tahun 2021, Pasal 17 ayat (1) huruf a UU PPh, berlaku Tahun Pajak 2022",
+                  "url": "https://www.pajak.go.id/id/siaran-pers/presiden-ri-sahkan-uu-harmonisasi-peraturan-perpajakan",
+                  "pinpoint": "5% sampai Rp60 juta; 15% sampai Rp250 juta; 25% sampai Rp500 juta; 30% sampai Rp5 miliar; 35% di atas Rp5 miliar",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "chargeability": "withheld",
+          "authority_codes": [
+            "411121"
+          ]
+        },
+        {
+          "id": "pph21-former-employee",
+          "name": "PMK 168 Article 17: former-employee",
+          "local_code": "pph21-former-employee",
+          "semantic_code": "withholding",
+          "notes": "Former employees under Article 3(1)(h), 5(1)(h), 12(8) and 16(6): irregular production payments, tantiem, gratuities, bonuses and similar payments. Not all retirement/severance receipts. Apply Article 7 income exclusions first. The resolver provides the schedule and does not calculate withholding.",
+          "rates": [
+            {
+              "id": "pph21-former-employee-20240101",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "brackets": [
+                  {
+                    "label": "Sampai dengan Rp60 juta",
+                    "up_to": "60000000",
+                    "rate": "0.05"
+                  },
+                  {
+                    "label": "Di atas Rp60 juta sampai dengan Rp250 juta",
+                    "over": "60000000",
+                    "up_to": "250000000",
+                    "rate": "0.15"
+                  },
+                  {
+                    "label": "Di atas Rp250 juta sampai dengan Rp500 juta",
+                    "over": "250000000",
+                    "up_to": "500000000",
+                    "rate": "0.25"
+                  },
+                  {
+                    "label": "Di atas Rp500 juta sampai dengan Rp5 miliar",
+                    "over": "500000000",
+                    "up_to": "5000000000",
+                    "rate": "0.30"
+                  },
+                  {
+                    "label": "Di atas Rp5 miliar",
+                    "over": "5000000000",
+                    "rate": "0.35"
+                  }
+                ],
+                "notes": "Apply the Article 17 marginal layers to the stated withholding base for this PMK 168 class, not a whole-gross TER percentage. No employee PTKP or annualisation is silently applied to these bases.",
+                "currency": "IDR",
+                "base_formula": "penghasilan bruto of the irregular former-employee payment"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 168/2023",
+                  "instrument": "PMK 168/2023",
+                  "url": "https://pajak.go.id/id/peraturan/petunjuk-pelaksanaan-pemotongan-pajak-atas-penghasilan-sehubungan-dengan-pekerjaan-jasa-1",
+                  "pinpoint": "Pasal 8-16 dan Pasal 25: berlaku 1 Januari 2024",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "Presiden RI Sahkan UU Harmonisasi Peraturan Perpajakan",
+                  "instrument": "UU No. 7 Tahun 2021, Pasal 17 ayat (1) huruf a UU PPh, berlaku Tahun Pajak 2022",
+                  "url": "https://www.pajak.go.id/id/siaran-pers/presiden-ri-sahkan-uu-harmonisasi-peraturan-perpajakan",
+                  "pinpoint": "5% sampai Rp60 juta; 15% sampai Rp250 juta; 25% sampai Rp500 juta; 30% sampai Rp5 miliar; 35% di atas Rp5 miliar",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "chargeability": "withheld",
+          "authority_codes": [
+            "411121"
+          ]
+        },
+        {
+          "id": "pph21-irregular-commissioner",
+          "name": "Monthly TER for irregular commissioners/supervisors",
+          "local_code": "pph21-irregular-commissioner",
+          "semantic_code": "withholding",
+          "notes": "Commissioners or supervisory board members receiving irregular income under Article 3(1)(c), 12(1) and 16(1). This distinct class uses monthly TER; do not infer the permanent-employee last-period reconciliation for this payment.",
+          "rates": [
+            {
+              "id": "pph21-irregular-commissioner-20240101",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "base_formula": "monthly TER selected by PTKP category * monthly gross income",
+                "notes": "Use the pph21-ter-monthly-a, -b or -c whole-gross grid, not the progressive Article 17 table."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 168/2023",
+                  "instrument": "PMK 168/2023",
+                  "url": "https://pajak.go.id/id/peraturan/petunjuk-pelaksanaan-pemotongan-pajak-atas-penghasilan-sehubungan-dengan-pekerjaan-jasa-1",
+                  "pinpoint": "Pasal 8-16 dan Pasal 25: berlaku 1 Januari 2024",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "chargeability": "withheld",
+          "authority_codes": [
+            "411121"
+          ]
+        },
+        {
+          "id": "pph21-last-period",
+          "name": "Permanent employee/pensioner last-period reconciliation",
+          "local_code": "pph21-last-period",
+          "semantic_code": "withholding",
+          "notes": "Permanent employees and periodic pensioners, Article 8-11 and 15. Last period is December or the period employment/periodic pension stops. Annual tax minus earlier-period withholding, not Article 17 tax on December gross. Employee deductions include salary-related eligible employee-paid pension contributions and qualifying religious payments; pensioner deductions differ. PTKP eligibility/status and part-year subjective liability require the cited tests. Monthly-paid non-permanent employees remain on monthly TER.",
+          "rates": [
+            {
+              "id": "pph21-last-period-20240101",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "brackets": [
+                  {
+                    "label": "Sampai dengan Rp60 juta",
+                    "up_to": "60000000",
+                    "rate": "0.05"
+                  },
+                  {
+                    "label": "Di atas Rp60 juta sampai dengan Rp250 juta",
+                    "over": "60000000",
+                    "up_to": "250000000",
+                    "rate": "0.15"
+                  },
+                  {
+                    "label": "Di atas Rp250 juta sampai dengan Rp500 juta",
+                    "over": "250000000",
+                    "up_to": "500000000",
+                    "rate": "0.25"
+                  },
+                  {
+                    "label": "Di atas Rp500 juta sampai dengan Rp5 miliar",
+                    "over": "500000000",
+                    "up_to": "5000000000",
+                    "rate": "0.30"
+                  },
+                  {
+                    "label": "Di atas Rp5 miliar",
+                    "over": "5000000000",
+                    "rate": "0.35"
+                  }
+                ],
+                "notes": "Taxable income = net income minus eligible PTKP, rounded down to full IDR thousands. Article 15(3) annualisation/proportion applies only where subjective liability starts after January or ends before December. A negative reconciliation is not clamped to zero by this reference.",
+                "currency": "IDR",
+                "base_formula": "Article 17 marginal tax on annual/part-year taxable income, less PPh 21 already withheld in earlier tax periods"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 168/2023",
+                  "instrument": "PMK 168/2023",
+                  "url": "https://pajak.go.id/id/peraturan/petunjuk-pelaksanaan-pemotongan-pajak-atas-penghasilan-sehubungan-dengan-pekerjaan-jasa-1",
+                  "pinpoint": "Pasal 8-16 dan Pasal 25: berlaku 1 Januari 2024",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "Presiden RI Sahkan UU Harmonisasi Peraturan Perpajakan",
+                  "instrument": "UU No. 7 Tahun 2021, Pasal 17 ayat (1) huruf a UU PPh, berlaku Tahun Pajak 2022",
+                  "url": "https://www.pajak.go.id/id/siaran-pers/presiden-ri-sahkan-uu-harmonisasi-peraturan-perpajakan",
+                  "pinpoint": "5% sampai Rp60 juta; 15% sampai Rp250 juta; 25% sampai Rp500 juta; 30% sampai Rp5 miliar; 35% di atas Rp5 miliar",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "parameters": [
+            {
+              "id": "job-cost",
+              "name": "Biaya jabatan",
+              "value": "0.05",
+              "notes": "5% of gross, capped IDR 6,000,000/year or 500,000/month, calculated for each employer; Article 10."
+            },
+            {
+              "id": "pension-cost",
+              "name": "Biaya pensiun",
+              "value": "0.05",
+              "notes": "5% of gross, capped IDR 2,400,000/year or 200,000/month, for each pension payer; Article 11."
+            }
+          ],
+          "chargeability": "withheld",
+          "authority_codes": [
+            "411121"
+          ],
+          "collection": {
+            "method": "withholding",
+            "reconciled_annually": true
+          }
         }
       ]
     },
