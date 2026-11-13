@@ -1,0 +1,27 @@
+packs/id/diffs/2025-08-01-pmk-51-2025-pph22.json
+  s_5fda4c2dbca69b::t_c63e1ffe190344 1-78
+packs/id/README.md
+  s_5fda4c2dbca69b::t_c63e1ffe190344 22,32,111-129
+packs/id/regime.json
+  s_5fda4c2dbca69b::t_c63e1ffe190344 22,134,180-347,1800,1808-1811,1813-1815,1841-3044
+benchmarks/global-comparison.md
+  s_5fda4c2dbca69b::t_2f1db52ba89790 17
+packages/open-tax/test/id-pph22.test.ts
+  s_5fda4c2dbca69b::t_2f1db52ba89790 1-67
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e6d2ded5431b9dad8a86ae4b07597bdfc5287cfc",
+  "prompts": {},
+  "sessions": {
+    "s_5fda4c2dbca69b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1d597-01b7-7913-914e-820e8b2e7cac",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Cid <308343041+convergenceID@users.noreply.github.com>"
+    }
+  }
+}
