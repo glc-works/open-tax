@@ -1,0 +1,671 @@
+{
+  "$schema": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/regime.schema.json",
+  "schema_version": "1.0.0",
+  "pack_id": "cn",
+  "jurisdiction": {
+    "code": "CN",
+    "name": "China",
+    "official_name": "People's Republic of China"
+  },
+  "currency": "CNY",
+  "authority": {
+    "id": "cn-sta",
+    "name": "State Taxation Administration",
+    "short_name": "STA",
+    "website": "https://www.chinatax.gov.cn"
+  },
+  "notes": "Starter pack for PRC VAT bands and enterprise income tax headline rates. 税收分类编码 codes are a sample dictionary, not rates. Reviewed on 2026-11-13 against the cited STA, gov.cn, and NPC pages. Not a filing position.",
+  "semantic_mappings": [
+    {
+      "semantic_code": "standard",
+      "treatment_id": "cn-vat-standard",
+      "rule": "Use for supplies that take the headline VAT band (currently 13%; historically 17% then 16%).",
+      "local_name": "基本税率"
+    },
+    {
+      "semantic_code": "reduced",
+      "treatment_id": "cn-vat-reduced-9",
+      "rule": "Use for supplies in the 9% statutory class (historically 11% then 10%), such as transportation, construction, and the goods listed in VAT Law Art. 10(2).",
+      "local_name": "9%税率"
+    },
+    {
+      "semantic_code": "reduced",
+      "treatment_id": "cn-vat-reduced-6",
+      "rule": "Use for supplies in the 6% statutory class (services and intangible assets other than the Art. 10(1), (2) and (5) items).",
+      "local_name": "6%税率"
+    },
+    {
+      "semantic_code": "reduced",
+      "treatment_id": "cn-vat-simplified-3",
+      "rule": "Use for the 3% simplified-method collection rate, typically for small-scale taxpayers under VAT Law Art. 11. Do not use this key for a general-method band.",
+      "local_name": "简易计税征收率"
+    },
+    {
+      "semantic_code": "zero",
+      "treatment_id": "cn-vat-export-zero",
+      "rule": "Use for exports of goods and prescribed cross-border sales of services or intangible assets that are zero-rated, with credit or refund as the Law provides.",
+      "local_name": "零税率"
+    },
+    {
+      "semantic_code": "exempt",
+      "treatment_id": "cn-vat-exempt",
+      "rule": "Use for supplies that VAT Law Art. 24 relieves from tax. Input VAT on that supply is not creditable.",
+      "local_name": "免征"
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "cn-eit-standard",
+      "rule": "Use for the 25% enterprise income tax that applies when no reduced EIT treatment is available.",
+      "local_name": "企业所得税25%"
+    },
+    {
+      "semantic_code": "reduced",
+      "treatment_id": "cn-eit-hnte",
+      "rule": "Use for high-and-new-technology enterprises that qualify under Art. 28 para 2, at 15%.",
+      "local_name": "高新技术企业15%"
+    },
+    {
+      "semantic_code": "reduced",
+      "treatment_id": "cn-eit-small-low-profit",
+      "rule": "Use for eligible small and low-profit enterprises under Art. 28 para 1, at the statutory 20% reduced rate (further temporary reliefs are not encoded).",
+      "local_name": "小型微利企业20%"
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "cn-eit-nr-passive",
+      "rule": "Use for the statutory 20% rate on China-source income of a non-resident enterprise without an establishment (Art. 4 para 2). Do not encode a 10% implementing-regulation figure from this pack."
+    }
+  ],
+  "taxes": [
+    {
+      "id": "vat",
+      "name": "Value-Added Tax",
+      "kind": "vat",
+      "treatments": [
+        {
+          "id": "cn-vat-standard",
+          "name": "Standard VAT band",
+          "semantic_code": "standard",
+          "rates": [
+            {
+              "id": "cn-vat-standard-17",
+              "effective_from": "1994-01-01",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.17"
+              },
+              "legal_citations": [
+                {
+                  "title": "财政部 税务总局关于调整增值税税率的通知",
+                  "instrument": "财税〔2018〕32号",
+                  "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n3359382/n3359454/c3545207/content.html",
+                  "pinpoint": "一、原适用17%和11%税率的分别调整为16%、10%；六、自2018年5月1日起执行",
+                  "publisher": "国家税务总局"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2018-04-30",
+              "notes": "Prior standard rate confirmed by 财税〔2018〕32号 ('原适用17%'). effective_from 1994-01-01 is the widely cited commencement of the 1993 Provisional VAT Regulations, with effective_from_bound in_force_by: that Provisional Regulation text was not opened in the source research, so this version is verified_starter.",
+              "superseded_by": "cn-vat-standard-16"
+            },
+            {
+              "id": "cn-vat-standard-16",
+              "effective_from": "2018-05-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.16"
+              },
+              "legal_citations": [
+                {
+                  "title": "财政部 税务总局关于调整增值税税率的通知",
+                  "instrument": "财税〔2018〕32号",
+                  "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n3359382/n3359454/c3545207/content.html",
+                  "pinpoint": "一、原适用17%和11%税率的分别调整为16%、10%；六、自2018年5月1日起执行",
+                  "publisher": "国家税务总局"
+                },
+                {
+                  "title": "关于深化增值税改革有关政策的公告",
+                  "instrument": "财政部 税务总局 海关总署公告2019年第39号",
+                  "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n4182981/201903/c4358850/content.html",
+                  "pinpoint": "一、原适用16%税率的调整为13%；原适用10%税率的调整为9%（自2019年4月1日起）",
+                  "publisher": "国家税务总局"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2019-03-31",
+              "successor_of": "cn-vat-standard-17",
+              "superseded_by": "cn-vat-standard-13"
+            },
+            {
+              "id": "cn-vat-standard-13",
+              "effective_from": "2019-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.13"
+              },
+              "legal_citations": [
+                {
+                  "title": "关于深化增值税改革有关政策的公告",
+                  "instrument": "财政部 税务总局 海关总署公告2019年第39号",
+                  "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n4182981/201903/c4358850/content.html",
+                  "pinpoint": "一、原适用16%税率的调整为13%；原适用10%税率的调整为9%（自2019年4月1日起）",
+                  "publisher": "国家税务总局"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2025-12-31",
+              "successor_of": "cn-vat-standard-16",
+              "superseded_by": "cn-vat-standard-13-law"
+            },
+            {
+              "id": "cn-vat-standard-13-law",
+              "effective_from": "2026-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.13"
+              },
+              "legal_citations": [
+                {
+                  "title": "中华人民共和国增值税法",
+                  "instrument": "中华人民共和国增值税法（2024年12月25日第十四届全国人大常委会第十三次会议通过）第十条、第十一条、第二十四条、第三十八条",
+                  "url": "https://www.gov.cn/yaowen/liebiao/202412/content_6994557.htm",
+                  "pinpoint": "第十条（一）13%（二）9%（三）6%（四）出口货物税率为零（五）跨境服务/无形资产零税率；第十一条 简易计税征收率3%；第三十八条 自2026年1月1日起施行，《增值税暂行条例》同时废止",
+                  "publisher": "中国政府网 gov.cn"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "PRC Value-Added Tax Law Art. 10(1): 13% on sales of goods, processing/repair services, tangible movable property leasing, and imported goods. Same percentage as the 2019 announcement; new instrument from 1 January 2026, when the Provisional Regulations are repealed.",
+              "successor_of": "cn-vat-standard-13"
+            }
+          ],
+          "local_name": "增值税基本税率",
+          "chargeability": "charged",
+          "input_credit": "creditable",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "Headline statutory band: 17% then 16% then 13%."
+        },
+        {
+          "id": "cn-vat-reduced-9",
+          "name": "Reduced VAT band (9% path)",
+          "semantic_code": "reduced",
+          "rates": [
+            {
+              "id": "cn-vat-reduced-11",
+              "effective_from": "2018-01-01",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.11"
+              },
+              "legal_citations": [
+                {
+                  "title": "财政部 税务总局关于调整增值税税率的通知",
+                  "instrument": "财税〔2018〕32号",
+                  "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n3359382/n3359454/c3545207/content.html",
+                  "pinpoint": "一、原适用17%和11%税率的分别调整为16%、10%；六、自2018年5月1日起执行",
+                  "publisher": "国家税务总局"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2018-04-30",
+              "notes": "Prior reduced rate confirmed by 财税〔2018〕32号 ('原适用11%'). The legal start of the 11% band (a later VAT-reform consolidation) was not pinned; this version is in force by 1 January 2018 and ends 30 April 2018. Do not read 1994 as the start of 11%.",
+              "superseded_by": "cn-vat-reduced-10"
+            },
+            {
+              "id": "cn-vat-reduced-10",
+              "effective_from": "2018-05-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.10"
+              },
+              "legal_citations": [
+                {
+                  "title": "财政部 税务总局关于调整增值税税率的通知",
+                  "instrument": "财税〔2018〕32号",
+                  "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n3359382/n3359454/c3545207/content.html",
+                  "pinpoint": "一、原适用17%和11%税率的分别调整为16%、10%；六、自2018年5月1日起执行",
+                  "publisher": "国家税务总局"
+                },
+                {
+                  "title": "关于深化增值税改革有关政策的公告",
+                  "instrument": "财政部 税务总局 海关总署公告2019年第39号",
+                  "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n4182981/201903/c4358850/content.html",
+                  "pinpoint": "一、原适用16%税率的调整为13%；原适用10%税率的调整为9%（自2019年4月1日起）",
+                  "publisher": "国家税务总局"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2019-03-31",
+              "successor_of": "cn-vat-reduced-11",
+              "superseded_by": "cn-vat-reduced-9"
+            },
+            {
+              "id": "cn-vat-reduced-9",
+              "effective_from": "2019-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.09"
+              },
+              "legal_citations": [
+                {
+                  "title": "关于深化增值税改革有关政策的公告",
+                  "instrument": "财政部 税务总局 海关总署公告2019年第39号",
+                  "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n4182981/201903/c4358850/content.html",
+                  "pinpoint": "一、原适用16%税率的调整为13%；原适用10%税率的调整为9%（自2019年4月1日起）",
+                  "publisher": "国家税务总局"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2025-12-31",
+              "successor_of": "cn-vat-reduced-10",
+              "superseded_by": "cn-vat-reduced-9-law"
+            },
+            {
+              "id": "cn-vat-reduced-9-law",
+              "effective_from": "2026-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.09"
+              },
+              "legal_citations": [
+                {
+                  "title": "中华人民共和国增值税法",
+                  "instrument": "中华人民共和国增值税法（2024年12月25日第十四届全国人大常委会第十三次会议通过）第十条、第十一条、第二十四条、第三十八条",
+                  "url": "https://www.gov.cn/yaowen/liebiao/202412/content_6994557.htm",
+                  "pinpoint": "第十条（一）13%（二）9%（三）6%（四）出口货物税率为零（五）跨境服务/无形资产零税率；第十一条 简易计税征收率3%；第三十八条 自2026年1月1日起施行，《增值税暂行条例》同时废止",
+                  "publisher": "中国政府网 gov.cn"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "PRC VAT Law Art. 10(2): 9% on transportation, postal, basic telecoms, construction, immovable-property leasing, sales of immovable property, transfer of land-use rights, and the listed goods (agricultural products, household utilities, books, feed, fertilizer, and others named in the article).",
+              "successor_of": "cn-vat-reduced-9"
+            }
+          ],
+          "local_name": "增值税9%税率（及前身11%/10%）",
+          "chargeability": "charged",
+          "input_credit": "creditable",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "Lower statutory band that moved 11% → 10% → 9%. Separate from the 6% band."
+        },
+        {
+          "id": "cn-vat-reduced-6",
+          "name": "Reduced VAT band (6%)",
+          "semantic_code": "reduced",
+          "rates": [
+            {
+              "id": "cn-vat-reduced-6-pilot",
+              "effective_from": "2016-05-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.06"
+              },
+              "legal_citations": [
+                {
+                  "title": "财政部 税务总局关于全面推开营业税改征增值税试点的通知 — 2016年第19号国务院公报 (中国政府网)",
+                  "instrument": "财税〔2016〕36号，2016年3月23日，自2016年5月1日起执行；附件1《营业税改征增值税试点实施办法》第十五条（一）",
+                  "url": "https://www.gov.cn/gongbao/content/2016/content_5088782.htm",
+                  "pinpoint": "附件1 第十五条（一）：税率为6％",
+                  "publisher": "中国政府网"
+                },
+                {
+                  "title": "关于全面推开营业税改征增值税试点的通知 — 国家税务总局 (chinatax.gov.cn)",
+                  "instrument": "财税〔2016〕36号",
+                  "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n1990035/201603/c2192724/content.html",
+                  "pinpoint": "SAT notification page: instrument date 2016-03-23 and commencement 自2016年5月1日起",
+                  "publisher": "国家税务总局"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2025-12-31",
+              "notes": "财税〔2016〕36号 Annex 1 Art. 15(1): 6% default rate on taxable activities other than the items then listed at 11%, 17%, and 0%. The 6% band was not itself rewritten by the 2018 and 2019 rate notices. effective_to is the day before the VAT Law commences, not a sunset written into Circular 36.",
+              "superseded_by": "cn-vat-reduced-6-law"
+            },
+            {
+              "id": "cn-vat-reduced-6-law",
+              "effective_from": "2026-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.06"
+              },
+              "legal_citations": [
+                {
+                  "title": "中华人民共和国增值税法",
+                  "instrument": "中华人民共和国增值税法（2024年12月25日第十四届全国人大常委会第十三次会议通过）第十条、第十一条、第二十四条、第三十八条",
+                  "url": "https://www.gov.cn/yaowen/liebiao/202412/content_6994557.htm",
+                  "pinpoint": "第十条（一）13%（二）9%（三）6%（四）出口货物税率为零（五）跨境服务/无形资产零税率；第十一条 简易计税征收率3%；第三十八条 自2026年1月1日起施行，《增值税暂行条例》同时废止",
+                  "publisher": "中国政府网 gov.cn"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "PRC VAT Law Art. 10(3): 6% on sales of services and intangible assets other than the items in Art. 10(1), (2) and (5).",
+              "successor_of": "cn-vat-reduced-6-pilot"
+            }
+          ],
+          "local_name": "增值税6%税率",
+          "chargeability": "charged",
+          "input_credit": "creditable",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "6% band originating in 财税〔2016〕36号 and restated in VAT Law Art. 10(3)."
+        },
+        {
+          "id": "cn-vat-simplified-3",
+          "name": "Simplified VAT collection rate (3%)",
+          "semantic_code": "reduced",
+          "rates": [
+            {
+              "id": "cn-vat-simplified-3-law",
+              "effective_from": "2026-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.03"
+              },
+              "legal_citations": [
+                {
+                  "title": "中华人民共和国增值税法",
+                  "instrument": "中华人民共和国增值税法（2024年12月25日第十四届全国人大常委会第十三次会议通过）第十条、第十一条、第二十四条、第三十八条",
+                  "url": "https://www.gov.cn/yaowen/liebiao/202412/content_6994557.htm",
+                  "pinpoint": "第十条（一）13%（二）9%（三）6%（四）出口货物税率为零（五）跨境服务/无形资产零税率；第十一条 简易计税征收率3%；第三十八条 自2026年1月1日起施行，《增值税暂行条例》同时废止",
+                  "publisher": "中国政府网 gov.cn"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "PRC VAT Law Art. 11: 3% collection rate (征收率) under the simplified method, typically used by small-scale taxpayers. This is a collection rate, not one of the Art. 10 bands. Earlier Provisional Regulations / 财税〔2009〕9号 simplified-rate history was not opened in the source research and is not encoded. A temporary 1% COVID/SME collection-rate reduction is mentioned in secondary discussion only and was not verified with dates or citations, so it is omitted."
+            }
+          ],
+          "local_name": "增值税简易计税征收率3%",
+          "chargeability": "charged",
+          "input_credit": "see_citation",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "Collection rate under the simplified method (VAT Law Art. 11), typically for small-scale taxpayers. Input-credit consequences follow the simplified-method rules, not the general credit-invoice path."
+        },
+        {
+          "id": "cn-vat-export-zero",
+          "name": "Export and cross-border zero rate",
+          "semantic_code": "zero",
+          "rates": [
+            {
+              "id": "cn-vat-export-zero-law",
+              "effective_from": "2026-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0"
+              },
+              "legal_citations": [
+                {
+                  "title": "中华人民共和国增值税法",
+                  "instrument": "中华人民共和国增值税法（2024年12月25日第十四届全国人大常委会第十三次会议通过）第十条、第十一条、第二十四条、第三十八条",
+                  "url": "https://www.gov.cn/yaowen/liebiao/202412/content_6994557.htm",
+                  "pinpoint": "第十条（一）13%（二）9%（三）6%（四）出口货物税率为零（五）跨境服务/无形资产零税率；第十一条 简易计税征收率3%；第三十八条 自2026年1月1日起施行，《增值税暂行条例》同时废止",
+                  "publisher": "中国政府网 gov.cn"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "PRC VAT Law Art. 10(4) and (5): export of goods (unless the State Council provides otherwise) and cross-border sales of services or intangible assets within the State Council's prescribed scope, at a zero rate. Earlier export zero-rating under the Provisional Regulations is not encoded as a prior version because that text was not opened."
+            }
+          ],
+          "local_name": "出口退税 / 零税率",
+          "chargeability": "zero_rated",
+          "input_credit": "creditable",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "Zero rate under VAT Law Art. 10(4) and (5). Credit or refund follows the Law and the implementing rules; this pack does not encode refund rates."
+        },
+        {
+          "id": "cn-vat-exempt",
+          "name": "VAT exemption",
+          "semantic_code": "exempt",
+          "rates": [
+            {
+              "id": "cn-vat-exempt-law",
+              "effective_from": "2026-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "none"
+              },
+              "legal_citations": [
+                {
+                  "title": "中华人民共和国增值税法",
+                  "instrument": "中华人民共和国增值税法（2024年12月25日第十四届全国人大常委会第十三次会议通过）第十条、第十一条、第二十四条、第三十八条",
+                  "url": "https://www.gov.cn/yaowen/liebiao/202412/content_6994557.htm",
+                  "pinpoint": "第十条（一）13%（二）9%（三）6%（四）出口货物税率为零（五）跨境服务/无形资产零税率；第十一条 简易计税征收率3%；第三十八条 自2026年1月1日起施行，《增值税暂行条例》同时废止",
+                  "publisher": "中国政府网 gov.cn"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "PRC VAT Law Art. 24 exemption items (including self-produced agricultural products sold by agricultural producers, medical services provided by medical institutions, antique books, natural persons selling used personal articles, imported instruments for research or teaching, and materials imported as unpaid aid from foreign governments or international organisations, among other listed items). The full article list is in the Law; this pack does not reproduce every line."
+            }
+          ],
+          "local_name": "增值税免征",
+          "chargeability": "exempt",
+          "input_credit": "not_creditable",
+          "collection": {
+            "method": "none"
+          },
+          "notes": "Statutory exemption under VAT Law Art. 24. Category only."
+        }
+      ],
+      "local_name": "增值税",
+      "notes": "Treatments are the statutory bands. 税收分类编码 codes identify the supply on a fapiao; they are a dictionary, not rates."
+    },
+    {
+      "id": "eit",
+      "name": "Enterprise Income Tax",
+      "kind": "income",
+      "treatments": [
+        {
+          "id": "cn-eit-standard",
+          "name": "Standard enterprise income tax (25%)",
+          "semantic_code": "standard",
+          "rates": [
+            {
+              "id": "cn-eit-standard-25",
+              "effective_from": "2008-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.25"
+              },
+              "legal_citations": [
+                {
+                  "title": "中华人民共和国企业所得税法（2018年修正）",
+                  "instrument": "企业所得税法 第四条、第二十八条、第六十条",
+                  "url": "http://www.npc.gov.cn/npc/c2/c30834/201905/t20190521_296654.html",
+                  "pinpoint": "第四条 税率25%，非居民企业第三条第三款所得20%；第二十八条 小型微利企业减按20%，高新技术企业减按15%；第六十条 自2008年1月1日起施行",
+                  "publisher": "中国人大网 npc.gov.cn"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Enterprise Income Tax Law Art. 4: 25% standard rate, in force from 1 January 2008 (Art. 60)."
+            }
+          ],
+          "local_name": "企业所得税法定税率",
+          "chargeability": "charged",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "self_assessment",
+            "reconciled_annually": true
+          }
+        },
+        {
+          "id": "cn-eit-hnte",
+          "name": "High-and-new-technology enterprise rate (15%)",
+          "semantic_code": "reduced",
+          "rates": [
+            {
+              "id": "cn-eit-hnte-15",
+              "effective_from": "2008-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.15"
+              },
+              "legal_citations": [
+                {
+                  "title": "中华人民共和国企业所得税法（2018年修正）",
+                  "instrument": "企业所得税法 第四条、第二十八条、第六十条",
+                  "url": "http://www.npc.gov.cn/npc/c2/c30834/201905/t20190521_296654.html",
+                  "pinpoint": "第四条 税率25%，非居民企业第三条第三款所得20%；第二十八条 小型微利企业减按20%，高新技术企业减按15%；第六十条 自2008年1月1日起施行",
+                  "publisher": "中国人大网 npc.gov.cn"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Art. 28 para 2: high-and-new-technology enterprises that the State needs to support in particular, reduced to 15%."
+            }
+          ],
+          "local_name": "高新技术企业减按15%",
+          "chargeability": "charged",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "self_assessment",
+            "reconciled_annually": true
+          }
+        },
+        {
+          "id": "cn-eit-small-low-profit",
+          "name": "Small and low-profit enterprise rate (20%)",
+          "semantic_code": "reduced",
+          "rates": [
+            {
+              "id": "cn-eit-small-low-profit-20",
+              "effective_from": "2008-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.20"
+              },
+              "legal_citations": [
+                {
+                  "title": "中华人民共和国企业所得税法（2018年修正）",
+                  "instrument": "企业所得税法 第四条、第二十八条、第六十条",
+                  "url": "http://www.npc.gov.cn/npc/c2/c30834/201905/t20190521_296654.html",
+                  "pinpoint": "第四条 税率25%，非居民企业第三条第三款所得20%；第二十八条 小型微利企业减按20%，高新技术企业减按15%；第六十条 自2008年1月1日起施行",
+                  "publisher": "中国人大网 npc.gov.cn"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Art. 28 para 1: eligible small and low-profit enterprises, reduced to 20%. Temporary MOF/STA reliefs that further reduce the effective burden were not verified and are not encoded."
+            }
+          ],
+          "local_name": "小型微利企业减按20%",
+          "chargeability": "charged",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "self_assessment",
+            "reconciled_annually": true
+          }
+        },
+        {
+          "id": "cn-eit-nr-passive",
+          "name": "Non-resident enterprise statutory rate (20%)",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "cn-eit-nr-passive-20",
+              "effective_from": "2008-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.20"
+              },
+              "legal_citations": [
+                {
+                  "title": "中华人民共和国企业所得税法（2018年修正）",
+                  "instrument": "企业所得税法 第四条、第二十八条、第六十条",
+                  "url": "http://www.npc.gov.cn/npc/c2/c30834/201905/t20190521_296654.html",
+                  "pinpoint": "第四条 税率25%，非居民企业第三条第三款所得20%；第二十八条 小型微利企业减按20%，高新技术企业减按15%；第六十条 自2008年1月1日起施行",
+                  "publisher": "中国人大网 npc.gov.cn"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Art. 4 para 2: statutory 20% on income of a non-resident enterprise falling under Art. 3 para 3 (typically China-source passive income without an establishment). A widely cited 10% rate under the Implementation Regulations (often associated with Art. 91) was not opened in the source research and is not encoded."
+            }
+          ],
+          "local_name": "非居民企业法定税率20%",
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          },
+          "notes": "Statutory 20%. The commonly applied 10% implementing-regulation reduction is not encoded."
+        }
+      ],
+      "local_name": "企业所得税"
+    }
+  ],
+  "maintainer": {
+    "name": "Open-Tax contributors (seat open)",
+    "github": "glc-works/open-tax",
+    "url": "https://github.com/glc-works/open-tax"
+  }
+}

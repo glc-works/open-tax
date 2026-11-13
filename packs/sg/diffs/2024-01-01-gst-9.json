@@ -1,0 +1,73 @@
+{
+  "$schema": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2024-01-01-gst-9",
+  "jurisdiction": "SG",
+  "pack_id": "sg",
+  "title": "GST standard rate 8% to 9% on 1 January 2024",
+  "summary": "GST Act s 16 and the IRAS rate page move the standard rate from 8% to 9% from 1 January 2024. Reverse charge and Overseas Vendor Registration move with the standard rate. Zero-rated, exempt, and out-of-scope treatments are unchanged.",
+  "legal_basis": [
+    {
+      "title": "Goods and Services Tax Act 1993",
+      "instrument": "Goods and Services Tax Act 1993, s 16 (Rate of tax)",
+      "url": "https://sso.agc.gov.sg/Act/GSTA1993?ProvIds=pr16-",
+      "pinpoint": "s 16(a)-(cb): 4% 2003; 5% 1 Jan 2004-30 Jun 2007; 7% 1 Jul 2007-31 Dec 2022; 8% 1 Jan 2023-31 Dec 2023; 9% from 1 Jan 2024 [Act 35 of 2022 wef 05/12/2022]",
+      "publisher": "Attorney-General's Chambers (SSO)"
+    },
+    {
+      "title": "IRAS | Current GST rates",
+      "instrument": "IRAS webpage: Prevailing GST rate and historical GST rates",
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/current-gst-rates",
+      "pinpoint": "Historical GST rates table (3% from 1 Apr 1994 ... 8% 1 Jan 2023-31 Dec 2023); 'The current GST rate in Singapore is 9%'",
+      "publisher": "IRAS"
+    }
+  ],
+  "changes": [
+    {
+      "id": "sg-gst-9",
+      "effective_from": "2024-01-01",
+      "change_type": "rate_change",
+      "summary": "Standard-rated GST, including GST collected under reverse charge and Overseas Vendor Registration, moves from 8% to 9%.",
+      "affected": {
+        "semantic_codes": [
+          "standard",
+          "reverse_charge"
+        ],
+        "treatment_ids": [
+          "sg-gst-standard",
+          "sg-gst-reverse-charge",
+          "sg-gst-ovr"
+        ],
+        "tax_ids": [
+          "gst"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Invoices and GST F5 returns for supplies from 1 January 2024 use 9%. Supplies through 31 December 2023 stay at 8%.",
+        "systems": [
+          "invoicing",
+          "filing",
+          "ecommerce",
+          "reporting"
+        ]
+      },
+      "computation": {
+        "statutory_rate": "0.09",
+        "effective_rate": "0.09"
+      },
+      "before": {
+        "statutory_rate": "0.08",
+        "effective_rate": "0.08"
+      },
+      "after": {
+        "statutory_rate": "0.09",
+        "effective_rate": "0.09"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "reviewed_on": "2026-11-13"
+  }
+}

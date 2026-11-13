@@ -1,0 +1,746 @@
+{
+  "$schema": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/regime.schema.json",
+  "schema_version": "1.0.0",
+  "pack_id": "my",
+  "jurisdiction": {
+    "code": "MY",
+    "name": "Malaysia"
+  },
+  "currency": "MYR",
+  "authority": {
+    "id": "my-rmcd",
+    "name": "Royal Malaysian Customs Department",
+    "short_name": "RMCD",
+    "website": "https://mysst.customs.gov.my"
+  },
+  "notes": "Primary authority is RMCD (SST). Corporate income tax and withholding are administered by the Inland Revenue Board of Malaysia (LHDN / IRBM, https://www.hasil.gov.my) and are cited to LHDN sources. Sales tax and service tax are two separate tax ids; SST is not an input-credit VAT. Starter pack, not a filing position. Reviewed on 2026-11-13.",
+  "semantic_mappings": [
+    {
+      "semantic_code": "standard",
+      "treatment_id": "my-service-tax-standard",
+      "rule": "Use for taxable services that take the general service-tax rate (6% through 29 February 2024, 8% from 1 March 2024), other than First Schedule services, credit-card specific charges, and the rental-or-leasing treatment.",
+      "local_name": "Kadar umum cukai perkhidmatan"
+    },
+    {
+      "semantic_code": "reduced",
+      "treatment_id": "my-service-tax-first-schedule-6",
+      "rule": "Use for taxable services listed in the First Schedule that remain at 6% after 1 March 2024 (F&B, telecoms, parking, logistics, and from 1 July 2025 the expanded First Schedule).",
+      "local_name": "Jadual Pertama"
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "my-service-tax-credit-card",
+      "rule": "Use for the RM25 per card per year service tax on principal or supplementary credit or charge cards under the Second Schedule.",
+      "local_name": "Kad kredit / caj"
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "my-service-tax-rental-leasing",
+      "rule": "Use for rental or leasing services: statutory 8% from 1 July 2025, then 8% statutory with a 6% effective charge from 1 January 2026 under DCP 2/2025. Do not map this path to reduced.",
+      "local_name": "Sewaan atau pajakan"
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "my-sales-tax-standard",
+      "rule": "Use for taxable goods that take the general 10% sales-tax rate under P.U.(A) 170/2025.",
+      "local_name": "Kadar umum cukai jualan"
+    },
+    {
+      "semantic_code": "reduced",
+      "treatment_id": "my-sales-tax-reduced",
+      "rule": "Use for taxable goods in the First Schedule of P.U.(A) 170/2025, charged at 5%.",
+      "local_name": "Jadual Pertama cukai jualan"
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "my-cit-standard",
+      "rule": "Use for the 24% corporate income tax that applies from YA 2016, other than companies on the MSME tier schedule.",
+      "local_name": "Cukai pendapatan syarikat 24%"
+    },
+    {
+      "semantic_code": "reduced",
+      "treatment_id": "my-cit-msme",
+      "rule": "Use for resident Malaysian-incorporated companies that meet the Sch 1 para 2A/2B SME conditions, on the 15% / 17% / 24% YA 2023+ schedule.",
+      "local_name": "Kadar MSME"
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "my-wht-interest",
+      "rule": "Use for withholding on interest paid to a non-resident under s 109."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "my-wht-royalty",
+      "rule": "Use for withholding on royalties paid to a non-resident under s 109."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "my-wht-109b",
+      "rule": "Use for withholding on special classes of income under s 4A / s 109B (technical or management services, movable-property use or rental, and similar)."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "my-wht-entertainer",
+      "rule": "Use for withholding on payments to a non-resident public entertainer under s 109A."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "my-wht-109f",
+      "rule": "Use for withholding on income under s 4(f) / s 109F."
+    }
+  ],
+  "taxes": [
+    {
+      "id": "service-tax",
+      "name": "Service Tax",
+      "kind": "sales",
+      "treatments": [
+        {
+          "id": "my-service-tax-standard",
+          "name": "Standard service tax",
+          "semantic_code": "standard",
+          "rates": [
+            {
+              "id": "my-service-tax-standard-6",
+              "effective_from": "2018-09-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.06"
+              },
+              "legal_citations": [
+                {
+                  "title": "MySST | Background",
+                  "instrument": "RMCD MySST webpage, Tax Rate section",
+                  "url": "https://mysst.customs.gov.my/background/",
+                  "publisher": "Royal Malaysian Customs Department"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2024-02-29",
+              "notes": "Parent order P.U.(A) 213/2018 is named in P.U.(A) 64/2024 and 173/2025, but its own text was not opened. Rate and 1 September 2018 commencement are taken from the RMCD MySST Background page.",
+              "superseded_by": "my-service-tax-standard-8"
+            },
+            {
+              "id": "my-service-tax-standard-8",
+              "effective_from": "2024-03-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.08"
+              },
+              "legal_citations": [
+                {
+                  "title": "Perintah Cukai Perkhidmatan (Kadar Cukai) (Pindaan) 2024",
+                  "instrument": "P.U. (A) 64/2024, amending Service Tax (Rate of Tax) Order 2018 [P.U. (A) 213/2018]",
+                  "url": "https://mysst.customs.gov.my/wp-content/uploads/2025/03/PERINTAH-CUKAI-PERKHIDMATAN-KADAR-CUKAI-PINDAAN-2024.pdf",
+                  "pinpoint": "para 1(2) in force 1 Mac 2024; F&B, telecommunication, parking, logistics stay at enam peratus; others lapan peratus",
+                  "publisher": "Federal Government Gazette / AGC"
+                },
+                {
+                  "title": "Perintah Cukai Perkhidmatan (Kadar Cukai) (Pindaan) 2025 / Service Tax (Rate of Tax) (Amendment) Order 2025",
+                  "instrument": "P.U. (A) 173/2025, made under s 10(2) Service Tax Act 2018 [Act 807]; amends P.U. (A) 213/2018",
+                  "url": "https://mysst.customs.gov.my/wp-content/uploads/2025/11/Perintah-CP-Kadar-CukaiPindaan-2025.pdf",
+                  "pinpoint": "para 1(2) in force 1 Julai 2025; para 3 substituted (general 8%; Jadual Pertama 6%; Jadual Kedua RM25/card)",
+                  "publisher": "Federal Government Gazette / AGC"
+                },
+                {
+                  "title": "MySST | Background",
+                  "instrument": "RMCD MySST webpage, Tax Rate section",
+                  "url": "https://mysst.customs.gov.my/background/",
+                  "publisher": "Royal Malaysian Customs Department"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "General 8% from 1 March 2024 under P.U.(A) 64/2024. P.U.(A) 173/2025 (in force 1 July 2025) restates the general rate at 8% for taxable services other than the First and Second Schedules, and expands the scope of taxable services (including financial services at 8%). This pack keeps one open 8% version rather than splitting a same-rate instrument change; the 1 July 2025 scope expansion is recorded in diffs/2025-07-01-sst-expansion.json.",
+              "successor_of": "my-service-tax-standard-6"
+            }
+          ],
+          "local_name": "Cukai Perkhidmatan (kadar umum)",
+          "chargeability": "charged",
+          "input_credit": "not_creditable",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "General rate on taxable services other than the First Schedule (6%) and Second Schedule (credit/charge cards). SST is not an input-credit invoice tax."
+        },
+        {
+          "id": "my-service-tax-first-schedule-6",
+          "name": "First Schedule service tax (6%)",
+          "semantic_code": "reduced",
+          "rates": [
+            {
+              "id": "my-service-tax-first-schedule-6-2024",
+              "effective_from": "2024-03-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.06"
+              },
+              "legal_citations": [
+                {
+                  "title": "Perintah Cukai Perkhidmatan (Kadar Cukai) (Pindaan) 2024",
+                  "instrument": "P.U. (A) 64/2024, amending Service Tax (Rate of Tax) Order 2018 [P.U. (A) 213/2018]",
+                  "url": "https://mysst.customs.gov.my/wp-content/uploads/2025/03/PERINTAH-CUKAI-PERKHIDMATAN-KADAR-CUKAI-PINDAAN-2024.pdf",
+                  "pinpoint": "para 1(2) in force 1 Mac 2024; F&B, telecommunication, parking, logistics stay at enam peratus; others lapan peratus",
+                  "publisher": "Federal Government Gazette / AGC"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2025-06-30",
+              "notes": "Services that remained at 6% when the general rate moved to 8%: food and beverage, telecommunication, parking, and logistics.",
+              "superseded_by": "my-service-tax-first-schedule-6-2025"
+            },
+            {
+              "id": "my-service-tax-first-schedule-6-2025",
+              "effective_from": "2025-07-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.06"
+              },
+              "legal_citations": [
+                {
+                  "title": "Perintah Cukai Perkhidmatan (Kadar Cukai) (Pindaan) 2025 / Service Tax (Rate of Tax) (Amendment) Order 2025",
+                  "instrument": "P.U. (A) 173/2025, made under s 10(2) Service Tax Act 2018 [Act 807]; amends P.U. (A) 213/2018",
+                  "url": "https://mysst.customs.gov.my/wp-content/uploads/2025/11/Perintah-CP-Kadar-CukaiPindaan-2025.pdf",
+                  "pinpoint": "para 1(2) in force 1 Julai 2025; para 3 substituted (general 8%; Jadual Pertama 6%; Jadual Kedua RM25/card)",
+                  "publisher": "Federal Government Gazette / AGC"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "First Schedule of P.U.(A) 173/2025 (6%): (1) makanan tersedia/terhidang; (2) minuman tidak beralkohol tersedia/terhidang; (3) penjualan minuman tidak beralkohol; (4) makanan bersekali minuman beralkohol/tidak beralkohol; (5) telekomunikasi; (6) telekomunikasi bersekali penyiaran langganan; (7) ruang letak kenderaan bermotor; (8) logistik; (9) jagaan kesihatan; (10) perubatan tradisional & komplementari; (11) kesihatan bersekutu; (12) kerja pembinaan; (13) pendidikan.",
+              "successor_of": "my-service-tax-first-schedule-6-2024"
+            }
+          ],
+          "local_name": "Cukai Perkhidmatan (Jadual Pertama)",
+          "chargeability": "charged",
+          "input_credit": "not_creditable",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "A lower statutory band for listed taxable services, not a VAT reduced rate. From 1 March 2024: F&B, telecommunication, parking, logistics. From 1 July 2025 the First Schedule is expanded (see treatment notes on the 2025 version)."
+        },
+        {
+          "id": "my-service-tax-credit-card",
+          "name": "Service tax on credit and charge cards",
+          "semantic_code": "standard",
+          "rates": [
+            {
+              "id": "my-service-tax-credit-card-25",
+              "effective_from": "2025-07-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "specific",
+                "value": "25",
+                "currency": "MYR",
+                "unit": "per card per year",
+                "notes": "Per principal or supplementary credit or charge card, on activation and every 12 months or part, as described in P.U.(A) 173/2025 Jadual Kedua."
+              },
+              "legal_citations": [
+                {
+                  "title": "Perintah Cukai Perkhidmatan (Kadar Cukai) (Pindaan) 2025 / Service Tax (Rate of Tax) (Amendment) Order 2025",
+                  "instrument": "P.U. (A) 173/2025, made under s 10(2) Service Tax Act 2018 [Act 807]; amends P.U. (A) 213/2018",
+                  "url": "https://mysst.customs.gov.my/wp-content/uploads/2025/11/Perintah-CP-Kadar-CukaiPindaan-2025.pdf",
+                  "pinpoint": "para 1(2) in force 1 Julai 2025; para 3 substituted (general 8%; Jadual Pertama 6%; Jadual Kedua RM25/card)",
+                  "publisher": "Federal Government Gazette / AGC"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              }
+            }
+          ],
+          "local_name": "Cukai Perkhidmatan (kad Kad Kredit / Caj)",
+          "chargeability": "charged",
+          "input_credit": "not_creditable",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "Specific RM25 charge under P.U.(A) 173/2025 Second Schedule, not an ad valorem percentage. Semantic key is standard because this is the generally applicable charge for that taxable service, not a reduced band."
+        },
+        {
+          "id": "my-service-tax-rental-leasing",
+          "name": "Service tax on rental or leasing",
+          "semantic_code": "standard",
+          "rates": [
+            {
+              "id": "my-service-tax-rental-leasing-8",
+              "effective_from": "2025-07-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.08"
+              },
+              "legal_citations": [
+                {
+                  "title": "Perintah Cukai Perkhidmatan (Kadar Cukai) (Pindaan) 2025 / Service Tax (Rate of Tax) (Amendment) Order 2025",
+                  "instrument": "P.U. (A) 173/2025, made under s 10(2) Service Tax Act 2018 [Act 807]; amends P.U. (A) 213/2018",
+                  "url": "https://mysst.customs.gov.my/wp-content/uploads/2025/11/Perintah-CP-Kadar-CukaiPindaan-2025.pdf",
+                  "pinpoint": "para 1(2) in force 1 Julai 2025; para 3 substituted (general 8%; Jadual Pertama 6%; Jadual Kedua RM25/card)",
+                  "publisher": "Federal Government Gazette / AGC"
+                },
+                {
+                  "title": "Dasar Cukai Perkhidmatan Bil. 2/2025 (Pindaan No. 4) — Sewaan atau Pajakan",
+                  "instrument": "RMCD Service Tax Policy No. 2/2025 (Amendment No. 4), item 8",
+                  "url": "https://mysst.customs.gov.my/wp-content/uploads/2026/04/DCP-2-2025-Sewaan-atau-Pajakan-Pindaan-No.4.pdf",
+                  "pinpoint": "Bil. 8: pengecualian 2% atas kadar cukai perkhidmatan sewaan atau pajakan, berkuat kuasa 1 Januari 2026; Lampiran B",
+                  "publisher": "RMCD"
+                },
+                {
+                  "title": "MySST | Background",
+                  "instrument": "RMCD MySST webpage, Tax Rate section",
+                  "url": "https://mysst.customs.gov.my/background/",
+                  "publisher": "Royal Malaysian Customs Department"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2025-12-31",
+              "notes": "Rental or leasing services fall under the general 8% rate in P.U.(A) 173/2025 (not in the First Schedule). Encoded as a distinct treatment so the 1 January 2026 administrative reduction has a predecessor.",
+              "superseded_by": "my-service-tax-rental-leasing-admin-6"
+            },
+            {
+              "id": "my-service-tax-rental-leasing-admin-6",
+              "effective_from": "2026-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.08",
+                "value": "0.06",
+                "base_formula": "8% statutory reduced administratively to 6% effective by Service Tax Policy / RMCD DCP 2/2025"
+              },
+              "legal_citations": [
+                {
+                  "title": "Dasar Cukai Perkhidmatan Bil. 2/2025 (Pindaan No. 4) — Sewaan atau Pajakan",
+                  "instrument": "RMCD Service Tax Policy No. 2/2025 (Amendment No. 4), item 8",
+                  "url": "https://mysst.customs.gov.my/wp-content/uploads/2026/04/DCP-2-2025-Sewaan-atau-Pajakan-Pindaan-No.4.pdf",
+                  "pinpoint": "Bil. 8: pengecualian 2% atas kadar cukai perkhidmatan sewaan atau pajakan, berkuat kuasa 1 Januari 2026; Lampiran B",
+                  "publisher": "RMCD"
+                },
+                {
+                  "title": "MySST | Background",
+                  "instrument": "RMCD MySST webpage, Tax Rate section",
+                  "url": "https://mysst.customs.gov.my/background/",
+                  "publisher": "Royal Malaysian Customs Department"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "RMCD grants a 2% exemption on the rental or leasing service-tax rate from 1 January 2026 'until amendment of legislation' (Dasar Cukai Perkhidmatan Bil. 2/2025, Amendment No. 4, item 8). The statutory rate remains 8%. MySST Background lists 'Rental or leasing services – 6% (effective from 1 January 2026)'.",
+              "successor_of": "my-service-tax-rental-leasing-8"
+            }
+          ],
+          "local_name": "Cukai Perkhidmatan (sewaan atau pajakan)",
+          "chargeability": "charged",
+          "input_credit": "not_creditable",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "Statutory character is the general 8% service-tax rate. From 1 January 2026 an administrative 2% exemption produces a 6% effective charge; that path stays standard (it is not a First Schedule reduced band)."
+        }
+      ],
+      "local_name": "Cukai Perkhidmatan",
+      "notes": "Separate tax id from sales tax. SST is not an input-credit VAT. Imported taxable services have been in scope from 1 January 2019 per the MySST Background page (not encoded as a separate treatment)."
+    },
+    {
+      "id": "sales-tax",
+      "name": "Sales Tax",
+      "kind": "sales",
+      "treatments": [
+        {
+          "id": "my-sales-tax-standard",
+          "name": "Standard sales tax (10%)",
+          "semantic_code": "standard",
+          "rates": [
+            {
+              "id": "my-sales-tax-standard-10",
+              "effective_from": "2025-07-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.10"
+              },
+              "legal_citations": [
+                {
+                  "title": "Perintah Cukai Jualan (Kadar Cukai Jualan) 2025 / Sales Tax (Rate of Sales Tax) Order 2025",
+                  "instrument": "P.U. (A) 170/2025, made under s 10(2) Sales Tax Act 2018 [Act 806]",
+                  "url": "https://mysst.customs.gov.my/wp-content/uploads/2025/07/1-PUA-170_2025.pdf",
+                  "pinpoint": "para 1(2) in force 1 Julai 2025; para 2(1) sepuluh peratus on all taxable goods except s 35 exemption orders & non-commercial baggage; para 2(3)(a) Jadual Pertama lima peratus; 2(3)(b) Jadual Kedua specific rates",
+                  "publisher": "Federal Government Gazette / AGC"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Ten per cent on all taxable goods except goods in s 35 exemption orders, non-commercial baggage, First Schedule (5%), and Second Schedule (specific rates)."
+            }
+          ],
+          "local_name": "Cukai Jualan (kadar umum)",
+          "chargeability": "charged",
+          "input_credit": "not_creditable",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "The widely published 10% rate from the 1 September 2018 SST restart is not encoded: the 2018 Rate Order text and P.U. number were not opened in the source research. This version starts on the verified commencement of P.U.(A) 170/2025."
+        },
+        {
+          "id": "my-sales-tax-reduced",
+          "name": "Reduced sales tax (5%)",
+          "semantic_code": "reduced",
+          "rates": [
+            {
+              "id": "my-sales-tax-reduced-5",
+              "effective_from": "2025-07-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.05"
+              },
+              "legal_citations": [
+                {
+                  "title": "Perintah Cukai Jualan (Kadar Cukai Jualan) 2025 / Sales Tax (Rate of Sales Tax) Order 2025",
+                  "instrument": "P.U. (A) 170/2025, made under s 10(2) Sales Tax Act 2018 [Act 806]",
+                  "url": "https://mysst.customs.gov.my/wp-content/uploads/2025/07/1-PUA-170_2025.pdf",
+                  "pinpoint": "para 1(2) in force 1 Julai 2025; para 2(1) sepuluh peratus on all taxable goods except s 35 exemption orders & non-commercial baggage; para 2(3)(a) Jadual Pertama lima peratus; 2(3)(b) Jadual Kedua specific rates",
+                  "publisher": "Federal Government Gazette / AGC"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Goods in the First Schedule of P.U.(A) 170/2025."
+            }
+          ],
+          "local_name": "Cukai Jualan (Jadual Pertama)",
+          "chargeability": "charged",
+          "input_credit": "not_creditable",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "The 2018 5% band is omitted for the same reason as the 2018 10% band: the 2018 Rate Order was not opened."
+        }
+      ],
+      "local_name": "Cukai Jualan",
+      "notes": "Separate tax id from service tax. SST is not an input-credit VAT."
+    },
+    {
+      "id": "cit",
+      "name": "Corporate Income Tax",
+      "kind": "income",
+      "treatments": [
+        {
+          "id": "my-cit-standard",
+          "name": "Standard corporate income tax (24%)",
+          "semantic_code": "standard",
+          "rates": [
+            {
+              "id": "my-cit-standard-24",
+              "effective_from": "2016-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.24"
+              },
+              "legal_citations": [
+                {
+                  "title": "Income Tax Act 1967 (online version as at 1 January 2026)",
+                  "instrument": "Income Tax Act 1967 [Act 53], Schedule 1 Part I paras 2(1), 2A, 2B, 2C",
+                  "url": "https://www.hasil.gov.my/wp-content/uploads/Income-Tax-Act-1967-online-version-as-at-1-January-2026.pdf",
+                  "pinpoint": "pp. 574-575 (Sch 1 paras 2-2C)",
+                  "publisher": "LHDN"
+                },
+                {
+                  "title": "Tax Rate of Company",
+                  "instrument": "LHDN webpage",
+                  "url": "https://www.hasil.gov.my/en/syarikat/kadar-cukai-syarikat/",
+                  "pinpoint": "'Year Assessment 2023 - 2024' table (page not yet showing YA 2025+ heading)",
+                  "publisher": "LHDN"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Sch 1 para 2(1): 25% for YA 2015 and 24% for subsequent YAs (YA 2016 onwards). effective_from is the first day of YA 2016."
+            }
+          ],
+          "chargeability": "charged",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "self_assessment",
+            "reconciled_annually": true
+          },
+          "notes": "Administered by LHDN, not RMCD. This pack's primary authority object is RMCD because SST is the headline indirect-tax layer; CIT citations are LHDN."
+        },
+        {
+          "id": "my-cit-msme",
+          "name": "MSME / SME corporate income tax tiers",
+          "semantic_code": "reduced",
+          "rates": [
+            {
+              "id": "my-cit-msme-ya2023",
+              "effective_from": "2023-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "brackets": [
+                  {
+                    "label": "First RM150,000",
+                    "over": "0",
+                    "up_to": "150000",
+                    "rate": "0.15"
+                  },
+                  {
+                    "label": "Next RM450,000 (up to RM600,000)",
+                    "over": "150000",
+                    "up_to": "600000",
+                    "rate": "0.17"
+                  },
+                  {
+                    "label": "Chargeable income exceeding RM600,000",
+                    "over": "600000",
+                    "rate": "0.24"
+                  }
+                ],
+                "notes": "ITA 1967 Sch 1 para 2A, as stated for YA 2023–2024 on the LHDN company-rate page. Conditions: resident and incorporated in Malaysia; ordinary paid-up capital not more than RM2.5 million at the start of the basis period; gross business income not more than RM50 million; excluded under para 2B if more than 50% is held by or holds a related company (paid-up capital over RM2.5 million), or (para 2B(d)) if more than 20% of paid-up capital is owned by foreign-incorporated companies or non-citizen individuals. The exact YA from which para 2B(d) applies was not pinned in the source research (check Finance Act 2023 before relying on that exclusion date)."
+              },
+              "legal_citations": [
+                {
+                  "title": "Income Tax Act 1967 (online version as at 1 January 2026)",
+                  "instrument": "Income Tax Act 1967 [Act 53], Schedule 1 Part I paras 2(1), 2A, 2B, 2C",
+                  "url": "https://www.hasil.gov.my/wp-content/uploads/Income-Tax-Act-1967-online-version-as-at-1-January-2026.pdf",
+                  "pinpoint": "pp. 574-575 (Sch 1 paras 2-2C)",
+                  "publisher": "LHDN"
+                },
+                {
+                  "title": "Tax Rate of Company",
+                  "instrument": "LHDN webpage",
+                  "url": "https://www.hasil.gov.my/en/syarikat/kadar-cukai-syarikat/",
+                  "pinpoint": "'Year Assessment 2023 - 2024' table (page not yet showing YA 2025+ heading)",
+                  "publisher": "LHDN"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "YA 2023 onwards as stated on the LHDN YA 2023–2024 table. Earlier LHDN-page history (for example 17% on the first RM600,000 in YA 2020–2022) is not encoded as prior versions."
+            }
+          ],
+          "chargeability": "charged",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "self_assessment",
+            "reconciled_annually": true
+          },
+          "notes": "Sch 1 paras 2A–2C. See the schedule notes for eligibility and the unpinned para 2B(d) commencement."
+        }
+      ],
+      "local_name": "Cukai Pendapatan Syarikat",
+      "notes": "Administered by the Inland Revenue Board of Malaysia (LHDN / IRBM), https://www.hasil.gov.my."
+    },
+    {
+      "id": "wht",
+      "name": "Withholding tax on payments to non-residents",
+      "kind": "withholding",
+      "treatments": [
+        {
+          "id": "my-wht-interest",
+          "name": "Withholding on interest paid to a non-resident",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "my-wht-interest-15",
+              "effective_from": "2026-11-13",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.15"
+              },
+              "legal_citations": [
+                {
+                  "title": "Withholding Tax",
+                  "instrument": "LHDN webpage (WHT rates table); ITA 1967 ss 109, 109A, 109B, 109F, Sch 1",
+                  "url": "https://www.hasil.gov.my/en/perundangan/cukai-pegangan/",
+                  "publisher": "LHDN"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "s 109, Sch 1 Part II; form CP37. Legal commencement of the 15% figure was not pinned on the fetched page."
+            }
+          ],
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          }
+        },
+        {
+          "id": "my-wht-royalty",
+          "name": "Withholding on royalties paid to a non-resident",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "my-wht-royalty-10",
+              "effective_from": "2026-11-13",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.10"
+              },
+              "legal_citations": [
+                {
+                  "title": "Withholding Tax",
+                  "instrument": "LHDN webpage (WHT rates table); ITA 1967 ss 109, 109A, 109B, 109F, Sch 1",
+                  "url": "https://www.hasil.gov.my/en/perundangan/cukai-pegangan/",
+                  "publisher": "LHDN"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "s 109, Sch 1 Part II; form CP37. Legal commencement was not pinned on the fetched page."
+            }
+          ],
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          }
+        },
+        {
+          "id": "my-wht-109b",
+          "name": "Withholding on special classes of income (s 4A / s 109B)",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "my-wht-109b-10",
+              "effective_from": "2026-11-13",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.10"
+              },
+              "legal_citations": [
+                {
+                  "title": "Withholding Tax",
+                  "instrument": "LHDN webpage (WHT rates table); ITA 1967 ss 109, 109A, 109B, 109F, Sch 1",
+                  "url": "https://www.hasil.gov.my/en/perundangan/cukai-pegangan/",
+                  "publisher": "LHDN"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Special classes of income under s 4A: technical or management services, use of movable property or rental, and similar. s 109B, Sch 1 Part V; form CP37D. Legal commencement was not pinned on the fetched page."
+            }
+          ],
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          }
+        },
+        {
+          "id": "my-wht-entertainer",
+          "name": "Withholding on non-resident public entertainers (s 109A)",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "my-wht-entertainer-15",
+              "effective_from": "2026-11-13",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.15"
+              },
+              "legal_citations": [
+                {
+                  "title": "Withholding Tax",
+                  "instrument": "LHDN webpage (WHT rates table); ITA 1967 ss 109, 109A, 109B, 109F, Sch 1",
+                  "url": "https://www.hasil.gov.my/en/perundangan/cukai-pegangan/",
+                  "publisher": "LHDN"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "s 109A, Sch 1 Part II; form CP154. Legal commencement was not pinned on the fetched page."
+            }
+          ],
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          }
+        },
+        {
+          "id": "my-wht-109f",
+          "name": "Withholding on income under s 4(f) (s 109F)",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "my-wht-109f-10",
+              "effective_from": "2026-11-13",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.10"
+              },
+              "legal_citations": [
+                {
+                  "title": "Withholding Tax",
+                  "instrument": "LHDN webpage (WHT rates table); ITA 1967 ss 109, 109A, 109B, 109F, Sch 1",
+                  "url": "https://www.hasil.gov.my/en/perundangan/cukai-pegangan/",
+                  "publisher": "LHDN"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "s 109F, Sch 1 Part XIII; form CP37F. Legal commencement was not pinned on the fetched page."
+            }
+          ],
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          }
+        }
+      ],
+      "notes": "Rates copied from the LHDN withholding-tax page, reviewed on 2026-11-13. DTA rates may be lower and are not encoded. Section 107A (contract payments to non-residents) was not in the verified source table and is omitted."
+    }
+  ],
+  "maintainer": {
+    "name": "Open-Tax contributors (seat open)",
+    "github": "glc-works/open-tax",
+    "url": "https://github.com/glc-works/open-tax"
+  }
+}

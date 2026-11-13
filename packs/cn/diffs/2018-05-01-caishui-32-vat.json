@@ -1,0 +1,100 @@
+{
+  "$schema": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2018-05-01-caishui-32-vat",
+  "jurisdiction": "CN",
+  "pack_id": "cn",
+  "title": "财税〔2018〕32号: VAT 17%/11% to 16%/10% on 1 May 2018",
+  "summary": "Circular Caishui [2018] No. 32 adjusts the VAT rates previously applicable at 17% and 11% to 16% and 10%, from 1 May 2018. The 6% band is not rewritten by this circular.",
+  "legal_basis": [
+    {
+      "title": "财政部 税务总局关于调整增值税税率的通知",
+      "instrument": "财税〔2018〕32号",
+      "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n3359382/n3359454/c3545207/content.html",
+      "pinpoint": "一、原适用17%和11%税率的分别调整为16%、10%；六、自2018年5月1日起执行",
+      "publisher": "国家税务总局"
+    }
+  ],
+  "changes": [
+    {
+      "id": "cn-vat-16",
+      "effective_from": "2018-05-01",
+      "change_type": "rate_change",
+      "summary": "The headline VAT band moves from 17% to 16%.",
+      "affected": {
+        "semantic_codes": [
+          "standard"
+        ],
+        "treatment_ids": [
+          "cn-vat-standard"
+        ],
+        "tax_ids": [
+          "vat"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Fapiao and filing for supplies that took 17% use 16% from 1 May 2018. Supplies through 30 April 2018 stay at 17%.",
+        "systems": [
+          "invoicing",
+          "filing",
+          "reporting"
+        ]
+      },
+      "computation": {
+        "statutory_rate": "0.16",
+        "effective_rate": "0.16"
+      },
+      "before": {
+        "statutory_rate": "0.17",
+        "effective_rate": "0.17"
+      },
+      "after": {
+        "statutory_rate": "0.16",
+        "effective_rate": "0.16"
+      }
+    },
+    {
+      "id": "cn-vat-10",
+      "effective_from": "2018-05-01",
+      "change_type": "rate_change",
+      "summary": "The lower statutory band that had been 11% moves to 10%.",
+      "affected": {
+        "semantic_codes": [
+          "reduced"
+        ],
+        "treatment_ids": [
+          "cn-vat-reduced-9"
+        ],
+        "tax_ids": [
+          "vat"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Supplies that took 11% use 10% from 1 May 2018.",
+        "systems": [
+          "invoicing",
+          "filing",
+          "reporting"
+        ]
+      },
+      "computation": {
+        "statutory_rate": "0.10",
+        "effective_rate": "0.10"
+      },
+      "before": {
+        "statutory_rate": "0.11",
+        "effective_rate": "0.11"
+      },
+      "after": {
+        "statutory_rate": "0.10",
+        "effective_rate": "0.10"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "reviewed_on": "2026-11-13"
+  }
+}

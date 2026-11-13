@@ -1,0 +1,303 @@
+{
+  "$schema": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/dictionary-entry.schema.json",
+  "schema_version": "1.0.0",
+  "dictionary_id": "cn-tax-classification-codes",
+  "jurisdiction": "CN",
+  "pack_id": "cn",
+  "kind": "commodity",
+  "name": "商品和服务税收分类编码 (sample)",
+  "authority": "国家税务总局",
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-13",
+    "notes": "Sample of 19-digit merged codes (合并编码) read directly from the 2017 STA Announcement [2017] No. 45 attachment (~4,205 rows in the source spreadsheet). STA has updated the table since; re-check against the current version before marking a code verified. Codes are a dictionary — never store rates on them."
+  },
+  "notes": "Do not collapse a later STA rate announcement into this list. The code can outlive the percentage. Local incentives and refund pilots stay out until a citation names them.",
+  "entries": [
+    {
+      "code": "1000000000000000000",
+      "name": "货物",
+      "description": "19-digit 合并编码 as printed in the 2017 STA attachment (short heading: 货物). A classification code identifies the supply; it is not a tax rate.",
+      "status": "sample",
+      "legal_citations": [
+        {
+          "title": "商品和服务税收分类编码表 (附件)",
+          "instrument": "国家税务总局关于增值税发票管理若干事项的公告（国家税务总局公告2017年第45号）附件 商品和服务税收分类编码表.xls",
+          "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n2511651/201712/c3300221/5118186/files/640910ad35e24745a63f4f73ead62dff.xls",
+          "publisher": "国家税务总局"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13",
+        "notes": "Read from the 2017 STA Announcement No. 45 attachment. STA has updated the table since; re-check against the current version before treating a code as current."
+      }
+    },
+    {
+      "code": "1010101000000000000",
+      "name": "谷物",
+      "description": "19-digit 合并编码 as printed in the 2017 STA attachment (short heading: 谷物). A classification code identifies the supply; it is not a tax rate.",
+      "status": "sample",
+      "legal_citations": [
+        {
+          "title": "商品和服务税收分类编码表 (附件)",
+          "instrument": "国家税务总局关于增值税发票管理若干事项的公告（国家税务总局公告2017年第45号）附件 商品和服务税收分类编码表.xls",
+          "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n2511651/201712/c3300221/5118186/files/640910ad35e24745a63f4f73ead62dff.xls",
+          "publisher": "国家税务总局"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13",
+        "notes": "Read from the 2017 STA Announcement No. 45 attachment. STA has updated the table since; re-check against the current version before treating a code as current."
+      }
+    },
+    {
+      "code": "3000000000000000000",
+      "name": "销售服务",
+      "description": "19-digit 合并编码 as printed in the 2017 STA attachment (short heading: 销售服务). A classification code identifies the supply; it is not a tax rate.",
+      "status": "sample",
+      "legal_citations": [
+        {
+          "title": "商品和服务税收分类编码表 (附件)",
+          "instrument": "国家税务总局关于增值税发票管理若干事项的公告（国家税务总局公告2017年第45号）附件 商品和服务税收分类编码表.xls",
+          "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n2511651/201712/c3300221/5118186/files/640910ad35e24745a63f4f73ead62dff.xls",
+          "publisher": "国家税务总局"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13",
+        "notes": "Read from the 2017 STA Announcement No. 45 attachment. STA has updated the table since; re-check against the current version before treating a code as current."
+      }
+    },
+    {
+      "code": "3010000000000000000",
+      "name": "交通运输服务",
+      "description": "19-digit 合并编码 as printed in the 2017 STA attachment (short heading: 运输服务). A classification code identifies the supply; it is not a tax rate.",
+      "status": "sample",
+      "legal_citations": [
+        {
+          "title": "商品和服务税收分类编码表 (附件)",
+          "instrument": "国家税务总局关于增值税发票管理若干事项的公告（国家税务总局公告2017年第45号）附件 商品和服务税收分类编码表.xls",
+          "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n2511651/201712/c3300221/5118186/files/640910ad35e24745a63f4f73ead62dff.xls",
+          "publisher": "国家税务总局"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13",
+        "notes": "Read from the 2017 STA Announcement No. 45 attachment. STA has updated the table since; re-check against the current version before treating a code as current."
+      }
+    },
+    {
+      "code": "3030100000000000000",
+      "name": "基础电信服务",
+      "description": "19-digit 合并编码 as printed in the 2017 STA attachment (short heading: 电信服务). A classification code identifies the supply; it is not a tax rate.",
+      "status": "sample",
+      "legal_citations": [
+        {
+          "title": "商品和服务税收分类编码表 (附件)",
+          "instrument": "国家税务总局关于增值税发票管理若干事项的公告（国家税务总局公告2017年第45号）附件 商品和服务税收分类编码表.xls",
+          "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n2511651/201712/c3300221/5118186/files/640910ad35e24745a63f4f73ead62dff.xls",
+          "publisher": "国家税务总局"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13",
+        "notes": "Read from the 2017 STA Announcement No. 45 attachment. STA has updated the table since; re-check against the current version before treating a code as current."
+      }
+    },
+    {
+      "code": "3040000000000000000",
+      "name": "现代服务",
+      "description": "19-digit 合并编码 as printed in the 2017 STA attachment (short heading: 现代服务). A classification code identifies the supply; it is not a tax rate.",
+      "status": "sample",
+      "legal_citations": [
+        {
+          "title": "商品和服务税收分类编码表 (附件)",
+          "instrument": "国家税务总局关于增值税发票管理若干事项的公告（国家税务总局公告2017年第45号）附件 商品和服务税收分类编码表.xls",
+          "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n2511651/201712/c3300221/5118186/files/640910ad35e24745a63f4f73ead62dff.xls",
+          "publisher": "国家税务总局"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13",
+        "notes": "Read from the 2017 STA Announcement No. 45 attachment. STA has updated the table since; re-check against the current version before treating a code as current."
+      }
+    },
+    {
+      "code": "3040200000000000000",
+      "name": "信息技术服务",
+      "description": "19-digit 合并编码 as printed in the 2017 STA attachment (short heading: 信息技术服务). A classification code identifies the supply; it is not a tax rate.",
+      "status": "sample",
+      "legal_citations": [
+        {
+          "title": "商品和服务税收分类编码表 (附件)",
+          "instrument": "国家税务总局关于增值税发票管理若干事项的公告（国家税务总局公告2017年第45号）附件 商品和服务税收分类编码表.xls",
+          "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n2511651/201712/c3300221/5118186/files/640910ad35e24745a63f4f73ead62dff.xls",
+          "publisher": "国家税务总局"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13",
+        "notes": "Read from the 2017 STA Announcement No. 45 attachment. STA has updated the table since; re-check against the current version before treating a code as current."
+      }
+    },
+    {
+      "code": "3040201000000000000",
+      "name": "软件服务",
+      "description": "19-digit 合并编码 as printed in the 2017 STA attachment (short heading: 信息技术服务). A classification code identifies the supply; it is not a tax rate.",
+      "status": "sample",
+      "legal_citations": [
+        {
+          "title": "商品和服务税收分类编码表 (附件)",
+          "instrument": "国家税务总局关于增值税发票管理若干事项的公告（国家税务总局公告2017年第45号）附件 商品和服务税收分类编码表.xls",
+          "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n2511651/201712/c3300221/5118186/files/640910ad35e24745a63f4f73ead62dff.xls",
+          "publisher": "国家税务总局"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13",
+        "notes": "Read from the 2017 STA Announcement No. 45 attachment. STA has updated the table since; re-check against the current version before treating a code as current."
+      }
+    },
+    {
+      "code": "3040203000000000000",
+      "name": "信息系统服务",
+      "description": "19-digit 合并编码 as printed in the 2017 STA attachment (short heading: 信息技术服务). A classification code identifies the supply; it is not a tax rate.",
+      "status": "sample",
+      "legal_citations": [
+        {
+          "title": "商品和服务税收分类编码表 (附件)",
+          "instrument": "国家税务总局关于增值税发票管理若干事项的公告（国家税务总局公告2017年第45号）附件 商品和服务税收分类编码表.xls",
+          "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n2511651/201712/c3300221/5118186/files/640910ad35e24745a63f4f73ead62dff.xls",
+          "publisher": "国家税务总局"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13",
+        "notes": "Read from the 2017 STA Announcement No. 45 attachment. STA has updated the table since; re-check against the current version before treating a code as current."
+      }
+    },
+    {
+      "code": "3040600000000000000",
+      "name": "鉴证咨询服务",
+      "description": "19-digit 合并编码 as printed in the 2017 STA attachment (short heading: 鉴证咨询服务). A classification code identifies the supply; it is not a tax rate.",
+      "status": "sample",
+      "legal_citations": [
+        {
+          "title": "商品和服务税收分类编码表 (附件)",
+          "instrument": "国家税务总局关于增值税发票管理若干事项的公告（国家税务总局公告2017年第45号）附件 商品和服务税收分类编码表.xls",
+          "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n2511651/201712/c3300221/5118186/files/640910ad35e24745a63f4f73ead62dff.xls",
+          "publisher": "国家税务总局"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13",
+        "notes": "Read from the 2017 STA Announcement No. 45 attachment. STA has updated the table since; re-check against the current version before treating a code as current."
+      }
+    },
+    {
+      "code": "3040603000000000000",
+      "name": "咨询服务",
+      "description": "19-digit 合并编码 as printed in the 2017 STA attachment (short heading: 鉴证咨询服务). A classification code identifies the supply; it is not a tax rate.",
+      "status": "sample",
+      "legal_citations": [
+        {
+          "title": "商品和服务税收分类编码表 (附件)",
+          "instrument": "国家税务总局关于增值税发票管理若干事项的公告（国家税务总局公告2017年第45号）附件 商品和服务税收分类编码表.xls",
+          "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n2511651/201712/c3300221/5118186/files/640910ad35e24745a63f4f73ead62dff.xls",
+          "publisher": "国家税务总局"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13",
+        "notes": "Read from the 2017 STA Announcement No. 45 attachment. STA has updated the table since; re-check against the current version before treating a code as current."
+      }
+    },
+    {
+      "code": "3050000000000000000",
+      "name": "建筑服务",
+      "description": "19-digit 合并编码 as printed in the 2017 STA attachment (short heading: 建筑服务). A classification code identifies the supply; it is not a tax rate.",
+      "status": "sample",
+      "legal_citations": [
+        {
+          "title": "商品和服务税收分类编码表 (附件)",
+          "instrument": "国家税务总局关于增值税发票管理若干事项的公告（国家税务总局公告2017年第45号）附件 商品和服务税收分类编码表.xls",
+          "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n2511651/201712/c3300221/5118186/files/640910ad35e24745a63f4f73ead62dff.xls",
+          "publisher": "国家税务总局"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13",
+        "notes": "Read from the 2017 STA Announcement No. 45 attachment. STA has updated the table since; re-check against the current version before treating a code as current."
+      }
+    },
+    {
+      "code": "3060000000000000000",
+      "name": "金融服务",
+      "description": "19-digit 合并编码 as printed in the 2017 STA attachment (short heading: 金融服务). A classification code identifies the supply; it is not a tax rate.",
+      "status": "sample",
+      "legal_citations": [
+        {
+          "title": "商品和服务税收分类编码表 (附件)",
+          "instrument": "国家税务总局关于增值税发票管理若干事项的公告（国家税务总局公告2017年第45号）附件 商品和服务税收分类编码表.xls",
+          "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n2511651/201712/c3300221/5118186/files/640910ad35e24745a63f4f73ead62dff.xls",
+          "publisher": "国家税务总局"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13",
+        "notes": "Read from the 2017 STA Announcement No. 45 attachment. STA has updated the table since; re-check against the current version before treating a code as current."
+      }
+    },
+    {
+      "code": "3060100000000000000",
+      "name": "贷款服务",
+      "description": "19-digit 合并编码 as printed in the 2017 STA attachment (short heading: 金融服务). A classification code identifies the supply; it is not a tax rate.",
+      "status": "sample",
+      "legal_citations": [
+        {
+          "title": "商品和服务税收分类编码表 (附件)",
+          "instrument": "国家税务总局关于增值税发票管理若干事项的公告（国家税务总局公告2017年第45号）附件 商品和服务税收分类编码表.xls",
+          "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n2511651/201712/c3300221/5118186/files/640910ad35e24745a63f4f73ead62dff.xls",
+          "publisher": "国家税务总局"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13",
+        "notes": "Read from the 2017 STA Announcement No. 45 attachment. STA has updated the table since; re-check against the current version before treating a code as current."
+      }
+    },
+    {
+      "code": "3070401000000000000",
+      "name": "餐饮服务",
+      "description": "19-digit 合并编码 as printed in the 2017 STA attachment (short heading: 餐饮服务). A classification code identifies the supply; it is not a tax rate.",
+      "status": "sample",
+      "legal_citations": [
+        {
+          "title": "商品和服务税收分类编码表 (附件)",
+          "instrument": "国家税务总局关于增值税发票管理若干事项的公告（国家税务总局公告2017年第45号）附件 商品和服务税收分类编码表.xls",
+          "url": "https://www.chinatax.gov.cn/chinatax/n810341/n810765/n2511651/201712/c3300221/5118186/files/640910ad35e24745a63f4f73ead62dff.xls",
+          "publisher": "国家税务总局"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13",
+        "notes": "Read from the 2017 STA Announcement No. 45 attachment. STA has updated the table since; re-check against the current version before treating a code as current."
+      }
+    }
+  ]
+}

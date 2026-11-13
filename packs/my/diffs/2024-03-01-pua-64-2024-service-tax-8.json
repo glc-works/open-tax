@@ -1,0 +1,102 @@
+{
+  "$schema": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2024-03-01-pua-64-2024-service-tax-8",
+  "jurisdiction": "MY",
+  "pack_id": "my",
+  "title": "P.U.(A) 64/2024: general service tax 6% to 8% on 1 March 2024",
+  "summary": "The Service Tax (Rate of Tax) (Amendment) Order 2024 raises the general service-tax rate from 6% to 8% from 1 March 2024. Food and beverage, telecommunication, parking, and logistics remain at 6% and are recorded as a reduced First Schedule treatment from the same date.",
+  "legal_basis": [
+    {
+      "title": "Perintah Cukai Perkhidmatan (Kadar Cukai) (Pindaan) 2024",
+      "instrument": "P.U. (A) 64/2024, amending Service Tax (Rate of Tax) Order 2018 [P.U. (A) 213/2018]",
+      "url": "https://mysst.customs.gov.my/wp-content/uploads/2025/03/PERINTAH-CUKAI-PERKHIDMATAN-KADAR-CUKAI-PINDAAN-2024.pdf",
+      "pinpoint": "para 1(2) in force 1 Mac 2024; F&B, telecommunication, parking, logistics stay at enam peratus; others lapan peratus",
+      "publisher": "Federal Government Gazette / AGC"
+    },
+    {
+      "title": "MySST | Background",
+      "instrument": "RMCD MySST webpage, Tax Rate section",
+      "url": "https://mysst.customs.gov.my/background/",
+      "publisher": "Royal Malaysian Customs Department"
+    }
+  ],
+  "changes": [
+    {
+      "id": "my-st-8",
+      "effective_from": "2024-03-01",
+      "change_type": "rate_change",
+      "summary": "General service tax moves from 6% to 8%.",
+      "affected": {
+        "semantic_codes": [
+          "standard"
+        ],
+        "treatment_ids": [
+          "my-service-tax-standard"
+        ],
+        "tax_ids": [
+          "service-tax"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Invoices for taxable services other than F&B, telecommunication, parking, and logistics use 8% from 1 March 2024. Services through 29 February 2024 stay at 6%.",
+        "systems": [
+          "invoicing",
+          "filing",
+          "reporting"
+        ]
+      },
+      "computation": {
+        "statutory_rate": "0.08",
+        "effective_rate": "0.08"
+      },
+      "before": {
+        "statutory_rate": "0.06",
+        "effective_rate": "0.06"
+      },
+      "after": {
+        "statutory_rate": "0.08",
+        "effective_rate": "0.08"
+      }
+    },
+    {
+      "id": "my-st-6-retained",
+      "effective_from": "2024-03-01",
+      "change_type": "treatment_added",
+      "summary": "Food and beverage, telecommunication, parking, and logistics remain at 6% and are encoded as a distinct reduced treatment from this date.",
+      "affected": {
+        "semantic_codes": [
+          "reduced"
+        ],
+        "treatment_ids": [
+          "my-service-tax-first-schedule-6"
+        ],
+        "tax_ids": [
+          "service-tax"
+        ]
+      },
+      "migration_impact": {
+        "severity": "medium",
+        "summary": "Billing systems must keep a 6% path for the four retained groups and must not automatically lift them to 8%.",
+        "systems": [
+          "invoicing",
+          "filing"
+        ]
+      },
+      "computation": {
+        "statutory_rate": "0.06",
+        "effective_rate": "0.06"
+      },
+      "after": {
+        "statutory_rate": "0.06",
+        "effective_rate": "0.06",
+        "description": "Retained 6% band for F&B, telecommunication, parking, and logistics."
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "reviewed_on": "2026-11-13"
+  }
+}
