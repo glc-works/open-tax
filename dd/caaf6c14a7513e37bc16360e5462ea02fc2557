@@ -1,0 +1,37 @@
+packs/id/README.md
+  s_5fda4c2dbca69b::t_3796c70330c4d1 30-31,158-179
+packs/id/diffs/2020-12-15-pp-61-2020-ppnbm.json
+  s_5fda4c2dbca69b::t_3796c70330c4d1 1-56
+benchmarks/global-comparison.md
+  s_5fda4c2dbca69b::t_3796c70330c4d1 17
+packages/open-tax/test/packs.test.ts
+  s_5fda4c2dbca69b::t_3796c70330c4d1 48,61
+packs/id/regime.json
+  s_5fda4c2dbca69b::t_3796c70330c4d1 22,71,438-604,613,621-624,627-629,662-665,687,718-720,756-758,794-796,831-833,876-878,890-893,910-913,958-960,998-1000,1031-2035,2038-2040,2044-2048,2051-2055,2057-2062,5384-5705
+  s_5fda4c2dbca69b::t_88b4c9eb60fccf 5706-5707
+packs/id/diffs/2025-08-01-pmk-53-2025-restatement.json
+  s_5fda4c2dbca69b::t_3796c70330c4d1 1-59
+packages/open-tax/test/id-indirect.test.ts
+  s_5fda4c2dbca69b::t_6f35e257d4aef6 53-56
+  s_5fda4c2dbca69b::t_46adefc06fa937 1-52,57-90
+packages/open-tax/test/cli.test.ts
+  s_5fda4c2dbca69b::t_a201d1bf91e852 178
+packs/id/diffs/2025-01-01-pmk-11-2025-special-bases.json
+  s_5fda4c2dbca69b::t_3796c70330c4d1 1-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ddcaaf6c14a7513e37bc16360e5462ea02fc2557",
+  "prompts": {},
+  "sessions": {
+    "s_5fda4c2dbca69b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1d597-01b7-7913-914e-820e8b2e7cac",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Cid <308343041+convergenceID@users.noreply.github.com>"
+    }
+  }
+}
