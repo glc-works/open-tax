@@ -27,6 +27,9 @@
     "./schemas/policy-diff.schema.json": "./schemas/policy-diff.schema.json",
     "./schemas/dictionary-entry.schema.json": "./schemas/dictionary-entry.schema.json"
   },
+  "bin": {
+    "open-tax": "./dist/cli.js"
+  },
   "files": [
     "dist",
     "schemas",
@@ -52,7 +55,7 @@
     "open-tax"
   ],
   "scripts": {
-    "build": "tsup && node scripts/copy-schemas.mjs",
+    "build": "node scripts/clean-dist.mjs && tsup && node scripts/copy-schemas.mjs && node scripts/prepare-cli.mjs",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test test/*.test.ts",
     "validate": "node --import tsx src/cli.ts",
