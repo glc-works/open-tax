@@ -2,7 +2,7 @@
   "name": "open-tax",
   "version": "0.1.1",
   "description": "Loader and validator for Open-Tax jurisdiction packs: effective-dated tax treatments, policy diffs, and filing dictionaries.",
-  "license": "Apache-2.0",
+  "license": "MPL-2.0",
   "private": false,
   "type": "module",
   "sideEffects": false,
@@ -33,6 +33,7 @@
   "files": [
     "dist",
     "schemas",
+    "LICENSE",
     "NOTICE",
     "README.md"
   ],
