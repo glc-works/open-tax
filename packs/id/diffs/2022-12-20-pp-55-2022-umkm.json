@@ -1,0 +1,64 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2022-12-20-pp-55-2022-umkm",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "PP 55/2022: qualifying small-business final income tax",
+  "summary": "Record the PP 55 0.5% final-turnover regime from its commencement. The rate already existed under earlier law, which this pack does not reconstruct.",
+  "legal_basis": [
+    {
+      "title": "PP Nomor 55 Tahun 2022",
+      "instrument": "PP 55/2022, Pasal 56-62 dan Pasal 74",
+      "url": "https://pajak.go.id/id/peraturan/penyesuaian-pengaturan-di-bidang-pajak-penghasilan",
+      "pinpoint": "Final 0,5%; peredaran bruto Rp4,8 miliar; pengecualian OP Rp500 juta; berlaku 20 Desember 2022",
+      "publisher": "Direktorat Jenderal Pajak"
+    }
+  ],
+  "changes": [
+    {
+      "id": "pp-55-2022-umkm",
+      "effective_from": "2022-12-20",
+      "change_type": "treatment_added",
+      "summary": "Record the PP 55 0.5% final-turnover regime from its commencement. The rate already existed under earlier law, which this pack does not reconstruct.",
+      "affected": {
+        "tax_ids": [
+          "pph4-2"
+        ],
+        "treatment_ids": [
+          "pph4-2-umkm"
+        ],
+        "semantic_codes": [
+          "final"
+        ],
+        "authority_codes": [
+          "411128"
+        ]
+      },
+      "computation": {
+        "effective_rate": "0.005",
+        "base_formula": "monthly business turnover under Pasal 60, after the cumulative annual Rp500.000.000 excluded portion for individuals only",
+        "notes": "Exclude individual professional services under Article 56(3)-(4), foreign income taxed abroad, income final-taxed under other rules, and non-tax objects. Article 60 bases tax on monthly business turnover before the specified discounts; the cumulative IDR 500 million annual excluded portion applies to individuals only. Under Article 61 a taxpayer crossing the turnover ceiling during a tax year continues this regime through that year, with ordinary taxation in following years as provided by law. Article 62 allows self-payment or withholding/collection by an appointed payer. A date or filing code does not establish eligibility. PP 20 Article II can affect tax years 2025 and 2026; the resolver only selects the version by instrument commencement, not retrospective entitlement or an as-known-at legal state."
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Retain a separate final turnover-tax treatment and the individuals-only cumulative allowance. Resolve eligibility from taxpayer type, registration history, elections, aggregated turnover, excluded income, and transition rules; do not multiply all revenue by a universal percentage.",
+        "systems": [
+          "filing",
+          "reporting"
+        ]
+      },
+      "after": {
+        "effective_rate": "0.005",
+        "description": "Original PP 55 scope: resident individuals and eligible cooperatives, CV, firms, limited companies, BUM Desa/BUM Desa bersama, with annual turnover not exceeding IDR 4.8 billion. Article 59 maximum periods are 7 tax years for individuals, 4 for specified entities including single-person companies, and 3 for other limited companies, subject to registration and Article 69 transition rules. Exclude opted-out taxpayers, qualifying professional CV/firms, specified relief recipients and permanent establishments under Article 57(2)."
+      },
+      "effective_to": "2026-04-21"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-14",
+    "notes": "Rate, statutory commencement and scope checked against DJP-hosted full statute texts. Eligibility is described, not automatically evaluated."
+  },
+  "notes": "Instrument commencement is encoded. PP 20 Article II includes relief affecting tax years 2025 and 2026; these retrospective eligibility decisions are not a date-only resolver computation."
+}

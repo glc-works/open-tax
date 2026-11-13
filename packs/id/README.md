@@ -21,7 +21,7 @@ Reviewed against the cited DJP and Ministry of Finance pages on 2026-11-13.
 | PPh 21 Pasal 17 | `withholding` | Layer schedule from the DJP UU HPP comparison, from tax year 2022. Last-period withholding for permanent employees and pensioners. |
 | PPh 22 | `withholding` | Category and KAP only. No percentage. |
 | PPh 23 | `withholding` | Headline 15% and 2% as stated by DJP. Exemptions, the no-TIN uplift, and the service list are not fully encoded. |
-| PPh 4 ayat (2) | `final` | Category and three filing-code names. No percentage. |
+| PPh 4 ayat (2) | `final` | General category plus a separately scoped UMKM 0.5% treatment and sample billing codes. |
 | PPh Badan and Pasal 31E | `standard` / `reduced` | HPP 22% on taxable income; conditional 50% rate reduction on the eligible Article 31E taxable-income portion. |
 | PPh 26 | `withholding` | Statutory 20% when no treaty applies. Treaty rates are not encoded. |
 
@@ -29,9 +29,8 @@ Reviewed against the cited DJP and Ministry of Finance pages on 2026-11-13.
 
 - PPnBM percentages
 - PPN DPP/besaran tertentu schedules under PMK 11/2025
-- UMKM final-tax eligibility and rates under PP 55/2022 as amended by PP 20/2026
 - PPh 22 percentages
-- PPh 4 ayat (2) percentages
+- PPh 4 ayat (2) percentages outside UMKM
 - Tax-treaty withholding tables
 - A KBLI-to-tax map (the dictionary is an empty, labeled structure)
 - BTKI or HS lines
@@ -81,3 +80,31 @@ and [DJP's Article 31E explanation](https://www.pajak.go.id/index.php/en/node/94
 Earlier corporate regimes, listed-company relief, global minimum tax and other
 special regimes are not reconstructed. The date-only resolver returns candidate
 treatments; the caller must determine eligibility and the taxable-income allocation.
+
+## UMKM final turnover tax
+
+`pph4-2-umkm` encodes the 0.5% final rate under
+[PP 55/2022](https://pajak.go.id/id/peraturan/penyesuaian-pengaturan-di-bidang-pajak-penghasilan)
+from 20 December 2022, followed by a linked scope version from 22 April 2026
+under [PP 20/2026](https://pajak.go.id/id/peraturan/perubahan-atas-peraturan-pemerintah-nomor-55-tahun-2022-tentang-penyesuaian-pengaturan-di).
+The original version ends inclusively on 21 April 2026. The rate is unchanged.
+The turnover eligibility limit is IDR 4.8 billion. The annual cumulative
+IDR 500 million excluded turnover portion applies to individuals only.
+Article 61 retains the final regime through the tax year of an in-year ceiling
+crossing; it does not impose an immediate switch on the crossing transaction.
+
+The new ordinary entry scope covers individuals, single-person companies and
+cooperatives, with additional exclusions, turnover aggregation and cooperative
+time limits. Existing CV/firms, other PT and BUM Desa may retain eligibility
+under Article II grandfathering. That article also provides specific relief
+for tax years 2025/2026 and cooperatives. The resolver models instrument
+commencement, not retrospective eligibility or an as-known-at legal state.
+The notes and citations must accompany the rate; a date and turnover amount
+alone cannot establish eligibility. PP 23/2018 history is not reconstructed.
+
+The KAP/KJS sample adds 411128-420 for self-payment and 411128-423 for
+withholding/collection, verified against the
+[Ministry of Finance billing explanation](https://mediakeuangan.kemenkeu.go.id/article/show/kewajiban-bendahara-memotong-pph-final-umkm).
+These codes identify payment types, not tax eligibility, commencement dates or
+current filing deadlines. The generic PPh 4(2) category still has no universal
+rate; other final-tax schedules remain absent.
