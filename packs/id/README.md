@@ -20,17 +20,17 @@ Reviewed against the cited DJP and Ministry of Finance pages on 2026-11-13.
 | PPh 21 TER harian | `withholding` | Non-monthly non-permanent employees. 0% up to Rp450,000; 0.5% above that up to Rp2,500,000. Nothing above that band. |
 | PPh 21 Pasal 17 | `withholding` | Layer schedule from the DJP UU HPP comparison, from tax year 2022. Last-period withholding for permanent employees and pensioners. |
 | PPh 22 | `withholding` / `final` | 28 PMK 51/2025 base-rate classes, including separate fuel/gas finality. |
-| PPh 23 | `withholding` | Headline 15% and 2% as stated by DJP. Exemptions, the no-TIN uplift, and the service list are not fully encoded. |
-| PPh 4 ayat (2) | `final` | General category plus a separately scoped UMKM 0.5% treatment and sample billing codes. |
+| PPh 23 | `withholding` | Ordinary 15%/2% plus separately scoped no-NPWP snapshots and exclusion notes; detailed service-list eligibility remains external. |
+| PPh 4 ayat (2) | `final` | Separately scoped UMKM, property, construction and resident-bond classes; no universal final-tax percentage. |
 | PPh Badan and Pasal 31E | `standard` / `reduced` | HPP 22% on taxable income; conditional 50% rate reduction on the eligible Article 31E taxable-income portion. |
-| PPh 26 | `withholding` | Statutory 20% when no treaty applies. Treaty rates are not encoded. |
+| PPh 26 | `withholding` | General statutory 20% plus separately scoped non-resident bond interest; treaty rates and other bases remain external. |
 
 ## What is not encoded
 
 - PPnBM percentages
 - PPN DPP/besaran tertentu schedules under PMK 11/2025
 - Earlier PPh 22 numerical history, full HS annex membership and special Article 22 regimes outside PMK 51/2025
-- PPh 4 ayat (2) percentages outside UMKM
+- Other final-tax families outside the explicitly encoded UMKM, rent, land-transfer, construction and resident-bond snapshots
 - Tax-treaty withholding tables
 - A KBLI-to-tax map (the dictionary is an empty, labeled structure)
 - BTKI or HS lines
@@ -107,7 +107,7 @@ withholding/collection, verified against the
 [Ministry of Finance billing explanation](https://mediakeuangan.kemenkeu.go.id/article/show/kewajiban-bendahara-memotong-pph-final-umkm).
 These codes identify payment types, not tax eligibility, commencement dates or
 current filing deadlines. The generic PPh 4(2) category still has no universal
-rate; other final-tax schedules remain absent.
+rate; each encoded final-tax family has a separate scoped treatment.
 
 ## PPh 22 collection classes
 
@@ -127,3 +127,31 @@ original annex; no unverified tariff lines are vendored. Fuel/gas collection
 is final only for distributors/agents; lubricants remain non-final. These
 are ordinary taxpayer-identification base rates; no-NPWP uplifts and special
 Article 22 regimes outside PMK 51/2025 remain unencoded.
+
+## Other final income tax and withholding scope
+
+The pack adds land/building rent under PP 34/2017 (2 January 2018), three
+land-transfer classes under PP 34/2016 (7 September 2016), seven construction
+classes under PP 9/2022 (21 February 2022), and resident/BUT bond interest
+under PP 91/2021 (30 August 2021). Each treatment and policy diff cites its
+statute. Collection can be withholding or self-payment. Rental includes the
+related gross charges but excludes accommodation. Land-transfer exceptions
+and simple-housing/public-interest qualifications must be checked first.
+Construction follows payment dates even for earlier contracts; the three-year
+evaluation clause is not an automatic expiry. Prior numeric histories, PPJB
+special computation, and other final-tax families remain absent.
+
+PPh 23 has separate no-NPWP 100%-higher snapshots and scope notes for bank,
+lease-option, dividend, profit-share, cooperative and specified financial
+service exclusions. These snapshots are verified in force on 14 November
+2026; that date does not assert the law first commenced then. The ordinary
+headline treatments assume the ordinary NPWP case; no exemption is inferred
+from missing rates. Full service-list/detailed documentary qualification is
+not encoded.
+
+PPh 26 separately records the PP 9/2021 non-resident bond-interest rate from
+2 August 2021, after the regulation's six-month delay, with its bond-specific
+base. It is distinct from PP 91/2021 resident/BUT final bond tax and the
+general Article 26(1) gross-income class. Treaty eligibility, Article 26(2)
+estimated-net-income coefficients and branch-profit computations remain
+unencoded; do not apply the gross-income percentage to those other bases.

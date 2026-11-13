@@ -345,6 +345,96 @@
       "treatment_id": "pph22-lubricants",
       "local_code": "pph22-lubricants",
       "rule": "Lubricant sales by producers/importers. Unlike fuel/gas to agents, lubricant collection is non-final for all these buyers under Article 10(3). Apply Article 4 exclusions and required exemption documents first. Amounts are base rates for the ordinary taxpayer-identification case; no-NPWP uplifts and special regimes outside PMK 51 are not encoded. The date-only resolver does not select a goods class, collector or exemption. Earlier numeric Article 22 histories are not reconstructed."
+    },
+    {
+      "semantic_code": "final",
+      "treatment_id": "pph4-2-rent",
+      "local_code": "pph4-2-rent",
+      "rule": "Land/building rental under PP 34/2017, including its specified build-operate-transfer income. Exclude accommodation/lodging services under Article 2(3). The payer withholds if appointed; otherwise the recipient self-remits under Article 3. Prior regimes and Article 5 pre-existing-contract transition amounts are not reconstructed."
+    },
+    {
+      "semantic_code": "final",
+      "treatment_id": "pph4-2-transfer-ordinary",
+      "local_code": "pph4-2-transfer-ordinary",
+      "rule": "Transfers other than the qualified developer simple-housing class and the public-interest acquisition class. Apply Article 6 exceptions first, including qualifying inheritance, gifts, approved book-value reorganisations and the conditional low-income/unsplit low-value transfer exception. PPJB and its changes require their separate Article 5 analysis; this treatment does not assert one PPJB rate. Earlier regimes are not reconstructed."
+    },
+    {
+      "semantic_code": "final",
+      "treatment_id": "pph4-2-transfer-simple-housing",
+      "local_code": "pph4-2-transfer-simple-housing",
+      "rule": "Only qualifying Rumah Sederhana/Rumah Susun Sederhana transferred by taxpayers whose main business is land/building transfers. Detailed housing criteria require the applicable implementing instrument; not all low-price housing qualifies. Apply Article 6 exceptions first, including qualifying inheritance, gifts, approved book-value reorganisations and the conditional low-income/unsplit low-value transfer exception. PPJB and its changes require their separate Article 5 analysis; this treatment does not assert one PPJB rate. Earlier regimes are not reconstructed."
+    },
+    {
+      "semantic_code": "final",
+      "treatment_id": "pph4-2-transfer-public-interest",
+      "local_code": "pph4-2-transfer-public-interest",
+      "rule": "Only transfers to government or specially tasked BUMN/BUMD under the public-interest land-acquisition law. This is an explicit statutory 0% final-income-tax rate, not a VAT export zero-rate or a universal government-sale exemption. Apply Article 6 exceptions first, including qualifying inheritance, gifts, approved book-value reorganisations and the conditional low-income/unsplit low-value transfer exception. PPJB and its changes require their separate Article 5 analysis; this treatment does not assert one PPJB rate. Earlier regimes are not reconstructed."
+    },
+    {
+      "semantic_code": "final",
+      "treatment_id": "pph4-2-construction-small",
+      "local_code": "pph4-2-construction-small",
+      "rule": "Construction work by providers with a small-business qualification certificate or the relevant individual work-competency certificate. Classify the actual construction service and certificate status first. PP 9/2022 Article II applies the new rules to payments from commencement even under earlier contracts; earlier payments are outside this snapshot. Its three-tax-year evaluation is not an automatic expiry. Paying final tax does not remove certification obligations. For a permanent establishment, branch-profits tax is separate. Withholding versus self-payment depends on the payer."
+    },
+    {
+      "semantic_code": "final",
+      "treatment_id": "pph4-2-construction-uncertified",
+      "local_code": "pph4-2-construction-uncertified",
+      "rule": "Construction work by providers without the required business/individual competency certificate. Classify the actual construction service and certificate status first. PP 9/2022 Article II applies the new rules to payments from commencement even under earlier contracts; earlier payments are outside this snapshot. Its three-tax-year evaluation is not an automatic expiry. Paying final tax does not remove certification obligations. For a permanent establishment, branch-profits tax is separate. Withholding versus self-payment depends on the payer."
+    },
+    {
+      "semantic_code": "final",
+      "treatment_id": "pph4-2-construction-other-certified",
+      "local_code": "pph4-2-construction-other-certified",
+      "rule": "Construction work by providers outside the small-qualified and uncertified classes; do not apply to uncertified providers. Classify the actual construction service and certificate status first. PP 9/2022 Article II applies the new rules to payments from commencement even under earlier contracts; earlier payments are outside this snapshot. Its three-tax-year evaluation is not an automatic expiry. Paying final tax does not remove certification obligations. For a permanent establishment, branch-profits tax is separate. Withholding versus self-payment depends on the payer."
+    },
+    {
+      "semantic_code": "final",
+      "treatment_id": "pph4-2-construction-integrated-certified",
+      "local_code": "pph4-2-construction-integrated-certified",
+      "rule": "Integrated construction work by providers with a business certificate. Classify the actual construction service and certificate status first. PP 9/2022 Article II applies the new rules to payments from commencement even under earlier contracts; earlier payments are outside this snapshot. Its three-tax-year evaluation is not an automatic expiry. Paying final tax does not remove certification obligations. For a permanent establishment, branch-profits tax is separate. Withholding versus self-payment depends on the payer."
+    },
+    {
+      "semantic_code": "final",
+      "treatment_id": "pph4-2-construction-integrated-uncertified",
+      "local_code": "pph4-2-construction-integrated-uncertified",
+      "rule": "Integrated construction work by providers without a business certificate. Classify the actual construction service and certificate status first. PP 9/2022 Article II applies the new rules to payments from commencement even under earlier contracts; earlier payments are outside this snapshot. Its three-tax-year evaluation is not an automatic expiry. Paying final tax does not remove certification obligations. For a permanent establishment, branch-profits tax is separate. Withholding versus self-payment depends on the payer."
+    },
+    {
+      "semantic_code": "final",
+      "treatment_id": "pph4-2-construction-consultancy-certified",
+      "local_code": "pph4-2-construction-consultancy-certified",
+      "rule": "Construction consultancy by providers with a business certificate or the relevant individual competency certificate. Classify the actual construction service and certificate status first. PP 9/2022 Article II applies the new rules to payments from commencement even under earlier contracts; earlier payments are outside this snapshot. Its three-tax-year evaluation is not an automatic expiry. Paying final tax does not remove certification obligations. For a permanent establishment, branch-profits tax is separate. Withholding versus self-payment depends on the payer."
+    },
+    {
+      "semantic_code": "final",
+      "treatment_id": "pph4-2-construction-consultancy-uncertified",
+      "local_code": "pph4-2-construction-consultancy-uncertified",
+      "rule": "Construction consultancy by providers without the required business/individual competency certificate. Classify the actual construction service and certificate status first. PP 9/2022 Article II applies the new rules to payments from commencement even under earlier contracts; earlier payments are outside this snapshot. Its three-tax-year evaluation is not an automatic expiry. Paying final tax does not remove certification obligations. For a permanent establishment, branch-profits tax is separate. Withholding versus self-payment depends on the payer."
+    },
+    {
+      "semantic_code": "final",
+      "treatment_id": "pph4-2-bond-resident",
+      "local_code": "pph4-2-bond-resident",
+      "rule": "PP 91/2021 bond interest for resident taxpayers and permanent establishments; bonds have maturity longer than 12 months and include sukuk. Exclude qualifying pension funds and domestic banks/Indonesian branches of foreign banks under Article 3. This is not the non-resident Article 26 regime. Collection can be withholding or the Article 4(2) self-payment case."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph23-no-npwp-15",
+      "local_code": "pph23-no-npwp-15",
+      "rule": "Only otherwise taxable 15% Article 23 income paid by an obligated payer to a resident taxpayer or permanent establishment without NPWP. Exclude bank payments, finance leases with purchase option, non-object/final individual dividends, non-object profit shares, cooperative member distributions and the specified financial-intermediary services. Government payers must also apply the listed final-tax, Article 15/21 and other specific exclusions. Land/building rent and qualifying final construction are not the ordinary 2% class. Service-list and documentary eligibility still require the implementing regulation. This is an in-force verification snapshot, not the legal commencement date."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph23-no-npwp-2",
+      "local_code": "pph23-no-npwp-2",
+      "rule": "Only otherwise taxable 2% Article 23 rent/service income paid by an obligated payer to a resident taxpayer or permanent establishment without NPWP. Exclude bank payments, finance leases with purchase option, non-object/final individual dividends, non-object profit shares, cooperative member distributions and the specified financial-intermediary services. Government payers must also apply the listed final-tax, Article 15/21 and other specific exclusions. Land/building rent and qualifying final construction are not the ordinary 2% class. Service-list and documentary eligibility still require the implementing regulation. This is an in-force verification snapshot, not the legal commencement date."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph26-bond",
+      "local_code": "pph26-bond",
+      "rule": "Only bond interest received by non-residents other than Indonesian permanent establishments, on bonds with maturity over 12 months including sukuk. Apply the specific coupon/discount basis and treaty eligibility; never treat the general 20% gross-income treatment as this special domestic bond rate. The six-month commencement delay is material. Earlier bond-rate history is not reconstructed."
     }
   ],
   "taxes": [
@@ -3050,7 +3140,7 @@
       "name": "Article 23 withholding",
       "local_name": "Pajak Penghasilan Pasal 23",
       "kind": "withholding",
-      "notes": "Headline rates only. The exemption list and the services list are not encoded.",
+      "notes": "Ordinary NPWP headline rates plus no-NPWP uplift snapshots. Exclusions are described in scope notes; a date-only query does not classify income or determine statutory eligibility.",
       "treatments": [
         {
           "id": "pph23-15",
@@ -3058,9 +3148,13 @@
           "local_name": "Dividen, bunga, royalti, dan hadiah",
           "local_code": "pph_23_15",
           "semantic_code": "withholding",
-          "authority_codes": ["411124"],
+          "authority_codes": [
+            "411124"
+          ],
           "chargeability": "withheld",
-          "collection": { "method": "withholding" },
+          "collection": {
+            "method": "withholding"
+          },
           "verification": {
             "status": "verified_starter",
             "reviewed_on": "2026-11-13",
@@ -3074,7 +3168,7 @@
               "rate": {
                 "kind": "ad_valorem",
                 "value": "0.15",
-                "notes": "15% of the gross amount. DJP's PPh 23/26 page states this headline for interest, royalties, and prizes, and its English rate table still lists dividends at 15% of the gross amount. Domestic dividend exemptions under UU HPP are not encoded. DJP also states that a missing tax ID makes the withholding 100% higher; that uplift is not encoded."
+                "notes": "15% of the gross amount. DJP's PPh 23/26 page states this headline for interest, royalties, and prizes, and its English rate table still lists dividends at 15% of the gross amount. Domestic dividend exemptions under UU HPP are not encoded. DJP also states that a missing tax ID makes the withholding 100% higher; the no-NPWP treatments encode a separately scoped in-force snapshot."
               },
               "legal_citations": [
                 {
@@ -3088,12 +3182,13 @@
                   "title": "Article 23 Income Tax",
                   "instrument": "DJP English rate table: dividends 15% of the gross amount",
                   "url": "https://www.pajak.go.id/id/node/80370",
-                  "pinpoint": "Dividends: 15% x gross amount. No TIN: withholding 100% higher, not encoded here.",
+                  "pinpoint": "Dividends: 15% x gross amount. No TIN: withholding 100% higher; see the separately scoped no-NPWP treatment.",
                   "publisher": "Direktorat Jenderal Pajak"
                 }
               ]
             }
-          ]
+          ],
+          "notes": "Ordinary NPWP case only. Exclude bank payments, finance leases with purchase option, non-object/final individual dividends, non-object profit shares, cooperative member distributions and the specified financial-intermediary services. Government payers must also apply the listed final-tax, Article 15/21 and other specific exclusions. Land/building rent and qualifying final construction are not the ordinary 2% class. Service-list and documentary eligibility still require the implementing regulation."
         },
         {
           "id": "pph23-2",
@@ -3101,9 +3196,13 @@
           "local_name": "Sewa dan imbalan jasa",
           "local_code": "pph_23_2",
           "semantic_code": "withholding",
-          "authority_codes": ["411124"],
+          "authority_codes": [
+            "411124"
+          ],
           "chargeability": "withheld",
-          "collection": { "method": "withholding" },
+          "collection": {
+            "method": "withholding"
+          },
           "verification": {
             "status": "verified_starter",
             "reviewed_on": "2026-11-13",
@@ -3129,7 +3228,88 @@
                 }
               ]
             }
-          ]
+          ],
+          "notes": "Ordinary NPWP case only. Exclude bank payments, finance leases with purchase option, non-object/final individual dividends, non-object profit shares, cooperative member distributions and the specified financial-intermediary services. Government payers must also apply the listed final-tax, Article 15/21 and other specific exclusions. Land/building rent and qualifying final construction are not the ordinary 2% class. Service-list and documentary eligibility still require the implementing regulation."
+        },
+        {
+          "id": "pph23-no-npwp-15",
+          "name": "Article 23 without NPWP: 15% base",
+          "local_code": "pph23-no-npwp-15",
+          "semantic_code": "withholding",
+          "notes": "Only otherwise taxable 15% Article 23 income paid by an obligated payer to a resident taxpayer or permanent establishment without NPWP. Exclude bank payments, finance leases with purchase option, non-object/final individual dividends, non-object profit shares, cooperative member distributions and the specified financial-intermediary services. Government payers must also apply the listed final-tax, Article 15/21 and other specific exclusions. Land/building rent and qualifying final construction are not the ordinary 2% class. Service-list and documentary eligibility still require the implementing regulation. This is an in-force verification snapshot, not the legal commencement date.",
+          "rates": [
+            {
+              "id": "pph23-no-npwp-15-20261114",
+              "effective_from": "2026-11-14",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.15",
+                "value": "0.30",
+                "base_formula": "2 * the ordinary Article 23 percentage * eligible gross amount",
+                "notes": "The equivalent doubles the cited ordinary rate; no withholding amount is computed."
+              },
+              "legal_citations": [
+                {
+                  "title": "UU PPh Pasal 23 ayat (1a), penjelasan DJP",
+                  "instrument": "UU PPh Pasal 23 ayat (1a), penjelasan DJP",
+                  "url": "https://www.pajak.go.id/id/pph-pasal-2326",
+                  "pinpoint": "Tarif lebih tinggi 100% tanpa NPWP; pengecualian pemotongan",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "pph23-no-npwp-2",
+          "name": "Article 23 without NPWP: 2% base",
+          "local_code": "pph23-no-npwp-2",
+          "semantic_code": "withholding",
+          "notes": "Only otherwise taxable 2% Article 23 rent/service income paid by an obligated payer to a resident taxpayer or permanent establishment without NPWP. Exclude bank payments, finance leases with purchase option, non-object/final individual dividends, non-object profit shares, cooperative member distributions and the specified financial-intermediary services. Government payers must also apply the listed final-tax, Article 15/21 and other specific exclusions. Land/building rent and qualifying final construction are not the ordinary 2% class. Service-list and documentary eligibility still require the implementing regulation. This is an in-force verification snapshot, not the legal commencement date.",
+          "rates": [
+            {
+              "id": "pph23-no-npwp-2-20261114",
+              "effective_from": "2026-11-14",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.02",
+                "value": "0.04",
+                "base_formula": "2 * the ordinary Article 23 percentage * eligible gross amount",
+                "notes": "The equivalent doubles the cited ordinary rate; no withholding amount is computed."
+              },
+              "legal_citations": [
+                {
+                  "title": "UU PPh Pasal 23 ayat (1a), penjelasan DJP",
+                  "instrument": "UU PPh Pasal 23 ayat (1a), penjelasan DJP",
+                  "url": "https://www.pajak.go.id/id/pph-pasal-2326",
+                  "pinpoint": "Tarif lebih tinggi 100% tanpa NPWP; pengecualian pemotongan",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
         }
       ]
     },
@@ -3138,7 +3318,7 @@
       "name": "Final income tax",
       "local_name": "Pajak Penghasilan Pasal 4 ayat (2)",
       "kind": "withholding",
-      "notes": "Final character is encoded. The percentages for deposits, land transfer, construction, and the other types are not, because each sits in its own regulation.",
+      "notes": "General final-tax category plus UMKM, land/building rent, three land-transfer classes, seven construction classes and resident bond interest. Other final-tax schedules and earlier histories remain unencoded. Taxpayer, income and collection method must be selected from the cited conditions.",
       "treatments": [
         {
           "id": "pph4-2",
@@ -3273,6 +3453,532 @@
               "notes": "PP 20 ordinary entry scope: resident individuals, single-person companies founded by one individual, and cooperatives; annual turnover limit remains IDR 4.8 billion. Apply Article 57 exclusions including related individual/single-person-company aggregate turnover, specialist-service single-person companies, elections, specified incentives and permanent establishments. Cooperatives have a four-tax-year limit. Article 58 aggregates the specified business/professional, foreign, spouse and related single-person-company turnover; do not test a single entity in isolation. Article 59 is deleted. Article II preserves grandfather eligibility for existing CV/firms, other limited companies and BUM Desa until their prior periods expire, and provides specific 2025/2026 and cooperative transition relief. Do not infer immediate exclusion of every existing entity from the new-entry list."
             }
           ]
+        },
+        {
+          "id": "pph4-2-rent",
+          "name": "Land/building rental income",
+          "local_code": "pph4-2-rent",
+          "semantic_code": "final",
+          "notes": "Land/building rental under PP 34/2017, including its specified build-operate-transfer income. Exclude accommodation/lodging services under Article 2(3). The payer withholds if appointed; otherwise the recipient self-remits under Article 3. Prior regimes and Article 5 pre-existing-contract transition amounts are not reconstructed.",
+          "rates": [
+            {
+              "id": "pph4-2-rent-20180102",
+              "effective_from": "2018-01-02",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.10",
+                "base_formula": "Gross land/building rental value including related maintenance, security, service and facility charges under Article 4"
+              },
+              "legal_citations": [
+                {
+                  "title": "PP 34/2017",
+                  "instrument": "PP 34/2017",
+                  "url": "https://www.pajak.go.id/id/peraturan/pajak-penghasilan-atas-penghasilan-dari-persewaan-tanah-danatau-bangunan",
+                  "pinpoint": "Pasal 2-5 dan Pasal 7: berlaku 2 Januari 2018",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "pph4-2-transfer-ordinary",
+          "name": "Land/building transfer: ordinary",
+          "local_code": "pph4-2-transfer-ordinary",
+          "semantic_code": "final",
+          "notes": "Transfers other than the qualified developer simple-housing class and the public-interest acquisition class. Apply Article 6 exceptions first, including qualifying inheritance, gifts, approved book-value reorganisations and the conditional low-income/unsplit low-value transfer exception. PPJB and its changes require their separate Article 5 analysis; this treatment does not assert one PPJB rate. Earlier regimes are not reconstructed.",
+          "rates": [
+            {
+              "id": "pph4-2-transfer-ordinary-20160907",
+              "effective_from": "2016-09-07",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.025",
+                "base_formula": "Gross transfer value under Article 2(2), with the authority/auction/related-party/ordinary-value rule selected from the facts"
+              },
+              "legal_citations": [
+                {
+                  "title": "PP 34/2016",
+                  "instrument": "PP 34/2016",
+                  "url": "https://www.pajak.go.id/id/peraturan/pajak-penghasilan-atas-penghasilan-dari-pengalihan-hak-atas-tanah-danatau-bangunan-dan",
+                  "pinpoint": "Pasal 2, Pasal 6 dan Pasal 12",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 261/PMK.03/2016",
+                  "instrument": "PMK 261/PMK.03/2016",
+                  "url": "https://jdih.kemenkeu.go.id/api/download/fulltext/2016/261~PMK.03~2016Per.pdf",
+                  "pinpoint": "Ketentuan peralihan: tarif PP 34 berlaku 7 September 2016",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "pph4-2-transfer-simple-housing",
+          "name": "Land/building transfer: simple-housing",
+          "local_code": "pph4-2-transfer-simple-housing",
+          "semantic_code": "final",
+          "notes": "Only qualifying Rumah Sederhana/Rumah Susun Sederhana transferred by taxpayers whose main business is land/building transfers. Detailed housing criteria require the applicable implementing instrument; not all low-price housing qualifies. Apply Article 6 exceptions first, including qualifying inheritance, gifts, approved book-value reorganisations and the conditional low-income/unsplit low-value transfer exception. PPJB and its changes require their separate Article 5 analysis; this treatment does not assert one PPJB rate. Earlier regimes are not reconstructed.",
+          "rates": [
+            {
+              "id": "pph4-2-transfer-simple-housing-20160907",
+              "effective_from": "2016-09-07",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.01",
+                "base_formula": "Gross transfer value under Article 2(2), with the authority/auction/related-party/ordinary-value rule selected from the facts"
+              },
+              "legal_citations": [
+                {
+                  "title": "PP 34/2016",
+                  "instrument": "PP 34/2016",
+                  "url": "https://www.pajak.go.id/id/peraturan/pajak-penghasilan-atas-penghasilan-dari-pengalihan-hak-atas-tanah-danatau-bangunan-dan",
+                  "pinpoint": "Pasal 2, Pasal 6 dan Pasal 12",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 261/PMK.03/2016",
+                  "instrument": "PMK 261/PMK.03/2016",
+                  "url": "https://jdih.kemenkeu.go.id/api/download/fulltext/2016/261~PMK.03~2016Per.pdf",
+                  "pinpoint": "Ketentuan peralihan: tarif PP 34 berlaku 7 September 2016",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "pph4-2-transfer-public-interest",
+          "name": "Land/building transfer: public-interest",
+          "local_code": "pph4-2-transfer-public-interest",
+          "semantic_code": "final",
+          "notes": "Only transfers to government or specially tasked BUMN/BUMD under the public-interest land-acquisition law. This is an explicit statutory 0% final-income-tax rate, not a VAT export zero-rate or a universal government-sale exemption. Apply Article 6 exceptions first, including qualifying inheritance, gifts, approved book-value reorganisations and the conditional low-income/unsplit low-value transfer exception. PPJB and its changes require their separate Article 5 analysis; this treatment does not assert one PPJB rate. Earlier regimes are not reconstructed.",
+          "rates": [
+            {
+              "id": "pph4-2-transfer-public-interest-20160907",
+              "effective_from": "2016-09-07",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0",
+                "base_formula": "Gross transfer value under Article 2(2), with the authority/auction/related-party/ordinary-value rule selected from the facts"
+              },
+              "legal_citations": [
+                {
+                  "title": "PP 34/2016",
+                  "instrument": "PP 34/2016",
+                  "url": "https://www.pajak.go.id/id/peraturan/pajak-penghasilan-atas-penghasilan-dari-pengalihan-hak-atas-tanah-danatau-bangunan-dan",
+                  "pinpoint": "Pasal 2, Pasal 6 dan Pasal 12",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 261/PMK.03/2016",
+                  "instrument": "PMK 261/PMK.03/2016",
+                  "url": "https://jdih.kemenkeu.go.id/api/download/fulltext/2016/261~PMK.03~2016Per.pdf",
+                  "pinpoint": "Ketentuan peralihan: tarif PP 34 berlaku 7 September 2016",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "pph4-2-construction-small",
+          "name": "Construction: small",
+          "local_code": "pph4-2-construction-small",
+          "semantic_code": "final",
+          "notes": "Construction work by providers with a small-business qualification certificate or the relevant individual work-competency certificate. Classify the actual construction service and certificate status first. PP 9/2022 Article II applies the new rules to payments from commencement even under earlier contracts; earlier payments are outside this snapshot. Its three-tax-year evaluation is not an automatic expiry. Paying final tax does not remove certification obligations. For a permanent establishment, branch-profits tax is separate. Withholding versus self-payment depends on the payer.",
+          "rates": [
+            {
+              "id": "pph4-2-construction-small-20220221",
+              "effective_from": "2022-02-21",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.0175",
+                "base_formula": "Payments or receipts excluding PPN under PP 51/2008 Article 5"
+              },
+              "legal_citations": [
+                {
+                  "title": "PP 9/2022",
+                  "instrument": "PP 9/2022",
+                  "url": "https://peraturan.bpk.go.id/Download/193622/PP%20Nomor%209%20Tahun%202022.pdf",
+                  "pinpoint": "Pasal I perubahan Pasal 2-3, Pasal 10D; Pasal II",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PP 51/2008 konsolidasi PP 9/2022",
+                  "instrument": "PP 51/2008 konsolidasi PP 9/2022",
+                  "url": "https://jdih.kemenkeu.go.id/api/download/0de381f7-2f69-4bd2-91d2-ad1f88560e4a/PP%2051%202008.pdf",
+                  "pinpoint": "Pasal 5: pembayaran/penerimaan tidak termasuk PPN",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "pph4-2-construction-uncertified",
+          "name": "Construction: uncertified",
+          "local_code": "pph4-2-construction-uncertified",
+          "semantic_code": "final",
+          "notes": "Construction work by providers without the required business/individual competency certificate. Classify the actual construction service and certificate status first. PP 9/2022 Article II applies the new rules to payments from commencement even under earlier contracts; earlier payments are outside this snapshot. Its three-tax-year evaluation is not an automatic expiry. Paying final tax does not remove certification obligations. For a permanent establishment, branch-profits tax is separate. Withholding versus self-payment depends on the payer.",
+          "rates": [
+            {
+              "id": "pph4-2-construction-uncertified-20220221",
+              "effective_from": "2022-02-21",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.04",
+                "base_formula": "Payments or receipts excluding PPN under PP 51/2008 Article 5"
+              },
+              "legal_citations": [
+                {
+                  "title": "PP 9/2022",
+                  "instrument": "PP 9/2022",
+                  "url": "https://peraturan.bpk.go.id/Download/193622/PP%20Nomor%209%20Tahun%202022.pdf",
+                  "pinpoint": "Pasal I perubahan Pasal 2-3, Pasal 10D; Pasal II",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PP 51/2008 konsolidasi PP 9/2022",
+                  "instrument": "PP 51/2008 konsolidasi PP 9/2022",
+                  "url": "https://jdih.kemenkeu.go.id/api/download/0de381f7-2f69-4bd2-91d2-ad1f88560e4a/PP%2051%202008.pdf",
+                  "pinpoint": "Pasal 5: pembayaran/penerimaan tidak termasuk PPN",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "pph4-2-construction-other-certified",
+          "name": "Construction: other-certified",
+          "local_code": "pph4-2-construction-other-certified",
+          "semantic_code": "final",
+          "notes": "Construction work by providers outside the small-qualified and uncertified classes; do not apply to uncertified providers. Classify the actual construction service and certificate status first. PP 9/2022 Article II applies the new rules to payments from commencement even under earlier contracts; earlier payments are outside this snapshot. Its three-tax-year evaluation is not an automatic expiry. Paying final tax does not remove certification obligations. For a permanent establishment, branch-profits tax is separate. Withholding versus self-payment depends on the payer.",
+          "rates": [
+            {
+              "id": "pph4-2-construction-other-certified-20220221",
+              "effective_from": "2022-02-21",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.0265",
+                "base_formula": "Payments or receipts excluding PPN under PP 51/2008 Article 5"
+              },
+              "legal_citations": [
+                {
+                  "title": "PP 9/2022",
+                  "instrument": "PP 9/2022",
+                  "url": "https://peraturan.bpk.go.id/Download/193622/PP%20Nomor%209%20Tahun%202022.pdf",
+                  "pinpoint": "Pasal I perubahan Pasal 2-3, Pasal 10D; Pasal II",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PP 51/2008 konsolidasi PP 9/2022",
+                  "instrument": "PP 51/2008 konsolidasi PP 9/2022",
+                  "url": "https://jdih.kemenkeu.go.id/api/download/0de381f7-2f69-4bd2-91d2-ad1f88560e4a/PP%2051%202008.pdf",
+                  "pinpoint": "Pasal 5: pembayaran/penerimaan tidak termasuk PPN",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "pph4-2-construction-integrated-certified",
+          "name": "Construction: integrated-certified",
+          "local_code": "pph4-2-construction-integrated-certified",
+          "semantic_code": "final",
+          "notes": "Integrated construction work by providers with a business certificate. Classify the actual construction service and certificate status first. PP 9/2022 Article II applies the new rules to payments from commencement even under earlier contracts; earlier payments are outside this snapshot. Its three-tax-year evaluation is not an automatic expiry. Paying final tax does not remove certification obligations. For a permanent establishment, branch-profits tax is separate. Withholding versus self-payment depends on the payer.",
+          "rates": [
+            {
+              "id": "pph4-2-construction-integrated-certified-20220221",
+              "effective_from": "2022-02-21",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.0265",
+                "base_formula": "Payments or receipts excluding PPN under PP 51/2008 Article 5"
+              },
+              "legal_citations": [
+                {
+                  "title": "PP 9/2022",
+                  "instrument": "PP 9/2022",
+                  "url": "https://peraturan.bpk.go.id/Download/193622/PP%20Nomor%209%20Tahun%202022.pdf",
+                  "pinpoint": "Pasal I perubahan Pasal 2-3, Pasal 10D; Pasal II",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PP 51/2008 konsolidasi PP 9/2022",
+                  "instrument": "PP 51/2008 konsolidasi PP 9/2022",
+                  "url": "https://jdih.kemenkeu.go.id/api/download/0de381f7-2f69-4bd2-91d2-ad1f88560e4a/PP%2051%202008.pdf",
+                  "pinpoint": "Pasal 5: pembayaran/penerimaan tidak termasuk PPN",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "pph4-2-construction-integrated-uncertified",
+          "name": "Construction: integrated-uncertified",
+          "local_code": "pph4-2-construction-integrated-uncertified",
+          "semantic_code": "final",
+          "notes": "Integrated construction work by providers without a business certificate. Classify the actual construction service and certificate status first. PP 9/2022 Article II applies the new rules to payments from commencement even under earlier contracts; earlier payments are outside this snapshot. Its three-tax-year evaluation is not an automatic expiry. Paying final tax does not remove certification obligations. For a permanent establishment, branch-profits tax is separate. Withholding versus self-payment depends on the payer.",
+          "rates": [
+            {
+              "id": "pph4-2-construction-integrated-uncertified-20220221",
+              "effective_from": "2022-02-21",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.04",
+                "base_formula": "Payments or receipts excluding PPN under PP 51/2008 Article 5"
+              },
+              "legal_citations": [
+                {
+                  "title": "PP 9/2022",
+                  "instrument": "PP 9/2022",
+                  "url": "https://peraturan.bpk.go.id/Download/193622/PP%20Nomor%209%20Tahun%202022.pdf",
+                  "pinpoint": "Pasal I perubahan Pasal 2-3, Pasal 10D; Pasal II",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PP 51/2008 konsolidasi PP 9/2022",
+                  "instrument": "PP 51/2008 konsolidasi PP 9/2022",
+                  "url": "https://jdih.kemenkeu.go.id/api/download/0de381f7-2f69-4bd2-91d2-ad1f88560e4a/PP%2051%202008.pdf",
+                  "pinpoint": "Pasal 5: pembayaran/penerimaan tidak termasuk PPN",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "pph4-2-construction-consultancy-certified",
+          "name": "Construction: consultancy-certified",
+          "local_code": "pph4-2-construction-consultancy-certified",
+          "semantic_code": "final",
+          "notes": "Construction consultancy by providers with a business certificate or the relevant individual competency certificate. Classify the actual construction service and certificate status first. PP 9/2022 Article II applies the new rules to payments from commencement even under earlier contracts; earlier payments are outside this snapshot. Its three-tax-year evaluation is not an automatic expiry. Paying final tax does not remove certification obligations. For a permanent establishment, branch-profits tax is separate. Withholding versus self-payment depends on the payer.",
+          "rates": [
+            {
+              "id": "pph4-2-construction-consultancy-certified-20220221",
+              "effective_from": "2022-02-21",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.035",
+                "base_formula": "Payments or receipts excluding PPN under PP 51/2008 Article 5"
+              },
+              "legal_citations": [
+                {
+                  "title": "PP 9/2022",
+                  "instrument": "PP 9/2022",
+                  "url": "https://peraturan.bpk.go.id/Download/193622/PP%20Nomor%209%20Tahun%202022.pdf",
+                  "pinpoint": "Pasal I perubahan Pasal 2-3, Pasal 10D; Pasal II",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PP 51/2008 konsolidasi PP 9/2022",
+                  "instrument": "PP 51/2008 konsolidasi PP 9/2022",
+                  "url": "https://jdih.kemenkeu.go.id/api/download/0de381f7-2f69-4bd2-91d2-ad1f88560e4a/PP%2051%202008.pdf",
+                  "pinpoint": "Pasal 5: pembayaran/penerimaan tidak termasuk PPN",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "pph4-2-construction-consultancy-uncertified",
+          "name": "Construction: consultancy-uncertified",
+          "local_code": "pph4-2-construction-consultancy-uncertified",
+          "semantic_code": "final",
+          "notes": "Construction consultancy by providers without the required business/individual competency certificate. Classify the actual construction service and certificate status first. PP 9/2022 Article II applies the new rules to payments from commencement even under earlier contracts; earlier payments are outside this snapshot. Its three-tax-year evaluation is not an automatic expiry. Paying final tax does not remove certification obligations. For a permanent establishment, branch-profits tax is separate. Withholding versus self-payment depends on the payer.",
+          "rates": [
+            {
+              "id": "pph4-2-construction-consultancy-uncertified-20220221",
+              "effective_from": "2022-02-21",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.06",
+                "base_formula": "Payments or receipts excluding PPN under PP 51/2008 Article 5"
+              },
+              "legal_citations": [
+                {
+                  "title": "PP 9/2022",
+                  "instrument": "PP 9/2022",
+                  "url": "https://peraturan.bpk.go.id/Download/193622/PP%20Nomor%209%20Tahun%202022.pdf",
+                  "pinpoint": "Pasal I perubahan Pasal 2-3, Pasal 10D; Pasal II",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PP 51/2008 konsolidasi PP 9/2022",
+                  "instrument": "PP 51/2008 konsolidasi PP 9/2022",
+                  "url": "https://jdih.kemenkeu.go.id/api/download/0de381f7-2f69-4bd2-91d2-ad1f88560e4a/PP%2051%202008.pdf",
+                  "pinpoint": "Pasal 5: pembayaran/penerimaan tidak termasuk PPN",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "pph4-2-bond-resident",
+          "name": "Bond interest: resident taxpayers and permanent establishments",
+          "local_code": "pph4-2-bond-resident",
+          "semantic_code": "final",
+          "notes": "PP 91/2021 bond interest for resident taxpayers and permanent establishments; bonds have maturity longer than 12 months and include sukuk. Exclude qualifying pension funds and domestic banks/Indonesian branches of foreign banks under Article 3. This is not the non-resident Article 26 regime. Collection can be withholding or the Article 4(2) self-payment case.",
+          "rates": [
+            {
+              "id": "pph4-2-bond-resident-20210830",
+              "effective_from": "2021-08-30",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "value": "0.10",
+                "base_formula": "Coupon interest pro rata to holding period, or the relevant discount under Article 2(3), with negative coupon-bond discount offset only as Article 2(4) permits"
+              },
+              "legal_citations": [
+                {
+                  "title": "PP 91/2021",
+                  "instrument": "PP 91/2021",
+                  "url": "https://www.pajak.go.id/id/peraturan/pajak-penghasilan-atas-penghasilan-berupa-bunga-obligasi-yang-diterima-atau-diperoleh",
+                  "pinpoint": "Pasal 1-4 dan Pasal 6: 30 Agustus 2021",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
         }
       ]
     },
@@ -3281,7 +3987,7 @@
       "name": "Non-resident withholding",
       "local_name": "Pajak Penghasilan Pasal 26",
       "kind": "withholding",
-      "notes": "Domestic statutory rate. A tax treaty can reduce it. Treaty tables are not in this pack.",
+      "notes": "General Article 26(1) gross-income class plus the non-resident bond-interest exception. Treaty rates, deemed-net-income coefficients for asset/insurance classes and branch-profit computations are not encoded.",
       "treatments": [
         {
           "id": "pph26",
@@ -3289,9 +3995,13 @@
           "local_name": "PPh Pasal 26",
           "local_code": "pph_26",
           "semantic_code": "withholding",
-          "authority_codes": ["411127"],
+          "authority_codes": [
+            "411127"
+          ],
           "chargeability": "withheld",
-          "collection": { "method": "withholding" },
+          "collection": {
+            "method": "withholding"
+          },
           "verification": {
             "status": "verified_starter",
             "reviewed_on": "2026-11-13",
@@ -3305,7 +4015,7 @@
               "rate": {
                 "kind": "ad_valorem",
                 "value": "0.20",
-                "notes": "20% of the gross amount where no treaty rate applies. DJP's Pasal 26 table states 20% x penghasilan bruto, or the treaty rate. Bond interest paid to a non-resident can be a different statutory rate and is not encoded. Apply a treaty rate only from the treaty."
+                "notes": "20% of the gross amount where no treaty rate applies. DJP's Pasal 26 table states 20% x penghasilan bruto, or the treaty rate. Non-resident bond interest is separately scoped in pph26-bond; do not apply this general rate to that class. Asset sales/insurance under Article 26(2) use estimated net income, not this gross base, and are not encoded. Apply a treaty rate only from the treaty."
               },
               "legal_citations": [
                 {
@@ -3318,6 +4028,51 @@
               ]
             }
           ]
+        },
+        {
+          "id": "pph26-bond",
+          "name": "Non-resident bond interest",
+          "local_code": "pph26-bond",
+          "semantic_code": "withholding",
+          "notes": "Only bond interest received by non-residents other than Indonesian permanent establishments, on bonds with maturity over 12 months including sukuk. Apply the specific coupon/discount basis and treaty eligibility; never treat the general 20% gross-income treatment as this special domestic bond rate. The six-month commencement delay is material. Earlier bond-rate history is not reconstructed.",
+          "rates": [
+            {
+              "id": "pph26-bond-20210802",
+              "effective_from": "2021-08-02",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "value": "0.10",
+                "base_formula": "Bond coupon interest or the relevant discount under PP 9/2021 Article 3(5)-(6)"
+              },
+              "legal_citations": [
+                {
+                  "title": "PP 9/2021",
+                  "instrument": "PP 9/2021",
+                  "url": "https://www.pajak.go.id/id/peraturan/perlakuan-perpajakan-untuk-mendukung-kemudahan-berusaha",
+                  "pinpoint": "Pasal 3 ayat (3)-(8), Pasal 11: tarif berlaku setelah enam bulan",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "Kementerian Keuangan Warta Fiskal 2021 edisi 2",
+                  "instrument": "Kementerian Keuangan Warta Fiskal 2021 edisi 2",
+                  "url": "https://fiskal.kemenkeu.go.id/files/warta-fiskal/file/1630899596_edisi-2-2021.pdf",
+                  "pinpoint": "PPh bunga obligasi WPLN: efektif 2 Agustus 2021",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
         }
       ]
     },

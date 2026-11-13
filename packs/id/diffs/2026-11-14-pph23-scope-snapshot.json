@@ -1,0 +1,51 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2026-11-14-pph23-scope-snapshot",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "Article 23: verified no-NPWP and exclusion snapshot",
+  "summary": "Clarify the documented 100% higher no-NPWP rates and excluded payments. The date is an in-force verification bound, not a new law or the legal commencement.",
+  "legal_basis": [
+    {
+      "title": "UU PPh Pasal 23 ayat (1a), penjelasan DJP",
+      "instrument": "UU PPh Pasal 23 ayat (1a), penjelasan DJP",
+      "url": "https://www.pajak.go.id/id/pph-pasal-2326",
+      "pinpoint": "Tarif lebih tinggi 100% tanpa NPWP; pengecualian pemotongan",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-14",
+    "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+  },
+  "changes": [
+    {
+      "id": "2026-11-14-pph23-scope-snapshot-coverage",
+      "effective_from": "2026-11-14",
+      "change_type": "clarification",
+      "summary": "Clarify the documented 100% higher no-NPWP rates and excluded payments. The date is an in-force verification bound, not a new law or the legal commencement.",
+      "affected": {
+        "tax_ids": [
+          "pph23"
+        ],
+        "treatment_ids": [
+          "pph23-no-npwp-15",
+          "pph23-no-npwp-2"
+        ],
+        "semantic_codes": [
+          "withholding"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Select the treatment by taxpayer, transaction and statutory scope; apply exclusions before choosing a rate. The resolver returns authored references and does not compute tax.",
+        "systems": [
+          "filing",
+          "reporting"
+        ]
+      }
+    }
+  ]
+}
