@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/policy-diff.schema.json",
+  "title": "Regulatory policy diff",
+  "description": "One legal instrument, or one dated transition, expressed as a structured change log. base_formula is a note for humans and agents. The reference library does not evaluate it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "jurisdiction",
+    "title",
+    "legal_basis",
+    "changes"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema_version": { "const": "1.0.0" },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{2,120}$"
+    },
+    "jurisdiction": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "pack_id": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(-[a-z0-9]{1,12})?$"
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string" },
+    "legal_basis": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/citation" }
+    },
+    "changes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/change" }
+    },
+    "verification": { "$ref": "#/$defs/verification" },
+    "notes": { "type": "string" }
+  },
+  "$defs": {
+    "semanticCode": {
+      "type": "string",
+      "enum": [
+        "standard",
+        "reduced",
+        "super_reduced",
+        "zero",
+        "exempt",
+        "out_of_scope",
+        "reverse_charge",
+        "withholding",
+        "luxury",
+        "not_collected",
+        "final"
+      ]
+    },
+    "decimal": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+    },
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "instrument"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "instrument": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri" },
+        "pinpoint": { "type": "string" },
+        "publisher": { "type": "string" }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["verified_starter", "verified", "structure_only", "unverified"]
+        },
+        "reviewed_on": { "type": "string", "format": "date" },
+        "notes": { "type": "string" }
+      }
+    },
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "statutory_rate": { "$ref": "#/$defs/decimal" },
+        "effective_rate": { "$ref": "#/$defs/decimal" },
+        "base_formula": { "type": "string" },
+        "description": { "type": "string" }
+      }
+    },
+    "change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "effective_from",
+        "change_type",
+        "summary",
+        "affected",
+        "migration_impact"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]{1,80}$"
+        },
+        "effective_from": { "type": "string", "format": "date" },
+        "effective_to": { "type": "string", "format": "date" },
+        "change_type": {
+          "type": "string",
+          "enum": [
+            "rate_change",
+            "base_change",
+            "treatment_added",
+            "treatment_removed",
+            "scope_change",
+            "collection_change",
+            "schedule_change",
+            "clarification"
+          ]
+        },
+        "summary": { "type": "string", "minLength": 1 },
+        "affected": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "semantic_codes": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "$ref": "#/$defs/semanticCode" }
+            },
+            "authority_codes": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "treatment_ids": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "tax_ids": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        "computation": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "base_formula": { "type": "string" },
+            "statutory_rate": { "$ref": "#/$defs/decimal" },
+            "effective_rate": { "$ref": "#/$defs/decimal" },
+            "notes": { "type": "string" }
+          }
+        },
+        "migration_impact": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["severity", "summary"],
+          "properties": {
+            "severity": {
+              "type": "string",
+              "enum": ["low", "medium", "high"]
+            },
+            "summary": { "type": "string", "minLength": 1 },
+            "systems": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "invoicing",
+                  "payroll",
+                  "filing",
+                  "reporting",
+                  "ecommerce",
+                  "customs",
+                  "other"
+                ]
+              }
+            }
+          }
+        },
+        "before": { "$ref": "#/$defs/snapshot" },
+        "after": { "$ref": "#/$defs/snapshot" }
+      }
+    }
+  }
+}

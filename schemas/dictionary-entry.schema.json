@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/dictionary-entry.schema.json",
+  "title": "Authority, commodity, or sector dictionary",
+  "description": "Neutral list of authority filing codes or commodity and sector codes, each optionally mapped to an Open-Tax treatment. A code in this file is not itself a tax rate.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "dictionary_id",
+    "jurisdiction",
+    "kind",
+    "name",
+    "entries"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema_version": { "const": "1.0.0" },
+    "dictionary_id": {
+      "type": "string",
+      "minLength": 3,
+      "pattern": "^[a-z0-9][a-z0-9-]{1,80}$"
+    },
+    "jurisdiction": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "pack_id": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(-[a-z0-9]{1,12})?$"
+    },
+    "kind": {
+      "type": "string",
+      "enum": ["authority_filing", "commodity", "sector", "correlation", "other"]
+    },
+    "name": { "type": "string", "minLength": 1 },
+    "authority": { "type": "string" },
+    "verification": { "$ref": "#/$defs/verification" },
+    "notes": { "type": "string" },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entry" }
+    }
+  },
+  "$defs": {
+    "semanticCode": {
+      "type": "string",
+      "enum": [
+        "standard",
+        "reduced",
+        "super_reduced",
+        "zero",
+        "exempt",
+        "out_of_scope",
+        "reverse_charge",
+        "withholding",
+        "luxury",
+        "not_collected",
+        "final"
+      ]
+    },
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "instrument"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "instrument": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri" },
+        "pinpoint": { "type": "string" },
+        "publisher": { "type": "string" }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["verified_starter", "verified", "structure_only", "unverified"]
+        },
+        "reviewed_on": { "type": "string", "format": "date" },
+        "notes": { "type": "string" }
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "name"],
+      "properties": {
+        "code": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["active", "deprecated", "sample"]
+        },
+        "maps_to": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "tax_id": { "type": "string" },
+            "treatment_id": { "type": "string" },
+            "semantic_code": { "$ref": "#/$defs/semanticCode" },
+            "notes": { "type": "string" }
+          }
+        },
+        "correlates_to": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["system"],
+            "properties": {
+              "system": { "type": "string", "minLength": 1 },
+              "code": { "type": "string" },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "legal_citations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/citation" }
+        },
+        "verification": { "$ref": "#/$defs/verification" },
+        "effective_from": { "type": "string", "format": "date" },
+        "effective_to": { "type": "string", "format": "date" }
+      }
+    }
+  }
+}

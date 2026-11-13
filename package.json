@@ -1,0 +1,19 @@
+{
+  "name": "open-tax-workspace",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "packages/open-tax"
+  ],
+  "scripts": {
+    "build": "npm run build -w open-tax",
+    "typecheck": "npm run typecheck -w open-tax",
+    "validate": "npm run validate -w open-tax",
+    "test": "npm run test -w open-tax && npm run build -w open-tax && node packages/open-tax/test/packaging.mjs",
+    "check": "npm run typecheck && npm test && npm run validate"
+  }
+}

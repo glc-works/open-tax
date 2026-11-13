@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../schemas/dictionary-entry.schema.json",
+  "schema_version": "1.0.0",
+  "dictionary_id": "id-kbli-tax-hints",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "kind": "sector",
+  "name": "KBLI tax hints",
+  "authority": "Badan Pusat Statistik publishes KBLI. DJP does not publish one KBLI-to-rate table.",
+  "verification": {
+    "status": "structure_only",
+    "reviewed_on": "2026-11-13",
+    "notes": "No KBLI code is asserted in this starter. An empty list is intentional."
+  },
+  "notes": "KBLI classifies business activity. It is not a PPN rate and not a KAP. Add an entry only when a regulation attaches a tax treatment to that activity, and put the regulation in legal_citations. Set verification to verified_starter only after that citation exists. Do not copy a code from memory. A future entry looks like { code, name, maps_to.treatment_id, maps_to.semantic_code, legal_citations } and must use a real BPS code.",
+  "entries": []
+}

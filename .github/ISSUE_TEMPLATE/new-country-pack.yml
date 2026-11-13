@@ -1,0 +1,87 @@
+name: New country pack
+description: Apply to maintain a jurisdiction pack and track the onboarding checklist.
+title: "[country-pack]: "
+labels:
+  - country-pack
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Read [CONTRIBUTING.md](https://github.com/glc-works/open-tax/blob/main/CONTRIBUTING.md#become-a-country-pack-maintainer) and [the mapping guide](https://github.com/glc-works/open-tax/blob/main/benchmarks/global-comparison.md) before opening this issue.
+
+        A pack is adopted when a maintainer is named in `MAINTAINERS.md` and added to `.github/CODEOWNERS` for `packs/<iso>/`.
+  - type: input
+    id: jurisdiction
+    attributes:
+      label: Jurisdiction
+      description: ISO 3166-1 alpha-2, lowercase, as the folder name `packs/<iso>/`.
+      placeholder: sg
+    validations:
+      required: true
+  - type: input
+    id: country_name
+    attributes:
+      label: Country or territory name
+      placeholder: Singapore
+    validations:
+      required: true
+  - type: input
+    id: maintainer
+    attributes:
+      label: Maintainer GitHub handle
+      description: The person who will review later changes to this pack.
+      placeholder: "@octocat"
+    validations:
+      required: true
+  - type: input
+    id: authority
+    attributes:
+      label: Tax authority
+      description: The administration whose publications you will cite.
+      placeholder: Inland Revenue Authority of Singapore
+    validations:
+      required: true
+  - type: textarea
+    id: taxes
+    attributes:
+      label: Taxes in the first version
+      description: List the taxes you will encode first. A first version may be one tax, done with citations, rather than a thin sketch of every tax.
+      placeholder: |
+        - GST (standard, zero, exempt, out of scope)
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Onboarding checklist
+      description: Tick what you already have. Leave the rest for the pull request.
+      options:
+        - label: I copied `packs/_template/` to `packs/<iso>/` and replaced the placeholder regime.
+          required: true
+        - label: Every numeric rate or threshold I will mark `verified` or `verified_starter` has a legal citation and an effective date.
+          required: true
+        - label: Semantic codes use the universal keys (`standard`, `reduced`, `zero`, `exempt`, `out_of_scope`, `reverse_charge`, `withholding`, `luxury`, and the others in the schema). Local names stay in `local_name` / `local_code`.
+          required: true
+        - label: I can explain, in `semantic_mappings`, which local rule lands on which semantic key.
+          required: true
+        - label: I will add at least one policy diff if the first version includes a historical change. An initial snapshot with no transition does not need a fake diff.
+          required: true
+        - label: "`npm test`, `npm run typecheck`, and `npm run validate` pass locally."
+          required: true
+        - label: I understand pack data is a software reference and not a filing opinion.
+          required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Primary sources you will use
+      description: Statutes, consolidated acts, or tax-authority manuals. Prefer stable official URLs.
+    validations:
+      required: true
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: What the first version will not encode
+      description: Say this explicitly so reviewers do not treat silence as a zero rate.
+      placeholder: Provincial taxes, excise schedules, and treaty withholding rates.
+    validations:
+      required: true

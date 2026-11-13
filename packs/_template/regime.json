@@ -1,0 +1,89 @@
+{
+  "$schema": "../../schemas/regime.schema.json",
+  "schema_version": "1.0.0",
+  "pack_id": "xx",
+  "jurisdiction": {
+    "code": "XX",
+    "name": "Template (replace with the country name)"
+  },
+  "currency": "XXX",
+  "authority": {
+    "id": "xx-authority",
+    "name": "Replace with the tax authority"
+  },
+  "maintainer": {
+    "name": "Replace with the maintainer name",
+    "github": "replace-with-github-handle"
+  },
+  "notes": "Starter shape only. XX is not a jurisdiction and XXX is not a currency to file against. Replace every placeholder and do not mark a rate verified until it has a real citation. Delete this note when the pack is real.",
+  "semantic_mappings": [
+    {
+      "semantic_code": "standard",
+      "treatment_id": "example-standard",
+      "local_code": "REPLACE",
+      "local_name": "Replace with the local name of the generally applicable rate",
+      "rule": "Use for supplies that take the generally applicable positive rate, and for no other local facility."
+    }
+  ],
+  "taxes": [
+    {
+      "id": "example-vat",
+      "name": "Example value-added tax",
+      "local_name": "Replace with the local tax name",
+      "kind": "vat",
+      "notes": "Duplicate this tax object for each tax. Keep history; do not delete an old rate when the law changes.",
+      "treatments": [
+        {
+          "id": "example-standard",
+          "name": "Standard treatment",
+          "local_name": "Replace with the local treatment name",
+          "local_code": "REPLACE",
+          "semantic_code": "standard",
+          "chargeability": "charged",
+          "input_credit": "see_citation",
+          "collection": { "method": "invoice" },
+          "verification": {
+            "status": "structure_only",
+            "notes": "Placeholder. Not a rate."
+          },
+          "rates": [
+            {
+              "id": "example-standard-previous",
+              "effective_from": "2020-01-01",
+              "effective_to": "2023-12-31",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "none",
+                "notes": "Replace this version with the cited previous rate, or delete the chain if you only encode the current rule."
+              },
+              "legal_citations": [
+                {
+                  "title": "Replace with the instrument title",
+                  "instrument": "REPLACE WITH LEGAL INSTRUMENT AND ARTICLE"
+                }
+              ],
+              "superseded_by": "example-standard-current",
+              "notes": "Placeholder version so the successor link is visible."
+            },
+            {
+              "id": "example-standard-current",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "none",
+                "notes": "Replace with an ad_valorem value, a formula, or a schedule copied from the citation."
+              },
+              "legal_citations": [
+                {
+                  "title": "Replace with the instrument title",
+                  "instrument": "REPLACE WITH LEGAL INSTRUMENT AND ARTICLE"
+                }
+              ],
+              "successor_of": "example-standard-previous"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

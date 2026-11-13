@@ -1,0 +1,92 @@
+name: Tax error or regulatory update
+description: Report a wrong rate, an outdated rule, a missing exemption, or a missing effective date.
+title: "[tax-update]: "
+labels:
+  - tax-data
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form when a pack states the wrong result, or when the law has moved and the pack has not.
+
+        Open-Tax is not a filing position. Reports need a legal source so a maintainer can correct the data without guessing.
+
+        Maintainer review steps are in [MAINTAINERS.md](https://github.com/glc-works/open-tax/blob/main/MAINTAINERS.md).
+  - type: input
+    id: jurisdiction
+    attributes:
+      label: Jurisdiction
+      description: ISO 3166-1 alpha-2 code and, if needed, the subdivision (for example ID, or US-CA).
+      placeholder: ID
+    validations:
+      required: true
+  - type: input
+    id: code_or_rule
+    attributes:
+      label: Code or rule
+      description: Semantic code, local treatment id, authority code, or the rule name that is wrong or missing.
+      placeholder: ppn-standard / standard / KAP 411211
+    validations:
+      required: true
+  - type: input
+    id: legal_reference
+    attributes:
+      label: Legal reference or gazette URL
+      description: Link to the statute, regulation, gazette, or tax-authority page. Name the article or section in the next field if the URL is a landing page.
+      placeholder: https://jdih.kemenkeu.go.id/...
+    validations:
+      required: true
+  - type: input
+    id: pinpoint
+    attributes:
+      label: Article, section, or gazette pinpoint
+      description: The exact provision a reviewer should read.
+      placeholder: PMK 131/2024 Pasal 3 ayat (3)
+    validations:
+      required: true
+  - type: input
+    id: effective_date
+    attributes:
+      label: Effective date
+      description: The date the correct rule starts, in YYYY-MM-DD. Add an end date in the details if the rule is temporary.
+      placeholder: "2025-01-01"
+    validations:
+      required: true
+  - type: textarea
+    id: expected_vs_actual
+    attributes:
+      label: Expected versus actual
+      description: What the pack (or the software using it) does today, and what the cited source requires.
+      placeholder: |
+        Actual: packs/id resolves standard PPN on 2025-01-15 as ...
+        Expected: ...
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is wrong?
+      options:
+        - Wrong rate or threshold
+        - Outdated regulation
+        - Missing effective date
+        - Missing exemption or out-of-scope case
+        - Wrong semantic mapping
+        - Edge case
+    validations:
+      required: true
+  - type: textarea
+    id: edge_case
+    attributes:
+      label: Edge case (optional)
+      description: Who the transaction is between, the good or service, and any condition the general rate does not capture.
+      placeholder: Sale of a PPnBM luxury good to a final consumer on 15 January 2025.
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I am reporting a factual error in the codification, not asking for tax advice on a real filing.
+          required: true

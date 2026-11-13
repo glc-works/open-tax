@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Country maintainer guide
+    url: https://github.com/glc-works/open-tax/blob/main/CONTRIBUTING.md#become-a-country-pack-maintainer
+    about: Read this before proposing a new jurisdiction pack.
+  - name: How corrections are reviewed
+    url: https://github.com/glc-works/open-tax/blob/main/MAINTAINERS.md
+    about: What happens after you report a wrong rate or an outdated rule.

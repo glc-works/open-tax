@@ -1,0 +1,46 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "xxxx-xx-xx-replace-with-instrument",
+  "jurisdiction": "XX",
+  "pack_id": "xx",
+  "title": "Example policy diff (replace or delete)",
+  "summary": "Shows the required shape of a regulatory change. This file is not a law.",
+  "legal_basis": [
+    {
+      "title": "Replace with the statute, regulation, or gazette",
+      "instrument": "REPLACE WITH LEGAL INSTRUMENT AND ARTICLE"
+    }
+  ],
+  "verification": {
+    "status": "structure_only",
+    "notes": "Placeholder. Do not treat the dates below as a real transition."
+  },
+  "changes": [
+    {
+      "id": "example-rate-change",
+      "effective_from": "2024-01-01",
+      "change_type": "rate_change",
+      "summary": "Replace this sentence with what changed, naming the old rule and the new rule.",
+      "affected": {
+        "semantic_codes": ["standard"],
+        "treatment_ids": ["example-standard"],
+        "tax_ids": ["example-vat"]
+      },
+      "computation": {
+        "notes": "Describe the base and the rate in words. Do not invent a percentage in this template."
+      },
+      "migration_impact": {
+        "severity": "medium",
+        "summary": "Say which systems must change on the effective date: invoices, payroll, filing codes, or reports.",
+        "systems": ["invoicing"]
+      },
+      "before": {
+        "description": "Previous cited rule."
+      },
+      "after": {
+        "description": "New cited rule."
+      }
+    }
+  ]
+}

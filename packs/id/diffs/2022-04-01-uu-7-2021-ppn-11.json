@@ -1,0 +1,54 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2022-04-01-uu-7-2021-ppn-11",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "UU HPP: PPN rate 10% to 11% on 1 April 2022",
+  "summary": "UU No. 7 Tahun 2021 replaced the 10% PPN rate with 11% from 1 April 2022. Exports stayed at 0%. The later 12% step was scheduled by the same article and is a separate diff.",
+  "legal_basis": [
+    {
+      "title": "UU PPN konsolidasi dengan tanda perubahan UU HPP",
+      "instrument": "UU No. 7 Tahun 2021, Pasal 7 ayat (1) huruf a UU PPN",
+      "url": "https://pajak.go.id/sites/default/files/2021-12/SDSN%20UU%20PPN%20Indo-%20dengan%20tanda%20perubahan_UU%20HPP.pdf",
+      "pinpoint": "11% mulai 1 April 2022",
+      "publisher": "Direktorat Jenderal Pajak"
+    },
+    {
+      "title": "Penyesuaian Tarif PPN",
+      "instrument": "Penjelasan DJP tentang kenaikan dari 10% menjadi 11%",
+      "url": "https://www.pajak.go.id/id/artikel/penyesuaian-tarif-ppn-tidak-bikin-masyarakat-susah-ini-penjelasannya",
+      "publisher": "Direktorat Jenderal Pajak"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-13"
+  },
+  "changes": [
+    {
+      "id": "uuhpp-ppn-11",
+      "effective_from": "2022-04-01",
+      "change_type": "rate_change",
+      "summary": "Standard PPN, including self-assessed use of offshore intangible goods and services, moves from 10% to 11%. The export rate stays 0%.",
+      "affected": {
+        "semantic_codes": ["standard", "reverse_charge"],
+        "treatment_ids": ["ppn-standard", "ppn-inbound"],
+        "tax_ids": ["ppn"],
+        "authority_codes": ["411211", "411212"]
+      },
+      "computation": {
+        "statutory_rate": "0.11",
+        "effective_rate": "0.11",
+        "notes": "Ordinary DPP. The 11/12 nilai lain mechanism does not exist yet."
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Invoices dated 1 April 2022 or later use 11%. Invoices through 31 March 2022 stay at 10%. Do not change the 0% export treatment.",
+        "systems": ["invoicing", "filing", "ecommerce"]
+      },
+      "before": { "statutory_rate": "0.10", "effective_rate": "0.10" },
+      "after": { "statutory_rate": "0.11", "effective_rate": "0.11" }
+    }
+  ]
+}
