@@ -1,0 +1,25 @@
+packs/id/regime.json
+  s_5fda4c2dbca69b::t_66b4a895e1946e 647-772,2231-3071
+packages/open-tax/test/id-ppn-bases.test.ts
+  s_5fda4c2dbca69b::t_46f796dbeb4661 1-60
+packs/id/diffs/2025-01-01-pmk-11-2025-additional-bases.json
+  s_5fda4c2dbca69b::t_66b4a895e1946e 1-70
+packs/id/README.md
+  s_5fda4c2dbca69b::t_66b4a895e1946e 31,197-213
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1ca0e3f7185f4ca3158ab2820d3a7707fdc30c53",
+  "prompts": {},
+  "sessions": {
+    "s_5fda4c2dbca69b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1d597-01b7-7913-914e-820e8b2e7cac",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Cid <308343041+convergenceID@users.noreply.github.com>"
+    }
+  }
+}
