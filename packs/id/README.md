@@ -28,7 +28,7 @@ Reviewed against the cited DJP and Ministry of Finance pages on 2026-11-13.
 ## What is not encoded
 
 - Detailed PPnBM vehicle schedules, ministerial goods/HS classification and housing thresholds
-- PMK 11 formulas not expressly encoded here, including imported-film, voucher, certain commodity/KSO formulas and crypto history
+- Gold and crypto PMK 11 histories pending complete PMK 52/53 and successor-regime verification
 - Earlier PPh 22 numerical history, full HS annex membership and special Article 22 regimes outside PMK 51/2025
 - Other final-tax families outside the explicitly encoded UMKM, rent, land-transfer, construction and resident-bond snapshots
 - Tax-treaty withholding tables
@@ -194,3 +194,20 @@ It records separate capped job/pension costs and the subjective-liability
 annualisation condition. It is not a tax on December gross and does not apply
 to monthly-paid non-permanent employees. The library does not execute formulas.
 All begin on 1 January 2024 under [PMK 168](https://pajak.go.id/id/peraturan/petunjuk-pelaksanaan-pemotongan-pajak-atas-penghasilan-sehubungan-dengan-pekerjaan-jasa-1).
+
+## Additional PMK 11 base paths
+
+21 further scoped treatments encode imported-film copy bases, telecom
+distribution levels, token/voucher fees or margins, the no-fee/no-margin voucher
+path, LPG retail DPP, both fertiliser price portions, member-to-KSO contributions,
+creditor disposals of repossessed collateral and six KPBPB movement/classification
+bases. DPP multipliers are distinguished from tax-due formulas; token face value
+is not the service commission. The cinema-copy VAT is collected once per copy.
+
+KPBPB location does not itself mean `not_collected`: origin, processing, temporary
+movement deadlines, luxury status and any specific facility determine treatment.
+The six base paths encode PPN only; PPnBM is determined separately. All are
+subject to [PMK 11](https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan)
+Article 22's January 2025 application. Gold and crypto are deliberately absent:
+PMK 52/53 and successor regimes need a complete transition review before those
+numbers can be published. An omitted treatment is not zero or exempt.

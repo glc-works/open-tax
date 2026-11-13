@@ -644,6 +644,132 @@
       "treatment_id": "pph21-last-period",
       "local_code": "pph21-last-period",
       "rule": "Permanent employees and periodic pensioners, Article 8-11 and 15. Last period is December or the period employment/periodic pension stops. Annual tax minus earlier-period withholding, not Article 17 tax on December gross. Employee deductions include salary-related eligible employee-paid pension contributions and qualifying religious payments; pensioner deductions differ. PTKP eligibility/status and part-year subjective liability require the cited tests. Monthly-paid non-permanent employees remain on monthly TER."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-special-import-film",
+      "local_code": "ppn-special-import-film",
+      "rule": "Imported story-film utilisation; VAT collected on import of the film media. The base already includes the physical media. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-special-import-film-cinema",
+      "local_code": "ppn-special-import-film-cinema",
+      "rule": "Supply of imported story-film copies by the importer to a cinema operator; collect only once per copy on its first delivery to a cinema operator, not on every screening. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-special-telecom-first",
+      "local_code": "ppn-special-telecom-first",
+      "rule": "Pulsa/starter cards supplied by the telecom provider or first-level distributor under amended PMK 6 Article 13(2). Not a declaration of VAT at every later distribution level. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-special-telecom-second-indirect",
+      "local_code": "ppn-special-telecom-second-indirect",
+      "rule": "Second-level distributor supplies pulsa/starter cards to telecom customers through a later-level distributor under amended PMK 6 Article 13(3)(a). Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-special-telecom-second-direct",
+      "local_code": "ppn-special-telecom-second-direct",
+      "rule": "Second-level distributor supplies pulsa/starter cards directly to telecom customers under amended PMK 6 Article 13(3)(b). Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-special-token-commission",
+      "local_code": "ppn-special-token-commission",
+      "rule": "Payment-transaction services for token distribution under amended PMK 6 Article 13(4)(a); the base is the service fee, not the nominal electricity/token value. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-special-token-margin",
+      "local_code": "ppn-special-token-margin",
+      "rule": "Token payment-transaction service margin under amended PMK 6 Article 13(4)(b). Distinguish it from the commission/administration-fee case. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-special-voucher-commission",
+      "local_code": "ppn-special-voucher-commission",
+      "rule": "Voucher marketing, distribution-payment or loyalty/reward services based on commission under amended PMK 6 Article 13(5)(a)(1). Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-special-voucher-margin",
+      "local_code": "ppn-special-voucher-margin",
+      "rule": "Voucher marketing, distribution-payment or loyalty/reward services not based on commission but with a margin under amended PMK 6 Article 13(5)(a)(2). No-commission/no-margin services use the separate PMK 71 specific-amount path. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-special-lpg-retail",
+      "local_code": "ppn-special-lpg-retail",
+      "rule": "Specified LPG unsubsidised-price portion under amended PMK 62 Article 5(1b); 0.825 is the expressly rounded DPP multiplier, not VAT due or the agent/base-point margin ratio. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-special-fertiliser-subsidy",
+      "local_code": "ppn-special-fertiliser-subsidy",
+      "rule": "Subsidised fertiliser government-subsidy portion under amended PMK 66 Article 4(3a); the subsidy payment includes VAT. This is the expressly rounded DPP, not a VAT percentage. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-special-fertiliser-retail",
+      "local_code": "ppn-special-fertiliser-retail",
+      "rule": "Subsidised fertiliser non-subsidy price portion under amended PMK 66 Article 4(4a); use the official maximum retail price for farmer/group cash purchases in the specified packaging/distribution level. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-special-kso-member",
+      "local_code": "ppn-special-kso-member",
+      "rule": "Taxable goods/services contributed by a member to a KSO under amended PMK 79 Article 6(3), not the KSO customer invoice. Article 6(2) makes the tax point the KSO supply to the customer. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-special-voucher-no-margin",
+      "local_code": "ppn-special-voucher-no-margin",
+      "rule": "Only PMK 71 Article 2(2)(e) voucher marketing/distribution-payment/loyalty services with neither commission nor margin; do not apply this on top of the separately encoded commission/margin cases. Article 22 applies this computation to collections from 1 January 2025."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-special-repossessed-collateral",
+      "local_code": "ppn-special-repossessed-collateral",
+      "rule": "Creditor delivery of repossessed collateral to its buyer within PMK 41 Article 2; VAT is collected when the creditor receives payment under Article 3(2). Not an exemption of collateral sales generally. Article 22 applies this computation to collections from 1 January 2025."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-ftz-unprocessed-ordinary",
+      "local_code": "ppn-ftz-unprocessed-ordinary",
+      "rule": "Goods/raw materials originally from outside the customs area, leaving KPBPB without processing, amended PMK 173 Article 15(3). Applies only after checking the specific not-collected/exempt facility exceptions; location in a free-trade zone alone does not grant relief. This non-luxury base uses 11/12. PMK 11 Article 22 applies this computation from 1 January 2025. Origin, processing and temporary-movement facts determine the base; the resolver does not infer them."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-ftz-unprocessed-luxury",
+      "local_code": "ppn-ftz-unprocessed-luxury",
+      "rule": "Goods/raw materials originally from outside the customs area, leaving KPBPB without processing, amended PMK 173 Article 15(3). Applies only after checking the specific not-collected/exempt facility exceptions; location in a free-trade zone alone does not grant relief. Luxury classification must meet the statutory PPnBM goods criteria; its PPN base is full, and any separate PPnBM must be determined independently. PMK 11 Article 22 applies this computation from 1 January 2025. Origin, processing and temporary-movement facts determine the base; the resolver does not infer them."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-ftz-not-returned-ordinary",
+      "local_code": "ppn-ftz-not-returned-ordinary",
+      "rule": "Temporary outward movement under PMK 173 Article 18(2)(a)-(c), not returned to KPBPB within the specified period, Article 19; collected by the KPBPB supplier. Applies only after checking the specific not-collected/exempt facility exceptions; location in a free-trade zone alone does not grant relief. This non-luxury base uses 11/12. PMK 11 Article 22 applies this computation from 1 January 2025. Origin, processing and temporary-movement facts determine the base; the resolver does not infer them."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-ftz-not-returned-luxury",
+      "local_code": "ppn-ftz-not-returned-luxury",
+      "rule": "Temporary outward movement under PMK 173 Article 18(2)(a)-(c), not returned to KPBPB within the specified period, Article 19; collected by the KPBPB supplier. Applies only after checking the specific not-collected/exempt facility exceptions; location in a free-trade zone alone does not grant relief. Luxury classification must meet the statutory PPnBM goods criteria; its PPN base is full, and any separate PPnBM must be determined independently. PMK 11 Article 22 applies this computation from 1 January 2025. Origin, processing and temporary-movement facts determine the base; the resolver does not infer them."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-ftz-not-reexported-ordinary",
+      "local_code": "ppn-ftz-not-reexported-ordinary",
+      "rule": "Temporary entry from TLDDP under PMK 173 Article 18(2)(d), not taken back out of KPBPB by the specified deadline, Article 20; self-paid by the KPBPB recipient. Applies only after checking the specific not-collected/exempt facility exceptions; location in a free-trade zone alone does not grant relief. This non-luxury base uses 11/12. PMK 11 Article 22 applies this computation from 1 January 2025. Origin, processing and temporary-movement facts determine the base; the resolver does not infer them."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "ppn-ftz-not-reexported-luxury",
+      "local_code": "ppn-ftz-not-reexported-luxury",
+      "rule": "Temporary entry from TLDDP under PMK 173 Article 18(2)(d), not taken back out of KPBPB by the specified deadline, Article 20; self-paid by the KPBPB recipient. Applies only after checking the specific not-collected/exempt facility exceptions; location in a free-trade zone alone does not grant relief. Luxury classification must meet the statutory PPnBM goods criteria; its PPN base is full, and any separate PPnBM must be determined independently. PMK 11 Article 22 applies this computation from 1 January 2025. Origin, processing and temporary-movement facts determine the base; the resolver does not infer them."
     }
   ],
   "taxes": [
@@ -2102,6 +2228,847 @@
             "reviewed_on": "2026-11-14",
             "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
           }
+        },
+        {
+          "id": "ppn-special-import-film",
+          "name": "Special PPN DPP: import-film",
+          "local_code": "ppn-special-import-film",
+          "semantic_code": "standard",
+          "notes": "Imported story-film utilisation; VAT collected on import of the film media. The base already includes the physical media. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply.",
+          "rates": [
+            {
+              "id": "ppn-special-import-film-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "11/12 * IDR 12000000 per copy",
+                "notes": "This text is the DPP; apply the statutory VAT multiplier once. No decimal on the whole invoice is asserted."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-special-import-film-cinema",
+          "name": "Special PPN DPP: import-film-cinema",
+          "local_code": "ppn-special-import-film-cinema",
+          "semantic_code": "standard",
+          "notes": "Supply of imported story-film copies by the importer to a cinema operator; collect only once per copy on its first delivery to a cinema operator, not on every screening. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply.",
+          "rates": [
+            {
+              "id": "ppn-special-import-film-cinema-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "11/12 * IDR 12000000 per copy",
+                "notes": "This text is the DPP; apply the statutory VAT multiplier once. No decimal on the whole invoice is asserted."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-special-telecom-first",
+          "name": "Special PPN DPP: telecom-first",
+          "local_code": "ppn-special-telecom-first",
+          "semantic_code": "standard",
+          "notes": "Pulsa/starter cards supplied by the telecom provider or first-level distributor under amended PMK 6 Article 13(2). Not a declaration of VAT at every later distribution level. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply.",
+          "rates": [
+            {
+              "id": "ppn-special-telecom-first-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "11/12 * nilai pembayaran yang ditagih",
+                "notes": "This text is the DPP; apply the statutory VAT multiplier once. No decimal on the whole invoice is asserted."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-special-telecom-second-indirect",
+          "name": "Special PPN DPP: telecom-second-indirect",
+          "local_code": "ppn-special-telecom-second-indirect",
+          "semantic_code": "standard",
+          "notes": "Second-level distributor supplies pulsa/starter cards to telecom customers through a later-level distributor under amended PMK 6 Article 13(3)(a). Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply.",
+          "rates": [
+            {
+              "id": "ppn-special-telecom-second-indirect-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "11/12 * nilai ditagih distributor tingkat kedua kepada distributor selanjutnya",
+                "notes": "This text is the DPP; apply the statutory VAT multiplier once. No decimal on the whole invoice is asserted."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-special-telecom-second-direct",
+          "name": "Special PPN DPP: telecom-second-direct",
+          "local_code": "ppn-special-telecom-second-direct",
+          "semantic_code": "standard",
+          "notes": "Second-level distributor supplies pulsa/starter cards directly to telecom customers under amended PMK 6 Article 13(3)(b). Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply.",
+          "rates": [
+            {
+              "id": "ppn-special-telecom-second-direct-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "11/12 * Harga Jual",
+                "notes": "This text is the DPP; apply the statutory VAT multiplier once. No decimal on the whole invoice is asserted."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-special-token-commission",
+          "name": "Special PPN DPP: token-commission",
+          "local_code": "ppn-special-token-commission",
+          "semantic_code": "standard",
+          "notes": "Payment-transaction services for token distribution under amended PMK 6 Article 13(4)(a); the base is the service fee, not the nominal electricity/token value. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply.",
+          "rates": [
+            {
+              "id": "ppn-special-token-commission-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "11/12 * komisi atau pendapatan administrasi",
+                "notes": "This text is the DPP; apply the statutory VAT multiplier once. No decimal on the whole invoice is asserted."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-special-token-margin",
+          "name": "Special PPN DPP: token-margin",
+          "local_code": "ppn-special-token-margin",
+          "semantic_code": "standard",
+          "notes": "Token payment-transaction service margin under amended PMK 6 Article 13(4)(b). Distinguish it from the commission/administration-fee case. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply.",
+          "rates": [
+            {
+              "id": "ppn-special-token-margin-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "11/12 * (nilai diminta - nilai nominal Token), excluding applicable local lighting tax and stamp duty",
+                "notes": "This text is the DPP; apply the statutory VAT multiplier once. No decimal on the whole invoice is asserted."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-special-voucher-commission",
+          "name": "Special PPN DPP: voucher-commission",
+          "local_code": "ppn-special-voucher-commission",
+          "semantic_code": "standard",
+          "notes": "Voucher marketing, distribution-payment or loyalty/reward services based on commission under amended PMK 6 Article 13(5)(a)(1). Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply.",
+          "rates": [
+            {
+              "id": "ppn-special-voucher-commission-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "11/12 * komisi atau imbalan diterima",
+                "notes": "This text is the DPP; apply the statutory VAT multiplier once. No decimal on the whole invoice is asserted."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-special-voucher-margin",
+          "name": "Special PPN DPP: voucher-margin",
+          "local_code": "ppn-special-voucher-margin",
+          "semantic_code": "standard",
+          "notes": "Voucher marketing, distribution-payment or loyalty/reward services not based on commission but with a margin under amended PMK 6 Article 13(5)(a)(2). No-commission/no-margin services use the separate PMK 71 specific-amount path. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply.",
+          "rates": [
+            {
+              "id": "ppn-special-voucher-margin-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "11/12 * (nilai ditagih - nilai dibayar atas penjualan Voucer)",
+                "notes": "This text is the DPP; apply the statutory VAT multiplier once. No decimal on the whole invoice is asserted."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-special-lpg-retail",
+          "name": "Special PPN DPP: lpg-retail",
+          "local_code": "ppn-special-lpg-retail",
+          "semantic_code": "standard",
+          "notes": "Specified LPG unsubsidised-price portion under amended PMK 62 Article 5(1b); 0.825 is the expressly rounded DPP multiplier, not VAT due or the agent/base-point margin ratio. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply.",
+          "rates": [
+            {
+              "id": "ppn-special-lpg-retail-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "0.825 * Harga Jual Eceran",
+                "notes": "This text is the DPP; apply the statutory VAT multiplier once. No decimal on the whole invoice is asserted."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-special-fertiliser-subsidy",
+          "name": "Special PPN DPP: fertiliser-subsidy",
+          "local_code": "ppn-special-fertiliser-subsidy",
+          "semantic_code": "standard",
+          "notes": "Subsidised fertiliser government-subsidy portion under amended PMK 66 Article 4(3a); the subsidy payment includes VAT. This is the expressly rounded DPP, not a VAT percentage. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply.",
+          "rates": [
+            {
+              "id": "ppn-special-fertiliser-subsidy-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "0.825 * jumlah pembayaran subsidi termasuk PPN",
+                "notes": "This text is the DPP; apply the statutory VAT multiplier once. No decimal on the whole invoice is asserted."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-special-fertiliser-retail",
+          "name": "Special PPN DPP: fertiliser-retail",
+          "local_code": "ppn-special-fertiliser-retail",
+          "semantic_code": "standard",
+          "notes": "Subsidised fertiliser non-subsidy price portion under amended PMK 66 Article 4(4a); use the official maximum retail price for farmer/group cash purchases in the specified packaging/distribution level. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply.",
+          "rates": [
+            {
+              "id": "ppn-special-fertiliser-retail-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "0.825 * harga eceran tertinggi",
+                "notes": "This text is the DPP; apply the statutory VAT multiplier once. No decimal on the whole invoice is asserted."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-special-kso-member",
+          "name": "Special PPN DPP: kso-member",
+          "local_code": "ppn-special-kso-member",
+          "semantic_code": "standard",
+          "notes": "Taxable goods/services contributed by a member to a KSO under amended PMK 79 Article 6(3), not the KSO customer invoice. Article 6(2) makes the tax point the KSO supply to the customer. Article 22 applies the computation to collections from 1 January 2025; PMK 11 was promulgated 4 February 2025. Underlying eligibility, input-credit and collection rules still apply.",
+          "rates": [
+            {
+              "id": "ppn-special-kso-member-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "11/12 * nilai kontribusi disepakati dalam perjanjian/dokumen kesepakatan",
+                "notes": "This text is the DPP; apply the statutory VAT multiplier once. No decimal on the whole invoice is asserted."
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-special-voucher-no-margin",
+          "name": "Specific PPN amount: voucher-no-margin",
+          "local_code": "ppn-special-voucher-no-margin",
+          "semantic_code": "standard",
+          "notes": "Only PMK 71 Article 2(2)(e) voucher marketing/distribution-payment/loyalty services with neither commission nor margin; do not apply this on top of the separately encoded commission/margin cases. Article 22 applies this computation to collections from 1 January 2025.",
+          "rates": [
+            {
+              "id": "ppn-special-voucher-no-margin-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "value": "0.011",
+                "base_formula": "Tax due = 10% * 11/12 * 12% * Harga Jual Voucer"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 71/PMK.03/2022",
+                  "instrument": "PMK 71/PMK.03/2022",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/pajak-pertambahan-nilai-atas-penyerahan-jasa-kena-pajak-tertentu",
+                  "pinpoint": "Pasal 2(2)(e) scope and Pasal 5 input-credit restriction",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "not_creditable"
+        },
+        {
+          "id": "ppn-special-repossessed-collateral",
+          "name": "Specific PPN amount: repossessed-collateral",
+          "local_code": "ppn-special-repossessed-collateral",
+          "semantic_code": "standard",
+          "notes": "Creditor delivery of repossessed collateral to its buyer within PMK 41 Article 2; VAT is collected when the creditor receives payment under Article 3(2). Not an exemption of collateral sales generally. Article 22 applies this computation to collections from 1 January 2025.",
+          "rates": [
+            {
+              "id": "ppn-special-repossessed-collateral-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "value": "0.011",
+                "base_formula": "Tax due = 10% * 11/12 * 12% * Harga Jual Agunan"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-ftz-unprocessed-ordinary",
+          "name": "KPBPB conditional PPN base: unprocessed-ordinary",
+          "local_code": "ppn-ftz-unprocessed-ordinary",
+          "semantic_code": "standard",
+          "notes": "Goods/raw materials originally from outside the customs area, leaving KPBPB without processing, amended PMK 173 Article 15(3). Applies only after checking the specific not-collected/exempt facility exceptions; location in a free-trade zone alone does not grant relief. This non-luxury base uses 11/12. PMK 11 Article 22 applies this computation from 1 January 2025. Origin, processing and temporary-movement facts determine the base; the resolver does not infer them.",
+          "rates": [
+            {
+              "id": "ppn-ftz-unprocessed-ordinary-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "11/12 * (customs import-value base including applicable customs/excise levies, excluding PPN and PPnBM)"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-ftz-unprocessed-luxury",
+          "name": "KPBPB conditional PPN base: unprocessed-luxury",
+          "local_code": "ppn-ftz-unprocessed-luxury",
+          "semantic_code": "standard",
+          "notes": "Goods/raw materials originally from outside the customs area, leaving KPBPB without processing, amended PMK 173 Article 15(3). Applies only after checking the specific not-collected/exempt facility exceptions; location in a free-trade zone alone does not grant relief. Luxury classification must meet the statutory PPnBM goods criteria; its PPN base is full, and any separate PPnBM must be determined independently. PMK 11 Article 22 applies this computation from 1 January 2025. Origin, processing and temporary-movement facts determine the base; the resolver does not infer them.",
+          "rates": [
+            {
+              "id": "ppn-ftz-unprocessed-luxury-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "customs import-value base including applicable customs/excise levies, excluding PPN and PPnBM"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-ftz-not-returned-ordinary",
+          "name": "KPBPB conditional PPN base: not-returned-ordinary",
+          "local_code": "ppn-ftz-not-returned-ordinary",
+          "semantic_code": "standard",
+          "notes": "Temporary outward movement under PMK 173 Article 18(2)(a)-(c), not returned to KPBPB within the specified period, Article 19; collected by the KPBPB supplier. Applies only after checking the specific not-collected/exempt facility exceptions; location in a free-trade zone alone does not grant relief. This non-luxury base uses 11/12. PMK 11 Article 22 applies this computation from 1 January 2025. Origin, processing and temporary-movement facts determine the base; the resolver does not infer them.",
+          "rates": [
+            {
+              "id": "ppn-ftz-not-returned-ordinary-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "11/12 * (harga pasar wajar)"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-ftz-not-returned-luxury",
+          "name": "KPBPB conditional PPN base: not-returned-luxury",
+          "local_code": "ppn-ftz-not-returned-luxury",
+          "semantic_code": "standard",
+          "notes": "Temporary outward movement under PMK 173 Article 18(2)(a)-(c), not returned to KPBPB within the specified period, Article 19; collected by the KPBPB supplier. Applies only after checking the specific not-collected/exempt facility exceptions; location in a free-trade zone alone does not grant relief. Luxury classification must meet the statutory PPnBM goods criteria; its PPN base is full, and any separate PPnBM must be determined independently. PMK 11 Article 22 applies this computation from 1 January 2025. Origin, processing and temporary-movement facts determine the base; the resolver does not infer them.",
+          "rates": [
+            {
+              "id": "ppn-ftz-not-returned-luxury-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "harga pasar wajar"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-ftz-not-reexported-ordinary",
+          "name": "KPBPB conditional PPN base: not-reexported-ordinary",
+          "local_code": "ppn-ftz-not-reexported-ordinary",
+          "semantic_code": "standard",
+          "notes": "Temporary entry from TLDDP under PMK 173 Article 18(2)(d), not taken back out of KPBPB by the specified deadline, Article 20; self-paid by the KPBPB recipient. Applies only after checking the specific not-collected/exempt facility exceptions; location in a free-trade zone alone does not grant relief. This non-luxury base uses 11/12. PMK 11 Article 22 applies this computation from 1 January 2025. Origin, processing and temporary-movement facts determine the base; the resolver does not infer them.",
+          "rates": [
+            {
+              "id": "ppn-ftz-not-reexported-ordinary-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "11/12 * (harga pasar wajar)"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
+        },
+        {
+          "id": "ppn-ftz-not-reexported-luxury",
+          "name": "KPBPB conditional PPN base: not-reexported-luxury",
+          "local_code": "ppn-ftz-not-reexported-luxury",
+          "semantic_code": "standard",
+          "notes": "Temporary entry from TLDDP under PMK 173 Article 18(2)(d), not taken back out of KPBPB by the specified deadline, Article 20; self-paid by the KPBPB recipient. Applies only after checking the specific not-collected/exempt facility exceptions; location in a free-trade zone alone does not grant relief. Luxury classification must meet the statutory PPnBM goods criteria; its PPN base is full, and any separate PPnBM must be determined independently. PMK 11 Article 22 applies this computation from 1 January 2025. Origin, processing and temporary-movement facts determine the base; the resolver does not infer them.",
+          "rates": [
+            {
+              "id": "ppn-ftz-not-reexported-luxury-20250101",
+              "effective_from": "2025-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.12",
+                "base_formula": "harga pasar wajar"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 11/2025",
+                  "instrument": "PMK 11/2025",
+                  "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+                  "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          },
+          "input_credit": "see_citation"
         }
       ]
     },
