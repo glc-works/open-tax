@@ -1,0 +1,36 @@
+packs/id/README.md
+  s_5fda4c2dbca69b::t_4c886aa2defbe3 23-24,26
+  s_5fda4c2dbca69b::t_e4a5897418cc2f 33,110,130-157
+packs/id/diffs/2026-11-14-pph23-scope-snapshot.json
+  s_5fda4c2dbca69b::t_e4a5897418cc2f 1-51
+packs/id/diffs/2016-09-07-pp-34-2016-transfer.json
+  s_5fda4c2dbca69b::t_e4a5897418cc2f 1-59
+packs/id/diffs/2022-02-21-pp-9-2022-construction.json
+  s_5fda4c2dbca69b::t_e4a5897418cc2f 1-63
+packages/open-tax/test/id-final-withholding.test.ts
+  s_5fda4c2dbca69b::t_4c886aa2defbe3 1-93
+packs/id/diffs/2018-01-02-pp-34-2017-rent.json
+  s_5fda4c2dbca69b::t_e4a5897418cc2f 1-50
+packs/id/regime.json
+  s_5fda4c2dbca69b::t_e4a5897418cc2f 348-437,3143,3151-3153,3155-3157,3171,3185,3190-3191,3199-3201,3203-3205,3231-3312,3321,3456-3981,3990,3998-4000,4002-4004,4018,4031-4075
+packs/id/diffs/2021-08-02-pp-9-2021-nonresident-bonds.json
+  s_5fda4c2dbca69b::t_e4a5897418cc2f 1-57
+packs/id/diffs/2021-08-30-pp-91-2021-bonds.json
+  s_5fda4c2dbca69b::t_e4a5897418cc2f 1-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1c6da8c096ce4df560ed187a202febf9c187b526",
+  "prompts": {},
+  "sessions": {
+    "s_5fda4c2dbca69b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1d597-01b7-7913-914e-820e8b2e7cac",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Cid <308343041+convergenceID@users.noreply.github.com>"
+    }
+  }
+}
