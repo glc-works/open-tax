@@ -1,0 +1,25 @@
+packaging/homebrew/open-tax.rb
+  s_5fda4c2dbca69b::t_cc4d2337f52ce9 14
+packages/open-tax/package.json
+  s_5fda4c2dbca69b::t_cc4d2337f52ce9 3,31
+packages/open-tax/test/packaging.mjs
+  s_5fda4c2dbca69b::t_cc4d2337f52ce9 36-37
+package-lock.json
+  s_5fda4c2dbca69b::t_f78ade122c26a7 2065
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0ff04ddf127d8812e8b34e7327a13a5b3c96c534",
+  "prompts": {},
+  "sessions": {
+    "s_5fda4c2dbca69b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1d597-01b7-7913-914e-820e8b2e7cac",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Cid <308343041+convergenceID@users.noreply.github.com>"
+    }
+  }
+}
