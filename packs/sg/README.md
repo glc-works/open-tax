@@ -10,14 +10,14 @@ Reviewed against the cited IRAS, AGC (Singapore Statutes Online), and MOF pages 
 | --- | --- | --- |
 | Standard-rated GST: 3% (1 Apr 1994–31 Dec 2002), 4% (2003), 5% (1 Jan 2004–30 Jun 2007), 7% (1 Jul 2007–31 Dec 2022), 8% (2023), 9% (from 1 Jan 2024) | `standard` | Cited rates. The 3% step is `verified_starter` (IRAS historical table only; s 16 as printed starts at 4%). Later steps are cited to GST Act s 16 and the IRAS rate page. |
 | Zero-rated GST (exports and international services, s 21) | `zero` | Rate 0 from GST commencement. Input tax stays creditable. |
-| Exempt supplies (Fourth Schedule: financial services, residential property, investment precious metals; digital payment tokens from 1 Jan 2020) | `exempt` | Category only. Input tax is not creditable. |
+| Exempt supplies (Fourth Schedule: financial services, residential property, investment precious metals; digital payment tokens from 1 Jan 2020) | `exempt` | Category only. Input tax is `see_citation`: blocked unless the De Minimis Rule or Regulation 33 applies. |
 | Out-of-scope (third-country sales, TOGC, private transactions, supplies outside Singapore) | `out_of_scope` | Category only. Not a supply. |
 | Reverse charge on imported B2B services (from 1 Jan 2020) and low-value goods (from 1 Jan 2023), for GST-registered persons not entitled to full input tax credit | `reverse_charge` | Tracks the prevailing standard rate: 7% then 8% then 9%. |
 | Overseas Vendor Registration — B2C digital services (from 1 Jan 2020), then also B2C remote non-digital services and imported low-value goods (from 1 Jan 2023) | `standard` (`sg-gst-ovr`) | The overseas vendor collects the prevailing standard rate. This is not reverse charge. |
 | Corporate income tax, flat 17% from YA 2010 | `standard` | Cited to the IRAS e-Tax Guide of 9 Sep 2024, para 4.2(i), and the current-rate pages. |
 | Partial tax exemption (PTE), YA 2020+: 75% of the first S$10,000 and 50% of the next S$190,000 | `reduced` | Schedule of exemption fractions, not a second CIT percentage. |
 | Start-up tax exemption (SUTE), YA 2020+, first 3 YAs: 75% of the first S$100,000 and 50% of the next S$100,000 | `reduced` | Same: exemption fractions, with the IRAS eligibility conditions in the notes. |
-| S 45 withholding: interest 15%; royalties 10%; know-how 10%; movable-property rent 15%; technical assistance / management fees at the prevailing CIT rate (17%); non-resident director 22% then 24% from YA 2024; professionals 15%; public entertainers 15%; NR property traders 15%; casino international market agents 3% | `withholding` | Rates as stated on the IRAS WHT page. Most figures use `effective_from_bound: in_force_by` on the review date because a legal start was not pinned. |
+| S 45 withholding: interest 15%; royalties 10%; know-how 10%; movable-property rent 15%; technical assistance / management fees at the prevailing CIT rate (17%); non-resident director 22% through 31 Dec 2022, then 24% from 1 Jan 2023; professionals 15%; public entertainers 15%; NR property traders 15%; casino international market agents 3% | `withholding` | Rates as stated on the IRAS WHT page. Most figures use `effective_from_bound: in_force_by` on the review date because a legal start was not pinned. |
 
 GST F5 boxes 1–17 are in `dictionaries/gst-f5-boxes.json`.
 
@@ -53,4 +53,4 @@ If a field is missing, the pack is silent. Do not infer zero.
 
 ## History
 
-Diffs in `diffs/` record the 1 January 2020 introduction of reverse charge and Overseas Vendor Registration, the 1 January 2023 move to 8% (and the low-value goods / remote non-digital extension), and the 1 January 2024 move to 9%. Earlier standard-rate steps (3%, 4%, 5%, 7%) stay in `regime.json` and point at their successor. Director withholding is versioned from 22% to 24% on 1 January 2024 (YA 2024).
+Diffs in `diffs/` record the 1 January 2020 introduction of reverse charge and Overseas Vendor Registration, the 1 January 2023 move to 8% (and the low-value goods / remote non-digital extension), and the 1 January 2024 move to 9%. Earlier standard-rate steps (3%, 4%, 5%, 7%) stay in `regime.json` and point at their successor. Director withholding is versioned from 22% to 24% on 1 January 2023, the date IRAS uses for income due and payable. YA 2024 is the assessment year for that 2023 income, not the withholding start date.

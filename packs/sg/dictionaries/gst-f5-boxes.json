@@ -251,9 +251,7 @@
       },
       "maps_to": {
         "tax_id": "gst",
-        "treatment_id": "sg-gst-out-of-scope",
-        "semantic_code": "out_of_scope",
-        "notes": "Out-of-scope supplies are reported here if they form part of revenue. Box 13 is revenue, not an out-of-scope box as such."
+        "notes": "Box 13 is accounting revenue, including revenue from ordinary taxable supplies. Out-of-scope supplies are reported here only when they form part of revenue. Do not classify the whole box as out of scope."
       }
     },
     {

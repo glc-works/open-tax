@@ -13,8 +13,8 @@ Reviewed against official GST Council and Press Information Bureau releases on 2
 | Standard GST 18%, from 1 July 2017 (still the standard rate after 22 September 2025) | `standard` | Combined GST. `verified_starter`. |
 | Merit / reduced GST 5%, from 1 July 2017, widened on 22 September 2025 | `reduced` (`in-gst-reduced-5`) | Same 5% figure; the set of supplies in the slab changes on 22 September 2025. |
 | Reduced GST 12%, 1 July 2017–21 September 2025, then retired | `reduced` (`in-gst-reduced-12`) | Historical only. `effective_to` is 21 September 2025. |
-| De-merit / luxury: 28% (1 July 2017–21 September 2025), 40% (22 September 2025–31 January 2026, tobacco deferred), 40% (from 1 February 2026, including named tobacco and pan masala goods) | `luxury` | `verified_starter`. Compensation cess is not encoded as a rate. |
-| Nil-rated 0% slab, from 1 July 2017 | `zero` | The nil slab described in the Council / PIB materials, not a certified IGST Act s 16 export encoding. |
+| De-merit / luxury: 28% (1 July 2017–21 September 2025), 40% (22 September 2025–31 January 2026 for goods that moved on 22 September; cigarettes, zarda, unmanufactured tobacco, and beedi kept their old rate, which is not encoded for that window), 40% (from 1 February 2026 for the notified tobacco and pan masala goods other than bidis and tobacco leaves) | `luxury` | `verified_starter`. Compensation cess is not encoded as a rate. |
+| Nil-rated 0% slab, from 1 July 2017 | `zero` | Domestic nil slab, including UHT milk from 22 September 2025. Chargeability is exempt and input tax is not creditable. This is not IGST Act s 16 export or SEZ zero-rating. |
 | Exemption category, 1 July 2017 then restated from 22 September 2025 | `exempt` | Category only. Notification lists were not opened. |
 
 A sample of HSN and SAC headings from the 56th Council annexures is in `dictionaries/hsn-sac.sample.json`. Codes are not rates.

@@ -5,7 +5,7 @@
   "jurisdiction": "IN",
   "pack_id": "in",
   "title": "1 February 2026: tobacco, pan masala, and related goods move to 40% GST",
-  "summary": "As summarised in the GST Council December 2025 newsletter, from 1 February 2026 pan masala, tobacco and products (other than bidis), cigarettes, and nicotine inhalation products move to 40% GST, and compensation cess on those goods is nil. The underlying Notifications 19/2025-CT(Rate) and 03/2025-Compensation Cess (Rate), dated 31 December 2025, were not opened. The 56th Council annexure described bidis as moving from 28% to 18%, not to 40%. Whether any goods remain at 28% after this date was not confirmed.",
+  "summary": "As summarised in the GST Council December 2025 newsletter, from 1 February 2026 pan masala, manufactured tobacco products other than bidis, cigarettes, and nicotine inhalation products move to 40% GST, and compensation cess on those goods is nil. Unmanufactured tobacco in that 40% scope excludes tobacco leaves; the PIB FAQ states tobacco leaves were already at 5%, and that leaf rate is not encoded here. The underlying Notifications 19/2025-CT(Rate) and 03/2025-Compensation Cess (Rate), dated 31 December 2025, were not opened. Bidis move from 28% to 18% in the 56th Council annexure, not to 40%. Whether any goods remain at 28% after this date was not confirmed.",
   "legal_basis": [
     {
       "title": "GST Council Monthly Newsletter, December 2025",
@@ -27,7 +27,7 @@
       "id": "in-gst-40-tobacco",
       "effective_from": "2026-02-01",
       "change_type": "scope_change",
-      "summary": "The 40% de-merit GST rate is extended to pan masala, tobacco products other than bidis, cigarettes, and nicotine inhalation products. Compensation cess on those goods is described as nil. Bidi is not described as joining the 40% band.",
+      "summary": "The 40% de-merit GST rate is extended to pan masala, manufactured tobacco products other than bidis, cigarettes, and nicotine inhalation products. Unmanufactured tobacco in this scope excludes tobacco leaves. Compensation cess on the named goods is described as nil. Bidi is not described as joining the 40% band.",
       "affected": {
         "semantic_codes": [
           "luxury"
@@ -55,7 +55,7 @@
       "after": {
         "statutory_rate": "0.40",
         "effective_rate": "0.40",
-        "description": "40% de-merit rate including the deferred tobacco and pan masala goods, other than bidis."
+        "description": "40% de-merit rate for the deferred pan masala and manufactured tobacco goods, other than bidis and other than tobacco leaves."
       }
     }
   ],

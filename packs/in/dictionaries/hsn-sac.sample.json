@@ -23,7 +23,7 @@
         "tax_id": "gst",
         "treatment_id": "in-gst-zero",
         "semantic_code": "zero",
-        "notes": "Destination treatment from 22 September 2025 as described in the Council annexure. Previous 5% treatment is not stored on the code."
+        "notes": "Destination from 22 September 2025. The PIB FAQ describes UHT milk as exempted, in line with other dairy milk. This nil-slab treatment is chargeable as exempt and input tax is not creditable. It is not IGST Act s 16 export zero-rating."
       },
       "correlates_to": [
         {

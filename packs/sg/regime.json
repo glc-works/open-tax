@@ -31,7 +31,7 @@
     {
       "semantic_code": "exempt",
       "treatment_id": "sg-gst-exempt",
-      "rule": "Use for Fourth Schedule exempt supplies (residential property, prescribed financial services, investment precious metals, digital payment tokens). Input tax is not creditable.",
+      "rule": "Use for Fourth Schedule exempt supplies (residential property, prescribed financial services, investment precious metals, digital payment tokens). Input tax is not creditable unless the De Minimis Rule is met or Regulation 33 of the GST (General) Regulations allows the claim. Read see_citation before denying the credit.",
       "local_name": "Exempt supplies"
     },
     {
@@ -98,7 +98,7 @@
     {
       "semantic_code": "withholding",
       "treatment_id": "sg-wht-director",
-      "rule": "Use for withholding on payments to a non-resident director (24% from YA 2024; 22% for the preceding encoded period)."
+      "rule": "Use for withholding on payments to a non-resident director: 22% for income due and payable from 1 January 2016 through 31 December 2022, then 24%."
     },
     {
       "semantic_code": "withholding",
@@ -388,22 +388,28 @@
                   "instrument": "IRAS webpage: GST F5 box-by-box guidance",
                   "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
                   "publisher": "IRAS"
+                },
+                {
+                  "title": "IRAS | Claiming Input Tax Incurred to Make Exempt Supplies",
+                  "instrument": "IRAS webpage: De Minimis Rule and Regulation 33 of the GST (General) Regulations",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/claiming-gst-(input-tax)/claiming-input-tax-incurred-to-make-exempt-supplies",
+                  "publisher": "IRAS"
                 }
               ],
               "verification": {
                 "status": "verified_starter",
                 "reviewed_on": "2026-11-13"
               },
-              "notes": "Fourth Schedule supplies: sale and lease of residential property; prescribed financial services; sale/import of investment precious metals (IPM); digital payment tokens (wef 1 Jan 2020)."
+              "notes": "Fourth Schedule supplies: sale and lease of residential property; prescribed financial services; sale/import of investment precious metals (IPM); digital payment tokens (wef 1 Jan 2020). Input tax is not an automatic denial: the De Minimis Rule and Regulation 33 can allow a claim."
             }
           ],
           "local_name": "Exempt supplies",
           "chargeability": "exempt",
-          "input_credit": "not_creditable",
+          "input_credit": "see_citation",
           "collection": {
             "method": "none"
           },
-          "notes": "Reported in GST F5 Box 3. Digital payment tokens were added as an exempt supply from 1 January 2020; this pack does not split a separate rate version for that scope change (the rate remains none)."
+          "notes": "Reported in GST F5 Box 3. Input tax attributable to exempt supplies is blocked unless the De Minimis Rule applies (IRAS: the value of exempt supplies does not exceed an average of S$40,000 a month and 5% of the total value of taxable and exempt supplies) or Regulation 33 of the GST (General) Regulations provides an exception. Digital payment tokens were added as an exempt supply from 1 January 2020; this pack does not split a separate rate version for that scope change (the rate remains none)."
         },
         {
           "id": "sg-gst-out-of-scope",
@@ -1155,13 +1161,13 @@
                 "status": "verified_starter",
                 "reviewed_on": "2026-11-13"
               },
-              "effective_to": "2023-12-31",
-              "notes": "22% as listed on the IRAS WHT page for the period before the 24% rate. The IRAS e-Tax Guide of 9 Sep 2024 states that the highest marginal personal income tax rate was 22% since YA 2017 (the research extract also listed a 2016-01-01 start from the WHT page). effective_to is the day before YA 2024, when that highest marginal rate became 24%.",
+              "effective_to": "2022-12-31",
+              "notes": "22% for income due and payable from 1 January 2016 through 31 December 2022, as stated on the IRAS non-resident director page and the WHT rates table. The e-Tax Guide's '22% since YA 2017' describes the personal-tax schedule; it does not extend this withholding rate through 2023.",
               "superseded_by": "sg-wht-director-24"
             },
             {
               "id": "sg-wht-director-24",
-              "effective_from": "2024-01-01",
+              "effective_from": "2023-01-01",
               "effective_from_bound": "exact",
               "rate": {
                 "kind": "ad_valorem",
@@ -1169,9 +1175,17 @@
               },
               "legal_citations": [
                 {
+                  "title": "IRAS | Tax for Non-Resident Directors",
+                  "instrument": "IRAS webpage: withhold 24% (22% for income due and payable from 1 Jan 2016 to 31 Dec 2022)",
+                  "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-director/tax-obligations-for-non-resident-director",
+                  "pinpoint": "Withhold tax at 24% (22% for income due and payable from 1 Jan 2016 to 31 Dec 2022)",
+                  "publisher": "IRAS"
+                },
+                {
                   "title": "IRAS | Types of Payment & the Applicable Withholding Tax Rates",
                   "instrument": "IRAS webpage; Income Tax Act 1947 s 45 (withholding) and s 12(6)/12(7) source rules",
                   "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax/types-of-payment-and-withholding-tax-rates",
+                  "pinpoint": "Payment to non-resident director: 24% (22% from 01 Jan 2016 to 31 Dec 2022)",
                   "publisher": "IRAS"
                 },
                 {
@@ -1186,7 +1200,7 @@
                 "status": "verified_starter",
                 "reviewed_on": "2026-11-13"
               },
-              "notes": "24% from Year of Assessment 2024, aligned with the highest marginal personal income tax rate as stated in the IRAS e-Tax Guide para 4.2(i). A research extract of the IRAS WHT page had dated the 24% figure from 2023-01-01; this pack follows the e-Tax Guide's YA 2024 commencement for the underlying 24% personal rate.",
+              "notes": "24% for income due and payable on or after 1 January 2023. YA 2024 in the e-Tax Guide is the assessment year for 2023 income, not a 1 January 2024 withholding start. The IRAS non-resident director page and the WHT rates table both date the 24% rate from the end of the 22% window on 31 December 2022.",
               "successor_of": "sg-wht-director-22"
             }
           ],

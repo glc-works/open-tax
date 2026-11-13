@@ -37,13 +37,13 @@
     {
       "semantic_code": "luxury",
       "treatment_id": "in-gst-luxury-28-40",
-      "rule": "Use for the de-merit path: 28% through 21 September 2025, then 40%. Do not use luxury for a different tax such as compensation cess.",
+      "rule": "Use for de-merit goods that moved from 28% to 40% on 22 September 2025. Do not use it for cigarettes, chewing tobacco such as zarda, unmanufactured tobacco, or beedi on a date from 22 September 2025 through 31 January 2026: those goods kept their previous GST rate plus compensation cess, and that transition-period rate is not encoded. From 1 February 2026 the 40% version covers the notified tobacco and pan masala goods other than bidis and other than tobacco leaves. Do not use luxury for compensation cess.",
       "local_name": "De-merit 28%/40%"
     },
     {
       "semantic_code": "zero",
       "treatment_id": "in-gst-zero",
-      "rule": "Use for the nil-rated 0% slab as described in the Council / PIB materials. Do not assume this is IGST Act s 16 export zero-rating.",
+      "rule": "Use for the domestic nil slab (rate 0) described in the Council / PIB materials, including UHT milk from 22 September 2025. Chargeability is exempt and input tax is not creditable. Do not use this for IGST Act s 16 export or SEZ zero-rating, which is not encoded.",
       "local_name": "Nil rate"
     },
     {
@@ -297,7 +297,7 @@
                 "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. This version is verified_starter on the official GST Council / PIB press releases named in the citations, reviewed on 2026-11-13. Open the notification PDFs before marking the rate verified."
               },
               "effective_to": "2026-01-31",
-              "notes": "Special de-merit 40% rate from 22 September 2025 under the 56th GST Council recommendations. Pan masala, gutkha, cigarettes, chewing tobacco (zarda), unmanufactured tobacco, and bidi stayed at their old GST rates plus compensation cess until the transition date of 1 February 2026.",
+              "notes": "Special de-merit 40% rate from 22 September 2025 for goods that moved on that date. Cigarettes, chewing tobacco such as zarda, unmanufactured tobacco, and beedi kept their previous GST rate plus compensation cess until 1 February 2026. That transition-period rate is not encoded, so a date in this window must not be read as 40% for those goods.",
               "successor_of": "in-gst-luxury-28",
               "superseded_by": "in-gst-luxury-40-tobacco"
             },
@@ -330,7 +330,7 @@
                 "reviewed_on": "2026-11-13",
                 "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. This version is verified_starter on the official GST Council / PIB press releases named in the citations, reviewed on 2026-11-13. Open the notification PDFs before marking the rate verified."
               },
-              "notes": "From 1 February 2026, pan masala, tobacco and products (other than bidis), cigarettes, and nicotine inhalation products move to 40%, and compensation cess on those goods is nil, as summarised in the GST Council December 2025 newsletter (Notifications 19/2025-CT(Rate) and 03/2025-Compensation Cess (Rate), dated 31 December 2025, not opened). Bidi is described in the 56th Council annexure as moving from 28% to 18%, not to 40%. Whether any goods remain at 28% after this date was not confirmed.",
+              "notes": "From 1 February 2026, pan masala, manufactured tobacco products other than bidis, cigarettes, and nicotine inhalation products move to 40%, and compensation cess on those goods is nil, as summarised in the GST Council December 2025 newsletter (Notifications 19/2025-CT(Rate) and 03/2025-Compensation Cess (Rate), dated 31 December 2025, not opened). Unmanufactured tobacco in that 40% scope excludes tobacco leaves: the PIB FAQ states tobacco leaves were already at 5%, and that 5% leaf rate is not encoded here. Bidi is described in the 56th Council annexure as moving from 28% to 18%, not to 40%. Whether any goods remain at 28% after this date was not confirmed.",
               "successor_of": "in-gst-luxury-40"
             }
           ],
@@ -376,16 +376,16 @@
                 "reviewed_on": "2026-11-13",
                 "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. This version is verified_starter on the official GST Council / PIB press releases named in the citations, reviewed on 2026-11-13. Open the notification PDFs before marking the rate verified."
               },
-              "notes": "Nil-rated slab (0%) as described in the 2017 four-tier structure and carried into the 56th Council materials as nil. Export / SEZ zero-rated supplies under IGST Act s 16 were not opened in the source research; this treatment is the nil slab, not a certified s 16 encoding. Input-credit consequences should be read from the citation, not inferred."
+              "notes": "Domestic nil slab (0%), including supplies the PIB FAQ describes as exempted, such as UHT milk from 22 September 2025. Nil-rated domestic supplies do not carry input credit. Export and SEZ zero-rating under IGST Act s 16 is a different rule and is not encoded."
             }
           ],
           "local_name": "GST nil rate",
-          "chargeability": "zero_rated",
-          "input_credit": "see_citation",
+          "chargeability": "exempt",
+          "input_credit": "not_creditable",
           "collection": {
             "method": "invoice"
           },
-          "notes": "Nil slab only. IGST Act s 16 export zero-rating was not opened."
+          "notes": "Domestic nil slab only. Input tax is not creditable. IGST Act s 16 export and SEZ zero-rating was not opened and is not this treatment."
         },
         {
           "id": "in-gst-exempt",
@@ -445,14 +445,21 @@
                   "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
                   "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
                   "publisher": "GST Council"
+                },
+                {
+                  "title": "Notification No. 16/2025-Central Tax (Rate)",
+                  "instrument": "Notification No. 16/2025-Central Tax (Rate), dated 17 September 2025, entries 36C to 36E (Heading 9971)",
+                  "url": "https://www.financialservices.gov.in/beta/en/exemption-on-gst",
+                  "pinpoint": "Individual life and health insurance, and reinsurance of those policies, exempt from 22 September 2025. Group policies stay at 18%.",
+                  "publisher": "Department of Financial Services, Ministry of Finance"
                 }
               ],
               "verification": {
                 "status": "verified_starter",
                 "reviewed_on": "2026-11-13",
-                "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. This version is verified_starter on the official GST Council / PIB press releases named in the citations, reviewed on 2026-11-13. Open the notification PDFs before marking the rate verified."
+                "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. Individual life and health insurance is cited to Notification 16/2025-CT(Rate) via the Department of Financial Services page. Open the notification PDFs before marking the rate verified."
               },
-              "notes": "Exemption category under Notification 10/2025-CT(Rate), which the PIB FAQ says supersedes 2/2017 from the 22 September 2025 reform. The goods and services lists were not opened. Some supplies moved into exemption (for example individual life and health insurance, SAC 9971, as described in the Council annexures).",
+              "notes": "Goods exemptions are under Notification 10/2025-CT(Rate), which the PIB FAQ says supersedes 2/2017 from 22 September 2025. Individual life and health insurance (Heading 9971), and reinsurance of those policies, are exempt under Notification 16/2025-CT(Rate) dated 17 September 2025, not under 10/2025. The lists themselves were not copied here.",
               "successor_of": "in-gst-exempt-2017"
             }
           ],

@@ -40,7 +40,7 @@
       },
       "migration_impact": {
         "severity": "high",
-        "summary": "Invoices for taxable services other than F&B, telecommunication, parking, and logistics use 8% from 1 March 2024. Services through 29 February 2024 stay at 6%.",
+        "summary": "8% applies to taxable services other than F&B, telecommunication, parking, and logistics that are provided on or after 1 March 2024. Paragraph 3(b) of P.U.(A) 64/2024 keeps 6% on a payment received before that date for a service provided on or after it. The date-only rate history does not decide those transitional transactions.",
         "systems": [
           "invoicing",
           "filing",

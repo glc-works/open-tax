@@ -56,7 +56,7 @@ test("Singapore GST steps from 3% to 9%, with zero, exempt, and out of scope kep
   assert.equal(zero?.rate.value, "0");
   assert.equal(zero?.inputCredit, "creditable");
   assert.equal(exempt?.semanticCode, "exempt");
-  assert.equal(exempt?.inputCredit, "not_creditable");
+  assert.equal(exempt?.inputCredit, "see_citation");
   assert.equal(outOfScope?.semanticCode, "out_of_scope");
   assert.notEqual(exempt?.treatmentId, outOfScope?.treatmentId);
 });
@@ -84,12 +84,16 @@ test("Singapore corporate tax is 17% and director withholding moves from 22% to 
   const cit = resolveTaxAtDate(regime, { date: "2024-01-01", treatmentId: "sg-cit-standard" })[0];
   assert.equal(cit?.rate.value, "0.17");
 
-  const before = resolveTaxAtDate(regime, { date: "2023-12-31", treatmentId: "sg-wht-director" })[0];
-  const after = resolveTaxAtDate(regime, { date: "2024-01-01", treatmentId: "sg-wht-director" })[0];
+  const before = resolveTaxAtDate(regime, { date: "2022-12-31", treatmentId: "sg-wht-director" })[0];
+  const after = resolveTaxAtDate(regime, { date: "2023-01-01", treatmentId: "sg-wht-director" })[0];
   assert.equal(before?.versionId, "sg-wht-director-22");
   assert.equal(before?.rate.value, "0.22");
   assert.equal(after?.versionId, "sg-wht-director-24");
   assert.equal(after?.rate.value, "0.24");
+  assert.equal(
+    resolveTaxAtDate(regime, { date: "2024-01-01", treatmentId: "sg-wht-director" })[0]?.rate.value,
+    "0.24",
+  );
 });
 
 test("Singapore GST F5 dictionary lists boxes 1 through 17", () => {
