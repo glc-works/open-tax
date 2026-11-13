@@ -2,7 +2,7 @@
 
 Starter pack for PPN and the core PPh withholding categories. It is a software reference. It is not a filing position and not a complete Indonesian tax engine.
 
-Reviewed against the cited DJP and Ministry of Finance pages on 2026-11-13.
+Reviewed against the cited DJP and Ministry of Finance instruments on 2026-11-14. Coverage remains partial as itemised below.
 
 ## What is encoded
 
@@ -23,11 +23,13 @@ Reviewed against the cited DJP and Ministry of Finance pages on 2026-11-13.
 | PPh 23 | `withholding` | Ordinary 15%/2% plus separately scoped no-NPWP snapshots and exclusion notes; detailed service-list eligibility remains external. |
 | PPh 4 ayat (2) | `final` | Separately scoped UMKM, property, construction and resident-bond classes; no universal final-tax percentage. |
 | PPh Badan and Pasal 31E | `standard` / `reduced` | HPP 22% on taxable income; conditional 50% rate reduction on the eligible Article 31E taxable-income portion. |
+| PPN special bases/amounts, PMK 11/53 | `standard` | 43 separately scoped formulas; gold/crypto omitted pending successor review. |
+| PPnBM | `luxury` on tax ID `ppnbm` | Seven PP 61 non-vehicle groups plus 14 selected ordinary vehicle classes. Classification remains conditional. |
 | PPh 26 | `withholding` | General statutory 20% plus separately scoped non-resident bond interest; treaty rates and other bases remain external. |
 
 ## What is not encoded
 
-- Detailed PPnBM vehicle schedules, ministerial goods/HS classification and housing thresholds
+- PPnBM bus/double-cab/low-carbon program schedules, ministerial goods/HS classification and housing thresholds
 - Gold and crypto PMK 11 histories pending complete PMK 52/53 and successor-regime verification
 - Earlier PPh 22 numerical history, full HS annex membership and special Article 22 regimes outside PMK 51/2025
 - Other final-tax families outside the explicitly encoded UMKM, rent, land-transfer, construction and resident-bond snapshots
@@ -170,8 +172,8 @@ credit rules and supplier/invoice/classification conditions remain external.
 
 PP 61/2020 contributes seven **non-vehicle PPnBM** groups from 15 December
 2020, after its 60-day delay. PPnBM has its own tax ID and is separate from
-the PPN luxury base. Its housing/HS ministerial classification and vehicle
-schedules remain unencoded. The tourism-yacht exception has a four-year
+the PPN luxury base. Its housing/HS ministerial classification and bus/double-cab/low-carbon
+program schedules remain unencoded. Selected ordinary vehicle classes are below. The tourism-yacht exception has a four-year
 recapture condition; no unverified zero-rate exemption is asserted.
 
 Sources: [PMK 11](https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan),
@@ -211,3 +213,34 @@ subject to [PMK 11](https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nil
 Article 22's January 2025 application. Gold and crypto are deliberately absent:
 PMK 52/53 and successor regimes need a complete transition review before those
 numbers can be published. An omitted treatment is not zero or exempt.
+
+## Selected PPnBM vehicle classes and verification gaps
+
+[PMK 42/2022](https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf)
+adds eight CO2-based passenger classes (two engine-capacity groups) and six
+other vehicle classes from 1 April 2022, the amended-annex date. The passenger
+entries are **CO2 branches only** for fewer than ten persons including the
+driver; fuel-economy alternative tests remain in the instrument. Conditional
+low-carbon program treatment must be checked first. Missing required test
+evidence triggers the highest rate in the applicable vehicle/capacity group,
+not a favourable assumed emissions class. Import and producer-supply bases differ.
+
+Bus, double-cab, electric/hybrid program, investment-triggered changes and
+government-borne incentives remain absent. The DJP HTML for PMK 141 contains
+misplaced text and duplicate/OCR errors; the original official PDF and amended
+annex are authoritative. Ambiguous table boundaries were not normalised from
+memory. Verify the source PDFs and applicable program decisions before adding
+those rows. The HS `Ex.` descriptions are not a universal vehicle-code map.
+
+### Remaining work before the Indonesia delivery is ready
+
+- Resolve the omitted vehicle/program schedules and ministerial non-vehicle
+  classifications/thresholds against authoritative original documents.
+- Review PMK 52/53 and successor gold/crypto transitions before encoding them.
+- Expand the explicitly sampled KAP/KJS filing dictionary where source-verified;
+  keep KBLI/BTKI omissions labelled rather than inventing code correlations.
+- Review remaining final-tax families and Article 26 bases beyond the encoded
+  snapshots. Treaty tables and unverified history stay absent.
+- Refresh comparison-pack status only after PR #3 lands; its files retain their owner.
+
+PR #5 remains draft while these coverage checks are outstanding.

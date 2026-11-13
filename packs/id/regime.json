@@ -770,6 +770,90 @@
       "treatment_id": "ppn-ftz-not-reexported-luxury",
       "local_code": "ppn-ftz-not-reexported-luxury",
       "rule": "Temporary entry from TLDDP under PMK 173 Article 18(2)(d), not taken back out of KPBPB by the specified deadline, Article 20; self-paid by the KPBPB recipient. Applies only after checking the specific not-collected/exempt facility exceptions; location in a free-trade zone alone does not grant relief. Luxury classification must meet the statutory PPnBM goods criteria; its PPN base is full, and any separate PPnBM must be determined independently. PMK 11 Article 22 applies this computation from 1 January 2025. Origin, processing and temporary-movement facts determine the base; the resolver does not infer them."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppnbm-passenger-upto-3000-under-150",
+      "local_code": "ppnbm-passenger-upto-3000-under-150",
+      "rule": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity at most 3,000 cc, with CO2 < 150 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppnbm-passenger-upto-3000-150-200",
+      "local_code": "ppnbm-passenger-upto-3000-150-200",
+      "rule": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity at most 3,000 cc, with 150 <= CO2 <= 200 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppnbm-passenger-upto-3000-200-250",
+      "local_code": "ppnbm-passenger-upto-3000-200-250",
+      "rule": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity at most 3,000 cc, with 200 < CO2 <= 250 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppnbm-passenger-upto-3000-over-250",
+      "local_code": "ppnbm-passenger-upto-3000-over-250",
+      "rule": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity at most 3,000 cc, with CO2 > 250 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppnbm-passenger-3000-4000-under-150",
+      "local_code": "ppnbm-passenger-3000-4000-under-150",
+      "rule": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity over 3,000 and at most 4,000 cc, with CO2 < 150 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppnbm-passenger-3000-4000-150-200",
+      "local_code": "ppnbm-passenger-3000-4000-150-200",
+      "rule": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity over 3,000 and at most 4,000 cc, with 150 <= CO2 <= 200 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppnbm-passenger-3000-4000-200-250",
+      "local_code": "ppnbm-passenger-3000-4000-200-250",
+      "rule": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity over 3,000 and at most 4,000 cc, with 200 < CO2 <= 250 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppnbm-passenger-3000-4000-over-250",
+      "local_code": "ppnbm-passenger-3000-4000-over-250",
+      "rule": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity over 3,000 and at most 4,000 cc, with CO2 > 250 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppnbm-vehicle-golf",
+      "local_code": "ppnbm-vehicle-golf",
+      "rule": "Golf cars, including golf buggies and similar vehicles, within Annex I D(1). Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppnbm-vehicle-terrain",
+      "local_code": "ppnbm-vehicle-terrain",
+      "rule": "Special vehicles for snow, beach, mountain or similar travel within Annex I D(2). Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppnbm-vehicle-motorcycle-250-500",
+      "local_code": "ppnbm-vehicle-motorcycle-250-500",
+      "rule": "Two-/three-wheel reciprocating internal-combustion piston vehicles, engine capacity over 250 and at most 500 cc, Annex I D(3). Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppnbm-vehicle-motorcycle-over-500",
+      "local_code": "ppnbm-vehicle-motorcycle-over-500",
+      "rule": "Two-/three-wheel reciprocating internal-combustion piston vehicles with engine capacity over 500 cc, Annex I D(4). Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppnbm-vehicle-caravan",
+      "local_code": "ppnbm-vehicle-caravan",
+      "rule": "Caravan-type trailers/semi-trailers for housing or camping within Annex I D(5). Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages."
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "ppnbm-vehicle-over-4000",
+      "local_code": "ppnbm-vehicle-over-4000",
+      "rule": "Motor vehicles with engine capacity over 4,000 cc within Annex I D(6); confirm the Ex. goods classification rather than extending this to all industrial machinery. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages."
     }
   ],
   "taxes": [
@@ -7000,7 +7084,7 @@
       "name": "Luxury-goods sales tax",
       "local_name": "Pajak Penjualan atas Barang Mewah",
       "kind": "sales",
-      "notes": "PP 61/2020 non-vehicle statutory groups only. Detailed implementing classes/HS, housing thresholds, motor-vehicle schedules and prior numeric histories remain unencoded. This tax is separate from PPN.",
+      "notes": "PP 61/2020 non-vehicle groups and selected PMK 42/2022 vehicle classes. Detailed HS, housing thresholds, bus/double-cab/low-carbon program schedules and prior numerical histories remain unencoded. PPnBM is separate from PPN.",
       "treatments": [
         {
           "id": "ppnbm-housing",
@@ -7301,6 +7385,636 @@
                   "instrument": "UU PPN dan PPnBM",
                   "url": "https://pajak.go.id/sites/default/files/2021-12/SDSN%20UU%20PPN%20Indo-%20dengan%20tanda%20perubahan_UU%20HPP.pdf",
                   "pinpoint": "Pasal 5: impor/penyerahan oleh pengusaha yang menghasilkan",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "ppnbm-passenger-upto-3000-under-150",
+          "name": "Passenger PPnBM CO2 branch: upto-3000 under-150",
+          "local_code": "ppnbm-passenger-upto-3000-under-150",
+          "semantic_code": "luxury",
+          "notes": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity at most 3,000 cc, with CO2 < 150 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages.",
+          "rates": [
+            {
+              "id": "ppnbm-passenger-upto-3000-under-150-20220401",
+              "effective_from": "2022-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.15",
+                "base_formula": "Nilai Impor for CBU imports; Harga Jual for domestic producer supply, subject to the separate low-carbon rules"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 42/PMK.010/2022",
+                  "instrument": "PMK 42/PMK.010/2022",
+                  "url": "https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf",
+                  "pinpoint": "Pasal I(3), Lampiran I A dan D; Pasal II berlaku 1 April 2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 141/PMK.010/2021",
+                  "instrument": "PMK 141/PMK.010/2021",
+                  "url": "https://jdih-old.kemenkeu.go.id/download/fcd2b15d-9e52-4589-85c2-5bd131aa4777/141~PMK.010~2021Per.pdf",
+                  "pinpoint": "Pasal 2, 21-28: scope, base, test reports and exclusions; amended by PMK 42/2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "ppnbm-passenger-upto-3000-150-200",
+          "name": "Passenger PPnBM CO2 branch: upto-3000 150-200",
+          "local_code": "ppnbm-passenger-upto-3000-150-200",
+          "semantic_code": "luxury",
+          "notes": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity at most 3,000 cc, with 150 <= CO2 <= 200 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages.",
+          "rates": [
+            {
+              "id": "ppnbm-passenger-upto-3000-150-200-20220401",
+              "effective_from": "2022-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.20",
+                "base_formula": "Nilai Impor for CBU imports; Harga Jual for domestic producer supply, subject to the separate low-carbon rules"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 42/PMK.010/2022",
+                  "instrument": "PMK 42/PMK.010/2022",
+                  "url": "https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf",
+                  "pinpoint": "Pasal I(3), Lampiran I A dan D; Pasal II berlaku 1 April 2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 141/PMK.010/2021",
+                  "instrument": "PMK 141/PMK.010/2021",
+                  "url": "https://jdih-old.kemenkeu.go.id/download/fcd2b15d-9e52-4589-85c2-5bd131aa4777/141~PMK.010~2021Per.pdf",
+                  "pinpoint": "Pasal 2, 21-28: scope, base, test reports and exclusions; amended by PMK 42/2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "ppnbm-passenger-upto-3000-200-250",
+          "name": "Passenger PPnBM CO2 branch: upto-3000 200-250",
+          "local_code": "ppnbm-passenger-upto-3000-200-250",
+          "semantic_code": "luxury",
+          "notes": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity at most 3,000 cc, with 200 < CO2 <= 250 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages.",
+          "rates": [
+            {
+              "id": "ppnbm-passenger-upto-3000-200-250-20220401",
+              "effective_from": "2022-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.25",
+                "base_formula": "Nilai Impor for CBU imports; Harga Jual for domestic producer supply, subject to the separate low-carbon rules"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 42/PMK.010/2022",
+                  "instrument": "PMK 42/PMK.010/2022",
+                  "url": "https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf",
+                  "pinpoint": "Pasal I(3), Lampiran I A dan D; Pasal II berlaku 1 April 2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 141/PMK.010/2021",
+                  "instrument": "PMK 141/PMK.010/2021",
+                  "url": "https://jdih-old.kemenkeu.go.id/download/fcd2b15d-9e52-4589-85c2-5bd131aa4777/141~PMK.010~2021Per.pdf",
+                  "pinpoint": "Pasal 2, 21-28: scope, base, test reports and exclusions; amended by PMK 42/2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "ppnbm-passenger-upto-3000-over-250",
+          "name": "Passenger PPnBM CO2 branch: upto-3000 over-250",
+          "local_code": "ppnbm-passenger-upto-3000-over-250",
+          "semantic_code": "luxury",
+          "notes": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity at most 3,000 cc, with CO2 > 250 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages.",
+          "rates": [
+            {
+              "id": "ppnbm-passenger-upto-3000-over-250-20220401",
+              "effective_from": "2022-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.40",
+                "base_formula": "Nilai Impor for CBU imports; Harga Jual for domestic producer supply, subject to the separate low-carbon rules"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 42/PMK.010/2022",
+                  "instrument": "PMK 42/PMK.010/2022",
+                  "url": "https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf",
+                  "pinpoint": "Pasal I(3), Lampiran I A dan D; Pasal II berlaku 1 April 2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 141/PMK.010/2021",
+                  "instrument": "PMK 141/PMK.010/2021",
+                  "url": "https://jdih-old.kemenkeu.go.id/download/fcd2b15d-9e52-4589-85c2-5bd131aa4777/141~PMK.010~2021Per.pdf",
+                  "pinpoint": "Pasal 2, 21-28: scope, base, test reports and exclusions; amended by PMK 42/2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "ppnbm-passenger-3000-4000-under-150",
+          "name": "Passenger PPnBM CO2 branch: 3000-4000 under-150",
+          "local_code": "ppnbm-passenger-3000-4000-under-150",
+          "semantic_code": "luxury",
+          "notes": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity over 3,000 and at most 4,000 cc, with CO2 < 150 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages.",
+          "rates": [
+            {
+              "id": "ppnbm-passenger-3000-4000-under-150-20220401",
+              "effective_from": "2022-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.40",
+                "base_formula": "Nilai Impor for CBU imports; Harga Jual for domestic producer supply, subject to the separate low-carbon rules"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 42/PMK.010/2022",
+                  "instrument": "PMK 42/PMK.010/2022",
+                  "url": "https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf",
+                  "pinpoint": "Pasal I(3), Lampiran I A dan D; Pasal II berlaku 1 April 2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 141/PMK.010/2021",
+                  "instrument": "PMK 141/PMK.010/2021",
+                  "url": "https://jdih-old.kemenkeu.go.id/download/fcd2b15d-9e52-4589-85c2-5bd131aa4777/141~PMK.010~2021Per.pdf",
+                  "pinpoint": "Pasal 2, 21-28: scope, base, test reports and exclusions; amended by PMK 42/2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "ppnbm-passenger-3000-4000-150-200",
+          "name": "Passenger PPnBM CO2 branch: 3000-4000 150-200",
+          "local_code": "ppnbm-passenger-3000-4000-150-200",
+          "semantic_code": "luxury",
+          "notes": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity over 3,000 and at most 4,000 cc, with 150 <= CO2 <= 200 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages.",
+          "rates": [
+            {
+              "id": "ppnbm-passenger-3000-4000-150-200-20220401",
+              "effective_from": "2022-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.50",
+                "base_formula": "Nilai Impor for CBU imports; Harga Jual for domestic producer supply, subject to the separate low-carbon rules"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 42/PMK.010/2022",
+                  "instrument": "PMK 42/PMK.010/2022",
+                  "url": "https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf",
+                  "pinpoint": "Pasal I(3), Lampiran I A dan D; Pasal II berlaku 1 April 2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 141/PMK.010/2021",
+                  "instrument": "PMK 141/PMK.010/2021",
+                  "url": "https://jdih-old.kemenkeu.go.id/download/fcd2b15d-9e52-4589-85c2-5bd131aa4777/141~PMK.010~2021Per.pdf",
+                  "pinpoint": "Pasal 2, 21-28: scope, base, test reports and exclusions; amended by PMK 42/2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "ppnbm-passenger-3000-4000-200-250",
+          "name": "Passenger PPnBM CO2 branch: 3000-4000 200-250",
+          "local_code": "ppnbm-passenger-3000-4000-200-250",
+          "semantic_code": "luxury",
+          "notes": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity over 3,000 and at most 4,000 cc, with 200 < CO2 <= 250 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages.",
+          "rates": [
+            {
+              "id": "ppnbm-passenger-3000-4000-200-250-20220401",
+              "effective_from": "2022-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.60",
+                "base_formula": "Nilai Impor for CBU imports; Harga Jual for domestic producer supply, subject to the separate low-carbon rules"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 42/PMK.010/2022",
+                  "instrument": "PMK 42/PMK.010/2022",
+                  "url": "https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf",
+                  "pinpoint": "Pasal I(3), Lampiran I A dan D; Pasal II berlaku 1 April 2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 141/PMK.010/2021",
+                  "instrument": "PMK 141/PMK.010/2021",
+                  "url": "https://jdih-old.kemenkeu.go.id/download/fcd2b15d-9e52-4589-85c2-5bd131aa4777/141~PMK.010~2021Per.pdf",
+                  "pinpoint": "Pasal 2, 21-28: scope, base, test reports and exclusions; amended by PMK 42/2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "ppnbm-passenger-3000-4000-over-250",
+          "name": "Passenger PPnBM CO2 branch: 3000-4000 over-250",
+          "local_code": "ppnbm-passenger-3000-4000-over-250",
+          "semantic_code": "luxury",
+          "notes": "Piston-engine spark-ignition or compression-ignition/diesel passenger vehicles carrying fewer than 10 persons including the driver, engine capacity over 3,000 and at most 4,000 cc, with CO2 > 250 g/km under Annex I A. Only the CO2 branch is stated here; use the original instrument for fuel-economy alternatives and low-carbon program eligibility. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages.",
+          "rates": [
+            {
+              "id": "ppnbm-passenger-3000-4000-over-250-20220401",
+              "effective_from": "2022-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.70",
+                "base_formula": "Nilai Impor for CBU imports; Harga Jual for domestic producer supply, subject to the separate low-carbon rules"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 42/PMK.010/2022",
+                  "instrument": "PMK 42/PMK.010/2022",
+                  "url": "https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf",
+                  "pinpoint": "Pasal I(3), Lampiran I A dan D; Pasal II berlaku 1 April 2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 141/PMK.010/2021",
+                  "instrument": "PMK 141/PMK.010/2021",
+                  "url": "https://jdih-old.kemenkeu.go.id/download/fcd2b15d-9e52-4589-85c2-5bd131aa4777/141~PMK.010~2021Per.pdf",
+                  "pinpoint": "Pasal 2, 21-28: scope, base, test reports and exclusions; amended by PMK 42/2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "ppnbm-vehicle-golf",
+          "name": "Other vehicle PPnBM: golf",
+          "local_code": "ppnbm-vehicle-golf",
+          "semantic_code": "luxury",
+          "notes": "Golf cars, including golf buggies and similar vehicles, within Annex I D(1). Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages.",
+          "rates": [
+            {
+              "id": "ppnbm-vehicle-golf-20220401",
+              "effective_from": "2022-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.50",
+                "base_formula": "Nilai Impor for CBU imports; Harga Jual for domestic producer supply"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 42/PMK.010/2022",
+                  "instrument": "PMK 42/PMK.010/2022",
+                  "url": "https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf",
+                  "pinpoint": "Pasal I(3), Lampiran I A dan D; Pasal II berlaku 1 April 2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 141/PMK.010/2021",
+                  "instrument": "PMK 141/PMK.010/2021",
+                  "url": "https://jdih-old.kemenkeu.go.id/download/fcd2b15d-9e52-4589-85c2-5bd131aa4777/141~PMK.010~2021Per.pdf",
+                  "pinpoint": "Pasal 2, 21-28: scope, base, test reports and exclusions; amended by PMK 42/2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "ppnbm-vehicle-terrain",
+          "name": "Other vehicle PPnBM: terrain",
+          "local_code": "ppnbm-vehicle-terrain",
+          "semantic_code": "luxury",
+          "notes": "Special vehicles for snow, beach, mountain or similar travel within Annex I D(2). Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages.",
+          "rates": [
+            {
+              "id": "ppnbm-vehicle-terrain-20220401",
+              "effective_from": "2022-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.60",
+                "base_formula": "Nilai Impor for CBU imports; Harga Jual for domestic producer supply"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 42/PMK.010/2022",
+                  "instrument": "PMK 42/PMK.010/2022",
+                  "url": "https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf",
+                  "pinpoint": "Pasal I(3), Lampiran I A dan D; Pasal II berlaku 1 April 2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 141/PMK.010/2021",
+                  "instrument": "PMK 141/PMK.010/2021",
+                  "url": "https://jdih-old.kemenkeu.go.id/download/fcd2b15d-9e52-4589-85c2-5bd131aa4777/141~PMK.010~2021Per.pdf",
+                  "pinpoint": "Pasal 2, 21-28: scope, base, test reports and exclusions; amended by PMK 42/2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "ppnbm-vehicle-motorcycle-250-500",
+          "name": "Other vehicle PPnBM: motorcycle-250-500",
+          "local_code": "ppnbm-vehicle-motorcycle-250-500",
+          "semantic_code": "luxury",
+          "notes": "Two-/three-wheel reciprocating internal-combustion piston vehicles, engine capacity over 250 and at most 500 cc, Annex I D(3). Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages.",
+          "rates": [
+            {
+              "id": "ppnbm-vehicle-motorcycle-250-500-20220401",
+              "effective_from": "2022-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.60",
+                "base_formula": "Nilai Impor for CBU imports; Harga Jual for domestic producer supply"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 42/PMK.010/2022",
+                  "instrument": "PMK 42/PMK.010/2022",
+                  "url": "https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf",
+                  "pinpoint": "Pasal I(3), Lampiran I A dan D; Pasal II berlaku 1 April 2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 141/PMK.010/2021",
+                  "instrument": "PMK 141/PMK.010/2021",
+                  "url": "https://jdih-old.kemenkeu.go.id/download/fcd2b15d-9e52-4589-85c2-5bd131aa4777/141~PMK.010~2021Per.pdf",
+                  "pinpoint": "Pasal 2, 21-28: scope, base, test reports and exclusions; amended by PMK 42/2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "ppnbm-vehicle-motorcycle-over-500",
+          "name": "Other vehicle PPnBM: motorcycle-over-500",
+          "local_code": "ppnbm-vehicle-motorcycle-over-500",
+          "semantic_code": "luxury",
+          "notes": "Two-/three-wheel reciprocating internal-combustion piston vehicles with engine capacity over 500 cc, Annex I D(4). Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages.",
+          "rates": [
+            {
+              "id": "ppnbm-vehicle-motorcycle-over-500-20220401",
+              "effective_from": "2022-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.95",
+                "base_formula": "Nilai Impor for CBU imports; Harga Jual for domestic producer supply"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 42/PMK.010/2022",
+                  "instrument": "PMK 42/PMK.010/2022",
+                  "url": "https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf",
+                  "pinpoint": "Pasal I(3), Lampiran I A dan D; Pasal II berlaku 1 April 2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 141/PMK.010/2021",
+                  "instrument": "PMK 141/PMK.010/2021",
+                  "url": "https://jdih-old.kemenkeu.go.id/download/fcd2b15d-9e52-4589-85c2-5bd131aa4777/141~PMK.010~2021Per.pdf",
+                  "pinpoint": "Pasal 2, 21-28: scope, base, test reports and exclusions; amended by PMK 42/2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "ppnbm-vehicle-caravan",
+          "name": "Other vehicle PPnBM: caravan",
+          "local_code": "ppnbm-vehicle-caravan",
+          "semantic_code": "luxury",
+          "notes": "Caravan-type trailers/semi-trailers for housing or camping within Annex I D(5). Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages.",
+          "rates": [
+            {
+              "id": "ppnbm-vehicle-caravan-20220401",
+              "effective_from": "2022-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.95",
+                "base_formula": "Nilai Impor for CBU imports; Harga Jual for domestic producer supply"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 42/PMK.010/2022",
+                  "instrument": "PMK 42/PMK.010/2022",
+                  "url": "https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf",
+                  "pinpoint": "Pasal I(3), Lampiran I A dan D; Pasal II berlaku 1 April 2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 141/PMK.010/2021",
+                  "instrument": "PMK 141/PMK.010/2021",
+                  "url": "https://jdih-old.kemenkeu.go.id/download/fcd2b15d-9e52-4589-85c2-5bd131aa4777/141~PMK.010~2021Per.pdf",
+                  "pinpoint": "Pasal 2, 21-28: scope, base, test reports and exclusions; amended by PMK 42/2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+              }
+            }
+          ],
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+          }
+        },
+        {
+          "id": "ppnbm-vehicle-over-4000",
+          "name": "Other vehicle PPnBM: over-4000",
+          "local_code": "ppnbm-vehicle-over-4000",
+          "semantic_code": "luxury",
+          "notes": "Motor vehicles with engine capacity over 4,000 cc within Annex I D(6); confirm the Ex. goods classification rather than extending this to all industrial machinery. Ordinary PPnBM classification before any separately qualifying low-carbon program, conditional exemption or government-borne incentive. Check the amended HS/Ex. goods description, vehicle test report and all statutory exclusions. HS codes and fuel-economy alternatives are not transcribed here; this is not an automatic vehicle classifier. Article 24 requires the highest class rate within the vehicle/capacity group when the required test evidence is missing; do not silently choose a favourable CO2 row. Article 25 distinguishes CBU import value from domestic producer selling price. No prior numerical vehicle history is reconstructed: 1 April 2022 is the amended-annex application date, not the first legal introduction of these percentages.",
+          "rates": [
+            {
+              "id": "ppnbm-vehicle-over-4000-20220401",
+              "effective_from": "2022-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.95",
+                "base_formula": "Nilai Impor for CBU imports; Harga Jual for domestic producer supply"
+              },
+              "legal_citations": [
+                {
+                  "title": "PMK 42/PMK.010/2022",
+                  "instrument": "PMK 42/PMK.010/2022",
+                  "url": "https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf",
+                  "pinpoint": "Pasal I(3), Lampiran I A dan D; Pasal II berlaku 1 April 2022",
+                  "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "PMK 141/PMK.010/2021",
+                  "instrument": "PMK 141/PMK.010/2021",
+                  "url": "https://jdih-old.kemenkeu.go.id/download/fcd2b15d-9e52-4589-85c2-5bd131aa4777/141~PMK.010~2021Per.pdf",
+                  "pinpoint": "Pasal 2, 21-28: scope, base, test reports and exclusions; amended by PMK 42/2022",
                   "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
                 }
               ],

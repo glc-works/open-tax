@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2022-04-01-pmk-42-2022-vehicles",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "PMK 42/2022: selected vehicle PPnBM classes",
+  "summary": "Encode eight passenger-vehicle CO2 branches and six other vehicle classes at the amended-annex date. Preserve import versus producer-supply bases, testing evidence, Ex. goods classifications and conditional low-carbon/exemption overrides. Do not infer unverified bus/double-cab or investment-triggered program numbers.",
+  "legal_basis": [
+    {
+      "title": "PMK 42/PMK.010/2022",
+      "instrument": "PMK 42/PMK.010/2022",
+      "url": "https://jdih.kemenkeu.go.id/download/9d340161-7cda-41d6-aec2-b4fe66a2d66b/42~PMK.010~2022Per.pdf",
+      "pinpoint": "Pasal I(3), Lampiran I A dan D; Pasal II berlaku 1 April 2022",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    },
+    {
+      "title": "PMK 141/PMK.010/2021",
+      "instrument": "PMK 141/PMK.010/2021",
+      "url": "https://jdih-old.kemenkeu.go.id/download/fcd2b15d-9e52-4589-85c2-5bd131aa4777/141~PMK.010~2021Per.pdf",
+      "pinpoint": "Pasal 2, 21-28: scope, base, test reports and exclusions; amended by PMK 42/2022",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-14",
+    "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+  },
+  "changes": [
+    {
+      "id": "2022-04-01-pmk-42-2022-vehicles-coverage",
+      "effective_from": "2022-04-01",
+      "change_type": "treatment_added",
+      "summary": "Encode eight passenger-vehicle CO2 branches and six other vehicle classes at the amended-annex date. Preserve import versus producer-supply bases, testing evidence, Ex. goods classifications and conditional low-carbon/exemption overrides. Do not infer unverified bus/double-cab or investment-triggered program numbers.",
+      "affected": {
+        "tax_ids": [
+          "ppnbm"
+        ],
+        "treatment_ids": [
+          "ppnbm-passenger-upto-3000-under-150",
+          "ppnbm-passenger-upto-3000-150-200",
+          "ppnbm-passenger-upto-3000-200-250",
+          "ppnbm-passenger-upto-3000-over-250",
+          "ppnbm-passenger-3000-4000-under-150",
+          "ppnbm-passenger-3000-4000-150-200",
+          "ppnbm-passenger-3000-4000-200-250",
+          "ppnbm-passenger-3000-4000-over-250",
+          "ppnbm-vehicle-golf",
+          "ppnbm-vehicle-terrain",
+          "ppnbm-vehicle-motorcycle-250-500",
+          "ppnbm-vehicle-motorcycle-over-500",
+          "ppnbm-vehicle-caravan",
+          "ppnbm-vehicle-over-4000"
+        ],
+        "semantic_codes": [
+          "luxury"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Select the treatment by taxpayer, transaction and statutory scope; apply exclusions before choosing a rate. The resolver returns authored references and does not compute tax.",
+        "systems": [
+          "filing",
+          "reporting"
+        ]
+      }
+    }
+  ]
+}
