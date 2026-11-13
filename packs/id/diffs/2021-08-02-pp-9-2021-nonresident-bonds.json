@@ -1,0 +1,57 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2021-08-02-pp-9-2021-nonresident-bonds",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "PP 9/2021: non-resident bond interest",
+  "summary": "Encode the special domestic 10% bond-interest rate after the six-month commencement delay, subject to the cited bond definition, base and treaty rules. Earlier bond history is not reconstructed.",
+  "legal_basis": [
+    {
+      "title": "PP 9/2021",
+      "instrument": "PP 9/2021",
+      "url": "https://www.pajak.go.id/id/peraturan/perlakuan-perpajakan-untuk-mendukung-kemudahan-berusaha",
+      "pinpoint": "Pasal 3 ayat (3)-(8), Pasal 11: tarif berlaku setelah enam bulan",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    },
+    {
+      "title": "Kementerian Keuangan Warta Fiskal 2021 edisi 2",
+      "instrument": "Kementerian Keuangan Warta Fiskal 2021 edisi 2",
+      "url": "https://fiskal.kemenkeu.go.id/files/warta-fiskal/file/1630899596_edisi-2-2021.pdf",
+      "pinpoint": "PPh bunga obligasi WPLN: efektif 2 Agustus 2021",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-14",
+    "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+  },
+  "changes": [
+    {
+      "id": "2021-08-02-pp-9-2021-nonresident-bonds-coverage",
+      "effective_from": "2021-08-02",
+      "change_type": "treatment_added",
+      "summary": "Encode the special domestic 10% bond-interest rate after the six-month commencement delay, subject to the cited bond definition, base and treaty rules. Earlier bond history is not reconstructed.",
+      "affected": {
+        "tax_ids": [
+          "pph26"
+        ],
+        "treatment_ids": [
+          "pph26-bond"
+        ],
+        "semantic_codes": [
+          "withholding"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Select the treatment by taxpayer, transaction and statutory scope; apply exclusions before choosing a rate. The resolver returns authored references and does not compute tax.",
+        "systems": [
+          "filing",
+          "reporting"
+        ]
+      }
+    }
+  ]
+}

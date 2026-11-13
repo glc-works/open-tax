@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2025-01-01-pmk-11-2025-additional-bases",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "PMK 11/2025: telecom, commodity, KSO and FTZ bases",
+  "summary": "Add express film/telecom/token/voucher, LPG/fertiliser, member-to-KSO and creditor-collateral calculations plus six KPBPB base paths, preserving fee versus face-value bases and conditional facility exceptions. Gold/crypto histories are omitted pending their later amending-instrument review.",
+  "legal_basis": [
+    {
+      "title": "PMK 11/2025",
+      "instrument": "PMK 11/2025",
+      "url": "https://www.pajak.go.id/index.php/id/peraturan/ketentuan-nilai-lain-sebagai-dasar-pengenaan-pajak-dan-besaran-tertentu-pajak-pertambahan",
+      "pinpoint": "Pasal 5-11, 17-18, 22: perhitungan sejak 1 Januari 2025",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-14",
+    "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+  },
+  "changes": [
+    {
+      "id": "2025-01-01-pmk-11-2025-additional-bases-coverage",
+      "effective_from": "2025-01-01",
+      "change_type": "treatment_added",
+      "summary": "Add express film/telecom/token/voucher, LPG/fertiliser, member-to-KSO and creditor-collateral calculations plus six KPBPB base paths, preserving fee versus face-value bases and conditional facility exceptions. Gold/crypto histories are omitted pending their later amending-instrument review.",
+      "affected": {
+        "tax_ids": [
+          "ppn"
+        ],
+        "treatment_ids": [
+          "ppn-special-import-film",
+          "ppn-special-import-film-cinema",
+          "ppn-special-telecom-first",
+          "ppn-special-telecom-second-indirect",
+          "ppn-special-telecom-second-direct",
+          "ppn-special-token-commission",
+          "ppn-special-token-margin",
+          "ppn-special-voucher-commission",
+          "ppn-special-voucher-margin",
+          "ppn-special-lpg-retail",
+          "ppn-special-fertiliser-subsidy",
+          "ppn-special-fertiliser-retail",
+          "ppn-special-kso-member",
+          "ppn-special-voucher-no-margin",
+          "ppn-special-repossessed-collateral",
+          "ppn-ftz-unprocessed-ordinary",
+          "ppn-ftz-unprocessed-luxury",
+          "ppn-ftz-not-returned-ordinary",
+          "ppn-ftz-not-returned-luxury",
+          "ppn-ftz-not-reexported-ordinary",
+          "ppn-ftz-not-reexported-luxury"
+        ],
+        "semantic_codes": [
+          "standard"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Select the treatment by taxpayer, transaction and statutory scope; apply exclusions before choosing a rate. The resolver returns authored references and does not compute tax.",
+        "systems": [
+          "filing",
+          "reporting"
+        ]
+      }
+    }
+  ]
+}

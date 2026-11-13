@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2018-01-02-pp-34-2017-rent",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "PP 34/2017: land/building rental",
+  "summary": "Initial encoded snapshot at the cited instrument commencement; prior numerical regimes are not reconstructed. Apply the specific base, exclusions and transition rules; final does not always mean payer withholding.",
+  "legal_basis": [
+    {
+      "title": "PP 34/2017",
+      "instrument": "PP 34/2017",
+      "url": "https://www.pajak.go.id/id/peraturan/pajak-penghasilan-atas-penghasilan-dari-persewaan-tanah-danatau-bangunan",
+      "pinpoint": "Pasal 2-5 dan Pasal 7: berlaku 2 Januari 2018",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-14",
+    "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+  },
+  "changes": [
+    {
+      "id": "2018-01-02-pp-34-2017-rent-coverage",
+      "effective_from": "2018-01-02",
+      "change_type": "treatment_added",
+      "summary": "Initial encoded snapshot at the cited instrument commencement; prior numerical regimes are not reconstructed. Apply the specific base, exclusions and transition rules; final does not always mean payer withholding.",
+      "affected": {
+        "tax_ids": [
+          "pph4-2"
+        ],
+        "treatment_ids": [
+          "pph4-2-rent"
+        ],
+        "semantic_codes": [
+          "final"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Select the treatment by taxpayer, transaction and statutory scope; apply exclusions before choosing a rate. The resolver returns authored references and does not compute tax.",
+        "systems": [
+          "filing",
+          "reporting"
+        ]
+      }
+    }
+  ]
+}

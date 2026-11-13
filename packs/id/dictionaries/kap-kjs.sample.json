@@ -240,6 +240,56 @@
           "publisher": "Direktorat Jenderal Pajak"
         }
       ]
+    },
+    {
+      "code": "411128-420",
+      "name": "PPh Final UMKM Setor Sendiri",
+      "status": "sample",
+      "maps_to": {
+        "tax_id": "pph4-2",
+        "treatment_id": "pph4-2-umkm",
+        "semantic_code": "final",
+        "notes": "Billing classification only; eligibility and applicable scope version still depend on taxpayer and income facts."
+      },
+      "legal_citations": [
+        {
+          "title": "Kewajiban Bendahara Memotong PPh Final UMKM",
+          "instrument": "Kementerian Keuangan, petunjuk KAP 411128 / KJS 420 dan 423",
+          "url": "https://mediakeuangan.kemenkeu.go.id/article/show/kewajiban-bendahara-memotong-pph-final-umkm",
+          "pinpoint": "Setor sendiri (420); dipotong atau dipungut (423)",
+          "publisher": "Kementerian Keuangan"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-14",
+        "notes": "Sample billing identifiers only; no legal commencement or payment deadline asserted."
+      }
+    },
+    {
+      "code": "411128-423",
+      "name": "PPh Final UMKM Pemotongan atau Pemungutan",
+      "status": "sample",
+      "maps_to": {
+        "tax_id": "pph4-2",
+        "treatment_id": "pph4-2-umkm",
+        "semantic_code": "final",
+        "notes": "Billing classification only; eligibility and applicable scope version still depend on taxpayer and income facts."
+      },
+      "legal_citations": [
+        {
+          "title": "Kewajiban Bendahara Memotong PPh Final UMKM",
+          "instrument": "Kementerian Keuangan, petunjuk KAP 411128 / KJS 420 dan 423",
+          "url": "https://mediakeuangan.kemenkeu.go.id/article/show/kewajiban-bendahara-memotong-pph-final-umkm",
+          "pinpoint": "Setor sendiri (420); dipotong atau dipungut (423)",
+          "publisher": "Kementerian Keuangan"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-14",
+        "notes": "Sample billing identifiers only; no legal commencement or payment deadline asserted."
+      }
     }
   ]
 }

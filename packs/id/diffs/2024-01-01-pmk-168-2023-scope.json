@@ -1,0 +1,56 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2024-01-01-pmk-168-2023-scope",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "PMK 168/2023: bases and employment-class routing",
+  "summary": "Encode the daily-above-2.5m route, resident individual service/event/pension-withdrawal/former-employee bases, irregular commissioners and permanent-employee/pensioner final-period reconciliation. The Article 17 layers are preserved but their calculation bases and TER routing differ by recipient class.",
+  "legal_basis": [
+    {
+      "title": "PMK 168/2023",
+      "instrument": "PMK 168/2023",
+      "url": "https://pajak.go.id/id/peraturan/petunjuk-pelaksanaan-pemotongan-pajak-atas-penghasilan-sehubungan-dengan-pekerjaan-jasa-1",
+      "pinpoint": "Pasal 8-16 dan Pasal 25: berlaku 1 Januari 2024",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-14",
+    "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+  },
+  "changes": [
+    {
+      "id": "2024-01-01-pmk-168-2023-scope-coverage",
+      "effective_from": "2024-01-01",
+      "change_type": "treatment_added",
+      "summary": "Encode the daily-above-2.5m route, resident individual service/event/pension-withdrawal/former-employee bases, irregular commissioners and permanent-employee/pensioner final-period reconciliation. The Article 17 layers are preserved but their calculation bases and TER routing differ by recipient class.",
+      "affected": {
+        "tax_ids": [
+          "pph21"
+        ],
+        "treatment_ids": [
+          "pph21-daily-high",
+          "pph21-non-employee",
+          "pph21-event-participant",
+          "pph21-employee-pension-withdrawal",
+          "pph21-former-employee",
+          "pph21-irregular-commissioner",
+          "pph21-last-period"
+        ],
+        "semantic_codes": [
+          "withholding"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Select the treatment by taxpayer, transaction and statutory scope; apply exclusions before choosing a rate. The resolver returns authored references and does not compute tax.",
+        "systems": [
+          "filing",
+          "reporting"
+        ]
+      }
+    }
+  ]
+}

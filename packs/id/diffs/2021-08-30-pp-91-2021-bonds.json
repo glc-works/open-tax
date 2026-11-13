@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2021-08-30-pp-91-2021-bonds",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "PP 91/2021: resident bond interest",
+  "summary": "Initial encoded snapshot at the cited instrument commencement; prior numerical regimes are not reconstructed. Apply the specific base, exclusions and transition rules; final does not always mean payer withholding.",
+  "legal_basis": [
+    {
+      "title": "PP 91/2021",
+      "instrument": "PP 91/2021",
+      "url": "https://www.pajak.go.id/id/peraturan/pajak-penghasilan-atas-penghasilan-berupa-bunga-obligasi-yang-diterima-atau-diperoleh",
+      "pinpoint": "Pasal 1-4 dan Pasal 6: 30 Agustus 2021",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-14",
+    "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+  },
+  "changes": [
+    {
+      "id": "2021-08-30-pp-91-2021-bonds-coverage",
+      "effective_from": "2021-08-30",
+      "change_type": "treatment_added",
+      "summary": "Initial encoded snapshot at the cited instrument commencement; prior numerical regimes are not reconstructed. Apply the specific base, exclusions and transition rules; final does not always mean payer withholding.",
+      "affected": {
+        "tax_ids": [
+          "pph4-2"
+        ],
+        "treatment_ids": [
+          "pph4-2-bond-resident"
+        ],
+        "semantic_codes": [
+          "final"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Select the treatment by taxpayer, transaction and statutory scope; apply exclusions before choosing a rate. The resolver returns authored references and does not compute tax.",
+        "systems": [
+          "filing",
+          "reporting"
+        ]
+      }
+    }
+  ]
+}

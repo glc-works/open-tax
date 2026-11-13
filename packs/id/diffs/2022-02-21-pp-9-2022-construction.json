@@ -1,0 +1,63 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2022-02-21-pp-9-2022-construction",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "PP 9/2022: seven construction classes",
+  "summary": "Initial encoded snapshot at the cited instrument commencement; prior numerical regimes are not reconstructed. Apply the specific base, exclusions and transition rules; final does not always mean payer withholding.",
+  "legal_basis": [
+    {
+      "title": "PP 9/2022",
+      "instrument": "PP 9/2022",
+      "url": "https://peraturan.bpk.go.id/Download/193622/PP%20Nomor%209%20Tahun%202022.pdf",
+      "pinpoint": "Pasal I perubahan Pasal 2-3, Pasal 10D; Pasal II",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    },
+    {
+      "title": "PP 51/2008 konsolidasi PP 9/2022",
+      "instrument": "PP 51/2008 konsolidasi PP 9/2022",
+      "url": "https://jdih.kemenkeu.go.id/api/download/0de381f7-2f69-4bd2-91d2-ad1f88560e4a/PP%2051%202008.pdf",
+      "pinpoint": "Pasal 5: pembayaran/penerimaan tidak termasuk PPN",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-14",
+    "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+  },
+  "changes": [
+    {
+      "id": "2022-02-21-pp-9-2022-construction-coverage",
+      "effective_from": "2022-02-21",
+      "change_type": "treatment_added",
+      "summary": "Initial encoded snapshot at the cited instrument commencement; prior numerical regimes are not reconstructed. Apply the specific base, exclusions and transition rules; final does not always mean payer withholding.",
+      "affected": {
+        "tax_ids": [
+          "pph4-2"
+        ],
+        "treatment_ids": [
+          "pph4-2-construction-small",
+          "pph4-2-construction-uncertified",
+          "pph4-2-construction-other-certified",
+          "pph4-2-construction-integrated-certified",
+          "pph4-2-construction-integrated-uncertified",
+          "pph4-2-construction-consultancy-certified",
+          "pph4-2-construction-consultancy-uncertified"
+        ],
+        "semantic_codes": [
+          "final"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Select the treatment by taxpayer, transaction and statutory scope; apply exclusions before choosing a rate. The resolver returns authored references and does not compute tax.",
+        "systems": [
+          "filing",
+          "reporting"
+        ]
+      }
+    }
+  ]
+}

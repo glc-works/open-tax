@@ -175,7 +175,7 @@ test("resolve prints the treatments in force and does not evaluate formulas", ()
   assert.equal(rows[0]?.rate.base_formula, "11/12 * (nilai impor | harga jual | penggantian)");
 
   const luxury = capture(() =>
-    runCli(["resolve", regimePath, "--date=2025-01-15", "--semantic", "luxury"]),
+    runCli(["resolve", regimePath, "--tax", "ppn", "--date=2025-01-15", "--semantic", "luxury"]),
   );
   assert.equal(luxury.result.valid, true, luxury.errs.join("\n"));
   const luxuryRows = JSON.parse(luxury.logs[0] ?? "null") as Array<{ versionId: string }>;

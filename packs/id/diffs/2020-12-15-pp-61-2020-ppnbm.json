@@ -1,0 +1,56 @@
+{
+  "$schema": "../../../schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2020-12-15-pp-61-2020-ppnbm",
+  "jurisdiction": "ID",
+  "pack_id": "id",
+  "title": "PP 61/2020: non-vehicle luxury-goods groups",
+  "summary": "Record seven non-vehicle statutory groups after the 60-day commencement delay. Preserve the separate PPnBM tax identity and conditional exceptions; detailed ministerial/vehicle classifications and earlier numeric histories are not reconstructed.",
+  "legal_basis": [
+    {
+      "title": "PP 61/2020",
+      "instrument": "PP 61/2020",
+      "url": "https://www.pajak.go.id/id/peraturan/barang-kena-pajak-yang-tergolong-mewah-selain-kendaraan-bermotor-yang-dikenai-pajak",
+      "pinpoint": "Pasal 1-3 dan Pasal 6: 60 hari setelah pengundangan 16 Oktober 2020",
+      "publisher": "Kementerian Keuangan / Direktorat Jenderal Pajak"
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-14",
+    "notes": "Official instrument text checked; treatment selection remains conditional on the cited scope and exclusions."
+  },
+  "changes": [
+    {
+      "id": "2020-12-15-pp-61-2020-ppnbm-coverage",
+      "effective_from": "2020-12-15",
+      "change_type": "treatment_added",
+      "summary": "Record seven non-vehicle statutory groups after the 60-day commencement delay. Preserve the separate PPnBM tax identity and conditional exceptions; detailed ministerial/vehicle classifications and earlier numeric histories are not reconstructed.",
+      "affected": {
+        "tax_ids": [
+          "ppnbm"
+        ],
+        "treatment_ids": [
+          "ppnbm-housing",
+          "ppnbm-unpowered-aircraft",
+          "ppnbm-ammunition",
+          "ppnbm-aircraft",
+          "ppnbm-firearms",
+          "ppnbm-ships",
+          "ppnbm-yachts"
+        ],
+        "semantic_codes": [
+          "luxury"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Select the treatment by taxpayer, transaction and statutory scope; apply exclusions before choosing a rate. The resolver returns authored references and does not compute tax.",
+        "systems": [
+          "filing",
+          "reporting"
+        ]
+      }
+    }
+  ]
+}
