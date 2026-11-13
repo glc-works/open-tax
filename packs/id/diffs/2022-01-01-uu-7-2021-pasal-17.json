@@ -4,7 +4,7 @@
   "id": "2022-01-01-uu-7-2021-pasal-17",
   "jurisdiction": "ID",
   "pack_id": "id",
-  "title": "UU HPP: Pasal 17 individual layers from tax year 2022",
+  "title": "UU HPP: individual layers and corporate rate from tax year 2022",
   "summary": "The progressive layers on individual taxable income widen the first band to Rp60 million and add a 35% layer above Rp5 billion. DJP said the UU PPh changes apply from tax year 2022.",
   "legal_basis": [
     {
@@ -12,6 +12,20 @@
       "instrument": "UU No. 7 Tahun 2021, Pasal 17 ayat (1) huruf a UU PPh",
       "url": "https://www.pajak.go.id/id/siaran-pers/presiden-ri-sahkan-uu-harmonisasi-peraturan-perpajakan",
       "pinpoint": "Tabel lapisan UU PPh versus UU HPP. Perubahan UU PPh berlaku mulai Tahun Pajak 2022.",
+      "publisher": "Direktorat Jenderal Pajak"
+    },
+    {
+      "title": "UU No. 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan",
+      "instrument": "UU 7/2021, Pasal 3, perubahan Pasal 17 ayat (1) huruf b UU PPh",
+      "url": "https://pajak.go.id/id/peraturan/harmonisasi-peraturan-perpajakan",
+      "pinpoint": "22% mulai Tahun Pajak 2022",
+      "publisher": "Direktorat Jenderal Pajak"
+    },
+    {
+      "title": "Fasilitas pengurangan tarif Pasal 31E",
+      "instrument": "UU PPh Pasal 31E ayat (1), penjelasan DJP Lima Jenis Tarif PPh Badan",
+      "url": "https://www.pajak.go.id/index.php/en/node/94054",
+      "pinpoint": "Wajib Pajak badan dalam negeri; peredaran bruto sampai Rp50 miliar; pengurangan tarif 50% atas PKP dari bagian peredaran bruto sampai Rp4,8 miliar",
       "publisher": "Direktorat Jenderal Pajak"
     }
   ],
@@ -27,10 +41,18 @@
       "change_type": "schedule_change",
       "summary": "Replace the four-layer individual schedule with the five-layer UU HPP schedule. This is the annual Pasal 17 computation, not the 2024 monthly TER.",
       "affected": {
-        "semantic_codes": ["withholding"],
-        "treatment_ids": ["pph21-annual"],
-        "tax_ids": ["pph21"],
-        "authority_codes": ["411121"]
+        "semantic_codes": [
+          "withholding"
+        ],
+        "treatment_ids": [
+          "pph21-annual"
+        ],
+        "tax_ids": [
+          "pph21"
+        ],
+        "authority_codes": [
+          "411121"
+        ]
       },
       "computation": {
         "notes": "Layers from 2022: 5% to Rp60 million; 15% to Rp250 million; 25% to Rp500 million; 30% to Rp5 billion; 35% above Rp5 billion. Each rate applies only to its slice."
@@ -38,13 +60,51 @@
       "migration_impact": {
         "severity": "high",
         "summary": "Payroll annualisation for tax year 2022 must use the new layers. Do not apply 35% to income below Rp5 billion.",
-        "systems": ["payroll", "filing"]
+        "systems": [
+          "payroll",
+          "filing"
+        ]
       },
       "before": {
         "description": "5% to Rp50 million; 15% to Rp250 million; 25% to Rp500 million; 30% above Rp500 million."
       },
       "after": {
         "description": "5% to Rp60 million; 15% to Rp250 million; 25% to Rp500 million; 30% to Rp5 billion; 35% above Rp5 billion."
+      }
+    },
+    {
+      "id": "uuhpp-corporate-2022",
+      "effective_from": "2022-01-01",
+      "change_type": "treatment_added",
+      "summary": "Record the HPP 22% corporate rate from tax year 2022 and the conditional Article 31E reduction. Earlier corporate rate history is not reconstructed.",
+      "affected": {
+        "tax_ids": [
+          "corporate-income-tax"
+        ],
+        "treatment_ids": [
+          "corporate-standard",
+          "corporate-31e"
+        ],
+        "semantic_codes": [
+          "standard",
+          "reduced"
+        ]
+      },
+      "computation": {
+        "statutory_rate": "0.22",
+        "notes": "Article 31E applies a 50% rate reduction only to the eligible taxable-income portion; not a blanket 11% tax on turnover or all profits."
+      },
+      "migration_impact": {
+        "severity": "medium",
+        "summary": "Separate ordinary corporate taxable income, qualifying Article 31E allocations, and final-taxed turnover. The reference resolver does not determine relief eligibility.",
+        "systems": [
+          "filing",
+          "reporting"
+        ]
+      },
+      "after": {
+        "statutory_rate": "0.22",
+        "description": "Article 31E qualifying portion takes 50% of this rate; residual taxable income uses the ordinary rate."
       }
     }
   ]

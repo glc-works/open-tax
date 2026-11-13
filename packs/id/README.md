@@ -15,19 +15,21 @@ Reviewed against the cited DJP and Ministry of Finance pages on 2026-11-13.
 | Pasal 4A | `out_of_scope` | The groups in the UU HPP text of Pasal 4A. Later amendments are not certified. |
 | Pemanfaatan BKP tidak berwujud / JKP dari luar Daerah Pabean | `reverse_charge` | Same rate path as standard. The recipient accounts for it. |
 | BKP mewah yang dikenai PPnBM, from 2025-01-01 | `luxury` | 12% on the full base. Final consumers use 11/12 only during January 2025. |
-| PPh 21 TER bulanan, pegawai tetap and pensioner, except the last period | `withholding` | Categories A/B/C and the effective date. The monthly percentage grid is not copied. |
-| PPh 21 TER bulanan, monthly-paid pegawai tidak tetap, including December | `withholding` | Same unpublished monthly grid. Not the daily bands and not the December Pasal 17 switch. |
+| PPh 21 TER bulanan, pegawai tetap and pensioner, except the last period | `withholding` | Categories A/B/C and the effective date. Complete A/B/C percentage tables; one rate applies to the whole monthly gross amount. |
+| PPh 21 TER bulanan, monthly-paid pegawai tidak tetap, including December | `withholding` | Same A/B/C tables. Not the daily bands and not the December Pasal 17 switch. |
 | PPh 21 TER harian | `withholding` | Non-monthly non-permanent employees. 0% up to Rp450,000; 0.5% above that up to Rp2,500,000. Nothing above that band. |
 | PPh 21 Pasal 17 | `withholding` | Layer schedule from the DJP UU HPP comparison, from tax year 2022. Last-period withholding for permanent employees and pensioners. |
 | PPh 22 | `withholding` | Category and KAP only. No percentage. |
 | PPh 23 | `withholding` | Headline 15% and 2% as stated by DJP. Exemptions, the no-TIN uplift, and the service list are not fully encoded. |
 | PPh 4 ayat (2) | `final` | Category and three filing-code names. No percentage. |
+| PPh Badan and Pasal 31E | `standard` / `reduced` | HPP 22% on taxable income; conditional 50% rate reduction on the eligible Article 31E taxable-income portion. |
 | PPh 26 | `withholding` | Statutory 20% when no treaty applies. Treaty rates are not encoded. |
 
 ## What is not encoded
 
 - PPnBM percentages
-- The monthly TER rows in the annex to PP 58/2023
+- PPN DPP/besaran tertentu schedules under PMK 11/2025
+- UMKM final-tax eligibility and rates under PP 55/2022 as amended by PP 20/2026
 - PPh 22 percentages
 - PPh 4 ayat (2) percentages
 - Tax-treaty withholding tables
@@ -52,3 +54,30 @@ If a field is missing, the pack is silent. Do not infer zero.
 ## History
 
 Diffs in `diffs/` record the 2022 Pasal 17 layers, the 1 April 2022 move to 11%, the 1 January 2024 TER, and PMK 131/2024. Old rate versions stay in `regime.json` and point at their successor.
+
+## Monthly TER schedules
+
+`pph21-ter-monthly` and `pph21-ter-monthly-tidak-tetap` retain the employment
+scope rules. Select `pph21-ter-monthly-a`, `pph21-ter-monthly-b`, or
+`pph21-ter-monthly-c` using PTKP status. The [official PP 58/2023 annex](https://www.pajak.go.id/sites/default/files/lampiran/Lampiran%20PP58TAHUN2023.pdf)
+contains 44, 40, and 41 bands respectively, effective 1 January 2024.
+`over` is exclusive and `up_to` inclusive. Apply the selected percentage to
+the entire monthly gross income; these are not progressive marginal layers.
+Permanent employees and pensioners switch to Pasal 17 in their last tax period.
+Monthly-paid non-permanent employees continue monthly TER through December.
+The library returns the schedule and does not select a gross-income band or
+calculate tax.
+
+## Corporate income tax
+
+`corporate-standard` records the UU HPP general rate of 22% from tax year 2022
+on taxable income. `corporate-31e` records a 50% reduction of that rate only on
+the qualifying taxable-income portion for domestic corporate taxpayers whose
+annual turnover does not exceed IDR 50 billion. The qualifying turnover portion
+is capped at IDR 4.8 billion. The stated 11% is not a tax on turnover and does
+not apply to all profits when turnover exceeds the qualifying portion.
+See [UU HPP](https://pajak.go.id/id/peraturan/harmonisasi-peraturan-perpajakan)
+and [DJP's Article 31E explanation](https://www.pajak.go.id/index.php/en/node/94054).
+Earlier corporate regimes, listed-company relief, global minimum tax and other
+special regimes are not reconstructed. The date-only resolver returns candidate
+treatments; the caller must determine eligibility and the taxable-income allocation.

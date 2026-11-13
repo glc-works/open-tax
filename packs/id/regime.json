@@ -19,7 +19,7 @@
     "github": "glc-works/open-tax",
     "url": "https://github.com/glc-works/open-tax"
   },
-  "notes": "Verified starter for PPN and the core PPh withholding categories. This is not a filing position and not a complete rate engine. PPnBM percentages, the full monthly TER grid, PPh 22 percentages, and PPh 4(2) percentages are intentionally absent. Silence means not encoded, not zero. Windows marked in_force_by are verified on that date; the legal start may be earlier.",
+  "notes": "Verified starter for PPN and the core PPh withholding categories. This is not a filing position and not a complete rate engine. PPnBM percentages, PPh 22 percentages, and PPh 4(2) percentages are intentionally absent. Silence means not encoded, not zero. Windows marked in_force_by are verified on that date; the legal start may be earlier.",
   "semantic_mappings": [
     {
       "semantic_code": "standard",
@@ -82,7 +82,7 @@
       "treatment_id": "pph21-ter-monthly",
       "local_code": "ter_bulanan",
       "local_name": "PPh 21 tarif efektif bulanan",
-      "rule": "Monthly TER for a permanent employee or pensioner in a tax period that is not the last period. PTKP status selects kategori A, B, or C under PP 58/2023 Pasal 2. Their last period uses pph21-annual. The percentage grid is not transcribed here."
+      "rule": "Monthly TER for a permanent employee or pensioner in a tax period that is not the last period. PTKP status selects kategori A, B, or C under PP 58/2023 Pasal 2. Their last period uses pph21-annual. Select the corresponding pph21-ter-monthly-a, -b, or -c schedule for the PTKP category."
     },
     {
       "semantic_code": "withholding",
@@ -97,6 +97,27 @@
       "local_code": "ter_harian",
       "local_name": "PPh 21 tarif efektif harian",
       "rule": "Daily TER for a non-permanent employee who is not paid monthly, within the two bands published for PP 58/2023: 0% up to Rp450,000 a day, and 0.5% above that up to Rp2,500,000 a day. A monthly-paid non-permanent employee stays on ter_bulanan_tidak_tetap even when average daily income falls in these bands. Amounts above Rp2,500,000 a day are not encoded."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph21-ter-monthly-a",
+      "local_code": "ter_bulanan_a",
+      "local_name": "TER bulanan kategori A",
+      "rule": "Monthly TER category A for PTKP TK/0; TK/1; K/0. Apply one bracket percentage to the entire monthly gross income, not marginal slices. For permanent employees and pensioners use only outside the last tax period; their last period uses pph21-annual. Monthly-paid non-permanent employees continue monthly TER including December."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph21-ter-monthly-b",
+      "local_code": "ter_bulanan_b",
+      "local_name": "TER bulanan kategori B",
+      "rule": "Monthly TER category B for PTKP TK/2; TK/3; K/1; K/2. Apply one bracket percentage to the entire monthly gross income, not marginal slices. For permanent employees and pensioners use only outside the last tax period; their last period uses pph21-annual. Monthly-paid non-permanent employees continue monthly TER including December."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "pph21-ter-monthly-c",
+      "local_code": "ter_bulanan_c",
+      "local_name": "TER bulanan kategori C",
+      "rule": "Monthly TER category C for PTKP K/3. Apply one bracket percentage to the entire monthly gross income, not marginal slices. For permanent employees and pensioners use only outside the last tax period; their last period uses pph21-annual. Monthly-paid non-permanent employees continue monthly TER including December."
     },
     {
       "semantic_code": "withholding",
@@ -139,6 +160,16 @@
       "local_code": "pph_26",
       "local_name": "PPh Pasal 26",
       "rule": "Statutory 20% withholding on the specified Indonesia-source income of a non-resident, unless a tax treaty sets a different rate. Treaty rates are not encoded."
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "corporate-standard",
+      "rule": "General Article 17 corporate income tax on taxable income of domestic corporate taxpayers and permanent establishments from tax year 2022. Exclude final-taxed income and apply separately any legally available relief; this treatment is not a complete company tax computation."
+    },
+    {
+      "semantic_code": "reduced",
+      "treatment_id": "corporate-31e",
+      "rule": "Only domestic corporate taxpayers with annual gross turnover at most IDR 50 billion. A 50% rate reduction applies only to taxable income attributable to the first IDR 4.8 billion of turnover. Any remaining taxable income uses the ordinary rate. This is not the UMKM final turnover tax and does not apply to a permanent establishment."
     }
   ],
   "taxes": [
@@ -566,7 +597,7 @@
       "name": "Employment withholding tax",
       "local_name": "Pajak Penghasilan Pasal 21",
       "kind": "withholding",
-      "notes": "Monthly TER percentages live in the annex to PP 58/2023 and are not copied here. Last-period Pasal 17 withholding is for permanent employees and pensioners. Monthly-paid non-permanent employees stay on the monthly TER through December.",
+      "notes": "Monthly TER percentages from PP 58/2023 annex A-C are encoded in pph21-ter-monthly-a, -b, and -c. Last-period Pasal 17 withholding is for permanent employees and pensioners. Monthly-paid non-permanent employees stay on the monthly TER through December.",
       "treatments": [
         {
           "id": "pph21-ter-monthly",
@@ -580,7 +611,7 @@
           "verification": {
             "status": "verified_starter",
             "reviewed_on": "2026-11-13",
-            "notes": "Categories and effective date are encoded. The monthly percentage rows are not."
+            "notes": "Scope and category selector; full percentage rows are in pph21-ter-monthly-a, -b, and -c."
           },
           "parameters": [
             {
@@ -609,7 +640,7 @@
               "effective_from_bound": "exact",
               "rate": {
                 "kind": "schedule",
-                "notes": "The monthly TER grid is Lampiran huruf A, B, and C of PP 58/2023, applied to monthly gross income. For a permanent employee or pensioner this version is the periods other than the last period, and that last period uses pph21-annual. This starter does not transcribe the rows."
+                "notes": "The monthly TER grid is Lampiran huruf A, B, and C of PP 58/2023, applied to monthly gross income. For a permanent employee or pensioner this version is the periods other than the last period, and that last period uses pph21-annual. Select the pph21-ter-monthly-a, -b, or -c schedule for the PTKP category."
               },
               "legal_citations": [
                 {
@@ -642,7 +673,7 @@
           "verification": {
             "status": "verified_starter",
             "reviewed_on": "2026-11-13",
-            "notes": "Scope only. The monthly percentage rows are not transcribed. PMK 168/2023 keeps monthly-paid pegawai tidak tetap on the monthly TER in the last month."
+            "notes": "Scope selector. Use the corresponding pph21-ter-monthly-a, -b, or -c percentage table. PMK 168/2023 keeps monthly-paid pegawai tidak tetap on the monthly TER in the last month."
           },
           "notes": "Use this instead of pph21-ter-daily when the non-permanent employee is paid monthly, and instead of pph21-annual for that employee's December withholding.",
           "rates": [
@@ -652,7 +683,7 @@
               "effective_from_bound": "exact",
               "rate": {
                 "kind": "schedule",
-                "notes": "Same unpublished monthly TER grid as pph21-ter-monthly, including the last month of the year. This starter does not transcribe the rows. Daily bands do not apply to a monthly-paid non-permanent employee."
+                "notes": "Same monthly TER grid as pph21-ter-monthly-a, -b, and -c, including the last month of the year. Select the pph21-ter-monthly-a, -b, or -c schedule for the PTKP category. Daily bands do not apply to a monthly-paid non-permanent employee."
               },
               "legal_citations": [
                 {
@@ -666,7 +697,7 @@
                   "title": "PP Nomor 58 Tahun 2023",
                   "instrument": "Peraturan Pemerintah Nomor 58 Tahun 2023 Pasal 2",
                   "url": "https://www.pajak.go.id/id/peraturan/tarif-pemotongan-pajak-penghasiian-pasal-21-atas-penghasilan-sehubungan-dengan-pekerjaan",
-                  "pinpoint": "Tarif efektif bulanan. Rincian tarif ada pada Lampiran dan tidak disalin di sini.",
+                  "pinpoint": "Tarif efektif bulanan. Rincian tarif Lampiran A-C ada di pph21-ter-monthly-a, -b, dan -c.",
                   "publisher": "Direktorat Jenderal Pajak"
                 }
               ]
@@ -727,6 +758,790 @@
                   "publisher": "Kementerian Keuangan"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "id": "pph21-ter-monthly-a",
+          "name": "Monthly TER category A",
+          "local_name": "TER bulanan kategori A",
+          "local_code": "ter_bulanan_a",
+          "semantic_code": "withholding",
+          "authority_codes": [
+            "411121"
+          ],
+          "chargeability": "withheld",
+          "collection": {
+            "method": "withholding"
+          },
+          "parameters": [
+            {
+              "id": "ptkp-a",
+              "name": "PTKP category membership",
+              "value": "TK/0; TK/1; K/0"
+            }
+          ],
+          "notes": "Monthly TER category A for PTKP TK/0; TK/1; K/0. Apply one bracket percentage to the entire monthly gross income, not marginal slices. For permanent employees and pensioners use only outside the last tax period; their last period uses pph21-annual. Monthly-paid non-permanent employees continue monthly TER including December.",
+          "verification": {
+            "status": "verified",
+            "reviewed_on": "2026-11-14",
+            "notes": "Full schedule transcribed from PP 58/2023 annex A."
+          },
+          "rates": [
+            {
+              "id": "pph21-ter-monthly-a-2024",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "currency": "IDR",
+                "brackets": [
+                  {
+                    "rate": "0",
+                    "up_to": "5400000"
+                  },
+                  {
+                    "rate": "0.0025",
+                    "over": "5400000",
+                    "up_to": "5650000"
+                  },
+                  {
+                    "rate": "0.005",
+                    "over": "5650000",
+                    "up_to": "5950000"
+                  },
+                  {
+                    "rate": "0.0075",
+                    "over": "5950000",
+                    "up_to": "6300000"
+                  },
+                  {
+                    "rate": "0.01",
+                    "over": "6300000",
+                    "up_to": "6750000"
+                  },
+                  {
+                    "rate": "0.0125",
+                    "over": "6750000",
+                    "up_to": "7500000"
+                  },
+                  {
+                    "rate": "0.015",
+                    "over": "7500000",
+                    "up_to": "8550000"
+                  },
+                  {
+                    "rate": "0.0175",
+                    "over": "8550000",
+                    "up_to": "9650000"
+                  },
+                  {
+                    "rate": "0.02",
+                    "over": "9650000",
+                    "up_to": "10050000"
+                  },
+                  {
+                    "rate": "0.0225",
+                    "over": "10050000",
+                    "up_to": "10350000"
+                  },
+                  {
+                    "rate": "0.025",
+                    "over": "10350000",
+                    "up_to": "10700000"
+                  },
+                  {
+                    "rate": "0.03",
+                    "over": "10700000",
+                    "up_to": "11050000"
+                  },
+                  {
+                    "rate": "0.035",
+                    "over": "11050000",
+                    "up_to": "11600000"
+                  },
+                  {
+                    "rate": "0.04",
+                    "over": "11600000",
+                    "up_to": "12500000"
+                  },
+                  {
+                    "rate": "0.05",
+                    "over": "12500000",
+                    "up_to": "13750000"
+                  },
+                  {
+                    "rate": "0.06",
+                    "over": "13750000",
+                    "up_to": "15100000"
+                  },
+                  {
+                    "rate": "0.07",
+                    "over": "15100000",
+                    "up_to": "16950000"
+                  },
+                  {
+                    "rate": "0.08",
+                    "over": "16950000",
+                    "up_to": "19750000"
+                  },
+                  {
+                    "rate": "0.09",
+                    "over": "19750000",
+                    "up_to": "24150000"
+                  },
+                  {
+                    "rate": "0.1",
+                    "over": "24150000",
+                    "up_to": "26450000"
+                  },
+                  {
+                    "rate": "0.11",
+                    "over": "26450000",
+                    "up_to": "28000000"
+                  },
+                  {
+                    "rate": "0.12",
+                    "over": "28000000",
+                    "up_to": "30050000"
+                  },
+                  {
+                    "rate": "0.13",
+                    "over": "30050000",
+                    "up_to": "32400000"
+                  },
+                  {
+                    "rate": "0.14",
+                    "over": "32400000",
+                    "up_to": "35400000"
+                  },
+                  {
+                    "rate": "0.15",
+                    "over": "35400000",
+                    "up_to": "39100000"
+                  },
+                  {
+                    "rate": "0.16",
+                    "over": "39100000",
+                    "up_to": "43850000"
+                  },
+                  {
+                    "rate": "0.17",
+                    "over": "43850000",
+                    "up_to": "47800000"
+                  },
+                  {
+                    "rate": "0.18",
+                    "over": "47800000",
+                    "up_to": "51400000"
+                  },
+                  {
+                    "rate": "0.19",
+                    "over": "51400000",
+                    "up_to": "56300000"
+                  },
+                  {
+                    "rate": "0.2",
+                    "over": "56300000",
+                    "up_to": "62200000"
+                  },
+                  {
+                    "rate": "0.21",
+                    "over": "62200000",
+                    "up_to": "68600000"
+                  },
+                  {
+                    "rate": "0.22",
+                    "over": "68600000",
+                    "up_to": "77500000"
+                  },
+                  {
+                    "rate": "0.23",
+                    "over": "77500000",
+                    "up_to": "89000000"
+                  },
+                  {
+                    "rate": "0.24",
+                    "over": "89000000",
+                    "up_to": "103000000"
+                  },
+                  {
+                    "rate": "0.25",
+                    "over": "103000000",
+                    "up_to": "125000000"
+                  },
+                  {
+                    "rate": "0.26",
+                    "over": "125000000",
+                    "up_to": "157000000"
+                  },
+                  {
+                    "rate": "0.27",
+                    "over": "157000000",
+                    "up_to": "206000000"
+                  },
+                  {
+                    "rate": "0.28",
+                    "over": "206000000",
+                    "up_to": "337000000"
+                  },
+                  {
+                    "rate": "0.29",
+                    "over": "337000000",
+                    "up_to": "454000000"
+                  },
+                  {
+                    "rate": "0.3",
+                    "over": "454000000",
+                    "up_to": "550000000"
+                  },
+                  {
+                    "rate": "0.31",
+                    "over": "550000000",
+                    "up_to": "695000000"
+                  },
+                  {
+                    "rate": "0.32",
+                    "over": "695000000",
+                    "up_to": "910000000"
+                  },
+                  {
+                    "rate": "0.33",
+                    "over": "910000000",
+                    "up_to": "1400000000"
+                  },
+                  {
+                    "rate": "0.34",
+                    "over": "1400000000"
+                  }
+                ],
+                "notes": "Monthly gross-income bands: over is exclusive; up_to is inclusive. A band selects a single rate on the whole gross amount. This is not the progressive Pasal 17 schedule. The library returns this table and does not compute withholding."
+              },
+              "legal_citations": [
+                {
+                  "title": "PP Nomor 58 Tahun 2023, Lampiran A",
+                  "instrument": "PP 58/2023, Pasal 2 dan Lampiran A",
+                  "url": "https://www.pajak.go.id/sites/default/files/lampiran/Lampiran%20PP58TAHUN2023.pdf",
+                  "pinpoint": "Lampiran A: 44 monthly gross-income bands",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-14",
+                "notes": "Full schedule transcribed from PP 58/2023 annex A."
+              }
+            }
+          ]
+        },
+        {
+          "id": "pph21-ter-monthly-b",
+          "name": "Monthly TER category B",
+          "local_name": "TER bulanan kategori B",
+          "local_code": "ter_bulanan_b",
+          "semantic_code": "withholding",
+          "authority_codes": [
+            "411121"
+          ],
+          "chargeability": "withheld",
+          "collection": {
+            "method": "withholding"
+          },
+          "parameters": [
+            {
+              "id": "ptkp-b",
+              "name": "PTKP category membership",
+              "value": "TK/2; TK/3; K/1; K/2"
+            }
+          ],
+          "notes": "Monthly TER category B for PTKP TK/2; TK/3; K/1; K/2. Apply one bracket percentage to the entire monthly gross income, not marginal slices. For permanent employees and pensioners use only outside the last tax period; their last period uses pph21-annual. Monthly-paid non-permanent employees continue monthly TER including December.",
+          "verification": {
+            "status": "verified",
+            "reviewed_on": "2026-11-14",
+            "notes": "Full schedule transcribed from PP 58/2023 annex B."
+          },
+          "rates": [
+            {
+              "id": "pph21-ter-monthly-b-2024",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "currency": "IDR",
+                "brackets": [
+                  {
+                    "rate": "0",
+                    "up_to": "6200000"
+                  },
+                  {
+                    "rate": "0.0025",
+                    "over": "6200000",
+                    "up_to": "6500000"
+                  },
+                  {
+                    "rate": "0.005",
+                    "over": "6500000",
+                    "up_to": "6850000"
+                  },
+                  {
+                    "rate": "0.0075",
+                    "over": "6850000",
+                    "up_to": "7300000"
+                  },
+                  {
+                    "rate": "0.01",
+                    "over": "7300000",
+                    "up_to": "9200000"
+                  },
+                  {
+                    "rate": "0.015",
+                    "over": "9200000",
+                    "up_to": "10750000"
+                  },
+                  {
+                    "rate": "0.02",
+                    "over": "10750000",
+                    "up_to": "11250000"
+                  },
+                  {
+                    "rate": "0.025",
+                    "over": "11250000",
+                    "up_to": "11600000"
+                  },
+                  {
+                    "rate": "0.03",
+                    "over": "11600000",
+                    "up_to": "12600000"
+                  },
+                  {
+                    "rate": "0.04",
+                    "over": "12600000",
+                    "up_to": "13600000"
+                  },
+                  {
+                    "rate": "0.05",
+                    "over": "13600000",
+                    "up_to": "14950000"
+                  },
+                  {
+                    "rate": "0.06",
+                    "over": "14950000",
+                    "up_to": "16400000"
+                  },
+                  {
+                    "rate": "0.07",
+                    "over": "16400000",
+                    "up_to": "18450000"
+                  },
+                  {
+                    "rate": "0.08",
+                    "over": "18450000",
+                    "up_to": "21850000"
+                  },
+                  {
+                    "rate": "0.09",
+                    "over": "21850000",
+                    "up_to": "26000000"
+                  },
+                  {
+                    "rate": "0.1",
+                    "over": "26000000",
+                    "up_to": "27700000"
+                  },
+                  {
+                    "rate": "0.11",
+                    "over": "27700000",
+                    "up_to": "29350000"
+                  },
+                  {
+                    "rate": "0.12",
+                    "over": "29350000",
+                    "up_to": "31450000"
+                  },
+                  {
+                    "rate": "0.13",
+                    "over": "31450000",
+                    "up_to": "33950000"
+                  },
+                  {
+                    "rate": "0.14",
+                    "over": "33950000",
+                    "up_to": "37100000"
+                  },
+                  {
+                    "rate": "0.15",
+                    "over": "37100000",
+                    "up_to": "41100000"
+                  },
+                  {
+                    "rate": "0.16",
+                    "over": "41100000",
+                    "up_to": "45800000"
+                  },
+                  {
+                    "rate": "0.17",
+                    "over": "45800000",
+                    "up_to": "49500000"
+                  },
+                  {
+                    "rate": "0.18",
+                    "over": "49500000",
+                    "up_to": "53800000"
+                  },
+                  {
+                    "rate": "0.19",
+                    "over": "53800000",
+                    "up_to": "58500000"
+                  },
+                  {
+                    "rate": "0.2",
+                    "over": "58500000",
+                    "up_to": "64000000"
+                  },
+                  {
+                    "rate": "0.21",
+                    "over": "64000000",
+                    "up_to": "71000000"
+                  },
+                  {
+                    "rate": "0.22",
+                    "over": "71000000",
+                    "up_to": "80000000"
+                  },
+                  {
+                    "rate": "0.23",
+                    "over": "80000000",
+                    "up_to": "93000000"
+                  },
+                  {
+                    "rate": "0.24",
+                    "over": "93000000",
+                    "up_to": "109000000"
+                  },
+                  {
+                    "rate": "0.25",
+                    "over": "109000000",
+                    "up_to": "129000000"
+                  },
+                  {
+                    "rate": "0.26",
+                    "over": "129000000",
+                    "up_to": "163000000"
+                  },
+                  {
+                    "rate": "0.27",
+                    "over": "163000000",
+                    "up_to": "211000000"
+                  },
+                  {
+                    "rate": "0.28",
+                    "over": "211000000",
+                    "up_to": "374000000"
+                  },
+                  {
+                    "rate": "0.29",
+                    "over": "374000000",
+                    "up_to": "459000000"
+                  },
+                  {
+                    "rate": "0.3",
+                    "over": "459000000",
+                    "up_to": "555000000"
+                  },
+                  {
+                    "rate": "0.31",
+                    "over": "555000000",
+                    "up_to": "704000000"
+                  },
+                  {
+                    "rate": "0.32",
+                    "over": "704000000",
+                    "up_to": "957000000"
+                  },
+                  {
+                    "rate": "0.33",
+                    "over": "957000000",
+                    "up_to": "1405000000"
+                  },
+                  {
+                    "rate": "0.34",
+                    "over": "1405000000"
+                  }
+                ],
+                "notes": "Monthly gross-income bands: over is exclusive; up_to is inclusive. A band selects a single rate on the whole gross amount. This is not the progressive Pasal 17 schedule. The library returns this table and does not compute withholding."
+              },
+              "legal_citations": [
+                {
+                  "title": "PP Nomor 58 Tahun 2023, Lampiran B",
+                  "instrument": "PP 58/2023, Pasal 2 dan Lampiran B",
+                  "url": "https://www.pajak.go.id/sites/default/files/lampiran/Lampiran%20PP58TAHUN2023.pdf",
+                  "pinpoint": "Lampiran B: 40 monthly gross-income bands",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-14",
+                "notes": "Full schedule transcribed from PP 58/2023 annex B."
+              }
+            }
+          ]
+        },
+        {
+          "id": "pph21-ter-monthly-c",
+          "name": "Monthly TER category C",
+          "local_name": "TER bulanan kategori C",
+          "local_code": "ter_bulanan_c",
+          "semantic_code": "withholding",
+          "authority_codes": [
+            "411121"
+          ],
+          "chargeability": "withheld",
+          "collection": {
+            "method": "withholding"
+          },
+          "parameters": [
+            {
+              "id": "ptkp-c",
+              "name": "PTKP category membership",
+              "value": "K/3"
+            }
+          ],
+          "notes": "Monthly TER category C for PTKP K/3. Apply one bracket percentage to the entire monthly gross income, not marginal slices. For permanent employees and pensioners use only outside the last tax period; their last period uses pph21-annual. Monthly-paid non-permanent employees continue monthly TER including December.",
+          "verification": {
+            "status": "verified",
+            "reviewed_on": "2026-11-14",
+            "notes": "Full schedule transcribed from PP 58/2023 annex C."
+          },
+          "rates": [
+            {
+              "id": "pph21-ter-monthly-c-2024",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "currency": "IDR",
+                "brackets": [
+                  {
+                    "rate": "0",
+                    "up_to": "6600000"
+                  },
+                  {
+                    "rate": "0.0025",
+                    "over": "6600000",
+                    "up_to": "6950000"
+                  },
+                  {
+                    "rate": "0.005",
+                    "over": "6950000",
+                    "up_to": "7350000"
+                  },
+                  {
+                    "rate": "0.0075",
+                    "over": "7350000",
+                    "up_to": "7800000"
+                  },
+                  {
+                    "rate": "0.01",
+                    "over": "7800000",
+                    "up_to": "8850000"
+                  },
+                  {
+                    "rate": "0.0125",
+                    "over": "8850000",
+                    "up_to": "9800000"
+                  },
+                  {
+                    "rate": "0.015",
+                    "over": "9800000",
+                    "up_to": "10950000"
+                  },
+                  {
+                    "rate": "0.0175",
+                    "over": "10950000",
+                    "up_to": "11200000"
+                  },
+                  {
+                    "rate": "0.02",
+                    "over": "11200000",
+                    "up_to": "12050000"
+                  },
+                  {
+                    "rate": "0.03",
+                    "over": "12050000",
+                    "up_to": "12950000"
+                  },
+                  {
+                    "rate": "0.04",
+                    "over": "12950000",
+                    "up_to": "14150000"
+                  },
+                  {
+                    "rate": "0.05",
+                    "over": "14150000",
+                    "up_to": "15550000"
+                  },
+                  {
+                    "rate": "0.06",
+                    "over": "15550000",
+                    "up_to": "17050000"
+                  },
+                  {
+                    "rate": "0.07",
+                    "over": "17050000",
+                    "up_to": "19500000"
+                  },
+                  {
+                    "rate": "0.08",
+                    "over": "19500000",
+                    "up_to": "22700000"
+                  },
+                  {
+                    "rate": "0.09",
+                    "over": "22700000",
+                    "up_to": "26600000"
+                  },
+                  {
+                    "rate": "0.1",
+                    "over": "26600000",
+                    "up_to": "28100000"
+                  },
+                  {
+                    "rate": "0.11",
+                    "over": "28100000",
+                    "up_to": "30100000"
+                  },
+                  {
+                    "rate": "0.12",
+                    "over": "30100000",
+                    "up_to": "32600000"
+                  },
+                  {
+                    "rate": "0.13",
+                    "over": "32600000",
+                    "up_to": "35400000"
+                  },
+                  {
+                    "rate": "0.14",
+                    "over": "35400000",
+                    "up_to": "38900000"
+                  },
+                  {
+                    "rate": "0.15",
+                    "over": "38900000",
+                    "up_to": "43000000"
+                  },
+                  {
+                    "rate": "0.16",
+                    "over": "43000000",
+                    "up_to": "47400000"
+                  },
+                  {
+                    "rate": "0.17",
+                    "over": "47400000",
+                    "up_to": "51200000"
+                  },
+                  {
+                    "rate": "0.18",
+                    "over": "51200000",
+                    "up_to": "55800000"
+                  },
+                  {
+                    "rate": "0.19",
+                    "over": "55800000",
+                    "up_to": "60400000"
+                  },
+                  {
+                    "rate": "0.2",
+                    "over": "60400000",
+                    "up_to": "66700000"
+                  },
+                  {
+                    "rate": "0.21",
+                    "over": "66700000",
+                    "up_to": "74500000"
+                  },
+                  {
+                    "rate": "0.22",
+                    "over": "74500000",
+                    "up_to": "83200000"
+                  },
+                  {
+                    "rate": "0.23",
+                    "over": "83200000",
+                    "up_to": "95600000"
+                  },
+                  {
+                    "rate": "0.24",
+                    "over": "95600000",
+                    "up_to": "110000000"
+                  },
+                  {
+                    "rate": "0.25",
+                    "over": "110000000",
+                    "up_to": "134000000"
+                  },
+                  {
+                    "rate": "0.26",
+                    "over": "134000000",
+                    "up_to": "169000000"
+                  },
+                  {
+                    "rate": "0.27",
+                    "over": "169000000",
+                    "up_to": "221000000"
+                  },
+                  {
+                    "rate": "0.28",
+                    "over": "221000000",
+                    "up_to": "390000000"
+                  },
+                  {
+                    "rate": "0.29",
+                    "over": "390000000",
+                    "up_to": "463000000"
+                  },
+                  {
+                    "rate": "0.3",
+                    "over": "463000000",
+                    "up_to": "561000000"
+                  },
+                  {
+                    "rate": "0.31",
+                    "over": "561000000",
+                    "up_to": "709000000"
+                  },
+                  {
+                    "rate": "0.32",
+                    "over": "709000000",
+                    "up_to": "965000000"
+                  },
+                  {
+                    "rate": "0.33",
+                    "over": "965000000",
+                    "up_to": "1419000000"
+                  },
+                  {
+                    "rate": "0.34",
+                    "over": "1419000000"
+                  }
+                ],
+                "notes": "Monthly gross-income bands: over is exclusive; up_to is inclusive. A band selects a single rate on the whole gross amount. This is not the progressive Pasal 17 schedule. The library returns this table and does not compute withholding."
+              },
+              "legal_citations": [
+                {
+                  "title": "PP Nomor 58 Tahun 2023, Lampiran C",
+                  "instrument": "PP 58/2023, Pasal 2 dan Lampiran C",
+                  "url": "https://www.pajak.go.id/sites/default/files/lampiran/Lampiran%20PP58TAHUN2023.pdf",
+                  "pinpoint": "Lampiran C: 41 monthly gross-income bands",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-14",
+                "notes": "Full schedule transcribed from PP 58/2023 annex C."
+              }
             }
           ]
         },
@@ -1017,6 +1832,106 @@
                   "publisher": "Direktorat Jenderal Pajak"
                 }
               ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "corporate-income-tax",
+      "name": "Corporate income tax",
+      "local_name": "PPh Badan",
+      "kind": "income",
+      "notes": "General HPP rate and Article 31E relief only. Listed-company relief, global minimum tax, incentives, final-taxed income and other special regimes are not encoded.",
+      "treatments": [
+        {
+          "id": "corporate-standard",
+          "name": "Corporate income tax, general HPP rate",
+          "semantic_code": "standard",
+          "collection": {
+            "method": "self_assessment"
+          },
+          "notes": "General Article 17 corporate income tax on taxable income of domestic corporate taxpayers and permanent establishments from tax year 2022. Exclude final-taxed income and apply separately any legally available relief; this treatment is not a complete company tax computation.",
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "HPP rate and Article 31E scope checked against the cited DJP statute text. No relief eligibility engine."
+          },
+          "rates": [
+            {
+              "id": "corporate-standard-2022",
+              "effective_from": "2022-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.22",
+                "base_formula": "Penghasilan Kena Pajak (PKP)"
+              },
+              "legal_citations": [
+                {
+                  "title": "UU No. 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan",
+                  "instrument": "UU 7/2021, Pasal 3, perubahan Pasal 17 ayat (1) huruf b UU PPh",
+                  "url": "https://pajak.go.id/id/peraturan/harmonisasi-peraturan-perpajakan",
+                  "pinpoint": "22% mulai Tahun Pajak 2022",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "HPP rate and Article 31E scope checked against the cited DJP statute text. No relief eligibility engine."
+              },
+              "notes": "Tax-year 2022 HPP restatement. This does not assert that 22% or Article 31E first existed in 2022; earlier corporate regimes are not reconstructed."
+            }
+          ]
+        },
+        {
+          "id": "corporate-31e",
+          "name": "Article 31E corporate rate relief",
+          "semantic_code": "reduced",
+          "collection": {
+            "method": "self_assessment"
+          },
+          "notes": "Only domestic corporate taxpayers with annual gross turnover at most IDR 50 billion. A 50% rate reduction applies only to taxable income attributable to the first IDR 4.8 billion of turnover. Any remaining taxable income uses the ordinary rate. This is not the UMKM final turnover tax and does not apply to a permanent establishment.",
+          "verification": {
+            "status": "verified_starter",
+            "reviewed_on": "2026-11-14",
+            "notes": "HPP rate and Article 31E scope checked against the cited DJP statute text. No relief eligibility engine."
+          },
+          "rates": [
+            {
+              "id": "corporate-31e-2022",
+              "effective_from": "2022-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "formula",
+                "statutory_value": "0.22",
+                "value": "0.11",
+                "base_formula": "50% * tarif Pasal 17 * PKP dari bagian peredaran bruto sampai dengan Rp4.800.000.000",
+                "notes": "0.11 is the stated rate on the eligible taxable-income portion only. The rest remains at the general rate. Eligibility and allocation are external to the resolver."
+              },
+              "legal_citations": [
+                {
+                  "title": "UU No. 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan",
+                  "instrument": "UU 7/2021, Pasal 3, perubahan Pasal 17 ayat (1) huruf b UU PPh",
+                  "url": "https://pajak.go.id/id/peraturan/harmonisasi-peraturan-perpajakan",
+                  "pinpoint": "22% mulai Tahun Pajak 2022",
+                  "publisher": "Direktorat Jenderal Pajak"
+                },
+                {
+                  "title": "Fasilitas pengurangan tarif Pasal 31E",
+                  "instrument": "UU PPh Pasal 31E ayat (1), penjelasan DJP Lima Jenis Tarif PPh Badan",
+                  "url": "https://www.pajak.go.id/index.php/en/node/94054",
+                  "pinpoint": "Wajib Pajak badan dalam negeri; peredaran bruto sampai Rp50 miliar; pengurangan tarif 50% atas PKP dari bagian peredaran bruto sampai Rp4,8 miliar",
+                  "publisher": "Direktorat Jenderal Pajak"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-14",
+                "notes": "HPP rate and Article 31E scope checked against the cited DJP statute text. No relief eligibility engine."
+              },
+              "notes": "Tax-year 2022 HPP restatement. This does not assert that 22% or Article 31E first existed in 2022; earlier corporate regimes are not reconstructed."
             }
           ]
         }
