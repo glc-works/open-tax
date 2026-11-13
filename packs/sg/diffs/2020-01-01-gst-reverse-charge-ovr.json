@@ -1,0 +1,119 @@
+{
+  "$schema": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2020-01-01-gst-reverse-charge-ovr",
+  "jurisdiction": "SG",
+  "pack_id": "sg",
+  "title": "GST reverse charge and Overseas Vendor Registration from 1 January 2020",
+  "summary": "From 1 January 2020, GST-registered persons not entitled to full input tax credit must account for GST under reverse charge on B2B imported services, and overseas vendors must register and collect the prevailing standard GST rate on B2C digital services (Overseas Vendor Registration). Both paths use the then-prevailing 7% standard rate. From 1 January 2023 the same regimes were extended to low-value goods (and OVR also to B2C remote non-digital services); that later extension is recorded in the 8% rate versions and is not a separate pack diff.",
+  "legal_basis": [
+    {
+      "title": "Goods and Services Tax Act 1993",
+      "instrument": "GST Act 1993, s 14 (Reverse charge on supplies received from abroad); s 16 includes reverse charge supplies",
+      "url": "https://sso.agc.gov.sg/Act/GSTA1993"
+    },
+    {
+      "title": "IRAS | Local businesses importing services and importing or supplying low-value goods",
+      "instrument": "IRAS webpage",
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-and-digital-economy/local-businesses",
+      "publisher": "IRAS"
+    },
+    {
+      "title": "Extended Overseas Vendor Registration Regime (slides)",
+      "instrument": "IRAS slides",
+      "url": "https://www.iras.gov.sg/media/docs/default-source/uploadedfiles/gst/extended-overseas-vendor-registration-regime-slides.pdf",
+      "publisher": "IRAS"
+    },
+    {
+      "title": "IRAS | Completing GST Return",
+      "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+      "publisher": "IRAS"
+    },
+    {
+      "title": "Goods and Services Tax Act 1993",
+      "instrument": "Goods and Services Tax Act 1993, s 16 (Rate of tax)",
+      "url": "https://sso.agc.gov.sg/Act/GSTA1993?ProvIds=pr16-",
+      "pinpoint": "s 16(a)-(cb): 4% 2003; 5% 1 Jan 2004-30 Jun 2007; 7% 1 Jul 2007-31 Dec 2022; 8% 1 Jan 2023-31 Dec 2023; 9% from 1 Jan 2024 [Act 35 of 2022 wef 05/12/2022]",
+      "publisher": "Attorney-General's Chambers (SSO)"
+    }
+  ],
+  "changes": [
+    {
+      "id": "sg-gst-rc-introduced",
+      "effective_from": "2020-01-01",
+      "change_type": "treatment_added",
+      "summary": "Reverse charge on B2B imported services begins, at the prevailing standard rate of 7%, for GST-registered recipients who are not entitled to full input tax credit.",
+      "affected": {
+        "semantic_codes": [
+          "reverse_charge"
+        ],
+        "treatment_ids": [
+          "sg-gst-reverse-charge"
+        ],
+        "tax_ids": [
+          "gst"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Partial-exempt and other non-full-credit GST-registered persons must identify imported services, account for output tax at 7%, and report the value in GST F5 (Boxes 1, 5 and 14).",
+        "systems": [
+          "invoicing",
+          "filing",
+          "reporting"
+        ]
+      },
+      "computation": {
+        "statutory_rate": "0.07",
+        "effective_rate": "0.07",
+        "notes": "Tracks GST Act s 16."
+      },
+      "after": {
+        "statutory_rate": "0.07",
+        "effective_rate": "0.07",
+        "description": "Reverse charge at the prevailing standard rate, from 1 January 2020."
+      }
+    },
+    {
+      "id": "sg-gst-ovr-introduced",
+      "effective_from": "2020-01-01",
+      "change_type": "collection_change",
+      "summary": "Overseas Vendor Registration begins for B2C digital services. Qualifying overseas vendors collect the prevailing standard GST rate of 7%; this is not reverse charge.",
+      "affected": {
+        "semantic_codes": [
+          "standard"
+        ],
+        "treatment_ids": [
+          "sg-gst-ovr"
+        ],
+        "tax_ids": [
+          "gst"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Overseas vendors of B2C digital services to Singapore customers must assess the S$1m / S$100,000 thresholds, register if liable, and charge 7% GST.",
+        "systems": [
+          "invoicing",
+          "ecommerce",
+          "filing"
+        ]
+      },
+      "computation": {
+        "statutory_rate": "0.07",
+        "effective_rate": "0.07",
+        "notes": "Standard rate collected by the overseas vendor."
+      },
+      "after": {
+        "statutory_rate": "0.07",
+        "effective_rate": "0.07",
+        "description": "OVR collection of the standard rate on B2C digital services."
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-13"
+  }
+}

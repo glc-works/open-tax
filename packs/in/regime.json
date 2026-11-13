@@ -1,0 +1,484 @@
+{
+  "$schema": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/regime.schema.json",
+  "schema_version": "1.0.0",
+  "pack_id": "in",
+  "jurisdiction": {
+    "code": "IN",
+    "name": "India",
+    "official_name": "Republic of India"
+  },
+  "currency": "INR",
+  "authority": {
+    "id": "in-cbic",
+    "name": "Central Board of Indirect Taxes and Customs",
+    "short_name": "CBIC",
+    "website": "https://cbic-gst.gov.in"
+  },
+  "notes": "Starter pack for Indian GST slabs. Rate notifications are made by CBIC on the recommendations of the GST Council. Official CBIC notification PDFs timed out in the source research; encoded rates that rest on GST Council and PIB releases are verified_starter, reviewed on 2026-11-13. Not a filing position.",
+  "semantic_mappings": [
+    {
+      "semantic_code": "standard",
+      "treatment_id": "in-gst-standard",
+      "rule": "Use for supplies that take the 18% GST slab, the ordinary rate both before and after the 56th Council rationalisation.",
+      "local_name": "Standard 18%"
+    },
+    {
+      "semantic_code": "reduced",
+      "treatment_id": "in-gst-reduced-5",
+      "rule": "Use for supplies that take the 5% merit / lower slab. From 22 September 2025 this slab is widened; it is still reduced, not standard.",
+      "local_name": "Merit 5%"
+    },
+    {
+      "semantic_code": "reduced",
+      "treatment_id": "in-gst-reduced-12",
+      "rule": "Use only for historical supplies that took the 12% slab through 21 September 2025. Do not use it for supplies on or after 22 September 2025.",
+      "local_name": "12% slab (retired)"
+    },
+    {
+      "semantic_code": "luxury",
+      "treatment_id": "in-gst-luxury-28-40",
+      "rule": "Use for de-merit goods that moved from 28% to 40% on 22 September 2025. Do not use it for cigarettes, chewing tobacco such as zarda, unmanufactured tobacco, or beedi on a date from 22 September 2025 through 31 January 2026: those goods kept their previous GST rate plus compensation cess, and that transition-period rate is not encoded. From 1 February 2026 the 40% version covers the notified tobacco and pan masala goods other than bidis and other than tobacco leaves. Do not use luxury for compensation cess.",
+      "local_name": "De-merit 28%/40%"
+    },
+    {
+      "semantic_code": "zero",
+      "treatment_id": "in-gst-zero",
+      "rule": "Use for the domestic nil slab (rate 0) described in the Council / PIB materials, including UHT milk from 22 September 2025. Chargeability is exempt and input tax is not creditable. Do not use this for IGST Act s 16 export or SEZ zero-rating, which is not encoded.",
+      "local_name": "Nil rate"
+    },
+    {
+      "semantic_code": "exempt",
+      "treatment_id": "in-gst-exempt",
+      "rule": "Use for supplies that the exemption notifications relieve from GST. The lists themselves are not copied here.",
+      "local_name": "Exempt"
+    }
+  ],
+  "taxes": [
+    {
+      "id": "gst",
+      "name": "Goods and Services Tax",
+      "kind": "vat",
+      "treatments": [
+        {
+          "id": "in-gst-standard",
+          "name": "Standard GST (18%)",
+          "semantic_code": "standard",
+          "rates": [
+            {
+              "id": "in-gst-standard-18",
+              "effective_from": "2017-07-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.18"
+              },
+              "legal_citations": [
+                {
+                  "title": "FAQs-3 on decisions of the 56th GST Council (PIB, 18 Sep 2025)",
+                  "instrument": "PIB press release PRID 2168426",
+                  "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2168426&lang=2&reg=3",
+                  "pinpoint": "Q1: Notification No. 9/2025-Central Tax (Rate) dt 17.9.2025 supersedes 1/2017-CT(Rate) dt 28.6.2017; Q2: 10/2025-CT(Rate) exemptions supersedes 2/2017; Q4: 2/2025-Compensation Cess (Rate)",
+                  "publisher": "Press Information Bureau"
+                },
+                {
+                  "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+                  "instrument": "GST Council / PIB press release with Annexures",
+                  "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+                  "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+                  "publisher": "GST Council"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13",
+                "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. This version is verified_starter on the official GST Council / PIB press releases named in the citations, reviewed on 2026-11-13. Open the notification PDFs before marking the rate verified."
+              },
+              "notes": "Combined GST (CGST+SGST/UTGST or IGST). The 18% standard slab has been part of the rate structure from the GST appointed day (1 July 2017; Notification 1/2017-CT(Rate) dated 28 June 2017 is named in the PIB FAQ but was not opened). The 56th GST Council restated 18% as the standard rate from 22 September 2025 under Notification 9/2025-CT(Rate) (also not opened). This pack keeps one open 18% version; the 2025 restatement is recorded in the policy diff."
+            }
+          ],
+          "local_name": "GST standard rate",
+          "chargeability": "charged",
+          "input_credit": "creditable",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "Combined GST. CGST notifications state half rates (for example 9% CGST corresponding to 18% combined)."
+        },
+        {
+          "id": "in-gst-reduced-5",
+          "name": "Merit / reduced GST (5%)",
+          "semantic_code": "reduced",
+          "rates": [
+            {
+              "id": "in-gst-reduced-5-2017",
+              "effective_from": "2017-07-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.05"
+              },
+              "legal_citations": [
+                {
+                  "title": "FAQs-3 on decisions of the 56th GST Council (PIB, 18 Sep 2025)",
+                  "instrument": "PIB press release PRID 2168426",
+                  "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2168426&lang=2&reg=3",
+                  "pinpoint": "Q1: Notification No. 9/2025-Central Tax (Rate) dt 17.9.2025 supersedes 1/2017-CT(Rate) dt 28.6.2017; Q2: 10/2025-CT(Rate) exemptions supersedes 2/2017; Q4: 2/2025-Compensation Cess (Rate)",
+                  "publisher": "Press Information Bureau"
+                },
+                {
+                  "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+                  "instrument": "GST Council / PIB press release with Annexures",
+                  "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+                  "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+                  "publisher": "GST Council"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13",
+                "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. This version is verified_starter on the official GST Council / PIB press releases named in the citations, reviewed on 2026-11-13. Open the notification PDFs before marking the rate verified."
+              },
+              "effective_to": "2025-09-21",
+              "notes": "5% merit / lower slab under the 2017 four-tier structure.",
+              "superseded_by": "in-gst-reduced-5-2025"
+            },
+            {
+              "id": "in-gst-reduced-5-2025",
+              "effective_from": "2025-09-22",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.05"
+              },
+              "legal_citations": [
+                {
+                  "title": "FAQs-3 on decisions of the 56th GST Council (PIB, 18 Sep 2025)",
+                  "instrument": "PIB press release PRID 2168426",
+                  "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2168426&lang=2&reg=3",
+                  "pinpoint": "Q1: Notification No. 9/2025-Central Tax (Rate) dt 17.9.2025 supersedes 1/2017-CT(Rate) dt 28.6.2017; Q2: 10/2025-CT(Rate) exemptions supersedes 2/2017; Q4: 2/2025-Compensation Cess (Rate)",
+                  "publisher": "Press Information Bureau"
+                },
+                {
+                  "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+                  "instrument": "GST Council / PIB press release with Annexures",
+                  "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+                  "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+                  "publisher": "GST Council"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13",
+                "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. This version is verified_starter on the official GST Council / PIB press releases named in the citations, reviewed on 2026-11-13. Open the notification PDFs before marking the rate verified."
+              },
+              "notes": "5% merit rate under the 56th GST Council two-rate structure. The 5% figure is unchanged; the set of goods and services in this slab was widened on 22 September 2025 (for example butter, ghee, and condensed milk moved from 12% to 5%, as listed in the Council annexures).",
+              "successor_of": "in-gst-reduced-5-2017"
+            }
+          ],
+          "local_name": "GST merit rate",
+          "chargeability": "charged",
+          "input_credit": "see_citation",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "5% combined. Input-credit entitlement can depend on the supply (for example the Council annexure describes hotel accommodation at 5% without ITC after 22 September 2025). Read the notification, not this pack, for credit."
+        },
+        {
+          "id": "in-gst-reduced-12",
+          "name": "Reduced GST (12%) — retired 21 September 2025",
+          "semantic_code": "reduced",
+          "rates": [
+            {
+              "id": "in-gst-reduced-12-2017",
+              "effective_from": "2017-07-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.12"
+              },
+              "legal_citations": [
+                {
+                  "title": "FAQs-3 on decisions of the 56th GST Council (PIB, 18 Sep 2025)",
+                  "instrument": "PIB press release PRID 2168426",
+                  "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2168426&lang=2&reg=3",
+                  "pinpoint": "Q1: Notification No. 9/2025-Central Tax (Rate) dt 17.9.2025 supersedes 1/2017-CT(Rate) dt 28.6.2017; Q2: 10/2025-CT(Rate) exemptions supersedes 2/2017; Q4: 2/2025-Compensation Cess (Rate)",
+                  "publisher": "Press Information Bureau"
+                },
+                {
+                  "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+                  "instrument": "GST Council / PIB press release with Annexures",
+                  "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+                  "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+                  "publisher": "GST Council"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13",
+                "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. This version is verified_starter on the official GST Council / PIB press releases named in the citations, reviewed on 2026-11-13. Open the notification PDFs before marking the rate verified."
+              },
+              "effective_to": "2025-09-21",
+              "notes": "12% slab under the 2017 four-tier structure. Abolished / migrated on 22 September 2025: goods and services in this slab moved to 5% or 18% (or another surviving treatment) as set out in the Council annexures. This version is retired; there is no open 12% rate."
+            }
+          ],
+          "local_name": "GST 12% slab",
+          "chargeability": "charged",
+          "input_credit": "creditable",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "Retired after 21 September 2025. Keep the historical version; do not treat 12% as an open rate."
+        },
+        {
+          "id": "in-gst-luxury-28-40",
+          "name": "De-merit / luxury GST (28% then 40%)",
+          "semantic_code": "luxury",
+          "rates": [
+            {
+              "id": "in-gst-luxury-28",
+              "effective_from": "2017-07-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.28"
+              },
+              "legal_citations": [
+                {
+                  "title": "FAQs-3 on decisions of the 56th GST Council (PIB, 18 Sep 2025)",
+                  "instrument": "PIB press release PRID 2168426",
+                  "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2168426&lang=2&reg=3",
+                  "pinpoint": "Q1: Notification No. 9/2025-Central Tax (Rate) dt 17.9.2025 supersedes 1/2017-CT(Rate) dt 28.6.2017; Q2: 10/2025-CT(Rate) exemptions supersedes 2/2017; Q4: 2/2025-Compensation Cess (Rate)",
+                  "publisher": "Press Information Bureau"
+                },
+                {
+                  "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+                  "instrument": "GST Council / PIB press release with Annexures",
+                  "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+                  "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+                  "publisher": "GST Council"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13",
+                "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. This version is verified_starter on the official GST Council / PIB press releases named in the citations, reviewed on 2026-11-13. Open the notification PDFs before marking the rate verified."
+              },
+              "effective_to": "2025-09-21",
+              "notes": "28% de-merit / luxury slab under the 2017 four-tier structure.",
+              "superseded_by": "in-gst-luxury-40"
+            },
+            {
+              "id": "in-gst-luxury-40",
+              "effective_from": "2025-09-22",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.40"
+              },
+              "legal_citations": [
+                {
+                  "title": "FAQs-3 on decisions of the 56th GST Council (PIB, 18 Sep 2025)",
+                  "instrument": "PIB press release PRID 2168426",
+                  "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2168426&lang=2&reg=3",
+                  "pinpoint": "Q1: Notification No. 9/2025-Central Tax (Rate) dt 17.9.2025 supersedes 1/2017-CT(Rate) dt 28.6.2017; Q2: 10/2025-CT(Rate) exemptions supersedes 2/2017; Q4: 2/2025-Compensation Cess (Rate)",
+                  "publisher": "Press Information Bureau"
+                },
+                {
+                  "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+                  "instrument": "GST Council / PIB press release with Annexures",
+                  "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+                  "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+                  "publisher": "GST Council"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13",
+                "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. This version is verified_starter on the official GST Council / PIB press releases named in the citations, reviewed on 2026-11-13. Open the notification PDFs before marking the rate verified."
+              },
+              "effective_to": "2026-01-31",
+              "notes": "Special de-merit 40% rate from 22 September 2025 for goods that moved on that date. Cigarettes, chewing tobacco such as zarda, unmanufactured tobacco, and beedi kept their previous GST rate plus compensation cess until 1 February 2026. That transition-period rate is not encoded, so a date in this window must not be read as 40% for those goods.",
+              "successor_of": "in-gst-luxury-28",
+              "superseded_by": "in-gst-luxury-40-tobacco"
+            },
+            {
+              "id": "in-gst-luxury-40-tobacco",
+              "effective_from": "2026-02-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.40"
+              },
+              "legal_citations": [
+                {
+                  "title": "GST Council Monthly Newsletter, December 2025",
+                  "instrument": "GST Council newsletter summarising Notification No. 19/2025-Central Tax (Rate) and 03/2025-Compensation Cess (Rate), both dt 31.12.2025",
+                  "url": "https://gstcouncil.gov.in/sites/default/files/2026-01/monthly_newsletter_december_2025_1.pdf",
+                  "pinpoint": "pan masala, tobacco (other than bidis), cigarettes, nicotine inhalation products to 40%; compensation cess Nil; wef 1 Feb 2026",
+                  "publisher": "GST Council"
+                },
+                {
+                  "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+                  "instrument": "GST Council / PIB press release with Annexures",
+                  "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+                  "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+                  "publisher": "GST Council"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13",
+                "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. This version is verified_starter on the official GST Council / PIB press releases named in the citations, reviewed on 2026-11-13. Open the notification PDFs before marking the rate verified."
+              },
+              "notes": "From 1 February 2026, pan masala, manufactured tobacco products other than bidis, cigarettes, and nicotine inhalation products move to 40%, and compensation cess on those goods is nil, as summarised in the GST Council December 2025 newsletter (Notifications 19/2025-CT(Rate) and 03/2025-Compensation Cess (Rate), dated 31 December 2025, not opened). Unmanufactured tobacco in that 40% scope excludes tobacco leaves: the PIB FAQ states tobacco leaves were already at 5%, and that 5% leaf rate is not encoded here. Bidi is described in the 56th Council annexure as moving from 28% to 18%, not to 40%. Whether any goods remain at 28% after this date was not confirmed.",
+              "successor_of": "in-gst-luxury-40"
+            }
+          ],
+          "local_name": "GST de-merit rate",
+          "chargeability": "charged",
+          "input_credit": "see_citation",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "28% through 21 September 2025, then 40%. Compensation cess, where it still applies, is a separate levy and is not encoded as a rate in this pack."
+        },
+        {
+          "id": "in-gst-zero",
+          "name": "Nil-rated GST",
+          "semantic_code": "zero",
+          "rates": [
+            {
+              "id": "in-gst-zero-2017",
+              "effective_from": "2017-07-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0"
+              },
+              "legal_citations": [
+                {
+                  "title": "FAQs-3 on decisions of the 56th GST Council (PIB, 18 Sep 2025)",
+                  "instrument": "PIB press release PRID 2168426",
+                  "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2168426&lang=2&reg=3",
+                  "pinpoint": "Q1: Notification No. 9/2025-Central Tax (Rate) dt 17.9.2025 supersedes 1/2017-CT(Rate) dt 28.6.2017; Q2: 10/2025-CT(Rate) exemptions supersedes 2/2017; Q4: 2/2025-Compensation Cess (Rate)",
+                  "publisher": "Press Information Bureau"
+                },
+                {
+                  "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+                  "instrument": "GST Council / PIB press release with Annexures",
+                  "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+                  "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+                  "publisher": "GST Council"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13",
+                "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. This version is verified_starter on the official GST Council / PIB press releases named in the citations, reviewed on 2026-11-13. Open the notification PDFs before marking the rate verified."
+              },
+              "notes": "Domestic nil slab (0%), including supplies the PIB FAQ describes as exempted, such as UHT milk from 22 September 2025. Nil-rated domestic supplies do not carry input credit. Export and SEZ zero-rating under IGST Act s 16 is a different rule and is not encoded."
+            }
+          ],
+          "local_name": "GST nil rate",
+          "chargeability": "exempt",
+          "input_credit": "not_creditable",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "Domestic nil slab only. Input tax is not creditable. IGST Act s 16 export and SEZ zero-rating was not opened and is not this treatment."
+        },
+        {
+          "id": "in-gst-exempt",
+          "name": "GST exemption",
+          "semantic_code": "exempt",
+          "rates": [
+            {
+              "id": "in-gst-exempt-2017",
+              "effective_from": "2017-07-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "none"
+              },
+              "legal_citations": [
+                {
+                  "title": "FAQs-3 on decisions of the 56th GST Council (PIB, 18 Sep 2025)",
+                  "instrument": "PIB press release PRID 2168426",
+                  "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2168426&lang=2&reg=3",
+                  "pinpoint": "Q1: Notification No. 9/2025-Central Tax (Rate) dt 17.9.2025 supersedes 1/2017-CT(Rate) dt 28.6.2017; Q2: 10/2025-CT(Rate) exemptions supersedes 2/2017; Q4: 2/2025-Compensation Cess (Rate)",
+                  "publisher": "Press Information Bureau"
+                },
+                {
+                  "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+                  "instrument": "GST Council / PIB press release with Annexures",
+                  "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+                  "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+                  "publisher": "GST Council"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13",
+                "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. This version is verified_starter on the official GST Council / PIB press releases named in the citations, reviewed on 2026-11-13. Open the notification PDFs before marking the rate verified."
+              },
+              "effective_to": "2025-09-21",
+              "notes": "Exemption category under Notification 2/2017-CT(Rate) (named in the PIB FAQ as the instrument superseded by 10/2025-CT(Rate)). The exemption lists themselves were not opened.",
+              "superseded_by": "in-gst-exempt-2025"
+            },
+            {
+              "id": "in-gst-exempt-2025",
+              "effective_from": "2025-09-22",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "none"
+              },
+              "legal_citations": [
+                {
+                  "title": "FAQs-3 on decisions of the 56th GST Council (PIB, 18 Sep 2025)",
+                  "instrument": "PIB press release PRID 2168426",
+                  "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2168426&lang=2&reg=3",
+                  "pinpoint": "Q1: Notification No. 9/2025-Central Tax (Rate) dt 17.9.2025 supersedes 1/2017-CT(Rate) dt 28.6.2017; Q2: 10/2025-CT(Rate) exemptions supersedes 2/2017; Q4: 2/2025-Compensation Cess (Rate)",
+                  "publisher": "Press Information Bureau"
+                },
+                {
+                  "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+                  "instrument": "GST Council / PIB press release with Annexures",
+                  "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+                  "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+                  "publisher": "GST Council"
+                },
+                {
+                  "title": "Notification No. 16/2025-Central Tax (Rate)",
+                  "instrument": "Notification No. 16/2025-Central Tax (Rate), dated 17 September 2025, entries 36C to 36E (Heading 9971)",
+                  "url": "https://www.financialservices.gov.in/beta/en/exemption-on-gst",
+                  "pinpoint": "Individual life and health insurance, and reinsurance of those policies, exempt from 22 September 2025. Group policies stay at 18%.",
+                  "publisher": "Department of Financial Services, Ministry of Finance"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13",
+                "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. Individual life and health insurance is cited to Notification 16/2025-CT(Rate) via the Department of Financial Services page. Open the notification PDFs before marking the rate verified."
+              },
+              "notes": "Goods exemptions are under Notification 10/2025-CT(Rate), which the PIB FAQ says supersedes 2/2017 from 22 September 2025. Individual life and health insurance (Heading 9971), and reinsurance of those policies, are exempt under Notification 16/2025-CT(Rate) dated 17 September 2025, not under 10/2025. The lists themselves were not copied here.",
+              "successor_of": "in-gst-exempt-2017"
+            }
+          ],
+          "local_name": "GST exempt",
+          "chargeability": "exempt",
+          "input_credit": "not_creditable",
+          "collection": {
+            "method": "none"
+          },
+          "notes": "Category only. Exemption lists in 2/2017-CT(Rate) and 10/2025-CT(Rate) were not opened."
+        }
+      ],
+      "local_name": "GST",
+      "notes": "Rates are combined GST (CGST+SGST/UTGST or IGST). CBIC official rate-notification PDFs timed out in the source research; versions that rest on GST Council / PIB releases are marked verified_starter. Special residual rates of 3%, 0.25% (rough diamonds), and 1.5% were mentioned in the 2017 structure and in a search summary of 9/2025-CT(Rate) schedules, but those notification texts were not opened and are not encoded."
+    }
+  ],
+  "maintainer": {
+    "name": "Open-Tax contributors (seat open)",
+    "github": "glc-works/open-tax",
+    "url": "https://github.com/glc-works/open-tax"
+  }
+}

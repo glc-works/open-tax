@@ -1,0 +1,338 @@
+{
+  "$schema": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/dictionary-entry.schema.json",
+  "schema_version": "1.0.0",
+  "dictionary_id": "sg-gst-f5-boxes",
+  "jurisdiction": "SG",
+  "pack_id": "sg",
+  "kind": "authority_filing",
+  "name": "IRAS GST F5 return boxes",
+  "authority": "Inland Revenue Authority of Singapore",
+  "verification": {
+    "status": "verified",
+    "reviewed_on": "2026-11-13",
+    "notes": "Box numbers and names copied from the IRAS Completing GST Return page. Boxes 18-21 (IGDS) are described on that page as a section for IGDS-approved businesses only and are not listed here as individual codes."
+  },
+  "notes": "IRAS publishes F5 box numbers, not separate transaction codes. Accounting-software tax codes such as SR, ZR, ES33, and TX come from the IRAS Accounting Software Register Plus (ASR+) / IAF specification and were not verified in the source research; they are not included.",
+  "entries": [
+    {
+      "code": "1",
+      "name": "Total value of standard-rated supplies",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      },
+      "maps_to": {
+        "tax_id": "gst",
+        "treatment_id": "sg-gst-standard",
+        "semantic_code": "standard"
+      }
+    },
+    {
+      "code": "2",
+      "name": "Total value of zero-rated supplies",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      },
+      "maps_to": {
+        "tax_id": "gst",
+        "treatment_id": "sg-gst-zero",
+        "semantic_code": "zero"
+      }
+    },
+    {
+      "code": "3",
+      "name": "Total value of exempt supplies",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      },
+      "maps_to": {
+        "tax_id": "gst",
+        "treatment_id": "sg-gst-exempt",
+        "semantic_code": "exempt"
+      }
+    },
+    {
+      "code": "4",
+      "name": "Total value of boxes (1)+(2)+(3)",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      }
+    },
+    {
+      "code": "5",
+      "name": "Total value of taxable purchases",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      }
+    },
+    {
+      "code": "6",
+      "name": "Output tax due",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      }
+    },
+    {
+      "code": "7",
+      "name": "Input tax and refunds claimed",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      }
+    },
+    {
+      "code": "8",
+      "name": "Net GST to be paid to or claimed from IRAS",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      }
+    },
+    {
+      "code": "9",
+      "name": "Total value of goods imported under the MES/ A3PL/ other approved schemes",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      }
+    },
+    {
+      "code": "10",
+      "name": "Did you claim GST you refunded to tourists?",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      }
+    },
+    {
+      "code": "11",
+      "name": "Did you make any bad debt relief claims and/or refund claims for reverse charge transactions?",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      }
+    },
+    {
+      "code": "12",
+      "name": "Did you make any pre-registration claims?",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      }
+    },
+    {
+      "code": "13",
+      "name": "Revenue",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      },
+      "maps_to": {
+        "tax_id": "gst",
+        "notes": "Box 13 is accounting revenue, including revenue from ordinary taxable supplies. Out-of-scope supplies are reported here only when they form part of revenue. Do not classify the whole box as out of scope."
+      }
+    },
+    {
+      "code": "14",
+      "name": "Did you import services and/or Low-Value Goods subject to GST under reverse charge?",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      },
+      "maps_to": {
+        "tax_id": "gst",
+        "treatment_id": "sg-gst-reverse-charge",
+        "semantic_code": "reverse_charge",
+        "notes": "Value is also included in Box 1 (and Box 5)."
+      }
+    },
+    {
+      "code": "15",
+      "name": "Did you operate an electronic marketplace to supply remote services subject to GST on behalf of third-party suppliers?",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      }
+    },
+    {
+      "code": "16",
+      "name": "Are you a redeliverer or electronic marketplace operator supplying imported Low-Value Goods on behalf of third-party suppliers?",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      }
+    },
+    {
+      "code": "17",
+      "name": "Did you supply imported Low-Value Goods that is subject to GST?",
+      "status": "active",
+      "legal_citations": [
+        {
+          "title": "IRAS | Completing GST Return",
+          "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+          "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+          "publisher": "IRAS"
+        }
+      ],
+      "verification": {
+        "status": "verified",
+        "reviewed_on": "2026-11-13"
+      },
+      "maps_to": {
+        "tax_id": "gst",
+        "treatment_id": "sg-gst-ovr",
+        "semantic_code": "standard",
+        "notes": "OVR / imported low-value goods disclosure. The supply is standard-rated and collected by the overseas vendor or marketplace."
+      }
+    }
+  ]
+}

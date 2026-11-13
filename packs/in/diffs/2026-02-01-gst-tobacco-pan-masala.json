@@ -1,0 +1,67 @@
+{
+  "$schema": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2026-02-01-gst-tobacco-pan-masala",
+  "jurisdiction": "IN",
+  "pack_id": "in",
+  "title": "1 February 2026: tobacco, pan masala, and related goods move to 40% GST",
+  "summary": "As summarised in the GST Council December 2025 newsletter, from 1 February 2026 pan masala, manufactured tobacco products other than bidis, cigarettes, and nicotine inhalation products move to 40% GST, and compensation cess on those goods is nil. Unmanufactured tobacco in that 40% scope excludes tobacco leaves; the PIB FAQ states tobacco leaves were already at 5%, and that leaf rate is not encoded here. The underlying Notifications 19/2025-CT(Rate) and 03/2025-Compensation Cess (Rate), dated 31 December 2025, were not opened. Bidis move from 28% to 18% in the 56th Council annexure, not to 40%. Whether any goods remain at 28% after this date was not confirmed.",
+  "legal_basis": [
+    {
+      "title": "GST Council Monthly Newsletter, December 2025",
+      "instrument": "GST Council newsletter summarising Notification No. 19/2025-Central Tax (Rate) and 03/2025-Compensation Cess (Rate), both dt 31.12.2025",
+      "url": "https://gstcouncil.gov.in/sites/default/files/2026-01/monthly_newsletter_december_2025_1.pdf",
+      "pinpoint": "pan masala, tobacco (other than bidis), cigarettes, nicotine inhalation products to 40%; compensation cess Nil; wef 1 Feb 2026",
+      "publisher": "GST Council"
+    },
+    {
+      "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+      "instrument": "GST Council / PIB press release with Annexures",
+      "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+      "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+      "publisher": "GST Council"
+    }
+  ],
+  "changes": [
+    {
+      "id": "in-gst-40-tobacco",
+      "effective_from": "2026-02-01",
+      "change_type": "scope_change",
+      "summary": "The 40% de-merit GST rate is extended to pan masala, manufactured tobacco products other than bidis, cigarettes, and nicotine inhalation products. Unmanufactured tobacco in this scope excludes tobacco leaves. Compensation cess on the named goods is described as nil. Bidi is not described as joining the 40% band.",
+      "affected": {
+        "semantic_codes": [
+          "luxury"
+        ],
+        "treatment_ids": [
+          "in-gst-luxury-28-40"
+        ],
+        "tax_ids": [
+          "gst"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "From 1 February 2026, invoices for the named tobacco and pan masala goods use 40% GST and should not add compensation cess if the newsletter summary is borne out by the unopened notifications. Bidi should be recoded from the annexure (28% to 18%), not assumed to be 40%. Confirm against 19/2025-CT(Rate) and 03/2025-Compensation Cess (Rate) before filing.",
+        "systems": [
+          "invoicing",
+          "filing",
+          "reporting"
+        ]
+      },
+      "computation": {
+        "statutory_rate": "0.40",
+        "effective_rate": "0.40"
+      },
+      "after": {
+        "statutory_rate": "0.40",
+        "effective_rate": "0.40",
+        "description": "40% de-merit rate for the deferred pan masala and manufactured tobacco goods, other than bidis and other than tobacco leaves."
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-13",
+    "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. This version is verified_starter on the official GST Council / PIB press releases named in the citations, reviewed on 2026-11-13. Open the notification PDFs before marking the rate verified."
+  }
+}

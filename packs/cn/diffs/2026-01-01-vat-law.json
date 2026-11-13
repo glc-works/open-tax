@@ -1,0 +1,61 @@
+{
+  "$schema": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2026-01-01-vat-law",
+  "jurisdiction": "CN",
+  "pack_id": "cn",
+  "title": "PRC Value-Added Tax Law commences on 1 January 2026",
+  "summary": "The PRC Value-Added Tax Law (adopted 25 December 2024) commences on 1 January 2026 and repeals the Provisional VAT Regulations. Art. 10 restates the 13%, 9%, 6%, and zero-rate bands. Art. 11 restates the 3% simplified collection rate. Art. 24 lists exemptions. The percentages of the general-method bands do not change on this date; the legal instrument does.",
+  "legal_basis": [
+    {
+      "title": "中华人民共和国增值税法",
+      "instrument": "中华人民共和国增值税法（2024年12月25日第十四届全国人大常委会第十三次会议通过）第十条、第十一条、第二十四条、第三十八条",
+      "url": "https://www.gov.cn/yaowen/liebiao/202412/content_6994557.htm",
+      "pinpoint": "第十条（一）13%（二）9%（三）6%（四）出口货物税率为零（五）跨境服务/无形资产零税率；第十一条 简易计税征收率3%；第三十八条 自2026年1月1日起施行，《增值税暂行条例》同时废止",
+      "publisher": "中国政府网 gov.cn"
+    }
+  ],
+  "changes": [
+    {
+      "id": "cn-vat-law-bands",
+      "effective_from": "2026-01-01",
+      "change_type": "clarification",
+      "summary": "VAT Law Art. 10 restates the 13%, 9%, 6%, and zero-rate bands, and Art. 11 restates the 3% simplified collection rate, from 1 January 2026.",
+      "affected": {
+        "semantic_codes": [
+          "standard",
+          "reduced",
+          "zero",
+          "exempt"
+        ],
+        "treatment_ids": [
+          "cn-vat-standard",
+          "cn-vat-reduced-9",
+          "cn-vat-reduced-6",
+          "cn-vat-simplified-3",
+          "cn-vat-export-zero",
+          "cn-vat-exempt"
+        ],
+        "tax_ids": [
+          "vat"
+        ]
+      },
+      "migration_impact": {
+        "severity": "medium",
+        "summary": "Invoice and filing systems keep the same general-method percentages but should cite the VAT Law from 1 January 2026. The Provisional Regulations are repealed on that date. Confirm any implementing-rule changes that the Law leaves to the State Council.",
+        "systems": [
+          "invoicing",
+          "filing",
+          "reporting"
+        ]
+      },
+      "after": {
+        "description": "VAT Law Arts. 10, 11 and 24 in force; Provisional Regulations repealed."
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "reviewed_on": "2026-11-13"
+  }
+}

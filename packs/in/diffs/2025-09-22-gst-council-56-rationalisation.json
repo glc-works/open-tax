@@ -1,0 +1,171 @@
+{
+  "$schema": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2025-09-22-gst-council-56-rationalisation",
+  "jurisdiction": "IN",
+  "pack_id": "in",
+  "title": "56th GST Council: rate rationalisation from 22 September 2025",
+  "summary": "The 56th GST Council recommended a two-rate structure of a 18% standard rate, a 5% merit rate, and a special 40% de-merit rate, implemented from 22 September 2025 for services and most goods. The 12% slab is abolished and those supplies migrate to 5% or 18% (or another surviving treatment). The 28% de-merit slab becomes 40% for goods that move on this date. Pan masala, gutkha, cigarettes, chewing tobacco, unmanufactured tobacco, and bidi stay on their old GST rates plus compensation cess until 1 February 2026. These figures rest on official GST Council / PIB releases; the underlying CBIC notification PDFs were not opened.",
+  "legal_basis": [
+    {
+      "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+      "instrument": "GST Council / PIB press release with Annexures",
+      "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+      "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+      "publisher": "GST Council"
+    },
+    {
+      "title": "FAQs-3 on decisions of the 56th GST Council (PIB, 18 Sep 2025)",
+      "instrument": "PIB press release PRID 2168426",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2168426&lang=2&reg=3",
+      "pinpoint": "Q1: Notification No. 9/2025-Central Tax (Rate) dt 17.9.2025 supersedes 1/2017-CT(Rate) dt 28.6.2017; Q2: 10/2025-CT(Rate) exemptions supersedes 2/2017; Q4: 2/2025-Compensation Cess (Rate)",
+      "publisher": "Press Information Bureau"
+    }
+  ],
+  "changes": [
+    {
+      "id": "in-gst-12-retired",
+      "effective_from": "2025-09-22",
+      "change_type": "treatment_removed",
+      "summary": "The 12% GST slab ends on 21 September 2025. Supplies that had been at 12% migrate to 5%, 18%, or another surviving treatment as set out in the Council annexures.",
+      "affected": {
+        "semantic_codes": [
+          "reduced"
+        ],
+        "treatment_ids": [
+          "in-gst-reduced-12"
+        ],
+        "tax_ids": [
+          "gst"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Do not issue 12% invoices for supplies from 22 September 2025. Recode each former 12% heading from the annexure (for example butter and ghee to 5%; certain works contracts and exploration services to 18%).",
+        "systems": [
+          "invoicing",
+          "filing",
+          "ecommerce",
+          "reporting"
+        ]
+      },
+      "before": {
+        "statutory_rate": "0.12",
+        "effective_rate": "0.12",
+        "description": "12% slab in force through 21 September 2025."
+      },
+      "after": {
+        "description": "12% slab retired. Destination rates are heading-specific."
+      }
+    },
+    {
+      "id": "in-gst-5-widened",
+      "effective_from": "2025-09-22",
+      "change_type": "scope_change",
+      "summary": "The 5% merit rate continues and is widened to include supplies that previously sat in other slabs (for example several dairy products previously at 12%).",
+      "affected": {
+        "semantic_codes": [
+          "reduced"
+        ],
+        "treatment_ids": [
+          "in-gst-reduced-5"
+        ],
+        "tax_ids": [
+          "gst"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Update item master data for headings that the annexure moves into 5%. The 5% figure itself does not change.",
+        "systems": [
+          "invoicing",
+          "filing",
+          "ecommerce"
+        ]
+      },
+      "computation": {
+        "statutory_rate": "0.05",
+        "effective_rate": "0.05"
+      },
+      "after": {
+        "statutory_rate": "0.05",
+        "effective_rate": "0.05",
+        "description": "Widened 5% merit slab."
+      }
+    },
+    {
+      "id": "in-gst-40",
+      "effective_from": "2025-09-22",
+      "change_type": "rate_change",
+      "summary": "The de-merit path for goods that move on this date changes from 28% to 40%. Selected tobacco and pan masala goods are deferred to 1 February 2026.",
+      "affected": {
+        "semantic_codes": [
+          "luxury"
+        ],
+        "treatment_ids": [
+          "in-gst-luxury-28-40"
+        ],
+        "tax_ids": [
+          "gst"
+        ]
+      },
+      "migration_impact": {
+        "severity": "high",
+        "summary": "Invoices for de-merit goods that the annexure moves on 22 September 2025 use 40%. Deferred tobacco and pan masala goods stay on their previous GST rate plus compensation cess until 1 February 2026.",
+        "systems": [
+          "invoicing",
+          "filing",
+          "ecommerce",
+          "reporting"
+        ]
+      },
+      "computation": {
+        "statutory_rate": "0.40",
+        "effective_rate": "0.40"
+      },
+      "before": {
+        "statutory_rate": "0.28",
+        "effective_rate": "0.28"
+      },
+      "after": {
+        "statutory_rate": "0.40",
+        "effective_rate": "0.40",
+        "description": "40% de-merit rate, with tobacco/pan masala deferred."
+      }
+    },
+    {
+      "id": "in-gst-18-restated",
+      "effective_from": "2025-09-22",
+      "change_type": "clarification",
+      "summary": "18% is restated as the standard rate. Some former 12% services move into 18%. The 18% figure itself does not change.",
+      "affected": {
+        "semantic_codes": [
+          "standard"
+        ],
+        "treatment_ids": [
+          "in-gst-standard"
+        ],
+        "tax_ids": [
+          "gst"
+        ]
+      },
+      "migration_impact": {
+        "severity": "medium",
+        "summary": "Keep 18% as the ordinary rate. Recode headings that the annexure moves into 18%.",
+        "systems": [
+          "invoicing",
+          "filing"
+        ]
+      },
+      "computation": {
+        "statutory_rate": "0.18",
+        "effective_rate": "0.18"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-13",
+    "notes": "CBIC official rate-notification PDFs (including 1/2017-CT(Rate), 9/2025-CT(Rate), 10/2025-CT(Rate), and 19/2025-CT(Rate)) timed out from the research box. This version is verified_starter on the official GST Council / PIB press releases named in the citations, reviewed on 2026-11-13. Open the notification PDFs before marking the rate verified."
+  }
+}

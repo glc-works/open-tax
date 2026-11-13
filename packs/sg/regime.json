@@ -1,0 +1,1358 @@
+{
+  "$schema": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/regime.schema.json",
+  "schema_version": "1.0.0",
+  "pack_id": "sg",
+  "jurisdiction": {
+    "code": "SG",
+    "name": "Singapore",
+    "official_name": "Republic of Singapore"
+  },
+  "currency": "SGD",
+  "authority": {
+    "id": "sg-iras",
+    "name": "Inland Revenue Authority of Singapore",
+    "short_name": "IRAS",
+    "website": "https://www.iras.gov.sg"
+  },
+  "notes": "Starter pack for Singapore GST, corporate income tax, and non-resident withholding. It is a software reference, not a filing position. Reviewed against the cited IRAS and AGC pages on 2026-11-13.",
+  "semantic_mappings": [
+    {
+      "semantic_code": "standard",
+      "treatment_id": "sg-gst-standard",
+      "rule": "Use for supplies that take the generally applicable positive GST rate under GST Act s 16, other than supplies collected under the Overseas Vendor Registration regime.",
+      "local_name": "Standard-rated supplies"
+    },
+    {
+      "semantic_code": "zero",
+      "treatment_id": "sg-gst-zero",
+      "rule": "Use for exports of goods and international services zero-rated under GST Act s 21. Input tax remains creditable.",
+      "local_name": "Zero-rated supplies"
+    },
+    {
+      "semantic_code": "exempt",
+      "treatment_id": "sg-gst-exempt",
+      "rule": "Use for Fourth Schedule exempt supplies (residential property, prescribed financial services, investment precious metals, digital payment tokens). Input tax is not creditable unless the De Minimis Rule is met or Regulation 33 of the GST (General) Regulations allows the claim. Read see_citation before denying the credit.",
+      "local_name": "Exempt supplies"
+    },
+    {
+      "semantic_code": "out_of_scope",
+      "treatment_id": "sg-gst-out-of-scope",
+      "rule": "Use when the transaction is not a supply for GST, including third-country sales, TOGC, and supplies outside Singapore.",
+      "local_name": "Out-of-scope supplies"
+    },
+    {
+      "semantic_code": "reverse_charge",
+      "treatment_id": "sg-gst-reverse-charge",
+      "rule": "Use when the GST-registered recipient must account for GST on imported services or low-value goods under s 14, typically because the person is not entitled to full input tax credit.",
+      "local_name": "Reverse charge"
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "sg-gst-ovr",
+      "rule": "Use for B2C imported digital services, remote non-digital services, or low-value goods on which an overseas vendor (or marketplace/redeliverer) collects the prevailing standard GST rate under the Overseas Vendor Registration regime. Do not use reverse_charge for this collection path.",
+      "local_name": "Overseas Vendor Registration"
+    },
+    {
+      "semantic_code": "standard",
+      "treatment_id": "sg-cit-standard",
+      "rule": "Use for the flat 17% corporate income tax on chargeable income, before applying PTE or SUTE exemption schedules.",
+      "local_name": "Corporate income tax"
+    },
+    {
+      "semantic_code": "reduced",
+      "treatment_id": "sg-cit-pte",
+      "rule": "Use for the partial tax exemption schedule under s 43 (YA 2020 onwards: 75% of the first S$10,000 and 50% of the next S$190,000).",
+      "local_name": "Partial tax exemption"
+    },
+    {
+      "semantic_code": "reduced",
+      "treatment_id": "sg-cit-sute",
+      "rule": "Use for the start-up tax exemption schedule under s 43 (YA 2020 onwards, first 3 YAs: 75% of the first S$100,000 and 50% of the next S$100,000), when the company meets the IRAS conditions.",
+      "local_name": "Start-up tax exemption"
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "sg-wht-interest",
+      "rule": "Use for withholding on interest, commissions and fees in connection with a loan or indebtedness paid to a non-resident."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "sg-wht-royalty",
+      "rule": "Use for withholding on royalties or lump sums for use of movable property paid to a non-resident."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "sg-wht-knowhow",
+      "rule": "Use for withholding on payments for use of scientific, technical, industrial or commercial knowledge or information."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "sg-wht-movable-rent",
+      "rule": "Use for withholding on rent or other payments for use of movable property paid to a non-resident."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "sg-wht-tech-management",
+      "rule": "Use for withholding on technical assistance and service fees and management fees paid to a non-resident, at the prevailing corporate income tax rate."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "sg-wht-director",
+      "rule": "Use for withholding on payments to a non-resident director: 22% for income due and payable from 1 January 2016 through 31 December 2022, then 24%."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "sg-wht-professional",
+      "rule": "Use for withholding on payments to a non-resident professional or firm."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "sg-wht-entertainer",
+      "rule": "Use for withholding on payments to a non-resident public entertainer."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "sg-wht-property-trader",
+      "rule": "Use for withholding on the sale of real property by a non-resident property trader."
+    },
+    {
+      "semantic_code": "withholding",
+      "treatment_id": "sg-wht-casino-agent",
+      "rule": "Use for withholding on payments to a non-resident international market agent in the casino sector."
+    }
+  ],
+  "taxes": [
+    {
+      "id": "gst",
+      "name": "Goods and Services Tax",
+      "kind": "vat",
+      "treatments": [
+        {
+          "id": "sg-gst-standard",
+          "name": "Standard-rated GST",
+          "semantic_code": "standard",
+          "rates": [
+            {
+              "id": "sg-gst-standard-3",
+              "effective_from": "1994-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.03"
+              },
+              "legal_citations": [
+                {
+                  "title": "IRAS | Current GST rates",
+                  "instrument": "IRAS webpage: Prevailing GST rate and historical GST rates",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/current-gst-rates",
+                  "pinpoint": "Historical GST rates table (3% from 1 Apr 1994 ... 8% 1 Jan 2023-31 Dec 2023); 'The current GST rate in Singapore is 9%'",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2002-12-31",
+              "notes": "IRAS historical table only; GST Act s 16 as currently printed starts at 4% (2003).",
+              "superseded_by": "sg-gst-standard-4"
+            },
+            {
+              "id": "sg-gst-standard-4",
+              "effective_from": "2003-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.04"
+              },
+              "legal_citations": [
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "Goods and Services Tax Act 1993, s 16 (Rate of tax)",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993?ProvIds=pr16-",
+                  "pinpoint": "s 16(a)-(cb): 4% 2003; 5% 1 Jan 2004-30 Jun 2007; 7% 1 Jul 2007-31 Dec 2022; 8% 1 Jan 2023-31 Dec 2023; 9% from 1 Jan 2024 [Act 35 of 2022 wef 05/12/2022]",
+                  "publisher": "Attorney-General's Chambers (SSO)"
+                },
+                {
+                  "title": "IRAS | Current GST rates",
+                  "instrument": "IRAS webpage: Prevailing GST rate and historical GST rates",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/current-gst-rates",
+                  "pinpoint": "Historical GST rates table (3% from 1 Apr 1994 ... 8% 1 Jan 2023-31 Dec 2023); 'The current GST rate in Singapore is 9%'",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2003-12-31",
+              "successor_of": "sg-gst-standard-3",
+              "superseded_by": "sg-gst-standard-5"
+            },
+            {
+              "id": "sg-gst-standard-5",
+              "effective_from": "2004-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.05"
+              },
+              "legal_citations": [
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "Goods and Services Tax Act 1993, s 16 (Rate of tax)",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993?ProvIds=pr16-",
+                  "pinpoint": "s 16(a)-(cb): 4% 2003; 5% 1 Jan 2004-30 Jun 2007; 7% 1 Jul 2007-31 Dec 2022; 8% 1 Jan 2023-31 Dec 2023; 9% from 1 Jan 2024 [Act 35 of 2022 wef 05/12/2022]",
+                  "publisher": "Attorney-General's Chambers (SSO)"
+                },
+                {
+                  "title": "IRAS | Current GST rates",
+                  "instrument": "IRAS webpage: Prevailing GST rate and historical GST rates",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/current-gst-rates",
+                  "pinpoint": "Historical GST rates table (3% from 1 Apr 1994 ... 8% 1 Jan 2023-31 Dec 2023); 'The current GST rate in Singapore is 9%'",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2007-06-30",
+              "successor_of": "sg-gst-standard-4",
+              "superseded_by": "sg-gst-standard-7"
+            },
+            {
+              "id": "sg-gst-standard-7",
+              "effective_from": "2007-07-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.07"
+              },
+              "legal_citations": [
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "Goods and Services Tax Act 1993, s 16 (Rate of tax)",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993?ProvIds=pr16-",
+                  "pinpoint": "s 16(a)-(cb): 4% 2003; 5% 1 Jan 2004-30 Jun 2007; 7% 1 Jul 2007-31 Dec 2022; 8% 1 Jan 2023-31 Dec 2023; 9% from 1 Jan 2024 [Act 35 of 2022 wef 05/12/2022]",
+                  "publisher": "Attorney-General's Chambers (SSO)"
+                },
+                {
+                  "title": "IRAS | Current GST rates",
+                  "instrument": "IRAS webpage: Prevailing GST rate and historical GST rates",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/current-gst-rates",
+                  "pinpoint": "Historical GST rates table (3% from 1 Apr 1994 ... 8% 1 Jan 2023-31 Dec 2023); 'The current GST rate in Singapore is 9%'",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2022-12-31",
+              "successor_of": "sg-gst-standard-5",
+              "superseded_by": "sg-gst-standard-8"
+            },
+            {
+              "id": "sg-gst-standard-8",
+              "effective_from": "2023-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.08"
+              },
+              "legal_citations": [
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "Goods and Services Tax Act 1993, s 16 (Rate of tax)",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993?ProvIds=pr16-",
+                  "pinpoint": "s 16(a)-(cb): 4% 2003; 5% 1 Jan 2004-30 Jun 2007; 7% 1 Jul 2007-31 Dec 2022; 8% 1 Jan 2023-31 Dec 2023; 9% from 1 Jan 2024 [Act 35 of 2022 wef 05/12/2022]",
+                  "publisher": "Attorney-General's Chambers (SSO)"
+                },
+                {
+                  "title": "IRAS | Current GST rates",
+                  "instrument": "IRAS webpage: Prevailing GST rate and historical GST rates",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/current-gst-rates",
+                  "pinpoint": "Historical GST rates table (3% from 1 Apr 1994 ... 8% 1 Jan 2023-31 Dec 2023); 'The current GST rate in Singapore is 9%'",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2023-12-31",
+              "successor_of": "sg-gst-standard-7",
+              "superseded_by": "sg-gst-standard-9"
+            },
+            {
+              "id": "sg-gst-standard-9",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.09"
+              },
+              "legal_citations": [
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "Goods and Services Tax Act 1993, s 16 (Rate of tax)",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993?ProvIds=pr16-",
+                  "pinpoint": "s 16(a)-(cb): 4% 2003; 5% 1 Jan 2004-30 Jun 2007; 7% 1 Jul 2007-31 Dec 2022; 8% 1 Jan 2023-31 Dec 2023; 9% from 1 Jan 2024 [Act 35 of 2022 wef 05/12/2022]",
+                  "publisher": "Attorney-General's Chambers (SSO)"
+                },
+                {
+                  "title": "IRAS | Current GST rates",
+                  "instrument": "IRAS webpage: Prevailing GST rate and historical GST rates",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/current-gst-rates",
+                  "pinpoint": "Historical GST rates table (3% from 1 Apr 1994 ... 8% 1 Jan 2023-31 Dec 2023); 'The current GST rate in Singapore is 9%'",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "successor_of": "sg-gst-standard-8"
+            }
+          ],
+          "local_name": "Standard-rated supplies",
+          "chargeability": "charged",
+          "input_credit": "creditable",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "Ordinary positive GST rate under GST Act s 16. Reported in GST F5 Box 1."
+        },
+        {
+          "id": "sg-gst-zero",
+          "name": "Zero-rated GST",
+          "semantic_code": "zero",
+          "rates": [
+            {
+              "id": "sg-gst-zero-1994",
+              "effective_from": "1994-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0"
+              },
+              "legal_citations": [
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "GST Act 1993, s 21 (Zero-rating for exports and international services); also ss 21A-21C",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993",
+                  "pinpoint": "s 21(3) international services"
+                },
+                {
+                  "title": "IRAS | Completing GST Return",
+                  "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              }
+            }
+          ],
+          "local_name": "Zero-rated supplies",
+          "chargeability": "zero_rated",
+          "input_credit": "creditable",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "Export of goods and international services listed in s 21(3) GST Act (documentation required). Input tax remains creditable. Reported in GST F5 Box 2."
+        },
+        {
+          "id": "sg-gst-exempt",
+          "name": "Exempt GST",
+          "semantic_code": "exempt",
+          "rates": [
+            {
+              "id": "sg-gst-exempt-1994",
+              "effective_from": "1994-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "none"
+              },
+              "legal_citations": [
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "GST Act 1993, s 22 (Exempt supply and exempt import) and Fourth Schedule",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993"
+                },
+                {
+                  "title": "IRAS | Completing GST Return",
+                  "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "IRAS | Claiming Input Tax Incurred to Make Exempt Supplies",
+                  "instrument": "IRAS webpage: De Minimis Rule and Regulation 33 of the GST (General) Regulations",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/claiming-gst-(input-tax)/claiming-input-tax-incurred-to-make-exempt-supplies",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Fourth Schedule supplies: sale and lease of residential property; prescribed financial services; sale/import of investment precious metals (IPM); digital payment tokens (wef 1 Jan 2020). Input tax is not an automatic denial: the De Minimis Rule and Regulation 33 can allow a claim."
+            }
+          ],
+          "local_name": "Exempt supplies",
+          "chargeability": "exempt",
+          "input_credit": "see_citation",
+          "collection": {
+            "method": "none"
+          },
+          "notes": "Reported in GST F5 Box 3. Input tax attributable to exempt supplies is blocked unless the De Minimis Rule applies (IRAS: the value of exempt supplies does not exceed an average of S$40,000 a month and 5% of the total value of taxable and exempt supplies) or Regulation 33 of the GST (General) Regulations provides an exception. Digital payment tokens were added as an exempt supply from 1 January 2020; this pack does not split a separate rate version for that scope change (the rate remains none)."
+        },
+        {
+          "id": "sg-gst-out-of-scope",
+          "name": "Out-of-scope supplies",
+          "semantic_code": "out_of_scope",
+          "rates": [
+            {
+              "id": "sg-gst-out-of-scope-1994",
+              "effective_from": "1994-04-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "none"
+              },
+              "legal_citations": [
+                {
+                  "title": "GST: General Guide for Businesses",
+                  "instrument": "IRAS e-Tax Guide, para 4.4 Out-of-scope Supply; para 3.1.3 (TOGC as excluded transaction)",
+                  "url": "https://www.iras.gov.sg/media/docs/default-source/e-tax/etaxguide_gst_gst-general-guide-for-businesses(1).pdf",
+                  "pinpoint": "paras 3.1.3, 3.1.5, 4.4.1-4.4.2",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "GST: Transfer of Business as a Going Concern",
+                  "instrument": "IRAS e-Tax Guide (2019-12-30), para 2.1 excluded transactions under GST (Excluded Transactions) Order",
+                  "url": "https://www.iras.gov.sg/media/docs/default-source/e-tax/etaxguide_gst_transfer-of-business-as-a-going-concern_2019-12-30.pdf",
+                  "pinpoint": "para 2.1(a), 4.1",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Place of supply outside Singapore (for example third-country sales of goods delivered from outside Singapore to outside Singapore), sales of overseas goods within a free trade zone or Zero GST warehouse, private transactions, salaries; transfer of a business as a going concern is an excluded transaction (not a supply)."
+            }
+          ],
+          "local_name": "Out-of-scope supplies",
+          "chargeability": "out_of_scope",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "none"
+          },
+          "notes": "Not reported in GST F5 Boxes 1-3; include in Box 13 Revenue if the supply forms part of revenue. Includes third-country sales, TOGC, and supplies by non-taxable persons."
+        },
+        {
+          "id": "sg-gst-reverse-charge",
+          "name": "Reverse charge on imported services and low-value goods",
+          "semantic_code": "reverse_charge",
+          "rates": [
+            {
+              "id": "sg-gst-reverse-charge-7",
+              "effective_from": "2020-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.07"
+              },
+              "legal_citations": [
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "GST Act 1993, s 14 (Reverse charge on supplies received from abroad); s 16 includes reverse charge supplies",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993"
+                },
+                {
+                  "title": "IRAS | Local businesses importing services and importing or supplying low-value goods",
+                  "instrument": "IRAS webpage",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-and-digital-economy/local-businesses",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "Extended Overseas Vendor Registration Regime (slides)",
+                  "instrument": "IRAS slides",
+                  "url": "https://www.iras.gov.sg/media/docs/default-source/uploadedfiles/gst/extended-overseas-vendor-registration-regime-slides.pdf",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "IRAS | Completing GST Return",
+                  "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "Goods and Services Tax Act 1993, s 16 (Rate of tax)",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993?ProvIds=pr16-",
+                  "pinpoint": "s 16(a)-(cb): 4% 2003; 5% 1 Jan 2004-30 Jun 2007; 7% 1 Jul 2007-31 Dec 2022; 8% 1 Jan 2023-31 Dec 2023; 9% from 1 Jan 2024 [Act 35 of 2022 wef 05/12/2022]",
+                  "publisher": "Attorney-General's Chambers (SSO)"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2022-12-31",
+              "notes": "B2B imported services received by GST-registered persons not entitled to full input tax credit (RC Businesses). Rate is the prevailing s 16 standard rate.",
+              "superseded_by": "sg-gst-reverse-charge-8"
+            },
+            {
+              "id": "sg-gst-reverse-charge-8",
+              "effective_from": "2023-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.08"
+              },
+              "legal_citations": [
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "GST Act 1993, s 14 (Reverse charge on supplies received from abroad); s 16 includes reverse charge supplies",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993"
+                },
+                {
+                  "title": "IRAS | Local businesses importing services and importing or supplying low-value goods",
+                  "instrument": "IRAS webpage",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-and-digital-economy/local-businesses",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "Extended Overseas Vendor Registration Regime (slides)",
+                  "instrument": "IRAS slides",
+                  "url": "https://www.iras.gov.sg/media/docs/default-source/uploadedfiles/gst/extended-overseas-vendor-registration-regime-slides.pdf",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "IRAS | Completing GST Return",
+                  "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "Goods and Services Tax Act 1993, s 16 (Rate of tax)",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993?ProvIds=pr16-",
+                  "pinpoint": "s 16(a)-(cb): 4% 2003; 5% 1 Jan 2004-30 Jun 2007; 7% 1 Jul 2007-31 Dec 2022; 8% 1 Jan 2023-31 Dec 2023; 9% from 1 Jan 2024 [Act 35 of 2022 wef 05/12/2022]",
+                  "publisher": "Attorney-General's Chambers (SSO)"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2023-12-31",
+              "notes": "Standard rate moves to 8%. Reverse charge is also extended to low-value goods purchased by RC Businesses from 1 Jan 2023.",
+              "successor_of": "sg-gst-reverse-charge-7",
+              "superseded_by": "sg-gst-reverse-charge-9"
+            },
+            {
+              "id": "sg-gst-reverse-charge-9",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.09"
+              },
+              "legal_citations": [
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "GST Act 1993, s 14 (Reverse charge on supplies received from abroad); s 16 includes reverse charge supplies",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993"
+                },
+                {
+                  "title": "IRAS | Local businesses importing services and importing or supplying low-value goods",
+                  "instrument": "IRAS webpage",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-and-digital-economy/local-businesses",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "Extended Overseas Vendor Registration Regime (slides)",
+                  "instrument": "IRAS slides",
+                  "url": "https://www.iras.gov.sg/media/docs/default-source/uploadedfiles/gst/extended-overseas-vendor-registration-regime-slides.pdf",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "IRAS | Completing GST Return",
+                  "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "Goods and Services Tax Act 1993, s 16 (Rate of tax)",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993?ProvIds=pr16-",
+                  "pinpoint": "s 16(a)-(cb): 4% 2003; 5% 1 Jan 2004-30 Jun 2007; 7% 1 Jul 2007-31 Dec 2022; 8% 1 Jan 2023-31 Dec 2023; 9% from 1 Jan 2024 [Act 35 of 2022 wef 05/12/2022]",
+                  "publisher": "Attorney-General's Chambers (SSO)"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Tracks the prevailing s 16 standard rate of 9%.",
+              "successor_of": "sg-gst-reverse-charge-8"
+            }
+          ],
+          "local_name": "Reverse charge",
+          "chargeability": "reverse_charged",
+          "input_credit": "see_citation",
+          "collection": {
+            "method": "self_assessment"
+          },
+          "notes": "Applies from 1 January 2020 to B2B imported services received by GST-registered persons not entitled to full input tax credit. Extended to low-value goods from 1 January 2023. The recipient accounts for GST at the prevailing standard rate. Value is also included in F5 Box 1 (and Box 5); Box 14 is the yes/no disclosure."
+        },
+        {
+          "id": "sg-gst-ovr",
+          "name": "Overseas Vendor Registration (B2C imported supplies)",
+          "semantic_code": "standard",
+          "rates": [
+            {
+              "id": "sg-gst-ovr-7",
+              "effective_from": "2020-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.07"
+              },
+              "legal_citations": [
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "GST Act 1993, s 14 (Reverse charge on supplies received from abroad); s 16 includes reverse charge supplies",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993"
+                },
+                {
+                  "title": "IRAS | Local businesses importing services and importing or supplying low-value goods",
+                  "instrument": "IRAS webpage",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-and-digital-economy/local-businesses",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "Extended Overseas Vendor Registration Regime (slides)",
+                  "instrument": "IRAS slides",
+                  "url": "https://www.iras.gov.sg/media/docs/default-source/uploadedfiles/gst/extended-overseas-vendor-registration-regime-slides.pdf",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "IRAS | Completing GST Return",
+                  "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "Goods and Services Tax Act 1993, s 16 (Rate of tax)",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993?ProvIds=pr16-",
+                  "pinpoint": "s 16(a)-(cb): 4% 2003; 5% 1 Jan 2004-30 Jun 2007; 7% 1 Jul 2007-31 Dec 2022; 8% 1 Jan 2023-31 Dec 2023; 9% from 1 Jan 2024 [Act 35 of 2022 wef 05/12/2022]",
+                  "publisher": "Attorney-General's Chambers (SSO)"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2022-12-31",
+              "notes": "Overseas Vendor Registration for B2C digital services. The overseas vendor collects the prevailing standard GST rate. Liability if global turnover > S$1m and B2C supplies to Singapore > S$100,000. This is not reverse charge.",
+              "superseded_by": "sg-gst-ovr-8"
+            },
+            {
+              "id": "sg-gst-ovr-8",
+              "effective_from": "2023-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.08"
+              },
+              "legal_citations": [
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "GST Act 1993, s 14 (Reverse charge on supplies received from abroad); s 16 includes reverse charge supplies",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993"
+                },
+                {
+                  "title": "IRAS | Local businesses importing services and importing or supplying low-value goods",
+                  "instrument": "IRAS webpage",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-and-digital-economy/local-businesses",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "Extended Overseas Vendor Registration Regime (slides)",
+                  "instrument": "IRAS slides",
+                  "url": "https://www.iras.gov.sg/media/docs/default-source/uploadedfiles/gst/extended-overseas-vendor-registration-regime-slides.pdf",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "IRAS | Completing GST Return",
+                  "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "Goods and Services Tax Act 1993, s 16 (Rate of tax)",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993?ProvIds=pr16-",
+                  "pinpoint": "s 16(a)-(cb): 4% 2003; 5% 1 Jan 2004-30 Jun 2007; 7% 1 Jul 2007-31 Dec 2022; 8% 1 Jan 2023-31 Dec 2023; 9% from 1 Jan 2024 [Act 35 of 2022 wef 05/12/2022]",
+                  "publisher": "Attorney-General's Chambers (SSO)"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2023-12-31",
+              "notes": "OVR extended to B2C low-value goods (air/post, value not exceeding S$400) and B2C remote non-digital services; same S$1m / S$100,000 thresholds. Vendor still collects the standard rate (8% in 2023).",
+              "successor_of": "sg-gst-ovr-7",
+              "superseded_by": "sg-gst-ovr-9"
+            },
+            {
+              "id": "sg-gst-ovr-9",
+              "effective_from": "2024-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.09"
+              },
+              "legal_citations": [
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "GST Act 1993, s 14 (Reverse charge on supplies received from abroad); s 16 includes reverse charge supplies",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993"
+                },
+                {
+                  "title": "IRAS | Local businesses importing services and importing or supplying low-value goods",
+                  "instrument": "IRAS webpage",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-and-digital-economy/local-businesses",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "Extended Overseas Vendor Registration Regime (slides)",
+                  "instrument": "IRAS slides",
+                  "url": "https://www.iras.gov.sg/media/docs/default-source/uploadedfiles/gst/extended-overseas-vendor-registration-regime-slides.pdf",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "IRAS | Completing GST Return",
+                  "instrument": "IRAS webpage: GST F5 box-by-box guidance",
+                  "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "Goods and Services Tax Act 1993",
+                  "instrument": "Goods and Services Tax Act 1993, s 16 (Rate of tax)",
+                  "url": "https://sso.agc.gov.sg/Act/GSTA1993?ProvIds=pr16-",
+                  "pinpoint": "s 16(a)-(cb): 4% 2003; 5% 1 Jan 2004-30 Jun 2007; 7% 1 Jul 2007-31 Dec 2022; 8% 1 Jan 2023-31 Dec 2023; 9% from 1 Jan 2024 [Act 35 of 2022 wef 05/12/2022]",
+                  "publisher": "Attorney-General's Chambers (SSO)"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Overseas vendors collect the prevailing standard GST rate of 9%.",
+              "successor_of": "sg-gst-ovr-8"
+            }
+          ],
+          "local_name": "Overseas Vendor Registration",
+          "chargeability": "charged",
+          "input_credit": "see_citation",
+          "collection": {
+            "method": "invoice"
+          },
+          "notes": "OVR is not reverse charge. Overseas vendors (and from 1 January 2023, electronic marketplaces and redeliverers in the extended regime) collect the prevailing standard GST rate on B2C digital services (from 1 January 2020) and, from 1 January 2023, on B2C remote non-digital services and imported low-value goods. Thresholds: global turnover > S$1m and B2C supplies to Singapore > S$100,000."
+        }
+      ],
+      "local_name": "GST",
+      "notes": "IRAS publishes GST as standard-rated, zero-rated, exempt, and out-of-scope. Reverse charge and Overseas Vendor Registration are collection mechanisms that use the prevailing standard rate."
+    },
+    {
+      "id": "cit",
+      "name": "Corporate Income Tax",
+      "kind": "income",
+      "treatments": [
+        {
+          "id": "sg-cit-standard",
+          "name": "Standard corporate income tax",
+          "semantic_code": "standard",
+          "rates": [
+            {
+              "id": "sg-cit-standard-17",
+              "effective_from": "2010-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.17"
+              },
+              "legal_citations": [
+                {
+                  "title": "IRAS e-Tax Guide: Incorporation of Companies by Medical Professionals and Relevant Tax Implications",
+                  "instrument": "IRAS e-Tax Guide (published 9 Sep 2024), para 4.2(i)",
+                  "url": "https://www.iras.gov.sg/docs/default-source/e-tax/etaxguide-on-corporatisation-and-tax-implications.pdf",
+                  "pinpoint": "Paragraph 4.2(i), page 3: 'the corporate income tax rate is 17% (since YA 2010)'; also records the highest marginal personal income tax rate as 24% with effect from YA 2024 (previously 22% since YA 2017)",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "IRAS | Corporate Income Tax Rates",
+                  "instrument": "IRAS webpage; Income Tax Act 1947 s 43",
+                  "url": "https://www.iras.gov.sg/quick-links/tax-rates/corporate-income-tax-rates",
+                  "pinpoint": "Corporate Income Tax (CIT) Rate: flat rate of 17% of chargeable income, local and foreign companies (does not itself state the YA 2010 start)",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "IRAS | Corporate Income Tax Rate, Rebates & Tax Exemption Schemes",
+                  "instrument": "Income Tax Act 1947, s 43 (start-up and partial tax exemption) as described by IRAS",
+                  "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/corporate-income-tax-rate-rebates-and-tax-exemption-schemes",
+                  "pinpoint": "Tables 1-2 (SUTE) and PTE table; also restates the flat 17% CIT rate",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "Corporate Income Tax | MOF",
+                  "instrument": "MOF policy page",
+                  "url": "https://www.mof.gov.sg/policies/taxes/corporate-income-tax/",
+                  "publisher": "Ministry of Finance Singapore"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Flat 17% of chargeable income, local and foreign companies, from Year of Assessment 2010. effective_from is the first day of YA 2010 (Singapore companies are assessed by Year of Assessment; the basis period is typically the preceding financial year)."
+            }
+          ],
+          "chargeability": "charged",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "self_assessment",
+            "reconciled_annually": true
+          },
+          "notes": "Income Tax Act 1947 s 43. The YA 2010 commencement is taken from the IRAS e-Tax Guide of 9 Sep 2024, para 4.2(i), not from the current-rate webpage (which only states the live 17% figure)."
+        },
+        {
+          "id": "sg-cit-pte",
+          "name": "Partial tax exemption (PTE)",
+          "semantic_code": "reduced",
+          "rates": [
+            {
+              "id": "sg-cit-pte-ya2020",
+              "effective_from": "2020-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "brackets": [
+                  {
+                    "label": "First S$10,000 of chargeable income",
+                    "over": "0",
+                    "up_to": "10000",
+                    "rate": "0.75",
+                    "notes": "Exemption fraction, not a tax rate. 75% of this band is exempt; the remainder is taxed at the prevailing CIT rate."
+                  },
+                  {
+                    "label": "Next S$190,000 of chargeable income",
+                    "over": "10000",
+                    "up_to": "200000",
+                    "rate": "0.50",
+                    "notes": "Exemption fraction, not a tax rate. 50% of this band is exempt. IRAS states the resulting maximum exemption as S$102,500 (S$7,500 + S$95,000)."
+                  }
+                ],
+                "notes": "Partial tax exemption (PTE) under Income Tax Act 1947 s 43, YA 2020 onwards. Chargeable income above S$200,000 is taxed in full at the prevailing CIT rate. These bracket rates are exemption percentages."
+              },
+              "legal_citations": [
+                {
+                  "title": "IRAS | Corporate Income Tax Rate, Rebates & Tax Exemption Schemes",
+                  "instrument": "Income Tax Act 1947, s 43 (start-up and partial tax exemption) as described by IRAS",
+                  "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/corporate-income-tax-rate-rebates-and-tax-exemption-schemes",
+                  "pinpoint": "Tables 1-2 (SUTE) and PTE table; also restates the flat 17% CIT rate",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "YA 2020 onwards. Bracket rates are exemption fractions, not CIT percentages."
+            }
+          ],
+          "chargeability": "charged",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "self_assessment",
+            "reconciled_annually": true
+          },
+          "notes": "Partial tax exemption under s 43. Pre-YA 2020 brackets (75% of first S$10,000 and 50% of the next S$290,000, through YA 2019) are described on the same IRAS page but are not encoded as a prior version because a legal start date for that earlier schedule was not pinned in the source research."
+        },
+        {
+          "id": "sg-cit-sute",
+          "name": "Tax exemption scheme for new start-up companies (SUTE)",
+          "semantic_code": "reduced",
+          "rates": [
+            {
+              "id": "sg-cit-sute-ya2020",
+              "effective_from": "2020-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "schedule",
+                "brackets": [
+                  {
+                    "label": "First S$100,000 of chargeable income",
+                    "over": "0",
+                    "up_to": "100000",
+                    "rate": "0.75",
+                    "notes": "Exemption fraction, not a tax rate. 75% of this band is exempt."
+                  },
+                  {
+                    "label": "Next S$100,000 of chargeable income",
+                    "over": "100000",
+                    "up_to": "200000",
+                    "rate": "0.50",
+                    "notes": "Exemption fraction, not a tax rate. 50% of this band is exempt. IRAS states the resulting maximum exemption as S$125,000."
+                  }
+                ],
+                "notes": "Tax exemption scheme for new start-up companies (SUTE), YA 2020 onwards, first 3 consecutive YAs. Conditions (IRAS): Singapore-incorporated, Singapore tax resident, no more than 20 shareholders (all individuals, or at least one individual holding at least 10%); excludes investment holding and property development. Bracket rates are exemption percentages."
+              },
+              "legal_citations": [
+                {
+                  "title": "IRAS | Corporate Income Tax Rate, Rebates & Tax Exemption Schemes",
+                  "instrument": "Income Tax Act 1947, s 43 (start-up and partial tax exemption) as described by IRAS",
+                  "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/corporate-income-tax-rate-rebates-and-tax-exemption-schemes",
+                  "pinpoint": "Tables 1-2 (SUTE) and PTE table; also restates the flat 17% CIT rate",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "YA 2020 onwards, first 3 consecutive YAs. Bracket rates are exemption fractions, not CIT percentages."
+            }
+          ],
+          "chargeability": "charged",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "self_assessment",
+            "reconciled_annually": true
+          },
+          "notes": "Start-up tax exemption under s 43. Pre-YA 2020 brackets (100% of first S$100,000 and 50% of the next S$200,000, maximum exemption S$200,000, through YA 2019) are described on the same IRAS page but are not encoded as a prior version because a legal start date for that earlier schedule was not pinned."
+        }
+      ],
+      "local_name": "CIT"
+    },
+    {
+      "id": "wht",
+      "name": "Withholding tax on payments to non-residents",
+      "kind": "withholding",
+      "treatments": [
+        {
+          "id": "sg-wht-interest",
+          "name": "Withholding on interest and related loan fees",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "sg-wht-interest-15",
+              "effective_from": "2026-11-13",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.15"
+              },
+              "legal_citations": [
+                {
+                  "title": "IRAS | Types of Payment & the Applicable Withholding Tax Rates",
+                  "instrument": "IRAS webpage; Income Tax Act 1947 s 45 (withholding) and s 12(6)/12(7) source rules",
+                  "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax/types-of-payment-and-withholding-tax-rates",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Interest, commissions and fees in connection with any loan or indebtedness. IRAS footnote: final tax on gross where the non-resident operates outside Singapore; a DTA may reduce the rate. Legal commencement of the 15% figure was not pinned on the fetched page."
+            }
+          ],
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          },
+          "notes": "Income Tax Act 1947 s 45, s 12(6)."
+        },
+        {
+          "id": "sg-wht-royalty",
+          "name": "Withholding on royalties",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "sg-wht-royalty-10",
+              "effective_from": "2026-11-13",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.10"
+              },
+              "legal_citations": [
+                {
+                  "title": "IRAS | Types of Payment & the Applicable Withholding Tax Rates",
+                  "instrument": "IRAS webpage; Income Tax Act 1947 s 45 (withholding) and s 12(6)/12(7) source rules",
+                  "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax/types-of-payment-and-withholding-tax-rates",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Royalties or lump sum for use of movable property (for example IP). Legal commencement was not pinned on the fetched page."
+            }
+          ],
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          }
+        },
+        {
+          "id": "sg-wht-knowhow",
+          "name": "Withholding on use of scientific, technical, industrial or commercial knowledge",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "sg-wht-knowhow-10",
+              "effective_from": "2026-11-13",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.10"
+              },
+              "legal_citations": [
+                {
+                  "title": "IRAS | Types of Payment & the Applicable Withholding Tax Rates",
+                  "instrument": "IRAS webpage; Income Tax Act 1947 s 45 (withholding) and s 12(6)/12(7) source rules",
+                  "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax/types-of-payment-and-withholding-tax-rates",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Use of scientific, technical, industrial or commercial knowledge or information. Legal commencement was not pinned on the fetched page."
+            }
+          ],
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          }
+        },
+        {
+          "id": "sg-wht-movable-rent",
+          "name": "Withholding on rent of movable property",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "sg-wht-movable-rent-15",
+              "effective_from": "2026-11-13",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.15"
+              },
+              "legal_citations": [
+                {
+                  "title": "IRAS | Types of Payment & the Applicable Withholding Tax Rates",
+                  "instrument": "IRAS webpage; Income Tax Act 1947 s 45 (withholding) and s 12(6)/12(7) source rules",
+                  "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax/types-of-payment-and-withholding-tax-rates",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Rent or other payments for use of movable property. Legal commencement was not pinned on the fetched page."
+            }
+          ],
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          }
+        },
+        {
+          "id": "sg-wht-tech-management",
+          "name": "Withholding on technical assistance, service fees and management fees",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "sg-wht-tech-management-cit",
+              "effective_from": "2026-11-13",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.17"
+              },
+              "legal_citations": [
+                {
+                  "title": "IRAS | Types of Payment & the Applicable Withholding Tax Rates",
+                  "instrument": "IRAS webpage; Income Tax Act 1947 s 45 (withholding) and s 12(6)/12(7) source rules",
+                  "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax/types-of-payment-and-withholding-tax-rates",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "IRAS | Corporate Income Tax Rates",
+                  "instrument": "IRAS webpage; Income Tax Act 1947 s 43",
+                  "url": "https://www.iras.gov.sg/quick-links/tax-rates/corporate-income-tax-rates",
+                  "pinpoint": "Corporate Income Tax (CIT) Rate: flat rate of 17% of chargeable income, local and foreign companies (does not itself state the YA 2010 start)",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "IRAS table does not state a fixed statutory percentage; it refers to the prevailing corporate income tax rate (currently 17%). Encoded as 0.17 with that qualification. Legal commencement of this charging rule was not pinned on the fetched page."
+            }
+          ],
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          },
+          "notes": "Tracks the prevailing CIT rate rather than a standalone statutory WHT figure."
+        },
+        {
+          "id": "sg-wht-director",
+          "name": "Withholding on payments to a non-resident director",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "sg-wht-director-22",
+              "effective_from": "2016-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.22"
+              },
+              "legal_citations": [
+                {
+                  "title": "IRAS | Types of Payment & the Applicable Withholding Tax Rates",
+                  "instrument": "IRAS webpage; Income Tax Act 1947 s 45 (withholding) and s 12(6)/12(7) source rules",
+                  "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax/types-of-payment-and-withholding-tax-rates",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "IRAS e-Tax Guide: Incorporation of Companies by Medical Professionals and Relevant Tax Implications",
+                  "instrument": "IRAS e-Tax Guide (published 9 Sep 2024), para 4.2(i)",
+                  "url": "https://www.iras.gov.sg/docs/default-source/e-tax/etaxguide-on-corporatisation-and-tax-implications.pdf",
+                  "pinpoint": "Paragraph 4.2(i), page 3: 'the corporate income tax rate is 17% (since YA 2010)'; also records the highest marginal personal income tax rate as 24% with effect from YA 2024 (previously 22% since YA 2017)",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "effective_to": "2022-12-31",
+              "notes": "22% for income due and payable from 1 January 2016 through 31 December 2022, as stated on the IRAS non-resident director page and the WHT rates table. The e-Tax Guide's '22% since YA 2017' describes the personal-tax schedule; it does not extend this withholding rate through 2023.",
+              "superseded_by": "sg-wht-director-24"
+            },
+            {
+              "id": "sg-wht-director-24",
+              "effective_from": "2023-01-01",
+              "effective_from_bound": "exact",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.24"
+              },
+              "legal_citations": [
+                {
+                  "title": "IRAS | Tax for Non-Resident Directors",
+                  "instrument": "IRAS webpage: withhold 24% (22% for income due and payable from 1 Jan 2016 to 31 Dec 2022)",
+                  "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-director/tax-obligations-for-non-resident-director",
+                  "pinpoint": "Withhold tax at 24% (22% for income due and payable from 1 Jan 2016 to 31 Dec 2022)",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "IRAS | Types of Payment & the Applicable Withholding Tax Rates",
+                  "instrument": "IRAS webpage; Income Tax Act 1947 s 45 (withholding) and s 12(6)/12(7) source rules",
+                  "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax/types-of-payment-and-withholding-tax-rates",
+                  "pinpoint": "Payment to non-resident director: 24% (22% from 01 Jan 2016 to 31 Dec 2022)",
+                  "publisher": "IRAS"
+                },
+                {
+                  "title": "IRAS e-Tax Guide: Incorporation of Companies by Medical Professionals and Relevant Tax Implications",
+                  "instrument": "IRAS e-Tax Guide (published 9 Sep 2024), para 4.2(i)",
+                  "url": "https://www.iras.gov.sg/docs/default-source/e-tax/etaxguide-on-corporatisation-and-tax-implications.pdf",
+                  "pinpoint": "Paragraph 4.2(i), page 3: 'the corporate income tax rate is 17% (since YA 2010)'; also records the highest marginal personal income tax rate as 24% with effect from YA 2024 (previously 22% since YA 2017)",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified_starter",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "24% for income due and payable on or after 1 January 2023. YA 2024 in the e-Tax Guide is the assessment year for 2023 income, not a 1 January 2024 withholding start. The IRAS non-resident director page and the WHT rates table both date the 24% rate from the end of the 22% window on 31 December 2022.",
+              "successor_of": "sg-wht-director-22"
+            }
+          ],
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          }
+        },
+        {
+          "id": "sg-wht-professional",
+          "name": "Withholding on non-resident professionals or firms",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "sg-wht-professional-15",
+              "effective_from": "2026-11-13",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.15"
+              },
+              "legal_citations": [
+                {
+                  "title": "IRAS | Types of Payment & the Applicable Withholding Tax Rates",
+                  "instrument": "IRAS webpage; Income Tax Act 1947 s 45 (withholding) and s 12(6)/12(7) source rules",
+                  "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax/types-of-payment-and-withholding-tax-rates",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "On gross, or the prevailing non-resident individual rate on net, as described by IRAS. Legal commencement was not pinned on the fetched page."
+            }
+          ],
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          }
+        },
+        {
+          "id": "sg-wht-entertainer",
+          "name": "Withholding on non-resident public entertainers",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "sg-wht-entertainer-15",
+              "effective_from": "2026-11-13",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.15"
+              },
+              "legal_citations": [
+                {
+                  "title": "IRAS | Types of Payment & the Applicable Withholding Tax Rates",
+                  "instrument": "IRAS webpage; Income Tax Act 1947 s 45 (withholding) and s 12(6)/12(7) source rules",
+                  "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax/types-of-payment-and-withholding-tax-rates",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Legal commencement was not pinned on the fetched page."
+            }
+          ],
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          }
+        },
+        {
+          "id": "sg-wht-property-trader",
+          "name": "Withholding on sale of real property by a non-resident property trader",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "sg-wht-property-trader-15",
+              "effective_from": "2026-11-13",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.15"
+              },
+              "legal_citations": [
+                {
+                  "title": "IRAS | Types of Payment & the Applicable Withholding Tax Rates",
+                  "instrument": "IRAS webpage; Income Tax Act 1947 s 45 (withholding) and s 12(6)/12(7) source rules",
+                  "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax/types-of-payment-and-withholding-tax-rates",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Legal commencement was not pinned on the fetched page."
+            }
+          ],
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          }
+        },
+        {
+          "id": "sg-wht-casino-agent",
+          "name": "Withholding on non-resident international market agents (casino)",
+          "semantic_code": "withholding",
+          "rates": [
+            {
+              "id": "sg-wht-casino-agent-3",
+              "effective_from": "2026-11-13",
+              "effective_from_bound": "in_force_by",
+              "rate": {
+                "kind": "ad_valorem",
+                "value": "0.03"
+              },
+              "legal_citations": [
+                {
+                  "title": "IRAS | Types of Payment & the Applicable Withholding Tax Rates",
+                  "instrument": "IRAS webpage; Income Tax Act 1947 s 45 (withholding) and s 12(6)/12(7) source rules",
+                  "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax/types-of-payment-and-withholding-tax-rates",
+                  "publisher": "IRAS"
+                }
+              ],
+              "verification": {
+                "status": "verified",
+                "reviewed_on": "2026-11-13"
+              },
+              "notes": "Legal commencement was not pinned on the fetched page."
+            }
+          ],
+          "chargeability": "withheld",
+          "input_credit": "not_applicable",
+          "collection": {
+            "method": "withholding"
+          }
+        }
+      ],
+      "notes": "Rates copied from the IRAS WHT types-of-payment page, reviewed on 2026-11-13. DTA rates are not encoded. The S-REIT 10% concession is omitted because the Budget 2025 extension end date was not confirmed (the fetched IRAS page was truncated)."
+    }
+  ],
+  "maintainer": {
+    "name": "Open-Tax contributors (seat open)",
+    "github": "glc-works/open-tax",
+    "url": "https://github.com/glc-works/open-tax"
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "$schema": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/dictionary-entry.schema.json",
+  "schema_version": "1.0.0",
+  "dictionary_id": "in-hsn-sac",
+  "jurisdiction": "IN",
+  "pack_id": "in",
+  "kind": "commodity",
+  "name": "HSN / SAC sample (56th GST Council annexures)",
+  "authority": "GST Council / CBIC",
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-13",
+    "notes": "Sample headings copied from the official 56th GST Council / PIB press release annexures. Not a complete HSN or SAC list, and not a rate table. CBIC notification PDFs were not opened."
+  },
+  "notes": "HSN codes classify goods; SAC codes classify services. A code identifies the supply. The rate version, with its effective date, comes from the notification — not from the code. maps_to records the destination treatment from 22 September 2025 as described in the annexure.",
+  "entries": [
+    {
+      "code": "0401",
+      "name": "Ultra-High Temperature (UHT) milk",
+      "description": "HSN 0401 as listed in the 56th GST Council annexures: moved from 5% to nil from 22 September 2025.",
+      "status": "sample",
+      "maps_to": {
+        "tax_id": "gst",
+        "treatment_id": "in-gst-zero",
+        "semantic_code": "zero",
+        "notes": "Destination from 22 September 2025. The PIB FAQ describes UHT milk as exempted, in line with other dairy milk. This nil-slab treatment is chargeable as exempt and input tax is not creditable. It is not IGST Act s 16 export zero-rating."
+      },
+      "correlates_to": [
+        {
+          "system": "HS",
+          "code": "0401",
+          "notes": "HSN heading aligned with HS 0401."
+        }
+      ],
+      "legal_citations": [
+        {
+          "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+          "instrument": "GST Council / PIB press release with Annexures",
+          "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+          "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+          "publisher": "GST Council"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13"
+      },
+      "effective_from": "2025-09-22"
+    },
+    {
+      "code": "0405",
+      "name": "Butter, ghee, butter oil, dairy spreads",
+      "description": "HSN 0405 as listed in the 56th GST Council annexures: moved from 12% to 5% from 22 September 2025.",
+      "status": "sample",
+      "maps_to": {
+        "tax_id": "gst",
+        "treatment_id": "in-gst-reduced-5",
+        "semantic_code": "reduced",
+        "notes": "Destination treatment from 22 September 2025."
+      },
+      "correlates_to": [
+        {
+          "system": "HS",
+          "code": "0405"
+        }
+      ],
+      "legal_citations": [
+        {
+          "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+          "instrument": "GST Council / PIB press release with Annexures",
+          "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+          "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+          "publisher": "GST Council"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13"
+      },
+      "effective_from": "2025-09-22"
+    },
+    {
+      "code": "0402 91 10",
+      "name": "Condensed milk",
+      "description": "HSN 0402 91 10 as listed in the 56th GST Council annexures: moved from 12% to 5% from 22 September 2025.",
+      "status": "sample",
+      "maps_to": {
+        "tax_id": "gst",
+        "treatment_id": "in-gst-reduced-5",
+        "semantic_code": "reduced",
+        "notes": "Destination treatment from 22 September 2025."
+      },
+      "correlates_to": [
+        {
+          "system": "HS",
+          "code": "0402",
+          "notes": "HS heading 0402; the tariff line is 0402 91 10."
+        }
+      ],
+      "legal_citations": [
+        {
+          "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+          "instrument": "GST Council / PIB press release with Annexures",
+          "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+          "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+          "publisher": "GST Council"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13"
+      },
+      "effective_from": "2025-09-22"
+    },
+    {
+      "code": "0402 99 20",
+      "name": "Condensed milk",
+      "description": "HSN 0402 99 20 as listed in the 56th GST Council annexures: moved from 12% to 5% from 22 September 2025.",
+      "status": "sample",
+      "maps_to": {
+        "tax_id": "gst",
+        "treatment_id": "in-gst-reduced-5",
+        "semantic_code": "reduced",
+        "notes": "Destination treatment from 22 September 2025."
+      },
+      "correlates_to": [
+        {
+          "system": "HS",
+          "code": "0402",
+          "notes": "HS heading 0402; the tariff line is 0402 99 20."
+        }
+      ],
+      "legal_citations": [
+        {
+          "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+          "instrument": "GST Council / PIB press release with Annexures",
+          "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+          "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+          "publisher": "GST Council"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13"
+      },
+      "effective_from": "2025-09-22"
+    },
+    {
+      "code": "2202 10",
+      "name": "Aerated waters etc. with added sugar/sweetener or flavoured",
+      "description": "HSN 2202 10 as listed in the 56th GST Council annexures: moved from 28% to 40% from 22 September 2025.",
+      "status": "sample",
+      "maps_to": {
+        "tax_id": "gst",
+        "treatment_id": "in-gst-luxury-28-40",
+        "semantic_code": "luxury",
+        "notes": "Destination treatment from 22 September 2025 (40%)."
+      },
+      "correlates_to": [
+        {
+          "system": "HS",
+          "code": "2202",
+          "notes": "HS heading 2202; the subheading is 2202 10."
+        }
+      ],
+      "legal_citations": [
+        {
+          "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+          "instrument": "GST Council / PIB press release with Annexures",
+          "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+          "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+          "publisher": "GST Council"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13"
+      },
+      "effective_from": "2025-09-22"
+    },
+    {
+      "code": "9963",
+      "name": "Hotel accommodation, value <= Rs 7,500 per unit per day",
+      "description": "SAC 9963 as listed in the 56th GST Council annexures: moved from 12% with ITC to 5% without ITC from 22 September 2025.",
+      "status": "sample",
+      "maps_to": {
+        "tax_id": "gst",
+        "treatment_id": "in-gst-reduced-5",
+        "semantic_code": "reduced",
+        "notes": "Destination rate is 5% from 22 September 2025. The annexure describes this path as without ITC; input_credit is not stored on the code."
+      },
+      "legal_citations": [
+        {
+          "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+          "instrument": "GST Council / PIB press release with Annexures",
+          "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+          "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+          "publisher": "GST Council"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13"
+      },
+      "effective_from": "2025-09-22"
+    },
+    {
+      "code": "9954",
+      "name": "Composite works contract predominantly earth work (>75%) to Government",
+      "description": "SAC 9954 as listed in the 56th GST Council annexures: moved from 12% to 18% from 22 September 2025.",
+      "status": "sample",
+      "maps_to": {
+        "tax_id": "gst",
+        "treatment_id": "in-gst-standard",
+        "semantic_code": "standard",
+        "notes": "Destination treatment from 22 September 2025."
+      },
+      "legal_citations": [
+        {
+          "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+          "instrument": "GST Council / PIB press release with Annexures",
+          "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+          "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+          "publisher": "GST Council"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13"
+      },
+      "effective_from": "2025-09-22"
+    },
+    {
+      "code": "9983",
+      "name": "Professional, technical & business services relating to petroleum crude/natural gas exploration",
+      "description": "SAC 9983 as listed in the 56th GST Council annexures: moved from 12% to 18% from 22 September 2025.",
+      "status": "sample",
+      "maps_to": {
+        "tax_id": "gst",
+        "treatment_id": "in-gst-standard",
+        "semantic_code": "standard",
+        "notes": "Destination treatment from 22 September 2025."
+      },
+      "legal_citations": [
+        {
+          "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+          "instrument": "GST Council / PIB press release with Annexures",
+          "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+          "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+          "publisher": "GST Council"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13"
+      },
+      "effective_from": "2025-09-22"
+    },
+    {
+      "code": "9971",
+      "name": "Individual life & health insurance policies (and reinsurance)",
+      "description": "SAC 9971 as listed in the 56th GST Council annexures: moved from 18% to exempt from 22 September 2025.",
+      "status": "sample",
+      "maps_to": {
+        "tax_id": "gst",
+        "treatment_id": "in-gst-exempt",
+        "semantic_code": "exempt",
+        "notes": "Destination treatment from 22 September 2025."
+      },
+      "legal_citations": [
+        {
+          "title": "Recommendations of the 56th Meeting of the GST Council (PIB press release, 03 Sep 2025)",
+          "instrument": "GST Council / PIB press release with Annexures",
+          "url": "https://www.gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau.pdf",
+          "pinpoint": "2-rate structure: Standard 18%, Merit 5%, special de-merit 40%; implementation paras a-d: services & most goods wef 22 Sep 2025; tobacco/pan masala deferred",
+          "publisher": "GST Council"
+        }
+      ],
+      "verification": {
+        "status": "verified_starter",
+        "reviewed_on": "2026-11-13"
+      },
+      "effective_from": "2025-09-22"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://raw.githubusercontent.com/glc-works/open-tax/main/schemas/policy-diff.schema.json",
+  "schema_version": "1.0.0",
+  "id": "2026-01-01-dcp-2-2025-rental-leasing",
+  "jurisdiction": "MY",
+  "pack_id": "my",
+  "title": "DCP 2/2025 (Amendment No. 4): rental or leasing effective 6% from 1 January 2026",
+  "summary": "From 1 January 2026 RMCD grants a 2% exemption on the service-tax rate for rental or leasing, producing a 6% effective charge while the statutory rate remains 8%, until the legislation is amended. The path stays semantically standard.",
+  "legal_basis": [
+    {
+      "title": "Dasar Cukai Perkhidmatan Bil. 2/2025 (Pindaan No. 4) — Sewaan atau Pajakan",
+      "instrument": "RMCD Service Tax Policy No. 2/2025 (Amendment No. 4), item 8",
+      "url": "https://mysst.customs.gov.my/wp-content/uploads/2026/04/DCP-2-2025-Sewaan-atau-Pajakan-Pindaan-No.4.pdf",
+      "pinpoint": "Bil. 8: pengecualian 2% atas kadar cukai perkhidmatan sewaan atau pajakan, berkuat kuasa 1 Januari 2026; Lampiran B",
+      "publisher": "RMCD"
+    },
+    {
+      "title": "MySST | Background",
+      "instrument": "RMCD MySST webpage, Tax Rate section",
+      "url": "https://mysst.customs.gov.my/background/",
+      "publisher": "Royal Malaysian Customs Department"
+    }
+  ],
+  "changes": [
+    {
+      "id": "my-st-rental-admin-6",
+      "effective_from": "2026-01-01",
+      "change_type": "base_change",
+      "summary": "Rental or leasing service tax remains 8% as a statutory rate and is reduced administratively to a 6% effective charge.",
+      "affected": {
+        "semantic_codes": [
+          "standard"
+        ],
+        "treatment_ids": [
+          "my-service-tax-rental-leasing"
+        ],
+        "tax_ids": [
+          "service-tax"
+        ]
+      },
+      "migration_impact": {
+        "severity": "medium",
+        "summary": "Invoicing for rental or leasing from 1 January 2026 should charge 6% while recording that the statutory rate is still 8%. Do not move these services onto the First Schedule 6% treatment.",
+        "systems": [
+          "invoicing",
+          "filing",
+          "reporting"
+        ]
+      },
+      "computation": {
+        "statutory_rate": "0.08",
+        "effective_rate": "0.06",
+        "base_formula": "8% statutory reduced administratively to 6% effective by Service Tax Policy / RMCD DCP 2/2025"
+      },
+      "before": {
+        "statutory_rate": "0.08",
+        "effective_rate": "0.08",
+        "description": "General 8% statutory and effective rate on rental or leasing."
+      },
+      "after": {
+        "statutory_rate": "0.08",
+        "effective_rate": "0.06",
+        "base_formula": "8% statutory reduced administratively to 6% effective by Service Tax Policy / RMCD DCP 2/2025"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified_starter",
+    "reviewed_on": "2026-11-13"
+  }
+}
