@@ -1,0 +1,33 @@
+packs/id/diffs/2022-12-20-pp-55-2022-umkm.json
+  s_5fda4c2dbca69b::t_e415a92977c169 1-53,56-64
+  s_5fda4c2dbca69b::t_7b112e2f7006a0 54-55
+packages/open-tax/test/id-umkm.test.ts
+  s_5fda4c2dbca69b::t_6c6cafd1840f3f 1-64
+packs/id/README.md
+  s_5fda4c2dbca69b::t_e415a92977c169 24,33,83-110
+packs/id/diffs/2026-04-22-pp-20-2026-umkm.json
+  s_5fda4c2dbca69b::t_e415a92977c169 1-74
+packs/id/dictionaries/kap-kjs.sample.json
+  s_5fda4c2dbca69b::t_e415a92977c169 243-292
+packs/id/regime.json
+  s_5fda4c2dbca69b::t_e415a92977c169 22,155,173-179,1772-1774,1801-1897
+  s_5fda4c2dbca69b::t_11abe794675a42 1898
+benchmarks/global-comparison.md
+  s_5fda4c2dbca69b::t_e415a92977c169 17-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "000c08c88088f60b6f28a7a7070a93d664c4bfef",
+  "prompts": {},
+  "sessions": {
+    "s_5fda4c2dbca69b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1d597-01b7-7913-914e-820e8b2e7cac",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Cid <308343041+convergenceID@users.noreply.github.com>"
+    }
+  }
+}
